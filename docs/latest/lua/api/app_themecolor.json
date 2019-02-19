@@ -1,0 +1,9 @@
+{
+  "name": "App::ThemeColor",
+  "header": "nativeui/app.h",
+  "type": "string",
+  "namespace": "nu",
+  "description": "Represent possible theme colors.",
+  "detail": "\nThis type is a string with following possible values:\n* `\"text\"`\n* `\"disabled-text\"`\n",
+  "id": "app_themecolor"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "MenuItem::Role",
+  "header": "nativeui/menu_item.h",
+  "type": "string",
+  "namespace": "nu",
+  "description": "Preset defaults for common menu items.",
+  "detail": "For common menu items like `Copy` and `Paste`, manually implementing them for\nall platforms is very boring work. You can instead specify a `role` for a menu\nitem, and Yue will automatically set labels, accelerators and actions for the\nmenu item.\n\nThis type is a string with following possible values:\n* `\"copy\"`\n* `\"cut\"`\n* `\"paste\"`\n* `\"select-all\"`\n* `\"undo\"`\n* `\"redo\"`\n\nOn macOS following values are also available:\n\n* `\"about\"`\n* `\"hide\"`\n* `\"hide-others\"`\n* `\"unhide\"`\n* `\"help\"`\n* `\"window\"`\n* `\"services\"`\n",
+  "id": "menuitem_role"
+}

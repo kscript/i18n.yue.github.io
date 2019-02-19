@@ -1,0 +1,23 @@
+{
+  "name": "KeyEvent",
+  "header": "nativeui/events/event.h",
+  "type": "struct",
+  "namespace": "nu",
+  "inherit": {
+    "name": "Event",
+    "id": "event"
+  },
+  "description": "Keyboard event.",
+  "properties": [
+    {
+      "description": "The key associated with the event.",
+      "id": "key",
+      "type": {
+        "name": "KeyboardCode",
+        "id": "keyboardcode"
+      },
+      "name": "key"
+    }
+  ],
+  "id": "keyevent"
+}

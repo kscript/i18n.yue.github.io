@@ -1,0 +1,86 @@
+{
+  "name": "Image",
+  "component": "gui",
+  "header": "nativeui/gfx/image.h",
+  "type": "Class",
+  "namespace": "nu",
+  "description": "Native image.",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Image",
+          "id": "image"
+        },
+        "name": "createFromPath",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "path"
+          }
+        ],
+        "str": "createFromPath(path)"
+      },
+      "description": "Create an image by reading from `path`.",
+      "id": "createfrompath-path"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Image",
+          "id": "image"
+        },
+        "name": "createFromBuffer",
+        "parameters": [
+          {
+            "type": {
+              "name": "nu::Buffer",
+              "id": "nu_buffer"
+            },
+            "name": "buffer"
+          },
+          {
+            "type": {
+              "name": "Number"
+            },
+            "name": "scaleFactor"
+          }
+        ],
+        "str": "createFromBuffer(buffer, scaleFactor)"
+      },
+      "description": "Create an image from `buffer` in memory, with `scale_factor`.\n",
+      "id": "createfrombuffer-buffer-scalefactor"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "SizeF",
+          "id": "sizef"
+        },
+        "name": "getSize",
+        "parameters": [],
+        "str": "getSize()"
+      },
+      "description": "Return image's size in DIP.",
+      "id": "getsize"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Number"
+        },
+        "name": "getScaleFactor",
+        "parameters": [],
+        "str": "getScaleFactor()"
+      },
+      "description": "Return image's scale factor.",
+      "id": "getscalefactor"
+    }
+  ],
+  "module": "gui",
+  "id": "image"
+}

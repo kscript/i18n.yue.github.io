@@ -1,0 +1,207 @@
+{
+  "name": "Container",
+  "component": "gui",
+  "header": "nativeui/container.h",
+  "type": "Class",
+  "namespace": "nu",
+  "inherit": {
+    "name": "View",
+    "id": "view"
+  },
+  "description": "Drawable view with child views.",
+  "detail": "The `Container` view is mainly used for two purposes:\n* Show custom drawn content;\n* Display a collection of child views.\n\nNote that the `index` counts from `1`, following lua's convention.\n",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Container",
+          "id": "container"
+        },
+        "name": "create",
+        "parameters": [],
+        "str": "create()"
+      },
+      "description": "Create a new container view.",
+      "id": "create"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "SizeF",
+          "id": "sizef"
+        },
+        "name": "getpreferredsize",
+        "parameters": [],
+        "str": "getpreferredsize()"
+      },
+      "description": "Get the minimum size to show all children of the view.\n\nNote that if the view is using a `flex-wrap: wrap` style, this method\nmight return a extremely wide/high size since it does not know the best\nwidth/height to show the children.\n",
+      "id": "getpreferredsize"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "number"
+        },
+        "name": "getpreferredheightforwidth",
+        "parameters": [
+          {
+            "type": {
+              "name": "number"
+            },
+            "name": "width"
+          }
+        ],
+        "str": "getpreferredheightforwidth(width)"
+      },
+      "description": "Return the minimum height to show all child of the view for the `width`.\n",
+      "id": "getpreferredheightforwidth-width"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "number"
+        },
+        "name": "getpreferredwidthforheight",
+        "parameters": [
+          {
+            "type": {
+              "name": "number"
+            },
+            "name": "height"
+          }
+        ],
+        "str": "getpreferredwidthforheight(height)"
+      },
+      "description": "Return the minimum width to show all child of the view for the `height`.\n",
+      "id": "getpreferredwidthforheight-height"
+    },
+    {
+      "signature": {
+        "name": "addchildview",
+        "parameters": [
+          {
+            "type": {
+              "name": "View",
+              "id": "view"
+            },
+            "name": "view"
+          }
+        ],
+        "str": "addchildview(view)"
+      },
+      "description": "Append a child `view` to the container.\n\nThis method will silently fail if the `view` already has a parent.\n",
+      "id": "addchildview-view"
+    },
+    {
+      "signature": {
+        "name": "addchildviewat",
+        "parameters": [
+          {
+            "type": {
+              "name": "View",
+              "id": "view"
+            },
+            "name": "view"
+          },
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "index"
+          }
+        ],
+        "str": "addchildviewat(view, index)"
+      },
+      "description": "Add a child `view` to the container at `index`.\n\nThis method will silently fail if the `view` already has a parent.\n",
+      "id": "addchildviewat-view-index"
+    },
+    {
+      "signature": {
+        "name": "removechildview",
+        "parameters": [
+          {
+            "type": {
+              "name": "View",
+              "id": "view"
+            },
+            "name": "view"
+          }
+        ],
+        "str": "removechildview(view)"
+      },
+      "description": "Remove a child `view` from this container.\n\nThis method will silently fail if the `view` is not a child of the\ncontainer.\n",
+      "id": "removechildview-view"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "integer"
+        },
+        "name": "childcount",
+        "parameters": [],
+        "str": "childcount()"
+      },
+      "description": "Return the count of children in the container.",
+      "id": "childcount"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "View",
+          "id": "view"
+        },
+        "name": "childat",
+        "parameters": [
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "index"
+          }
+        ],
+        "str": "childat(index)"
+      },
+      "description": "Return the child `view` at `index`.\n\nThis method will silently fail if the `index` is out of range.\n",
+      "id": "childat-index"
+    }
+  ],
+  "events": [
+    {
+      "callback": {
+        "name": "ondraw",
+        "parameters": [
+          {
+            "type": {
+              "name": "Container",
+              "id": "container"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "Painter",
+              "id": "painter"
+            },
+            "name": "painter",
+            "description": "The drawing context of the view."
+          },
+          {
+            "type": {
+              "name": "RectF",
+              "id": "rectf"
+            },
+            "name": "dirty",
+            "description": "The area in the view to draw on."
+          }
+        ],
+        "str": "ondraw(self, painter, dirty)"
+      },
+      "description": "Emitted when button the operating system or application requests to draw\na portion of the view.\n",
+      "id": "ondraw-self-painter-dirty"
+    }
+  ],
+  "module": "yue.gui",
+  "id": "container"
+}

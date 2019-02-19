@@ -1,0 +1,100 @@
+{
+  "name": "Canvas",
+  "component": "gui",
+  "header": "nativeui/gfx/canvas.h",
+  "type": "Class",
+  "namespace": "nu",
+  "description": "Offscreen drawing.",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Canvas",
+          "id": "canvas"
+        },
+        "name": "create",
+        "parameters": [
+          {
+            "type": {
+              "name": "SizeF",
+              "id": "sizef"
+            },
+            "name": "size"
+          },
+          {
+            "type": {
+              "name": "number"
+            },
+            "name": "scalefactor"
+          }
+        ],
+        "str": "create(size, scalefactor)"
+      },
+      "description": "Create a new canvas with specified size and scale factor.\n",
+      "id": "create-size-scalefactor"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Canvas",
+          "id": "canvas"
+        },
+        "name": "createformainscreen",
+        "parameters": [
+          {
+            "type": {
+              "name": "SizeF",
+              "id": "sizef"
+            },
+            "name": "size"
+          }
+        ],
+        "str": "createformainscreen(size)"
+      },
+      "description": "Create a new canvas with `size` using default scale factor.\n\nThis is strongly discouraged for using, since it does not work well with\nmulti-monitor setup. Only use it when you do not care about per-monitor\nDPI.\n",
+      "id": "createformainscreen-size"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "number"
+        },
+        "name": "getscalefactor",
+        "parameters": [],
+        "str": "getscalefactor()"
+      },
+      "description": "Return the scale factor of the canvas.",
+      "id": "getscalefactor"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Painter",
+          "id": "painter"
+        },
+        "name": "getpainter",
+        "parameters": [],
+        "str": "getpainter()"
+      },
+      "description": "Return the Painter that can be used to draw on the canvas.",
+      "id": "getpainter"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "SizeF",
+          "id": "sizef"
+        },
+        "name": "getsize",
+        "parameters": [],
+        "str": "getsize()"
+      },
+      "description": "Return the DIP size of canvas.",
+      "id": "getsize"
+    }
+  ],
+  "module": "yue.gui",
+  "id": "canvas"
+}

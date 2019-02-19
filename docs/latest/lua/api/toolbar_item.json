@@ -1,0 +1,62 @@
+{
+  "name": "Toolbar::Item",
+  "header": "nativeui/toolbar.h",
+  "type": "table",
+  "namespace": "nu",
+  "description": "Represent an item of `Toolbar`.",
+  "properties": [
+    {
+      "description": "Item's label.",
+      "id": "label",
+      "type": {
+        "name": "string"
+      },
+      "name": "label"
+    },
+    {
+      "description": "Item's minimum size.",
+      "id": "minsize",
+      "type": {
+        "name": "SizeF",
+        "id": "sizef"
+      },
+      "name": "minsize"
+    },
+    {
+      "description": "Item's maximum size.",
+      "id": "maxsize",
+      "type": {
+        "name": "SizeF",
+        "id": "sizef"
+      },
+      "name": "maxsize"
+    },
+    {
+      "description": "Item's image.",
+      "id": "image",
+      "type": {
+        "name": "Image",
+        "id": "image"
+      },
+      "name": "image"
+    },
+    {
+      "description": "Item's custom view.",
+      "id": "view",
+      "type": {
+        "name": "View",
+        "id": "view"
+      },
+      "name": "view"
+    },
+    {
+      "description": "Function called when item is clicked.",
+      "id": "onclick",
+      "type": {
+        "name": "function"
+      },
+      "name": "onclick"
+    }
+  ],
+  "id": "toolbar_item"
+}

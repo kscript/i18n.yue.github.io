@@ -1,0 +1,651 @@
+{
+  "name": "View",
+  "component": "gui",
+  "header": "nativeui/view.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "description": "Base class for GUI components.",
+  "detail": "`View` provides methods to receive and change various style properties.\n\n`View` is a `RefCounted` type. Sub-classes of `View` can only be created on\nheap, and must be managed with `scoped_refptr`.\nEvery API that accpets `View*` will store a reference to the pointer, so it\nis safe to pass a newly created raw pointer to public APIs.\n\n```cpp\nscoped_refptr<nu::Container> container = new nu::Container;\ncontainer->AddChildView(new nu::Label(\"child\"));\n```\n",
+  "class_properties": [
+    {
+      "description": "The class name of this view.",
+      "id": "kclassname",
+      "type": {
+        "name": "const char*"
+      },
+      "name": "kClassName"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "const char*"
+        },
+        "name": "GetClassName",
+        "parameters": [],
+        "str": "const char* GetClassName() const"
+      },
+      "description": "Return the class name.",
+      "detail": "The returned value is guarenteed to be the `kClassName` property of each\nview.\n",
+      "id": "getclassname"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Vector2dF",
+          "id": "vector2df"
+        },
+        "name": "OffsetFromView",
+        "parameters": [
+          {
+            "type": {
+              "name": "const View*",
+              "id": "view"
+            },
+            "name": "view"
+          }
+        ],
+        "str": "Vector2dF OffsetFromView(const View* view) const"
+      },
+      "description": "Return offset from `view`.",
+      "id": "offsetfromview-view"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Vector2dF",
+          "id": "vector2df"
+        },
+        "name": "OffsetFromWindow",
+        "parameters": [],
+        "str": "Vector2dF OffsetFromWindow() const"
+      },
+      "description": "Return offset from the window that owns the view.",
+      "id": "offsetfromwindow"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "RectF",
+          "id": "rectf"
+        },
+        "name": "GetBounds",
+        "parameters": [],
+        "str": "RectF GetBounds() const"
+      },
+      "description": "Return the position and size of the view, relative to its parent.",
+      "id": "getbounds"
+    },
+    {
+      "signature": {
+        "name": "Layout",
+        "parameters": [],
+        "str": "void Layout()"
+      },
+      "description": "Make the view re-recalculate its layout.",
+      "id": "layout"
+    },
+    {
+      "signature": {
+        "name": "SchedulePaint",
+        "parameters": [],
+        "str": "void SchedulePaint()"
+      },
+      "description": "Schedule to repaint the whole view.",
+      "id": "schedulepaint"
+    },
+    {
+      "signature": {
+        "name": "SchedulePaintRect",
+        "parameters": [
+          {
+            "type": {
+              "name": "const RectF&",
+              "id": "rectf"
+            },
+            "name": "rect"
+          }
+        ],
+        "str": "void SchedulePaintRect(const RectF& rect)"
+      },
+      "description": "Schedule to repaint the `rect` area in view.",
+      "id": "schedulepaintrect-rect"
+    },
+    {
+      "signature": {
+        "name": "SetVisible",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "visible"
+          }
+        ],
+        "str": "void SetVisible(bool visible)"
+      },
+      "description": "Show/Hide the view.",
+      "id": "setvisible-visible"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsVisible",
+        "parameters": [],
+        "str": "bool IsVisible() const"
+      },
+      "description": "Return whether the view is visible.",
+      "id": "isvisible"
+    },
+    {
+      "signature": {
+        "name": "SetEnabled",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "enable"
+          }
+        ],
+        "str": "void SetEnabled(bool enable)"
+      },
+      "description": "Set whether the view is enabled.",
+      "detail": "The enabled state of each view is not affected by its parent, disabling\na container-like view does not have any effect.\n",
+      "id": "setenabled-enable"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsEnabled",
+        "parameters": [],
+        "str": "bool IsEnabled() const"
+      },
+      "description": "Return whether the view is enabled.",
+      "id": "isenabled"
+    },
+    {
+      "signature": {
+        "name": "Focus",
+        "parameters": [],
+        "str": "void Focus()"
+      },
+      "description": "Move the keyboard focus to the view.",
+      "id": "focus"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "HasFocus",
+        "parameters": [],
+        "str": "bool HasFocus() const"
+      },
+      "description": "Return whether the view has keyboard focus.",
+      "id": "hasfocus"
+    },
+    {
+      "signature": {
+        "name": "SetFocusable",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "focusable"
+          }
+        ],
+        "str": "void SetFocusable(bool focusable)"
+      },
+      "description": "Set whether the view can be focused on.",
+      "id": "setfocusable-focusable"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsFocusable",
+        "parameters": [],
+        "str": "bool IsFocusable() const"
+      },
+      "description": "Return whether the view can be focused on.",
+      "id": "isfocusable"
+    },
+    {
+      "signature": {
+        "name": "SetCapture",
+        "parameters": [],
+        "str": "void SetCapture()"
+      },
+      "description": "Set mouse capture to the view.",
+      "id": "setcapture"
+    },
+    {
+      "signature": {
+        "name": "ReleaseCapture",
+        "parameters": [],
+        "str": "void ReleaseCapture()"
+      },
+      "description": "Release mouse capture if the view has mouse capture.",
+      "id": "releasecapture"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "HasCapture",
+        "parameters": [],
+        "str": "bool HasCapture() const"
+      },
+      "description": "Return whether the view has mouse capture.",
+      "id": "hascapture"
+    },
+    {
+      "signature": {
+        "name": "SetMouseDownCanMoveWindow",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "can"
+          }
+        ],
+        "str": "void SetMouseDownCanMoveWindow(bool can)"
+      },
+      "description": "Set whether dragging mouse would move the window.",
+      "detail": "For most platforms this method only works for frameless windows, having\nthis feature may also prevent mouse events to happen.\n\nOn macOS the `Container` view has this feature turned on by default. To\nturn this feature on for the view, the view's parent view must also has\nthis feature turned on.\n\nOn Windows the view with this feature will be treated as titlebar, e.g.\ndouble-clicking would maximize the window, right-clicking may show the\nsystem menu.\n",
+      "id": "setmousedowncanmovewindow-can"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsMouseDownCanMoveWindow",
+        "parameters": [],
+        "str": "bool IsMouseDownCanMoveWindow() const"
+      },
+      "description": "Return whether dragging the view would move the window.",
+      "id": "ismousedowncanmovewindow"
+    },
+    {
+      "signature": {
+        "name": "SetCursor",
+        "parameters": [
+          {
+            "type": {
+              "name": "Cursor*",
+              "id": "cursor"
+            },
+            "name": "cursor"
+          }
+        ],
+        "str": "void SetCursor(Cursor* cursor)"
+      },
+      "description": "Set the cursor to show when hovering the view.",
+      "detail": "On Linux, setting cursor would force the view to own its own GDK window.\nFor certain views like `Label`, this may have remove the view's background\ncolor.\n",
+      "id": "setcursor-cursor"
+    },
+    {
+      "signature": {
+        "name": "SetFont",
+        "parameters": [
+          {
+            "type": {
+              "name": "Font*",
+              "id": "font"
+            },
+            "name": "font"
+          }
+        ],
+        "str": "void SetFont(Font* font)"
+      },
+      "description": "Change the font used for drawing text in the view.",
+      "detail": "This methods only works for `View`s that display text, like `Label` or\n`Entry`.\n",
+      "id": "setfont-font"
+    },
+    {
+      "signature": {
+        "name": "SetColor",
+        "parameters": [
+          {
+            "type": {
+              "name": "Color",
+              "id": "color"
+            },
+            "name": "color"
+          }
+        ],
+        "str": "void SetColor(Color color)"
+      },
+      "description": "Change the color used for drawing text in the view.",
+      "detail": "This methods only works for `View`s that display text, like `Label` or\n`Entry`.\n",
+      "id": "setcolor-color"
+    },
+    {
+      "signature": {
+        "name": "SetBackgroundColor",
+        "parameters": [
+          {
+            "type": {
+              "name": "Color",
+              "id": "color"
+            },
+            "name": "color"
+          }
+        ],
+        "str": "void SetBackgroundColor(Color color)"
+      },
+      "description": "Change the background color of the view.",
+      "id": "setbackgroundcolor-color"
+    },
+    {
+      "signature": {
+        "name": "SetStyle",
+        "parameters": [
+          {
+            "type": {
+              "name": "Args..."
+            },
+            "name": "styles",
+            "description": "Variadic parameters that are pairs of keys and values.\n"
+          }
+        ],
+        "str": "void SetStyle(Args... styles)"
+      },
+      "description": "Change the styles of the view.",
+      "detail": "Available style properties can be found at\n[Layout System](../guides/layout_system.html).\n\n```cpp\nview->SetStyle(\"flex\", 1, \"flex-direction\", \"row\");\n```\n",
+      "id": "setstyle-styles"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::string"
+        },
+        "name": "GetComputedLayout",
+        "parameters": [],
+        "str": "std::string GetComputedLayout() const"
+      },
+      "description": "Return string representation of the view's layout.",
+      "id": "getcomputedlayout"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "SizeF",
+          "id": "sizef"
+        },
+        "name": "GetMinimumSize",
+        "parameters": [],
+        "str": "SizeF GetMinimumSize() const"
+      },
+      "description": "Return the minimum size needed to show the view.",
+      "id": "getminimumsize"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "View*",
+          "id": "view"
+        },
+        "name": "GetParent",
+        "parameters": [],
+        "str": "View* GetParent() const"
+      },
+      "description": "Return parent view.",
+      "id": "getparent"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Window*",
+          "id": "window"
+        },
+        "name": "GetWindow",
+        "parameters": [],
+        "str": "Window* GetWindow() const"
+      },
+      "description": "Return the window that the view belongs to.",
+      "id": "getwindow"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "NativeView",
+          "id": "nativeview"
+        },
+        "name": "GetNative",
+        "parameters": [],
+        "str": "NativeView GetNative() const"
+      },
+      "description": "Return the native type wrapped by the view.",
+      "id": "getnative"
+    }
+  ],
+  "events": [
+    {
+      "callback": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "on_mouse_down",
+        "parameters": [
+          {
+            "type": {
+              "name": "View*",
+              "id": "view"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "const MouseEvent&",
+              "id": "mouseevent"
+            },
+            "name": "event"
+          }
+        ],
+        "str": "bool on_mouse_down(View* self, const MouseEvent& event)"
+      },
+      "description": "Emitted when pressing mouse buttons.",
+      "id": "onmousedown-self-event"
+    },
+    {
+      "callback": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "on_mouse_up",
+        "parameters": [
+          {
+            "type": {
+              "name": "View*",
+              "id": "view"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "const MouseEvent&",
+              "id": "mouseevent"
+            },
+            "name": "event"
+          }
+        ],
+        "str": "bool on_mouse_up(View* self, const MouseEvent& event)"
+      },
+      "description": "Emitted when releasing mouse buttons.",
+      "id": "onmouseup-self-event"
+    },
+    {
+      "callback": {
+        "name": "on_mouse_move",
+        "parameters": [
+          {
+            "type": {
+              "name": "View*",
+              "id": "view"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "const MouseEvent&",
+              "id": "mouseevent"
+            },
+            "name": "event"
+          }
+        ],
+        "str": "void on_mouse_move(View* self, const MouseEvent& event)"
+      },
+      "description": "Emitted when user moves mouse in the view.",
+      "id": "onmousemove-self-event"
+    },
+    {
+      "callback": {
+        "name": "on_mouse_enter",
+        "parameters": [
+          {
+            "type": {
+              "name": "View*",
+              "id": "view"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "const MouseEvent&",
+              "id": "mouseevent"
+            },
+            "name": "event"
+          }
+        ],
+        "str": "void on_mouse_enter(View* self, const MouseEvent& event)"
+      },
+      "description": "Emitted when mouse enters the view.",
+      "id": "onmouseenter-self-event"
+    },
+    {
+      "callback": {
+        "name": "on_mouse_leave",
+        "parameters": [
+          {
+            "type": {
+              "name": "View*",
+              "id": "view"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "const MouseEvent&",
+              "id": "mouseevent"
+            },
+            "name": "event"
+          }
+        ],
+        "str": "void on_mouse_leave(View* self, const MouseEvent& event)"
+      },
+      "description": "Emitted when mouse leaves the view.",
+      "id": "onmouseleave-self-event"
+    },
+    {
+      "callback": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "on_key_down",
+        "parameters": [
+          {
+            "type": {
+              "name": "View*",
+              "id": "view"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "const KeyEvent&",
+              "id": "keyevent"
+            },
+            "name": "event"
+          }
+        ],
+        "str": "bool on_key_down(View* self, const KeyEvent& event)"
+      },
+      "description": "Emitted when pressing keyboard.",
+      "id": "onkeydown-self-event"
+    },
+    {
+      "callback": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "on_key_up",
+        "parameters": [
+          {
+            "type": {
+              "name": "View*",
+              "id": "view"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "const KeyEvent&",
+              "id": "keyevent"
+            },
+            "name": "event"
+          }
+        ],
+        "str": "bool on_key_up(View* self, const KeyEvent& event)"
+      },
+      "description": "Emitted when releasing keyboard.",
+      "id": "onkeyup-self-event"
+    },
+    {
+      "callback": {
+        "name": "on_size_changed",
+        "parameters": [
+          {
+            "type": {
+              "name": "View*",
+              "id": "view"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "void on_size_changed(View* self)"
+      },
+      "description": "Emitted when the view's size has been changed.",
+      "id": "onsizechanged-self"
+    },
+    {
+      "callback": {
+        "name": "on_capture_lost",
+        "parameters": [
+          {
+            "type": {
+              "name": "View*",
+              "id": "view"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "void on_capture_lost(View* self)"
+      },
+      "description": "Emitted when the mouse capture on view has been released.",
+      "id": "oncapturelost-self"
+    }
+  ],
+  "id": "view"
+}

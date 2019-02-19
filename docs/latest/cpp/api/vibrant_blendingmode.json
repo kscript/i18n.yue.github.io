@@ -1,0 +1,12 @@
+{
+  "name": "Vibrant::BlendingMode",
+  "platform": [
+    "macOS"
+  ],
+  "header": "nativeui/vibrant.h",
+  "type": "enum class",
+  "namespace": "nu",
+  "description": "The blending mode of a `Vibrant` view.",
+  "detail": "\nThis type is an `enum class` with following values:\n* `Vibrant::BlendingMode::BehindWindow`\n* `Vibrant::BlendingMode::WithinWindow`\n",
+  "id": "vibrant_blendingmode"
+}

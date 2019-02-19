@@ -1,0 +1,89 @@
+{
+  "name": "Color",
+  "component": "gui",
+  "header": "nativeui/gfx/color.h",
+  "type": "Integer",
+  "namespace": "nu",
+  "description": "32-bit Color with alpha channel.",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Color",
+          "id": "color"
+        },
+        "name": "rgb",
+        "parameters": [
+          {
+            "type": {
+              "name": "Integer"
+            },
+            "name": "r",
+            "description": "8-bit red channel value."
+          },
+          {
+            "type": {
+              "name": "Integer"
+            },
+            "name": "g",
+            "description": "8-bit green channel value."
+          },
+          {
+            "type": {
+              "name": "Integer"
+            },
+            "name": "b",
+            "description": "8-bit blue channel value."
+          }
+        ],
+        "str": "rgb(r, g, b)"
+      },
+      "description": "Create an opaque RGB color.",
+      "id": "rgb-r-g-b"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Color",
+          "id": "color"
+        },
+        "name": "argb",
+        "parameters": [
+          {
+            "type": {
+              "name": "Integer"
+            },
+            "name": "a"
+          },
+          {
+            "type": {
+              "name": "Integer"
+            },
+            "name": "r",
+            "description": "8-bit red channel value."
+          },
+          {
+            "type": {
+              "name": "Integer"
+            },
+            "name": "g",
+            "description": "8-bit green channel value."
+          },
+          {
+            "type": {
+              "name": "Integer"
+            },
+            "name": "b",
+            "description": "8-bit blue channel value."
+          }
+        ],
+        "str": "argb(a, r, g, b)"
+      },
+      "description": "Create an ARGB color.",
+      "id": "argb-a-r-g-b"
+    }
+  ],
+  "module": "gui",
+  "detail": "\n`Color` is represented by a 32-bit ARGB integer.\n\nFor APIs that accept `Color`, you can pass a hex string representing the\ncolor, like `\"#A123\"`, `\"#123\"`, `\"#AA112233\"`, `\"#112233\"`.\n\n```js\nlabel.setColor('#F000')\n```\n",
+  "id": "color"
+}

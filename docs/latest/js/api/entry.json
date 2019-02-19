@@ -1,0 +1,116 @@
+{
+  "name": "Entry",
+  "component": "gui",
+  "header": "nativeui/entry.h",
+  "type": "Class",
+  "namespace": "nu",
+  "inherit": {
+    "name": "View",
+    "id": "view"
+  },
+  "description": "Single-line text input view.",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Entry",
+          "id": "entry"
+        },
+        "name": "create",
+        "parameters": [],
+        "str": "create()"
+      },
+      "description": "Create a normal `Entry`.",
+      "id": "create"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Entry",
+          "id": "entry"
+        },
+        "name": "createType",
+        "parameters": [
+          {
+            "type": {
+              "name": "Entry::Type",
+              "id": "entry_type"
+            },
+            "name": "type"
+          }
+        ],
+        "str": "createType(type)"
+      },
+      "description": "Create an `Entry` with `type`.",
+      "id": "createtype-type"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "setText",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "text"
+          }
+        ],
+        "str": "setText(text)"
+      },
+      "description": "Change the text in the view.",
+      "id": "settext-text"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "String"
+        },
+        "name": "getText",
+        "parameters": [],
+        "str": "getText()"
+      },
+      "description": "Return currently displayed text.",
+      "id": "gettext"
+    }
+  ],
+  "events": [
+    {
+      "callback": {
+        "name": "onTextChange",
+        "parameters": [
+          {
+            "type": {
+              "name": "Entry",
+              "id": "entry"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "onTextChange(self)"
+      },
+      "description": "Emitted when user has changed text.",
+      "id": "ontextchange-self"
+    },
+    {
+      "callback": {
+        "name": "onActivate",
+        "parameters": [
+          {
+            "type": {
+              "name": "Entry",
+              "id": "entry"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "onActivate(self)"
+      },
+      "description": "Emitted when user has pressed <kbd>Enter</kbd> in the view.",
+      "id": "onactivate-self"
+    }
+  ],
+  "module": "gui",
+  "id": "entry"
+}

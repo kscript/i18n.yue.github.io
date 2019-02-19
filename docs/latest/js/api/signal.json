@@ -1,0 +1,67 @@
+{
+  "name": "Signal",
+  "header": "nativeui/signal.h",
+  "type": "Class",
+  "namespace": "nu",
+  "description": "Connect and emit events.",
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Integer"
+        },
+        "name": "connect",
+        "parameters": [
+          {
+            "type": {
+              "name": "Function"
+            },
+            "name": "slot"
+          }
+        ],
+        "str": "connect(slot)"
+      },
+      "description": "Connect `slot` to the signal, and return an ID that can be used to\ndisconnect it.\n\nThe signature of `slot` must match the event's type.\n",
+      "id": "connect-slot"
+    },
+    {
+      "signature": {
+        "name": "disconnect",
+        "parameters": [
+          {
+            "type": {
+              "name": "Integer"
+            },
+            "name": "id"
+          }
+        ],
+        "str": "disconnect(id)"
+      },
+      "description": "Disconnect the `id` from the signal.",
+      "id": "disconnect-id"
+    },
+    {
+      "signature": {
+        "name": "disconnectAll",
+        "parameters": [],
+        "str": "disconnectAll()"
+      },
+      "description": "Disconnect all slots in the signal.",
+      "id": "disconnectall"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "isEmpty",
+        "parameters": [],
+        "str": "isEmpty()"
+      },
+      "description": "Return `true` if there is no slot connected to the signal.",
+      "id": "isempty"
+    }
+  ],
+  "detail": "\nThis class implements the signal/slot pattern, which is used as event type.\n",
+  "id": "signal"
+}

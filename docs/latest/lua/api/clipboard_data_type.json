@@ -1,0 +1,9 @@
+{
+  "name": "Clipboard::Data::Type",
+  "header": "nativeui/clipboard.h",
+  "type": "string",
+  "namespace": "nu",
+  "description": "Type of clipboard data.",
+  "detail": "\nThis type is a string with following possible values:\n* `\"text\"`\n* `\"html\"`\n* `\"image\"`\n* `\"file-paths\"`\n* `\"none\"`\n",
+  "id": "clipboard_data_type"
+}

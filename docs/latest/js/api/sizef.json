@@ -1,0 +1,27 @@
+{
+  "name": "SizeF",
+  "header": "nativeui/gfx/geometry/size_f.h",
+  "type": "Object",
+  "namespace": "nu",
+  "description": "Size type.",
+  "properties": [
+    {
+      "description": "Size width.",
+      "id": "width",
+      "type": {
+        "name": "Number"
+      },
+      "name": "width"
+    },
+    {
+      "description": "Size height.",
+      "id": "height",
+      "type": {
+        "name": "Number"
+      },
+      "name": "height"
+    }
+  ],
+  "detail": "\nThis type is represented by an `Object` with `width` and `height`\nproperties.\n\n```js\nwindow.setContentSize({width: 100, height: 100})\n```\n",
+  "id": "sizef"
+}

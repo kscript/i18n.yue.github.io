@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Events and delegates - Yue</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <link rel="stylesheet" href="../guide.css">
+</head>
+
+<body>
+  <div id="header">
+    <a class="logo" href="../index.html">Yue</a>
+    <div class="nav">
+      <a>
+        <span>
+          Langauge/语言:
+        </span>
+        <select id="i18n-list" i18n-page="api"></select>
+      </a>
+      <a href="../index.html" i18n="Docs"></a>
+      <a href="/" i18n="Versions"></a>
+      <a href="https://github.com/yue/yue">GitHub</a>
+    </div>
+  </div>
+  <div id="container">
+    <div class="markdown-body" id="content">
+      <h1 id="events-and-delegates">Events and delegates</h1>
+      <h2 id="event">Event</h2>
+      <p>Yue uses the signal/slot pattern for the event system, each event is a signal
+        that can be connected by multiple slots, and event handlers are slots that can
+        connect to multiple signals.</p>
+      <p>In Yue each signal is an instance of <a href="../api/signal.html"><code>Signal</code></a> class,
+        while slot is just a function.</p>
+      <pre><code class="lang-js"><span class="hljs-keyword">const</span> {app} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gui'</span>)
+app.onReady.connect(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'on ready'</span>))
+</code></pre>
+      <p>It is also possible to connect a slot to a signal by assignment, which is a
+        shorthand of calling <code>connect</code>.</p>
+      <pre><code class="lang-js">app.onReady = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'on ready'</span>)
+</code></pre>
+      <h3 id="preventing-the-default-behavior">Preventing the default behavior</h3>
+      <p>Certain events have default behaviors that can be prevented.</p>
+      <p>Returning <code>true</code> means preventing the default behavior, and other slots of the
+        event will not be executed. While returning nothing or <code>false</code> means the slot
+        is only observing the event.</p>
+      <pre><code class="lang-js"><span class="hljs-keyword">const</span> {Container} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gui'</span>)
+<span class="hljs-keyword">let</span> view = Container.create()
+view.onMouseDown.connect(<span class="hljs-function">(<span class="hljs-params">self, event</span>) =&gt;</span> <span class="hljs-literal">true</span>)
+</code></pre>
+      <h2 id="delegate">Delegate</h2>
+      <p>Unlike event that can have multiple handlers connected, a delegate is a single
+        <code>Function</code> that can only be assigned by one function.</p>
+      <pre><code class="lang-js"><span class="hljs-keyword">const</span> {Window} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gui'</span>)
+<span class="hljs-keyword">let</span> <span class="hljs-built_in">window</span> = Window.create({})
+<span class="hljs-built_in">window</span>.shouldClose = <span class="hljs-function">(<span class="hljs-params">self</span>) =&gt;</span> <span class="hljs-literal">false</span>
+</code></pre>
+      <p>The delegates are usually used over events when the library is requesting data
+        dynamically.</p>
+    </div>
+    <div class="markdown-body" id="sidebar"></div>
+  </div>
+  <div id="footer">
+    <p>Content of this page is in public domain.</p>
+  </div>
+  <script src="../i18n.js"></script>
+</body>
+
+</html>

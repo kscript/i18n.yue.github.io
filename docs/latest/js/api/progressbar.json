@@ -1,0 +1,87 @@
+{
+  "name": "ProgressBar",
+  "component": "gui",
+  "header": "nativeui/progress.h",
+  "type": "Class",
+  "namespace": "nu",
+  "inherit": {
+    "name": "View",
+    "id": "view"
+  },
+  "description": "Horizontal bar showing progress.",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "ProgressBar",
+          "id": "progressbar"
+        },
+        "name": "create",
+        "parameters": [],
+        "str": "create()"
+      },
+      "description": "Create a new `ProgressBar`.",
+      "id": "create"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "setValue",
+        "parameters": [
+          {
+            "type": {
+              "name": "Number"
+            },
+            "name": "percent"
+          }
+        ],
+        "str": "setValue(percent)"
+      },
+      "description": "Set the percent value between `0` and `100.0`.",
+      "id": "setvalue-percent"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Number"
+        },
+        "name": "getValue",
+        "parameters": [],
+        "str": "getValue()"
+      },
+      "description": "Return the percent value between `0` and `100.0`.",
+      "id": "getvalue"
+    },
+    {
+      "signature": {
+        "name": "setIndeterminate",
+        "parameters": [
+          {
+            "type": {
+              "name": "Boolean"
+            },
+            "name": "indeterminate"
+          }
+        ],
+        "str": "setIndeterminate(indeterminate)"
+      },
+      "description": "Set whether the progress bar is indeterminate.",
+      "id": "setindeterminate-indeterminate"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "isIndeterminate",
+        "parameters": [],
+        "str": "isIndeterminate()"
+      },
+      "description": "Return whether the progress bar is indeterminate.",
+      "id": "isindeterminate"
+    }
+  ],
+  "module": "gui",
+  "id": "progressbar"
+}

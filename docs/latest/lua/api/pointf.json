@@ -1,0 +1,27 @@
+{
+  "name": "PointF",
+  "header": "nativeui/gfx/geometry/point_f.h",
+  "type": "table",
+  "namespace": "nu",
+  "description": "A point with x and y coordinate.",
+  "properties": [
+    {
+      "description": "X coordinate.",
+      "id": "x",
+      "type": {
+        "name": "number"
+      },
+      "name": "x"
+    },
+    {
+      "description": "Y coordinate.",
+      "id": "y",
+      "type": {
+        "name": "number"
+      },
+      "name": "y"
+    }
+  ],
+  "detail": "\nThis type is represented by a table with `x` and `y` properties.\n\n```lua\npainter:moveto{x=11, y=24}\n```\n\nWhen a function accepts `PointF` as its last parameter, you can simply\nunpack `x` and `y`:\n\n```lua\npainter:moveto(11, 24)\n```\n",
+  "id": "pointf"
+}

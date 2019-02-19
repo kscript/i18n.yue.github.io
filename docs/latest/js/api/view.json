@@ -1,0 +1,616 @@
+{
+  "name": "View",
+  "component": "gui",
+  "header": "nativeui/view.h",
+  "type": "Class",
+  "namespace": "nu",
+  "description": "Base class for GUI components.",
+  "detail": "`View` provides methods to receive and change various style properties.\n",
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Vector2dF",
+          "id": "vector2df"
+        },
+        "name": "offsetFromView",
+        "parameters": [
+          {
+            "type": {
+              "name": "View",
+              "id": "view"
+            },
+            "name": "view"
+          }
+        ],
+        "str": "offsetFromView(view)"
+      },
+      "description": "Return offset from `view`.",
+      "id": "offsetfromview-view"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Vector2dF",
+          "id": "vector2df"
+        },
+        "name": "offsetFromWindow",
+        "parameters": [],
+        "str": "offsetFromWindow()"
+      },
+      "description": "Return offset from the window that owns the view.",
+      "id": "offsetfromwindow"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "RectF",
+          "id": "rectf"
+        },
+        "name": "getBounds",
+        "parameters": [],
+        "str": "getBounds()"
+      },
+      "description": "Return the position and size of the view, relative to its parent.",
+      "id": "getbounds"
+    },
+    {
+      "signature": {
+        "name": "layout",
+        "parameters": [],
+        "str": "layout()"
+      },
+      "description": "Make the view re-recalculate its layout.",
+      "id": "layout"
+    },
+    {
+      "signature": {
+        "name": "schedulePaint",
+        "parameters": [],
+        "str": "schedulePaint()"
+      },
+      "description": "Schedule to repaint the whole view.",
+      "id": "schedulepaint"
+    },
+    {
+      "signature": {
+        "name": "schedulePaintRect",
+        "parameters": [
+          {
+            "type": {
+              "name": "RectF",
+              "id": "rectf"
+            },
+            "name": "rect"
+          }
+        ],
+        "str": "schedulePaintRect(rect)"
+      },
+      "description": "Schedule to repaint the `rect` area in view.",
+      "id": "schedulepaintrect-rect"
+    },
+    {
+      "signature": {
+        "name": "setVisible",
+        "parameters": [
+          {
+            "type": {
+              "name": "Boolean"
+            },
+            "name": "visible"
+          }
+        ],
+        "str": "setVisible(visible)"
+      },
+      "description": "Show/Hide the view.",
+      "id": "setvisible-visible"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "isVisible",
+        "parameters": [],
+        "str": "isVisible()"
+      },
+      "description": "Return whether the view is visible.",
+      "id": "isvisible"
+    },
+    {
+      "signature": {
+        "name": "setEnabled",
+        "parameters": [
+          {
+            "type": {
+              "name": "Boolean"
+            },
+            "name": "enable"
+          }
+        ],
+        "str": "setEnabled(enable)"
+      },
+      "description": "Set whether the view is enabled.",
+      "detail": "The enabled state of each view is not affected by its parent, disabling\na container-like view does not have any effect.\n",
+      "id": "setenabled-enable"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "isEnabled",
+        "parameters": [],
+        "str": "isEnabled()"
+      },
+      "description": "Return whether the view is enabled.",
+      "id": "isenabled"
+    },
+    {
+      "signature": {
+        "name": "focus",
+        "parameters": [],
+        "str": "focus()"
+      },
+      "description": "Move the keyboard focus to the view.",
+      "id": "focus"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "hasFocus",
+        "parameters": [],
+        "str": "hasFocus()"
+      },
+      "description": "Return whether the view has keyboard focus.",
+      "id": "hasfocus"
+    },
+    {
+      "signature": {
+        "name": "setFocusable",
+        "parameters": [
+          {
+            "type": {
+              "name": "Boolean"
+            },
+            "name": "focusable"
+          }
+        ],
+        "str": "setFocusable(focusable)"
+      },
+      "description": "Set whether the view can be focused on.",
+      "id": "setfocusable-focusable"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "isFocusable",
+        "parameters": [],
+        "str": "isFocusable()"
+      },
+      "description": "Return whether the view can be focused on.",
+      "id": "isfocusable"
+    },
+    {
+      "signature": {
+        "name": "setCapture",
+        "parameters": [],
+        "str": "setCapture()"
+      },
+      "description": "Set mouse capture to the view.",
+      "id": "setcapture"
+    },
+    {
+      "signature": {
+        "name": "releaseCapture",
+        "parameters": [],
+        "str": "releaseCapture()"
+      },
+      "description": "Release mouse capture if the view has mouse capture.",
+      "id": "releasecapture"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "hasCapture",
+        "parameters": [],
+        "str": "hasCapture()"
+      },
+      "description": "Return whether the view has mouse capture.",
+      "id": "hascapture"
+    },
+    {
+      "signature": {
+        "name": "setMouseDownCanMoveWindow",
+        "parameters": [
+          {
+            "type": {
+              "name": "Boolean"
+            },
+            "name": "can"
+          }
+        ],
+        "str": "setMouseDownCanMoveWindow(can)"
+      },
+      "description": "Set whether dragging mouse would move the window.",
+      "detail": "For most platforms this method only works for frameless windows, having\nthis feature may also prevent mouse events to happen.\n\nOn macOS the `Container` view has this feature turned on by default. To\nturn this feature on for the view, the view's parent view must also has\nthis feature turned on.\n\nOn Windows the view with this feature will be treated as titlebar, e.g.\ndouble-clicking would maximize the window, right-clicking may show the\nsystem menu.\n",
+      "id": "setmousedowncanmovewindow-can"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "isMouseDownCanMoveWindow",
+        "parameters": [],
+        "str": "isMouseDownCanMoveWindow()"
+      },
+      "description": "Return whether dragging the view would move the window.",
+      "id": "ismousedowncanmovewindow"
+    },
+    {
+      "signature": {
+        "name": "setCursor",
+        "parameters": [
+          {
+            "type": {
+              "name": "Cursor",
+              "id": "cursor"
+            },
+            "name": "cursor"
+          }
+        ],
+        "str": "setCursor(cursor)"
+      },
+      "description": "Set the cursor to show when hovering the view.",
+      "detail": "On Linux, setting cursor would force the view to own its own GDK window.\nFor certain views like `Label`, this may have remove the view's background\ncolor.\n",
+      "id": "setcursor-cursor"
+    },
+    {
+      "signature": {
+        "name": "setFont",
+        "parameters": [
+          {
+            "type": {
+              "name": "Font",
+              "id": "font"
+            },
+            "name": "font"
+          }
+        ],
+        "str": "setFont(font)"
+      },
+      "description": "Change the font used for drawing text in the view.",
+      "detail": "This methods only works for `View`s that display text, like `Label` or\n`Entry`.\n",
+      "id": "setfont-font"
+    },
+    {
+      "signature": {
+        "name": "setColor",
+        "parameters": [
+          {
+            "type": {
+              "name": "Color",
+              "id": "color"
+            },
+            "name": "color"
+          }
+        ],
+        "str": "setColor(color)"
+      },
+      "description": "Change the color used for drawing text in the view.",
+      "detail": "This methods only works for `View`s that display text, like `Label` or\n`Entry`.\n",
+      "id": "setcolor-color"
+    },
+    {
+      "signature": {
+        "name": "setBackgroundColor",
+        "parameters": [
+          {
+            "type": {
+              "name": "Color",
+              "id": "color"
+            },
+            "name": "color"
+          }
+        ],
+        "str": "setBackgroundColor(color)"
+      },
+      "description": "Change the background color of the view.",
+      "id": "setbackgroundcolor-color"
+    },
+    {
+      "signature": {
+        "name": "setStyle",
+        "parameters": [
+          {
+            "type": {
+              "name": "Object"
+            },
+            "name": "styles",
+            "description": "A key-value dictionary that defines the name and value of the style\nproperties, key must be string, and value must be either string or\nnumber.\n"
+          }
+        ],
+        "str": "setStyle(styles)"
+      },
+      "description": "Change the styles of the view.",
+      "detail": "Available style properties can be found at\n[Layout System](../guides/layout_system.html).\n",
+      "id": "setstyle-styles"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "String"
+        },
+        "name": "getComputedLayout",
+        "parameters": [],
+        "str": "getComputedLayout()"
+      },
+      "description": "Return string representation of the view's layout.",
+      "id": "getcomputedlayout"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "SizeF",
+          "id": "sizef"
+        },
+        "name": "getMinimumSize",
+        "parameters": [],
+        "str": "getMinimumSize()"
+      },
+      "description": "Return the minimum size needed to show the view.",
+      "id": "getminimumsize"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "View",
+          "id": "view"
+        },
+        "name": "getParent",
+        "parameters": [],
+        "str": "getParent()"
+      },
+      "description": "Return parent view.",
+      "id": "getparent"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Window",
+          "id": "window"
+        },
+        "name": "getWindow",
+        "parameters": [],
+        "str": "getWindow()"
+      },
+      "description": "Return the window that the view belongs to.",
+      "id": "getwindow"
+    }
+  ],
+  "events": [
+    {
+      "callback": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "onMouseDown",
+        "parameters": [
+          {
+            "type": {
+              "name": "View",
+              "id": "view"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "MouseEvent",
+              "id": "mouseevent"
+            },
+            "name": "event"
+          }
+        ],
+        "str": "onMouseDown(self, event)"
+      },
+      "description": "Emitted when pressing mouse buttons.",
+      "id": "onmousedown-self-event"
+    },
+    {
+      "callback": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "onMouseUp",
+        "parameters": [
+          {
+            "type": {
+              "name": "View",
+              "id": "view"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "MouseEvent",
+              "id": "mouseevent"
+            },
+            "name": "event"
+          }
+        ],
+        "str": "onMouseUp(self, event)"
+      },
+      "description": "Emitted when releasing mouse buttons.",
+      "id": "onmouseup-self-event"
+    },
+    {
+      "callback": {
+        "name": "onMouseMove",
+        "parameters": [
+          {
+            "type": {
+              "name": "View",
+              "id": "view"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "MouseEvent",
+              "id": "mouseevent"
+            },
+            "name": "event"
+          }
+        ],
+        "str": "onMouseMove(self, event)"
+      },
+      "description": "Emitted when user moves mouse in the view.",
+      "id": "onmousemove-self-event"
+    },
+    {
+      "callback": {
+        "name": "onMouseEnter",
+        "parameters": [
+          {
+            "type": {
+              "name": "View",
+              "id": "view"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "MouseEvent",
+              "id": "mouseevent"
+            },
+            "name": "event"
+          }
+        ],
+        "str": "onMouseEnter(self, event)"
+      },
+      "description": "Emitted when mouse enters the view.",
+      "id": "onmouseenter-self-event"
+    },
+    {
+      "callback": {
+        "name": "onMouseLeave",
+        "parameters": [
+          {
+            "type": {
+              "name": "View",
+              "id": "view"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "MouseEvent",
+              "id": "mouseevent"
+            },
+            "name": "event"
+          }
+        ],
+        "str": "onMouseLeave(self, event)"
+      },
+      "description": "Emitted when mouse leaves the view.",
+      "id": "onmouseleave-self-event"
+    },
+    {
+      "callback": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "onKeyDown",
+        "parameters": [
+          {
+            "type": {
+              "name": "View",
+              "id": "view"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "KeyEvent",
+              "id": "keyevent"
+            },
+            "name": "event"
+          }
+        ],
+        "str": "onKeyDown(self, event)"
+      },
+      "description": "Emitted when pressing keyboard.",
+      "id": "onkeydown-self-event"
+    },
+    {
+      "callback": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "onKeyUp",
+        "parameters": [
+          {
+            "type": {
+              "name": "View",
+              "id": "view"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "KeyEvent",
+              "id": "keyevent"
+            },
+            "name": "event"
+          }
+        ],
+        "str": "onKeyUp(self, event)"
+      },
+      "description": "Emitted when releasing keyboard.",
+      "id": "onkeyup-self-event"
+    },
+    {
+      "callback": {
+        "name": "onSizeChanged",
+        "parameters": [
+          {
+            "type": {
+              "name": "View",
+              "id": "view"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "onSizeChanged(self)"
+      },
+      "description": "Emitted when the view's size has been changed.",
+      "id": "onsizechanged-self"
+    },
+    {
+      "callback": {
+        "name": "onCaptureLost",
+        "parameters": [
+          {
+            "type": {
+              "name": "View",
+              "id": "view"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "onCaptureLost(self)"
+      },
+      "description": "Emitted when the mouse capture on view has been released.",
+      "id": "oncapturelost-self"
+    }
+  ],
+  "module": "gui",
+  "id": "view"
+}

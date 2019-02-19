@@ -1,0 +1,98 @@
+{
+  "name": "Buffer",
+  "lang": [
+    "cpp"
+  ],
+  "header": "nativeui/buffer.h",
+  "type": "class",
+  "namespace": "nu",
+  "description": "A chunk of memory.",
+  "detail": "This type is move-only, you should pass instances by value and use `std::move`\nwhen necessary.\n",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Buffer",
+          "id": "buffer"
+        },
+        "name": "Wrap",
+        "parameters": [
+          {
+            "type": {
+              "name": "const void*"
+            },
+            "name": "content"
+          },
+          {
+            "type": {
+              "name": "size_t"
+            },
+            "name": "size"
+          }
+        ],
+        "str": "Buffer Wrap(const void* content, size_t size)"
+      },
+      "description": "Return a `Buffer` with `content` of `size`. The `content` is not managed\nby the returned `Buffer`, it is caller's reposnsibility to manage the\nlifetime of `content` and ensure `content` is valid during `Buffer`'s\nlifetime.\n",
+      "id": "wrap-content-size"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Buffer",
+          "id": "buffer"
+        },
+        "name": "TakeOver",
+        "parameters": [
+          {
+            "type": {
+              "name": "void*"
+            },
+            "name": "content"
+          },
+          {
+            "type": {
+              "name": "size_t"
+            },
+            "name": "size"
+          },
+          {
+            "type": {
+              "name": "std::function<void(void*)>"
+            },
+            "name": "free"
+          }
+        ],
+        "str": "Buffer TakeOver(void* content, size_t size, std::function<void(void*)> free)"
+      },
+      "description": "Return a `Buffer` with `content` of `size`, when destroyed the `content`\nwould be released with `free`.\n",
+      "id": "takeover-content-size-free"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "void*"
+        },
+        "name": "content",
+        "parameters": [],
+        "str": "void* content() const"
+      },
+      "description": "Return the pointer to underlying memory.",
+      "id": "content"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "size_t"
+        },
+        "name": "size",
+        "parameters": [],
+        "str": "size_t size() const"
+      },
+      "description": "Return the size of pointed memory.",
+      "id": "size"
+    }
+  ],
+  "id": "buffer"
+}

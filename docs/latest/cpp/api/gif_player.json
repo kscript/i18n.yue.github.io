@@ -1,0 +1,96 @@
+{
+  "name": "GifPlayer",
+  "component": "gui",
+  "header": "nativeui/gif_player.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "inherit": {
+    "name": "View",
+    "id": "view"
+  },
+  "description": "Image view with animated GIF support.",
+  "detail": "It can also display other types of images, but only GIF images can be\nanimated.\n\nDisplaying animated GIF images consumes lots of CPU resources, it is highly\nunrecommended to constantly display animated GIF images.\n\nFor optimization, hiding the view would automatically pause the animation,\nand showing the view would automatically resume previous state.\n",
+  "constructors": [
+    {
+      "signature": {
+        "name": "GifPlayer",
+        "parameters": [],
+        "str": "GifPlayer()"
+      },
+      "description": "Create a new `GifPlayer`.",
+      "id": "gifplayer"
+    }
+  ],
+  "class_properties": [
+    {
+      "description": "The class name of this view.",
+      "id": "kclassname",
+      "type": {
+        "name": "const char*"
+      },
+      "name": "kClassName"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "SetImage",
+        "parameters": [
+          {
+            "type": {
+              "name": "Image*",
+              "id": "image"
+            },
+            "name": "image"
+          }
+        ],
+        "str": "void SetImage(Image* image)"
+      },
+      "description": "Set the image.",
+      "detail": "After setting the image, the animated image will start playing\nautomatically.\n",
+      "id": "setimage-image"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Image*",
+          "id": "image"
+        },
+        "name": "GetImage",
+        "parameters": [],
+        "str": "Image* GetImage() const"
+      },
+      "description": "Return the image.",
+      "id": "getimage"
+    },
+    {
+      "signature": {
+        "name": "SetAnimating",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "animating"
+          }
+        ],
+        "str": "void SetAnimating(bool animating)"
+      },
+      "description": "Set whether the animated image should be played.",
+      "id": "setanimating-animating"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsAnimating",
+        "parameters": [],
+        "str": "bool IsAnimating() const"
+      },
+      "description": "Return whether the image is animating.",
+      "id": "isanimating"
+    }
+  ],
+  "id": "gif_player"
+}

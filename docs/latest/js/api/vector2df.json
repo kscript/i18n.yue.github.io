@@ -1,0 +1,27 @@
+{
+  "name": "Vector2dF",
+  "header": "nativeui/gfx/geometry/vector2d_f.h",
+  "type": "Object",
+  "namespace": "nu",
+  "description": "Two dimensions vector.",
+  "properties": [
+    {
+      "description": "X component.",
+      "id": "x",
+      "type": {
+        "name": "Number"
+      },
+      "name": "x"
+    },
+    {
+      "description": "Y component.",
+      "id": "y",
+      "type": {
+        "name": "Number"
+      },
+      "name": "y"
+    }
+  ],
+  "detail": "\nThis is represented by an `Object` with `x` and `y` properties, indicating a\ndistance in two dimensions between two points.\n\n```lua\nconsole.log(view.offsetFromWindow())\n// { x: 100, y: 100 }\n```\n",
+  "id": "vector2df"
+}

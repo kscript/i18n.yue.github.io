@@ -1,0 +1,134 @@
+{
+  "name": "TableModel",
+  "component": "gui",
+  "header": "nativeui/table_model.h",
+  "type": "Class",
+  "namespace": "nu",
+  "description": "Base class for models of Table.",
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "integer"
+        },
+        "name": "getrowcount",
+        "parameters": [],
+        "str": "getrowcount()"
+      },
+      "description": "Return how many rows are in the model.",
+      "id": "getrowcount"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "any"
+        },
+        "name": "getvalue",
+        "parameters": [
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "column"
+          },
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "row"
+          }
+        ],
+        "str": "getvalue(column, row)"
+      },
+      "description": "Return the data at `column` and `row`.",
+      "detail": "Note that the returned value will be stored as primary types, native\nobjects (for example `Image`s) can not be passed to renderer.\n",
+      "id": "getvalue-column-row"
+    },
+    {
+      "signature": {
+        "name": "setvalue",
+        "parameters": [
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "column"
+          },
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "row"
+          },
+          {
+            "type": {
+              "name": "any"
+            },
+            "name": "value"
+          }
+        ],
+        "str": "setvalue(column, row, value)"
+      },
+      "description": "Change the `value` at `column` and `row`.",
+      "detail": "\nNote that the value will be stored as primary types, native objects (for\nexample `Image`s) can not be saved.\n",
+      "id": "setvalue-column-row-value"
+    },
+    {
+      "signature": {
+        "name": "notifyrowinsertion",
+        "parameters": [
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "row"
+          }
+        ],
+        "str": "notifyrowinsertion(row)"
+      },
+      "description": "Called by implementers to notify the table that a row is inserted.\n",
+      "id": "notifyrowinsertion-row"
+    },
+    {
+      "signature": {
+        "name": "notifyrowdeletion",
+        "parameters": [
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "row"
+          }
+        ],
+        "str": "notifyrowdeletion(row)"
+      },
+      "description": "Called by implementers to notify the table that a row is removed.\n",
+      "id": "notifyrowdeletion-row"
+    },
+    {
+      "signature": {
+        "name": "notifyvaluechange",
+        "parameters": [
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "column"
+          },
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "row"
+          }
+        ],
+        "str": "notifyvaluechange(column, row)"
+      },
+      "description": "Called by implementers to notify the table that the value at `column` and\n`row` has been changed.\n",
+      "id": "notifyvaluechange-column-row"
+    }
+  ],
+  "module": "yue.gui",
+  "detail": "\nFor simple use cases, the [`SimpleTableModel`](simpletablemodel.html) can\nbe used.\n\nFor implementing a custom `TableModel`, please see\n[`AbstractTableModel`](abstracttablemodel.html).\n",
+  "id": "tablemodel"
+}

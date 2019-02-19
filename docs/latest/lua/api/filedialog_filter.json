@@ -1,0 +1,26 @@
+{
+  "name": "FileDialog::Filter",
+  "header": "nativeui/file_dialog.h",
+  "type": "table",
+  "namespace": "nu",
+  "description": "FileDialog filters.",
+  "properties": [
+    {
+      "description": "Filter's description.",
+      "id": "description",
+      "type": {
+        "name": "string"
+      },
+      "name": "description"
+    },
+    {
+      "description": "An array of filename extensions for the filter.",
+      "id": "extensions",
+      "type": {
+        "name": "table"
+      },
+      "name": "extensions"
+    }
+  ],
+  "id": "filedialog_filter"
+}

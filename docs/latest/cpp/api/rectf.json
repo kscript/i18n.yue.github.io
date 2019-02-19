@@ -1,0 +1,747 @@
+{
+  "name": "RectF",
+  "header": "nativeui/gfx/geometry/rect_f.h",
+  "type": "class",
+  "namespace": "nu",
+  "description": "Rectangle type.",
+  "detail": "This type defines a simple integer rectangle class. The containment semantics\nare array-like; that is, the coordinate (x, y) is considered to be\ncontained by the rectangle, but the coordinate (x + width, y) is not.\n\nThe class will happily let you create malformed rectangles (that is,\nrectangles with negative width and/or height), but there will be assertions\nin the operations (such as Contains()) to complain in this case.\n",
+  "constructors": [
+    {
+      "signature": {
+        "name": "RectF",
+        "parameters": [],
+        "str": "RectF()"
+      },
+      "description": "Create an empty rectangle.",
+      "id": "rectf"
+    },
+    {
+      "signature": {
+        "name": "RectF",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "width"
+          },
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "height"
+          }
+        ],
+        "str": "RectF(float width, float height)"
+      },
+      "description": "Create a rectangle with `width` and `height`, positioned at (0, 0).\n",
+      "id": "rectf-width-height"
+    },
+    {
+      "signature": {
+        "name": "RectF",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "x"
+          },
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "y"
+          },
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "width"
+          },
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "height"
+          }
+        ],
+        "str": "RectF(float x, float y, float width, float height)"
+      },
+      "description": "Create a rectangle defined with `x`, `y`, `width`, `height`.\n",
+      "id": "rectf-x-y-width-height"
+    },
+    {
+      "signature": {
+        "name": "RectF",
+        "parameters": [
+          {
+            "type": {
+              "name": "const SizeF&",
+              "id": "sizef"
+            },
+            "name": "size"
+          }
+        ],
+        "str": "RectF(const SizeF& size)"
+      },
+      "description": "Create a rectangle with `size`, positioned at (0, 0).\n",
+      "id": "rectf-size"
+    },
+    {
+      "signature": {
+        "name": "RectF",
+        "parameters": [
+          {
+            "type": {
+              "name": "const PointF&",
+              "id": "pointf"
+            },
+            "name": "origin"
+          },
+          {
+            "type": {
+              "name": "const SizeF&",
+              "id": "sizef"
+            },
+            "name": "size"
+          }
+        ],
+        "str": "RectF(const PointF& origin, const SizeF& size)"
+      },
+      "description": "Create a rectangle with `origin` and `size`.\n",
+      "id": "rectf-origin-size"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "x",
+        "parameters": [],
+        "str": "float x() const"
+      },
+      "description": "Return X coordinate.",
+      "id": "x"
+    },
+    {
+      "signature": {
+        "name": "set_x",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "x"
+          }
+        ],
+        "str": "void set_x(float x)"
+      },
+      "description": "Set X coordinate.",
+      "id": "setx-x"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "y",
+        "parameters": [],
+        "str": "float y() const"
+      },
+      "description": "Return Y coordinate.",
+      "id": "y"
+    },
+    {
+      "signature": {
+        "name": "set_y",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "y"
+          }
+        ],
+        "str": "void set_y(float y)"
+      },
+      "description": "Set Y coordinate.",
+      "id": "sety-y"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "width",
+        "parameters": [],
+        "str": "float width() const"
+      },
+      "description": "Return rectangle width.",
+      "id": "width"
+    },
+    {
+      "signature": {
+        "name": "set_width",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "width"
+          }
+        ],
+        "str": "void set_width(float width)"
+      },
+      "description": "Set rectangle width.",
+      "id": "setwidth-width"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "height",
+        "parameters": [],
+        "str": "float height() const"
+      },
+      "description": "Return rectangle height.",
+      "id": "height"
+    },
+    {
+      "signature": {
+        "name": "set_height",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "height"
+          }
+        ],
+        "str": "void set_height(float height)"
+      },
+      "description": "Set rectangle height.",
+      "id": "setheight-height"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "const PointF&",
+          "id": "pointf"
+        },
+        "name": "origin",
+        "parameters": [],
+        "str": "const PointF& origin() const"
+      },
+      "description": "Return origin.",
+      "id": "origin"
+    },
+    {
+      "signature": {
+        "name": "set_origin",
+        "parameters": [
+          {
+            "type": {
+              "name": "const PointF&",
+              "id": "pointf"
+            },
+            "name": "origin"
+          }
+        ],
+        "str": "void set_origin(const PointF& origin)"
+      },
+      "description": "Set origin.",
+      "id": "setorigin-origin"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "const SizeF&",
+          "id": "sizef"
+        },
+        "name": "size",
+        "parameters": [],
+        "str": "const SizeF& size() const"
+      },
+      "description": "Return size.",
+      "id": "size"
+    },
+    {
+      "signature": {
+        "name": "set_size",
+        "parameters": [
+          {
+            "type": {
+              "name": "const SizeF&",
+              "id": "sizef"
+            },
+            "name": "size"
+          }
+        ],
+        "str": "void set_size(const SizeF& size)"
+      },
+      "description": "Set size.",
+      "id": "setsize-size"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "right",
+        "parameters": [],
+        "str": "float right() const"
+      },
+      "description": "Return the x coordinate of lower-right corner of the rectangle.",
+      "id": "right"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "bottom",
+        "parameters": [],
+        "str": "float bottom() const"
+      },
+      "description": "Return the y coordinate of lower-right corner of the rectangle.",
+      "id": "bottom"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Vector2dF",
+          "id": "vector2df"
+        },
+        "name": "OffsetFromOrigin",
+        "parameters": [],
+        "str": "Vector2dF OffsetFromOrigin() const"
+      },
+      "description": "Return the vector version of upper-left corner.",
+      "id": "offsetfromorigin"
+    },
+    {
+      "signature": {
+        "name": "Inset",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "horizontal"
+          },
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "vertical"
+          }
+        ],
+        "str": "void Inset(float horizontal, float vertical)"
+      },
+      "description": "Shrink the rectangle by a `horizontal` and `vertical` distance on all\nsides.\n",
+      "id": "inset-horizontal-vertical"
+    },
+    {
+      "signature": {
+        "name": "Inset",
+        "parameters": [
+          {
+            "type": {
+              "name": "const InsetsF&",
+              "id": "insetsf"
+            },
+            "name": "insets"
+          }
+        ],
+        "str": "void Inset(const InsetsF& insets)"
+      },
+      "description": "Shrink the rectangle by the given `insets`.",
+      "id": "inset-insets"
+    },
+    {
+      "signature": {
+        "name": "Inset",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "left"
+          },
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "top"
+          },
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "right"
+          },
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "bottom"
+          }
+        ],
+        "str": "void Inset(float left, float top, float right, float bottom)"
+      },
+      "description": "Shrink the rectangle by the specified amount on each side.",
+      "id": "inset-left-top-right-bottom"
+    },
+    {
+      "signature": {
+        "name": "Offset",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "horizontal"
+          },
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "vertical"
+          }
+        ],
+        "str": "void Offset(float horizontal, float vertical);"
+      },
+      "description": "Move the rectangle by a `horizontal` and `vertical` distance.",
+      "id": "offset-horizontal-vertical"
+    },
+    {
+      "signature": {
+        "name": "Offset",
+        "parameters": [
+          {
+            "type": {
+              "name": "const Vector2dF&",
+              "id": "vector2df"
+            },
+            "name": "distance"
+          }
+        ],
+        "str": "void Offset(const Vector2dF& distance)"
+      },
+      "description": "Move the rectangle by the `distance` vector.",
+      "id": "offset-distance"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsEmpty",
+        "parameters": [],
+        "str": "bool IsEmpty() const"
+      },
+      "description": "Return `true` if the area of the rectangle is zero.",
+      "id": "isempty"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "Contains",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "x"
+          },
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "y"
+          }
+        ],
+        "str": "bool Contains(float x, float y) const"
+      },
+      "description": "Return `true` if the point identified by point `x` and `y` falls inside\nthis rectangle. The point (x, y) is inside the rectangle, but the\npoint (x + width, y + height) is not.\n",
+      "id": "contains-x-y"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "Contains",
+        "parameters": [
+          {
+            "type": {
+              "name": "const PointF&",
+              "id": "pointf"
+            },
+            "name": "point"
+          }
+        ],
+        "str": "bool Contains(const PointF& point) const"
+      },
+      "description": "Return `true` if `point` is contained by the rectangle.",
+      "id": "contains-point"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "Contains",
+        "parameters": [
+          {
+            "type": {
+              "name": "const RectF&",
+              "id": "rectf"
+            },
+            "name": "rect"
+          }
+        ],
+        "str": "bool Contains(const RectF& rect) const"
+      },
+      "description": "Return `true` if `rect` is contained by the rectangle.",
+      "id": "contains-rect"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "Intersects",
+        "parameters": [
+          {
+            "type": {
+              "name": "const RectF&",
+              "id": "rectf"
+            },
+            "name": "rect"
+          }
+        ],
+        "str": "bool Intersects(const RectF& rect) const"
+      },
+      "description": "Return `true` if this rectangle intersects the specified `rect`. An empty\nrectangle doesn't intersect any rectangle.\n",
+      "id": "intersects-rect"
+    },
+    {
+      "signature": {
+        "name": "Intersect",
+        "parameters": [
+          {
+            "type": {
+              "name": "const RectF&",
+              "id": "rectf"
+            },
+            "name": "rect"
+          }
+        ],
+        "str": "void Intersect(const RectF& rect)"
+      },
+      "description": "Compute the intersection of this rectangle with the given `rect`.\n",
+      "id": "intersect-rect"
+    },
+    {
+      "signature": {
+        "name": "Union",
+        "parameters": [
+          {
+            "type": {
+              "name": "const RectF&",
+              "id": "rectf"
+            },
+            "name": "rect"
+          }
+        ],
+        "str": "void Union(const RectF& rect)"
+      },
+      "description": "Compute the union of this rectangle with the given `rect`. The union\nis the smallest rectangle containing both rectangles.\n",
+      "id": "union-rect"
+    },
+    {
+      "signature": {
+        "name": "Subtract",
+        "parameters": [
+          {
+            "type": {
+              "name": "const RectF&",
+              "id": "rectf"
+            },
+            "name": "rect"
+          }
+        ],
+        "str": "void Subtract(const RectF& rect)"
+      },
+      "description": "Compute the rectangle resulting from subtracting `rect` from `*this`,\ni.e. the bounding rect of `Region(*this) - Region(rect)`.\n",
+      "id": "subtract-rect"
+    },
+    {
+      "signature": {
+        "name": "AdjustToFit",
+        "parameters": [
+          {
+            "type": {
+              "name": "const RectF&",
+              "id": "rectf"
+            },
+            "name": "rect"
+          }
+        ],
+        "str": "void AdjustToFit(const RectF& rect)"
+      },
+      "description": "Fit as much of the receiving rectangle into the supplied rectangle as\npossible, becoming the result. For example, if the receiver had\na x-location of 2 and a width of 4, and the supplied rectangle had\nan x-location of 0 with a width of 5, the returned rectangle would have\nan x-location of 1 with a width of 4.\n",
+      "id": "adjusttofit-rect"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "PointF",
+          "id": "pointf"
+        },
+        "name": "CenterPoint",
+        "parameters": [],
+        "str": "PointF CenterPoint() const"
+      },
+      "description": "Return the center of the rectangle.",
+      "id": "centerpoint"
+    },
+    {
+      "signature": {
+        "name": "ClampToCenteredSize",
+        "parameters": [
+          {
+            "type": {
+              "name": "const SizeF&",
+              "id": "sizef"
+            },
+            "name": "size"
+          }
+        ],
+        "str": "void ClampToCenteredSize(const SizeF& size)"
+      },
+      "description": "Become a rectangle that has the same center point but with a size capped\nat given `size`.\n",
+      "id": "clamptocenteredsize-size"
+    },
+    {
+      "signature": {
+        "name": "SplitVertically",
+        "parameters": [
+          {
+            "type": {
+              "name": "RectF*",
+              "id": "rectf"
+            },
+            "name": "left_half"
+          },
+          {
+            "type": {
+              "name": "RectF*",
+              "id": "rectf"
+            },
+            "name": "right_half"
+          }
+        ],
+        "str": "void SplitVertically(RectF* left_half, RectF* right_half) const"
+      },
+      "description": "Split the rectangle in two halves, `left_half` and `right_half`.\n",
+      "id": "splitvertically-lefthalf-righthalf"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "SharesEdgeWith",
+        "parameters": [
+          {
+            "type": {
+              "name": "const RectF&",
+              "id": "rectf"
+            },
+            "name": "rect"
+          }
+        ],
+        "str": "bool SharesEdgeWith(const RectF& rect) const"
+      },
+      "description": "Return `true` if this rectangle shares an entire edge (i.e., same width\nor same height) with the given rectangle, and the rectangles do not\noverlap.\n",
+      "id": "sharesedgewith-rect"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "ManhattanDistanceToPoint",
+        "parameters": [
+          {
+            "type": {
+              "name": "const PointF&",
+              "id": "pointf"
+            },
+            "name": "point"
+          }
+        ],
+        "str": "float ManhattanDistanceToPoint(const PointF& point) const"
+      },
+      "description": "Return the manhattan distance from the rect to the `point`. If the point\nis inside the rect, return 0.\n",
+      "id": "manhattandistancetopoint-point"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "ManhattanInternalDistance",
+        "parameters": [
+          {
+            "type": {
+              "name": "const RectF&",
+              "id": "rectf"
+            },
+            "name": "rect"
+          }
+        ],
+        "str": "float ManhattanInternalDistance(const RectF& rect) const"
+      },
+      "description": "Return the manhattan distance between the contents of this rect and the\ncontents of the given rect. That is, if the intersection of the two rects\nis non-empty then the function returns 0. If the rects share a side, it\nreturn the smallest non-zero value appropriate for float.\n",
+      "id": "manhattaninternaldistance-rect"
+    },
+    {
+      "signature": {
+        "name": "Scale",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "scale"
+          }
+        ],
+        "str": "void Scale(float scale)"
+      },
+      "description": "Scale the rectangle by `scale`.",
+      "id": "scale-scale"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::string"
+        },
+        "name": "ToString",
+        "parameters": [],
+        "str": "std::string ToString() const"
+      },
+      "description": "Return string representation of the rectangle.",
+      "id": "tostring"
+    }
+  ],
+  "id": "rectf"
+}

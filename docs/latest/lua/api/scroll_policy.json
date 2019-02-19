@@ -1,0 +1,9 @@
+{
+  "name": "Scroll::Policy",
+  "header": "nativeui/scroll.h",
+  "type": "string",
+  "namespace": "nu",
+  "description": "Scrollbar policy.",
+  "detail": "\nThis type is a string with following possible values:\n* `\"always\"`\n* `\"never\"`\n* `\"automatic\"`\n",
+  "id": "scroll_policy"
+}

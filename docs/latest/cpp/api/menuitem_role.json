@@ -1,0 +1,9 @@
+{
+  "name": "MenuItem::Role",
+  "header": "nativeui/menu_item.h",
+  "type": "enum class",
+  "namespace": "nu",
+  "description": "Preset defaults for common menu items.",
+  "detail": "For common menu items like `Copy` and `Paste`, manually implementing them for\nall platforms is very boring work. You can instead specify a `role` for a menu\nitem, and Yue will automatically set labels, accelerators and actions for the\nmenu item.\n\nThis type is an `enum class` with following values:\n* `MenuItem::Role::Copy`\n* `MenuItem::Role::Cut`\n* `MenuItem::Role::Paste`\n* `MenuItem::Role::SelectAll`\n* `MenuItem::Role::Undo`\n* `MenuItem::Role::Redo`\n\nOn macOS following values are also available:\n\n* `MenuItem::Role::About`\n* `MenuItem::Role::Hide`\n* `MenuItem::Role::HideOthers`\n* `MenuItem::Role::Unhide`\n* `MenuItem::Role::Help`\n* `MenuItem::Role::Window`\n* `MenuItem::Role::Services`\n",
+  "id": "menuitem_role"
+}

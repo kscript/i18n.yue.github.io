@@ -1,0 +1,37 @@
+{
+  "name": "MenuBar",
+  "component": "gui",
+  "header": "nativeui/menu_bar.h",
+  "type": "Class",
+  "namespace": "nu",
+  "inherit": {
+    "name": "MenuBase",
+    "id": "menubase"
+  },
+  "description": "Menu bar.",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "MenuBar",
+          "id": "menubar"
+        },
+        "name": "create",
+        "parameters": [
+          {
+            "type": {
+              "name": "table"
+            },
+            "name": "items",
+            "description": "An array of menu items to be inserted to the menu."
+          }
+        ],
+        "str": "create(items)"
+      },
+      "description": "Create a menubar.",
+      "id": "create-items"
+    }
+  ],
+  "module": "yue.gui",
+  "id": "menubar"
+}

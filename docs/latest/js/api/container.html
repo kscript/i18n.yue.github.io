@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Container - Yue</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <div id="header">
+    <a class="logo" href="../index.html">Yue</a>
+    <div class="nav">
+      <a>
+        <span>
+          Langauge/语言:
+        </span>
+        <select id="i18n-list" i18n-page="api"></select>
+      </a>
+      <a href="../index.html" i18n="Docs"></a>
+      <a href="/" i18n="Versions"></a>
+      <a href="https://github.com/yue/yue">GitHub</a>
+    </div>
+  </div>
+  <div id="container">
+    <div class="markdown-body" id="content">
+      <h1>Container</h1>
+      <p>Drawable view with child views.</p>
+      <table class="code">
+        <tr>
+          <td>Module</td>
+          <td>require("gui")</td>
+        </tr>
+        <tr>
+          <td>Type</td>
+          <td>Class</td>
+        </tr>
+        <tr>
+          <td>Inherits</td>
+          <td><a class="type" href="view.html">View</a></td>
+        </tr>
+      </table>
+      <p>The <code>Container</code> view is mainly used for two purposes:</p>
+      <ul>
+        <li>Show custom drawn content;</li>
+        <li>Display a collection of child views.</li>
+      </ul>
+      <h2 id="class-methods"><a class="anchor" aria-hidden="true" href="#class-methods"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>Class methods</h2>
+      <h3 id="create"><a class="anchor" aria-hidden="true" href="#create"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>create()</h3>
+      <p>Create a new container view.</p>
+      <h4>Return</h4><code><a class="type" href="container.html">Container</a></code>
+      <h2 id="methods"><a class="anchor" aria-hidden="true" href="#methods"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>Methods</h2>
+      <h3 id="getpreferredsize"><a class="anchor" aria-hidden="true" href="#getpreferredsize"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>getPreferredSize()</h3>
+      <p>Get the minimum size to show all children of the view.</p>
+      <p>Note that if the view is using a <code>flex-wrap: wrap</code> style, this method
+        might return a extremely wide/high size since it does not know the best
+        width/height to show the children.</p>
+      <h4>Return</h4><code><a class="type" href="sizef.html">SizeF</a></code>
+      <h3 id="getpreferredheightforwidth-width"><a class="anchor" aria-hidden="true"
+          href="#getpreferredheightforwidth-width"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+            width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>getPreferredHeightForWidth(width)</h3>
+      <p>Return the minimum height to show all child of the view for the <code>width</code>.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">Number</span></code> <span class="code">width</span></li>
+      </ul>
+      <h4>Return</h4><code><span class="type">Number</span></code>
+      <h3 id="getpreferredwidthforheight-height"><a class="anchor" aria-hidden="true"
+          href="#getpreferredwidthforheight-height"><svg aria-hidden="true" height="16" version="1.1"
+            viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>getPreferredWidthForHeight(height)</h3>
+      <p>Return the minimum width to show all child of the view for the <code>height</code>.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">Number</span></code> <span class="code">height</span></li>
+      </ul>
+      <h4>Return</h4><code><span class="type">Number</span></code>
+      <h3 id="addchildview-view"><a class="anchor" aria-hidden="true" href="#addchildview-view"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>addChildView(view)</h3>
+      <p>Append a child <code>view</code> to the container.</p>
+      <p>This method will silently fail if the <code>view</code> already has a parent.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="view.html">View</a></code> <span class="code">view</span></li>
+      </ul>
+      <h3 id="addchildviewat-view-index"><a class="anchor" aria-hidden="true" href="#addchildviewat-view-index"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>addChildViewAt(view, index)</h3>
+      <p>Add a child <code>view</code> to the container at <code>index</code>.</p>
+      <p>This method will silently fail if the <code>view</code> already has a parent.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="view.html">View</a></code> <span class="code">view</span></li>
+        <li><code><span class="type">Integer</span></code> <span class="code">index</span></li>
+      </ul>
+      <h3 id="removechildview-view"><a class="anchor" aria-hidden="true" href="#removechildview-view"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>removeChildView(view)</h3>
+      <p>Remove a child <code>view</code> from this container.</p>
+      <p>This method will silently fail if the <code>view</code> is not a child of the
+        container.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="view.html">View</a></code> <span class="code">view</span></li>
+      </ul>
+      <h3 id="childcount"><a class="anchor" aria-hidden="true" href="#childcount"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>childCount()</h3>
+      <p>Return the count of children in the container.</p>
+      <h4>Return</h4><code><span class="type">Integer</span></code>
+      <h3 id="childat-index"><a class="anchor" aria-hidden="true" href="#childat-index"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>childAt(index)</h3>
+      <p>Return the child <code>view</code> at <code>index</code>.</p>
+      <p>This method will silently fail if the <code>index</code> is out of range.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">Integer</span></code> <span class="code">index</span></li>
+      </ul>
+      <h4>Return</h4><code><a class="type" href="view.html">View</a></code>
+      <h2 id="events"><a class="anchor" aria-hidden="true" href="#events"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>Events</h2>
+      <h3 id="ondraw-self-painter-dirty"><a class="anchor" aria-hidden="true" href="#ondraw-self-painter-dirty"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>onDraw(self, painter, dirty)</h3>
+      <p>Emitted when button the operating system or application requests to draw
+        a portion of the view.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="container.html">Container</a></code> <span class="code">self</span></li>
+        <li><code><a class="type" href="painter.html">Painter</a></code> <span class="code">painter</span> - The drawing
+          context of the view.</li>
+        <li><code><a class="type" href="rectf.html">RectF</a></code> <span class="code">dirty</span> - The area in the
+          view to draw on.</li>
+      </ul>
+      <h4>Preventable</h4>No.
+    </div>
+    <div class="markdown-body" id="sidebar">
+      <h4>Langauge:</h4>
+      <div class="lang-switcher"><a href="../../cpp/api/container.html">C++</a> | <a
+          href="../../lua/api/container.html">Lua</a> | <span class="current">JavaScript</span></div>
+      <h4>Version:</h4><span class="current">v0.6.2</span>
+      <h4>Formats:</h4><a href="container.json">JSON</a>
+      <h4>Components:</h4>
+      <ul>
+        <li><a href="abstracttablemodel.html" i18n="AbstractTableModel"></a></li>
+        <li><a href="app.html" i18n="App"></a></li>
+        <li><a href="browser.html" i18n="Browser"></a></li>
+        <li><a href="button.html" i18n="Button"></a></li>
+        <li><a href="canvas.html" i18n="Canvas"></a></li>
+        <li><a href="clipboard.html" i18n="Clipboard"></a></li>
+        <li><a href="color.html" i18n="Color"></a></li>
+        <li><a href="combobox.html" i18n="ComboBox"></a></li>
+        <li><span class="current" i18n="Container"></span></li>
+        <li><a href="cursor.html" i18n="Cursor"></a></li>
+        <li><a href="entry.html" i18n="Entry"></a></li>
+        <li><a href="filedialog.html" i18n="FileDialog"></a></li>
+        <li><a href="fileopendialog.html" i18n="FileOpenDialog"></a></li>
+        <li><a href="filesavedialog.html" i18n="FileSaveDialog"></a></li>
+        <li><a href="font.html" i18n="Font"></a></li>
+        <li><a href="gif_player.html" i18n="GifPlayer"></a></li>
+        <li><a href="group.html" i18n="Group"></a></li>
+        <li><a href="image.html" i18n="Image"></a></li>
+        <li><a href="label.html" i18n="Label"></a></li>
+        <li><a href="lifetime.html" i18n="Lifetime"></a></li>
+        <li><a href="menu.html" i18n="Menu"></a></li>
+        <li><a href="menubar.html" i18n="MenuBar"></a></li>
+        <li><a href="menubase.html" i18n="MenuBase"></a></li>
+        <li><a href="menuitem.html" i18n="MenuItem"></a></li>
+        <li><a href="message_loop.html" i18n="MessageLoop"></a></li>
+        <li><a href="painter.html" i18n="Painter"></a></li>
+        <li><a href="picker.html" i18n="Picker"></a></li>
+        <li><a href="progressbar.html" i18n="ProgressBar"></a></li>
+        <li><a href="protocolasarjob.html" i18n="ProtocolAsarJob"></a></li>
+        <li><a href="protocolfilejob.html" i18n="ProtocolFileJob"></a></li>
+        <li><a href="protocoljob.html" i18n="ProtocolJob"></a></li>
+        <li><a href="protocolstringjob.html" i18n="ProtocolStringJob"></a></li>
+        <li><a href="scroll.html" i18n="Scroll"></a></li>
+        <li><a href="simpletablemodel.html" i18n="SimpleTableModel"></a></li>
+        <li><a href="tab.html" i18n="Tab"></a></li>
+        <li><a href="table.html" i18n="Table"></a></li>
+        <li><a href="tablemodel.html" i18n="TableModel"></a></li>
+        <li><a href="textedit.html" i18n="TextEdit"></a></li>
+        <li><a href="toolbar.html" i18n="Toolbar"></a></li>
+        <li><a href="tray.html" i18n="Tray"></a></li>
+        <li><a href="vibrant.html" i18n="Vibrant"></a></li>
+        <li><a href="view.html" i18n="View"></a></li>
+        <li><a href="window.html" i18n="Window"></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="footer">
+    <p>Content of this page is in public domain.</p>
+  </div>
+  <script src="../i18n.js"></script>
+</body>
+
+</html>

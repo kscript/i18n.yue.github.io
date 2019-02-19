@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>View - Yue</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <div id="header">
+    <a class="logo" href="../index.html">Yue</a>
+    <div class="nav">
+      <a>
+        <span>
+          Langauge/语言:
+        </span>
+        <select id="i18n-list" i18n-page="api"></select>
+      </a>
+      <a href="../index.html" i18n="Docs"></a>
+      <a href="/" i18n="Versions"></a>
+      <a href="https://github.com/yue/yue">GitHub</a>
+    </div>
+  </div>
+  <div id="container">
+    <div class="markdown-body" id="content">
+      <h1>View</h1>
+      <p>Base class for GUI components.</p>
+      <table class="code">
+        <tr>
+          <td>Module</td>
+          <td>require("gui")</td>
+        </tr>
+        <tr>
+          <td>Type</td>
+          <td>Class</td>
+        </tr>
+      </table>
+      <p><code>View</code> provides methods to receive and change various style properties.</p>
+      <h2 id="methods"><a class="anchor" aria-hidden="true" href="#methods"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>Methods</h2>
+      <h3 id="offsetfromview-view"><a class="anchor" aria-hidden="true" href="#offsetfromview-view"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>offsetFromView(view)</h3>
+      <p>Return offset from <code>view</code>.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="view.html">View</a></code> <span class="code">view</span></li>
+      </ul>
+      <h4>Return</h4><code><a class="type" href="vector2df.html">Vector2dF</a></code>
+      <h3 id="offsetfromwindow"><a class="anchor" aria-hidden="true" href="#offsetfromwindow"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>offsetFromWindow()</h3>
+      <p>Return offset from the window that owns the view.</p>
+      <h4>Return</h4><code><a class="type" href="vector2df.html">Vector2dF</a></code>
+      <h3 id="getbounds"><a class="anchor" aria-hidden="true" href="#getbounds"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>getBounds()</h3>
+      <p>Return the position and size of the view, relative to its parent.</p>
+      <h4>Return</h4><code><a class="type" href="rectf.html">RectF</a></code>
+      <h3 id="layout"><a class="anchor" aria-hidden="true" href="#layout"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>layout()</h3>
+      <p>Make the view re-recalculate its layout.</p>
+      <h3 id="schedulepaint"><a class="anchor" aria-hidden="true" href="#schedulepaint"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>schedulePaint()</h3>
+      <p>Schedule to repaint the whole view.</p>
+      <h3 id="schedulepaintrect-rect"><a class="anchor" aria-hidden="true" href="#schedulepaintrect-rect"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>schedulePaintRect(rect)</h3>
+      <p>Schedule to repaint the <code>rect</code> area in view.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="rectf.html">RectF</a></code> <span class="code">rect</span></li>
+      </ul>
+      <h3 id="setvisible-visible"><a class="anchor" aria-hidden="true" href="#setvisible-visible"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setVisible(visible)</h3>
+      <p>Show/Hide the view.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">Boolean</span></code> <span class="code">visible</span></li>
+      </ul>
+      <h3 id="isvisible"><a class="anchor" aria-hidden="true" href="#isvisible"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>isVisible()</h3>
+      <p>Return whether the view is visible.</p>
+      <h4>Return</h4><code><span class="type">Boolean</span></code>
+      <h3 id="setenabled-enable"><a class="anchor" aria-hidden="true" href="#setenabled-enable"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setEnabled(enable)</h3>
+      <p>Set whether the view is enabled.</p>
+      <p>The enabled state of each view is not affected by its parent, disabling
+        a container-like view does not have any effect.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">Boolean</span></code> <span class="code">enable</span></li>
+      </ul>
+      <h3 id="isenabled"><a class="anchor" aria-hidden="true" href="#isenabled"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>isEnabled()</h3>
+      <p>Return whether the view is enabled.</p>
+      <h4>Return</h4><code><span class="type">Boolean</span></code>
+      <h3 id="focus"><a class="anchor" aria-hidden="true" href="#focus"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>focus()</h3>
+      <p>Move the keyboard focus to the view.</p>
+      <h3 id="hasfocus"><a class="anchor" aria-hidden="true" href="#hasfocus"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>hasFocus()</h3>
+      <p>Return whether the view has keyboard focus.</p>
+      <h4>Return</h4><code><span class="type">Boolean</span></code>
+      <h3 id="setfocusable-focusable"><a class="anchor" aria-hidden="true" href="#setfocusable-focusable"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setFocusable(focusable)</h3>
+      <p>Set whether the view can be focused on.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">Boolean</span></code> <span class="code">focusable</span></li>
+      </ul>
+      <h3 id="isfocusable"><a class="anchor" aria-hidden="true" href="#isfocusable"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>isFocusable()</h3>
+      <p>Return whether the view can be focused on.</p>
+      <h4>Return</h4><code><span class="type">Boolean</span></code>
+      <h3 id="setcapture"><a class="anchor" aria-hidden="true" href="#setcapture"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setCapture()</h3>
+      <p>Set mouse capture to the view.</p>
+      <h3 id="releasecapture"><a class="anchor" aria-hidden="true" href="#releasecapture"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>releaseCapture()</h3>
+      <p>Release mouse capture if the view has mouse capture.</p>
+      <h3 id="hascapture"><a class="anchor" aria-hidden="true" href="#hascapture"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>hasCapture()</h3>
+      <p>Return whether the view has mouse capture.</p>
+      <h4>Return</h4><code><span class="type">Boolean</span></code>
+      <h3 id="setmousedowncanmovewindow-can"><a class="anchor" aria-hidden="true"
+          href="#setmousedowncanmovewindow-can"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+            width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setMouseDownCanMoveWindow(can)</h3>
+      <p>Set whether dragging mouse would move the window.</p>
+      <p>For most platforms this method only works for frameless windows, having
+        this feature may also prevent mouse events to happen.</p>
+      <p>On macOS the <code>Container</code> view has this feature turned on by default. To
+        turn this feature on for the view, the view&#39;s parent view must also has
+        this feature turned on.</p>
+      <p>On Windows the view with this feature will be treated as titlebar, e.g.
+        double-clicking would maximize the window, right-clicking may show the
+        system menu.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">Boolean</span></code> <span class="code">can</span></li>
+      </ul>
+      <h3 id="ismousedowncanmovewindow"><a class="anchor" aria-hidden="true" href="#ismousedowncanmovewindow"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>isMouseDownCanMoveWindow()</h3>
+      <p>Return whether dragging the view would move the window.</p>
+      <h4>Return</h4><code><span class="type">Boolean</span></code>
+      <h3 id="setcursor-cursor"><a class="anchor" aria-hidden="true" href="#setcursor-cursor"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setCursor(cursor)</h3>
+      <p>Set the cursor to show when hovering the view.</p>
+      <p>On Linux, setting cursor would force the view to own its own GDK window.
+        For certain views like <code>Label</code>, this may have remove the view&#39;s background
+        color.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="cursor.html">Cursor</a></code> <span class="code">cursor</span></li>
+      </ul>
+      <h3 id="setfont-font"><a class="anchor" aria-hidden="true" href="#setfont-font"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setFont(font)</h3>
+      <p>Change the font used for drawing text in the view.</p>
+      <p>This methods only works for <code>View</code>s that display text, like <code>Label</code> or
+        <code>Entry</code>.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="font.html">Font</a></code> <span class="code">font</span></li>
+      </ul>
+      <h3 id="setcolor-color"><a class="anchor" aria-hidden="true" href="#setcolor-color"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setColor(color)</h3>
+      <p>Change the color used for drawing text in the view.</p>
+      <p>This methods only works for <code>View</code>s that display text, like <code>Label</code> or
+        <code>Entry</code>.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="color.html">Color</a></code> <span class="code">color</span></li>
+      </ul>
+      <h3 id="setbackgroundcolor-color"><a class="anchor" aria-hidden="true" href="#setbackgroundcolor-color"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setBackgroundColor(color)</h3>
+      <p>Change the background color of the view.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="color.html">Color</a></code> <span class="code">color</span></li>
+      </ul>
+      <h3 id="setstyle-styles"><a class="anchor" aria-hidden="true" href="#setstyle-styles"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setStyle(styles)</h3>
+      <p>Change the styles of the view.</p>
+      <p>Available style properties can be found at
+        <a href="../guides/layout_system.html">Layout System</a>.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">Object</span></code> <span class="code">styles</span> - A key-value dictionary that
+          defines the name and value of the style
+          properties, key must be string, and value must be either string or
+          number.</li>
+      </ul>
+      <h3 id="getcomputedlayout"><a class="anchor" aria-hidden="true" href="#getcomputedlayout"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>getComputedLayout()</h3>
+      <p>Return string representation of the view&#39;s layout.</p>
+      <h4>Return</h4><code><span class="type">String</span></code>
+      <h3 id="getminimumsize"><a class="anchor" aria-hidden="true" href="#getminimumsize"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>getMinimumSize()</h3>
+      <p>Return the minimum size needed to show the view.</p>
+      <h4>Return</h4><code><a class="type" href="sizef.html">SizeF</a></code>
+      <h3 id="getparent"><a class="anchor" aria-hidden="true" href="#getparent"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>getParent()</h3>
+      <p>Return parent view.</p>
+      <h4>Return</h4><code><a class="type" href="view.html">View</a></code>
+      <h3 id="getwindow"><a class="anchor" aria-hidden="true" href="#getwindow"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>getWindow()</h3>
+      <p>Return the window that the view belongs to.</p>
+      <h4>Return</h4><code><a class="type" href="window.html">Window</a></code>
+      <h2 id="events"><a class="anchor" aria-hidden="true" href="#events"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>Events</h2>
+      <h3 id="onmousedown-self-event"><a class="anchor" aria-hidden="true" href="#onmousedown-self-event"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>onMouseDown(self, event)</h3>
+      <p>Emitted when pressing mouse buttons.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="view.html">View</a></code> <span class="code">self</span></li>
+        <li><code><a class="type" href="mouseevent.html">MouseEvent</a></code> <span class="code">event</span></li>
+      </ul>
+      <h4>Preventable</h4>Yes.<h3 id="onmouseup-self-event"><a class="anchor" aria-hidden="true"
+          href="#onmouseup-self-event"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>onMouseUp(self, event)</h3>
+      <p>Emitted when releasing mouse buttons.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="view.html">View</a></code> <span class="code">self</span></li>
+        <li><code><a class="type" href="mouseevent.html">MouseEvent</a></code> <span class="code">event</span></li>
+      </ul>
+      <h4>Preventable</h4>Yes.<h3 id="onmousemove-self-event"><a class="anchor" aria-hidden="true"
+          href="#onmousemove-self-event"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+            width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>onMouseMove(self, event)</h3>
+      <p>Emitted when user moves mouse in the view.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="view.html">View</a></code> <span class="code">self</span></li>
+        <li><code><a class="type" href="mouseevent.html">MouseEvent</a></code> <span class="code">event</span></li>
+      </ul>
+      <h4>Preventable</h4>No.<h3 id="onmouseenter-self-event"><a class="anchor" aria-hidden="true"
+          href="#onmouseenter-self-event"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+            width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>onMouseEnter(self, event)</h3>
+      <p>Emitted when mouse enters the view.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="view.html">View</a></code> <span class="code">self</span></li>
+        <li><code><a class="type" href="mouseevent.html">MouseEvent</a></code> <span class="code">event</span></li>
+      </ul>
+      <h4>Preventable</h4>No.<h3 id="onmouseleave-self-event"><a class="anchor" aria-hidden="true"
+          href="#onmouseleave-self-event"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+            width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>onMouseLeave(self, event)</h3>
+      <p>Emitted when mouse leaves the view.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="view.html">View</a></code> <span class="code">self</span></li>
+        <li><code><a class="type" href="mouseevent.html">MouseEvent</a></code> <span class="code">event</span></li>
+      </ul>
+      <h4>Preventable</h4>No.<h3 id="onkeydown-self-event"><a class="anchor" aria-hidden="true"
+          href="#onkeydown-self-event"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>onKeyDown(self, event)</h3>
+      <p>Emitted when pressing keyboard.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="view.html">View</a></code> <span class="code">self</span></li>
+        <li><code><a class="type" href="keyevent.html">KeyEvent</a></code> <span class="code">event</span></li>
+      </ul>
+      <h4>Preventable</h4>Yes.<h3 id="onkeyup-self-event"><a class="anchor" aria-hidden="true"
+          href="#onkeyup-self-event"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>onKeyUp(self, event)</h3>
+      <p>Emitted when releasing keyboard.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="view.html">View</a></code> <span class="code">self</span></li>
+        <li><code><a class="type" href="keyevent.html">KeyEvent</a></code> <span class="code">event</span></li>
+      </ul>
+      <h4>Preventable</h4>Yes.<h3 id="onsizechanged-self"><a class="anchor" aria-hidden="true"
+          href="#onsizechanged-self"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>onSizeChanged(self)</h3>
+      <p>Emitted when the view&#39;s size has been changed.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="view.html">View</a></code> <span class="code">self</span></li>
+      </ul>
+      <h4>Preventable</h4>No.<h3 id="oncapturelost-self"><a class="anchor" aria-hidden="true"
+          href="#oncapturelost-self"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>onCaptureLost(self)</h3>
+      <p>Emitted when the mouse capture on view has been released.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="view.html">View</a></code> <span class="code">self</span></li>
+      </ul>
+      <h4>Preventable</h4>No.
+    </div>
+    <div class="markdown-body" id="sidebar">
+      <h4>Langauge:</h4>
+      <div class="lang-switcher"><a href="../../cpp/api/view.html">C++</a> | <a href="../../lua/api/view.html">Lua</a> |
+        <span class="current">JavaScript</span></div>
+      <h4>Version:</h4><span class="current">v0.6.2</span>
+      <h4>Formats:</h4><a href="view.json">JSON</a>
+      <h4>Components:</h4>
+      <ul>
+        <li><a href="abstracttablemodel.html" i18n="AbstractTableModel"></a></li>
+        <li><a href="app.html" i18n="App"></a></li>
+        <li><a href="browser.html" i18n="Browser"></a></li>
+        <li><a href="button.html" i18n="Button"></a></li>
+        <li><a href="canvas.html" i18n="Canvas"></a></li>
+        <li><a href="clipboard.html" i18n="Clipboard"></a></li>
+        <li><a href="color.html" i18n="Color"></a></li>
+        <li><a href="combobox.html" i18n="ComboBox"></a></li>
+        <li><a href="container.html" i18n="Container"></a></li>
+        <li><a href="cursor.html" i18n="Cursor"></a></li>
+        <li><a href="entry.html" i18n="Entry"></a></li>
+        <li><a href="filedialog.html" i18n="FileDialog"></a></li>
+        <li><a href="fileopendialog.html" i18n="FileOpenDialog"></a></li>
+        <li><a href="filesavedialog.html" i18n="FileSaveDialog"></a></li>
+        <li><a href="font.html" i18n="Font"></a></li>
+        <li><a href="gif_player.html" i18n="GifPlayer"></a></li>
+        <li><a href="group.html" i18n="Group"></a></li>
+        <li><a href="image.html" i18n="Image"></a></li>
+        <li><a href="label.html" i18n="Label"></a></li>
+        <li><a href="lifetime.html" i18n="Lifetime"></a></li>
+        <li><a href="menu.html" i18n="Menu"></a></li>
+        <li><a href="menubar.html" i18n="MenuBar"></a></li>
+        <li><a href="menubase.html" i18n="MenuBase"></a></li>
+        <li><a href="menuitem.html" i18n="MenuItem"></a></li>
+        <li><a href="message_loop.html" i18n="MessageLoop"></a></li>
+        <li><a href="painter.html" i18n="Painter"></a></li>
+        <li><a href="picker.html" i18n="Picker"></a></li>
+        <li><a href="progressbar.html" i18n="ProgressBar"></a></li>
+        <li><a href="protocolasarjob.html" i18n="ProtocolAsarJob"></a></li>
+        <li><a href="protocolfilejob.html" i18n="ProtocolFileJob"></a></li>
+        <li><a href="protocoljob.html" i18n="ProtocolJob"></a></li>
+        <li><a href="protocolstringjob.html" i18n="ProtocolStringJob"></a></li>
+        <li><a href="scroll.html" i18n="Scroll"></a></li>
+        <li><a href="simpletablemodel.html" i18n="SimpleTableModel"></a></li>
+        <li><a href="tab.html" i18n="Tab"></a></li>
+        <li><a href="table.html" i18n="Table"></a></li>
+        <li><a href="tablemodel.html" i18n="TableModel"></a></li>
+        <li><a href="textedit.html" i18n="TextEdit"></a></li>
+        <li><a href="toolbar.html" i18n="Toolbar"></a></li>
+        <li><a href="tray.html" i18n="Tray"></a></li>
+        <li><a href="vibrant.html" i18n="Vibrant"></a></li>
+        <li><span class="current" i18n="View"></span></li>
+        <li><a href="window.html" i18n="Window"></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="footer">
+    <p>Content of this page is in public domain.</p>
+  </div>
+  <script src="../i18n.js"></script>
+</body>
+
+</html>

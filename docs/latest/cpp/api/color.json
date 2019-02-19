@@ -1,0 +1,196 @@
+{
+  "name": "Color",
+  "component": "gui",
+  "header": "nativeui/gfx/color.h",
+  "type": "class",
+  "namespace": "nu",
+  "description": "32-bit Color with alpha channel.",
+  "constructors": [
+    {
+      "signature": {
+        "name": "Color",
+        "parameters": [],
+        "str": "Color()"
+      },
+      "description": "Create a black color.",
+      "id": "color"
+    },
+    {
+      "signature": {
+        "name": "Color",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "hex"
+          }
+        ],
+        "str": "Color(const std::string& hex)"
+      },
+      "description": "Create color from hex string, like `\"#A123\"`, `\"#123\"`, `\"#AA112233\"`,\n`\"#112233\"`.\n",
+      "id": "color-hex"
+    },
+    {
+      "signature": {
+        "name": "Color",
+        "parameters": [
+          {
+            "type": {
+              "name": "uint32_t"
+            },
+            "name": "value"
+          }
+        ],
+        "str": "Color(uint32_t value)"
+      },
+      "description": "Create color from raw ARGB value.",
+      "id": "color-value"
+    },
+    {
+      "signature": {
+        "name": "Color",
+        "parameters": [
+          {
+            "type": {
+              "name": "unsigned"
+            },
+            "name": "a",
+            "description": "8-bit alpha channel value."
+          },
+          {
+            "type": {
+              "name": "unsigned"
+            },
+            "name": "r",
+            "description": "8-bit red channel value."
+          },
+          {
+            "type": {
+              "name": "unsigned"
+            },
+            "name": "g",
+            "description": "8-bit green channel value."
+          },
+          {
+            "type": {
+              "name": "unsigned"
+            },
+            "name": "b",
+            "description": "8-bit blue channel value."
+          }
+        ],
+        "str": "Color(unsigned a, unsigned r, unsigned g, unsigned b)"
+      },
+      "description": "Create an ARGB color.",
+      "id": "color-a-r-g-b"
+    },
+    {
+      "signature": {
+        "name": "Color",
+        "parameters": [
+          {
+            "type": {
+              "name": "unsigned"
+            },
+            "name": "r",
+            "description": "8-bit red channel value."
+          },
+          {
+            "type": {
+              "name": "unsigned"
+            },
+            "name": "g",
+            "description": "8-bit green channel value."
+          },
+          {
+            "type": {
+              "name": "unsigned"
+            },
+            "name": "b",
+            "description": "8-bit blue channel value."
+          }
+        ],
+        "str": "Color(unsigned r, unsigned g, unsigned b)"
+      },
+      "description": "Create an opaque RGB color.",
+      "id": "color-r-g-b"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "uint32_t"
+        },
+        "name": "value",
+        "parameters": [],
+        "str": "uint32_t value() const"
+      },
+      "description": "Return raw RGBA value.",
+      "id": "value"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "unsigned"
+        },
+        "name": "a",
+        "parameters": [],
+        "str": "unsigned a() const"
+      },
+      "description": "Return alpha channel value.",
+      "id": "a"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "unsigned"
+        },
+        "name": "r",
+        "parameters": [],
+        "str": "unsigned r() const"
+      },
+      "description": "Return red channel value.",
+      "id": "r"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "unsigned"
+        },
+        "name": "g",
+        "parameters": [],
+        "str": "unsigned g() const"
+      },
+      "description": "Return green channel value.",
+      "id": "g"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "unsigned"
+        },
+        "name": "b",
+        "parameters": [],
+        "str": "unsigned b() const"
+      },
+      "description": "Return blue channel value.",
+      "id": "b"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "transparent",
+        "parameters": [],
+        "str": "bool transparent() const"
+      },
+      "description": "Return whether color is transparent.",
+      "id": "transparent"
+    }
+  ],
+  "detail": "\nThis class should be copied by value under most cases, since the underlying\ntype is a simple `uint32_t`.\n",
+  "id": "color"
+}

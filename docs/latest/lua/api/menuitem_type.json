@@ -1,0 +1,9 @@
+{
+  "name": "MenuItem::Type",
+  "header": "nativeui/menu_item.h",
+  "type": "string",
+  "namespace": "nu",
+  "description": "Represent possible `Menuitem` types.",
+  "detail": "\nThis type is a string with following possible values:\n* `\"label\"`\n* `\"checkbox\"`\n* `\"radio\"`\n* `\"separator\"`\n* `\"submenu\"`\n",
+  "id": "menuitem_type"
+}

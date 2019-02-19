@@ -1,0 +1,12 @@
+{
+  "name": "Vibrant::Material",
+  "platform": [
+    "macOS"
+  ],
+  "header": "nativeui/vibrant.h",
+  "type": "enum class",
+  "namespace": "nu",
+  "description": "The material of a `Vibrant` view.",
+  "detail": "\nThis type is an `enum class` with following values:\n* `Vibrant::Material::AppearanceBased`\n* `Vibrant::Material::Light`\n* `Vibrant::Material::Dark`\n* `Vibrant::Material::Titlebar`\n",
+  "id": "vibrant_material"
+}

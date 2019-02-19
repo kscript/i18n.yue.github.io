@@ -1,0 +1,205 @@
+{
+  "name": "Table",
+  "component": "gui",
+  "header": "nativeui/table.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "inherit": {
+    "name": "View",
+    "id": "view"
+  },
+  "description": "Table view.",
+  "detail": "The `Table` does not store any data itself, to display data in `Table`, users\nhave to provide a [`TableModel`](tablemodel.html).\n\nHow data are renderered depends on the type of column. It is also possible to\ncreate a custom renderer for arbitrary data.\n",
+  "constructors": [
+    {
+      "signature": {
+        "name": "Table",
+        "parameters": [],
+        "str": "Table()"
+      },
+      "description": "Create a new `Table`.",
+      "id": "table"
+    }
+  ],
+  "class_properties": [
+    {
+      "description": "The class name of this view.",
+      "id": "kclassname",
+      "type": {
+        "name": "const char*"
+      },
+      "name": "kClassName"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "SetModel",
+        "parameters": [
+          {
+            "type": {
+              "name": "TableModel*",
+              "id": "tablemodel"
+            },
+            "name": "model"
+          }
+        ],
+        "str": "void SetModel(TableModel* model)"
+      },
+      "description": "Set `model` as table's data source.",
+      "id": "setmodel-model"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "TableModel*",
+          "id": "tablemodel"
+        },
+        "name": "GetModel",
+        "parameters": [],
+        "str": "TableModel* GetModel()"
+      },
+      "description": "Return table's model.",
+      "id": "getmodel"
+    },
+    {
+      "signature": {
+        "name": "AddColumn",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "title"
+          }
+        ],
+        "str": "void AddColumn(const std::string& title)"
+      },
+      "description": "Add a new column with `title`, which shows readonly text.",
+      "id": "addcolumn-title"
+    },
+    {
+      "signature": {
+        "name": "AddColumnWithOptions",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "title"
+          },
+          {
+            "type": {
+              "name": "const Table::ColumnOptions&",
+              "id": "table_columnoptions"
+            },
+            "name": "options"
+          }
+        ],
+        "str": "void AddColumnWithOptions(const std::string& title, const Table::ColumnOptions& options)"
+      },
+      "description": "Add a new column with `title` and `options`.",
+      "id": "addcolumnwithoptions-title-options"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "int"
+        },
+        "name": "GetColumnCount",
+        "parameters": [],
+        "str": "int GetColumnCount() const"
+      },
+      "description": "Return the number of columns.",
+      "id": "getcolumncount"
+    },
+    {
+      "signature": {
+        "name": "SetColumnsVisible",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "visible"
+          }
+        ],
+        "str": "void SetColumnsVisible(bool visible)"
+      },
+      "description": "Set whether the columns header is visible.",
+      "detail": "On macOS adding column after hiding the header will result in missing\ncolumns in the header even after making the header visible again.\n\nIt is recommended to never show the header again after hiding the header,\nfor consistent behaviors between platforms.\n",
+      "id": "setcolumnsvisible-visible"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsColumnsVisible",
+        "parameters": [],
+        "str": "bool IsColumnsVisible() const"
+      },
+      "description": "Return whether the columns header is visible.",
+      "id": "iscolumnsvisible"
+    },
+    {
+      "signature": {
+        "name": "SetRowHeight",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "height"
+          }
+        ],
+        "str": "void SetRowHeight(float height)"
+      },
+      "description": "Set the `height` of each row.",
+      "detail": "It is not recommended to change row height unless you are drawing all\ncells yourself, as the default text cells may not show decently under\nlarge or small height.\n\nOn Linux, due to platform implementations, this method has to be called\nbefore adding columns. It does not have any effect when columns have\nalready been added.\n",
+      "id": "setrowheight-height"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "GetRowHeight",
+        "parameters": [],
+        "str": "float GetRowHeight() const"
+      },
+      "description": "Return the `height` of each row.",
+      "id": "getrowheight"
+    },
+    {
+      "signature": {
+        "name": "SelectRow",
+        "parameters": [
+          {
+            "type": {
+              "name": "int"
+            },
+            "name": "row"
+          }
+        ],
+        "str": "void SelectRow(int row)"
+      },
+      "description": "Select a `row`.",
+      "id": "selectrow-row"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "int"
+        },
+        "name": "GetSelectedRow",
+        "parameters": [],
+        "str": "int GetSelectedRow() const"
+      },
+      "description": "Return the index of selected row.",
+      "detail": "For table that allows multiple selections, this will return the index of\nfirst selected row. When no row is selected, `-1` will be returned.\n",
+      "id": "getselectedrow"
+    }
+  ],
+  "id": "table"
+}

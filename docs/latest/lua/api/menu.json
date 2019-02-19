@@ -1,0 +1,48 @@
+{
+  "name": "Menu",
+  "component": "gui",
+  "header": "nativeui/menu.h",
+  "type": "Class",
+  "namespace": "nu",
+  "inherit": {
+    "name": "MenuBase",
+    "id": "menubase"
+  },
+  "description": "Popup menu.",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Menu",
+          "id": "menu"
+        },
+        "name": "create",
+        "parameters": [
+          {
+            "type": {
+              "name": "table"
+            },
+            "name": "items",
+            "description": "An array of menu items to be inserted to the menu."
+          }
+        ],
+        "str": "create(items)"
+      },
+      "description": "Create a popup menu.",
+      "id": "create-items"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "popup",
+        "parameters": [],
+        "str": "popup()"
+      },
+      "description": "Show the popup menu at current mouse position, this method will block\nuntil the menu is dismissed.\n",
+      "id": "popup"
+    }
+  ],
+  "module": "yue.gui",
+  "id": "menu"
+}

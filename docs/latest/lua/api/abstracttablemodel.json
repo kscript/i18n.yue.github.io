@@ -1,0 +1,107 @@
+{
+  "name": "AbstractTableModel",
+  "component": "gui",
+  "lang": [
+    "lua",
+    "js"
+  ],
+  "type": "Class",
+  "namespace": "nu",
+  "inherit": {
+    "name": "TableModel",
+    "id": "tablemodel"
+  },
+  "description": "Implement a custom TableModel.",
+  "detail": "To implement a custom `TableModel`, please implement all the methods in the\nDelegates section. It is also required to call the `Notify` methods of\n[`TableModel`](tablemodel.html) super class when data has been changed, so\nthe `Table` can correctly update.\n\nFor simple use cases, the [`SimpleTableModel`](simpletablemodel.html) can\nbe used.\n",
+  "delegates": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "integer"
+        },
+        "name": "getrowcount",
+        "parameters": [
+          {
+            "type": {
+              "name": "AbstractTableModel",
+              "id": "abstracttablemodel"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "getrowcount(self)"
+      },
+      "description": "Return how many rows are in the model.",
+      "id": "getrowcount-self"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "any"
+        },
+        "name": "getvalue",
+        "parameters": [
+          {
+            "type": {
+              "name": "AbstractTableModel",
+              "id": "abstracttablemodel"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "column"
+          },
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "row"
+          }
+        ],
+        "str": "getvalue(self, column, row)"
+      },
+      "description": "Return the data at `column` and `row`.",
+      "id": "getvalue-self-column-row"
+    },
+    {
+      "signature": {
+        "name": "setvalue",
+        "parameters": [
+          {
+            "type": {
+              "name": "AbstractTableModel",
+              "id": "abstracttablemodel"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "column"
+          },
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "row"
+          },
+          {
+            "type": {
+              "name": "any"
+            },
+            "name": "value"
+          }
+        ],
+        "str": "setvalue(self, column, row, value)"
+      },
+      "description": "Change the `value` at `column` and `row`.",
+      "id": "setvalue-self-column-row-value"
+    }
+  ],
+  "module": "yue.gui",
+  "id": "abstracttablemodel"
+}

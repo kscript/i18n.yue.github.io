@@ -1,0 +1,9 @@
+{
+  "name": "KeyboardCode",
+  "header": "nativeui/events/keyboard_codes.h",
+  "type": "String",
+  "namespace": "nu",
+  "description": "Codes of keyboard keys.",
+  "detail": "\nKeyboard keys are represented with strings, in Yue we use the values of\nHTML5 DOM's `KeyboardEvent.key` to represent the keys. A list of available\nkeys can be found at:\n[Key Values - MDN](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values).\n\nThere is an exception that the <kbd>Space Bar</kbd> is represented as\n`\"Space\"` in Yue instead of `\" \"`.\n",
+  "id": "keyboardcode"
+}

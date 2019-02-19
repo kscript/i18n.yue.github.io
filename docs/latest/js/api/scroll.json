@@ -1,0 +1,178 @@
+{
+  "name": "Scroll",
+  "component": "gui",
+  "header": "nativeui/scroll.h",
+  "type": "Class",
+  "namespace": "nu",
+  "inherit": {
+    "name": "View",
+    "id": "view"
+  },
+  "description": "Show a part of view with scrollbar.",
+  "detail": "The `Scroll` view can show an arbitrary content view inside it.\n\nWhen the content is larger than the `Scroll` view, scrollbars will be\noptionally showed. When the content view is smaller then the `Scroll` view,\nthe content view will be resized to the size of the `Scroll` view.\n",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Scroll",
+          "id": "scroll"
+        },
+        "name": "create",
+        "parameters": [],
+        "str": "create()"
+      },
+      "description": "Create a new `Scroll` view.",
+      "id": "create"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "setContentView",
+        "parameters": [
+          {
+            "type": {
+              "name": "View",
+              "id": "view"
+            },
+            "name": "view"
+          }
+        ],
+        "str": "setContentView(view)"
+      },
+      "description": "Set the content `view`.",
+      "id": "setcontentview-view"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "View",
+          "id": "view"
+        },
+        "name": "getContentView",
+        "parameters": [],
+        "str": "getContentView()"
+      },
+      "description": "Return the content `view`.",
+      "id": "getcontentview"
+    },
+    {
+      "signature": {
+        "name": "setContentSize",
+        "parameters": [
+          {
+            "type": {
+              "name": "SizeF",
+              "id": "sizef"
+            },
+            "name": "size"
+          }
+        ],
+        "str": "setContentSize(size)"
+      },
+      "description": "Set the size of content view.",
+      "id": "setcontentsize-size"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "SizeF",
+          "id": "sizef"
+        },
+        "name": "getContentSize",
+        "parameters": [],
+        "str": "getContentSize()"
+      },
+      "description": "Return the size of content view.",
+      "id": "getcontentsize"
+    },
+    {
+      "signature": {
+        "name": "setOverlayScrollbar",
+        "parameters": [
+          {
+            "type": {
+              "name": "Boolean"
+            },
+            "name": "overlay"
+          }
+        ],
+        "str": "setOverlayScrollbar(overlay)"
+      },
+      "platform": [
+        "macOS",
+        "linux"
+      ],
+      "description": "Set whether to use overlay scrolling.",
+      "id": "setoverlayscrollbar-overlay"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "isOverlayScrollbar",
+        "parameters": [],
+        "str": "isOverlayScrollbar()"
+      },
+      "platform": [
+        "macOS",
+        "linux"
+      ],
+      "description": "Return whether overlay scrolling is used.",
+      "id": "isoverlayscrollbar"
+    },
+    {
+      "signature": {
+        "name": "setScrollbarPolicy",
+        "parameters": [
+          {
+            "type": {
+              "name": "Scroll::Policy",
+              "id": "scroll_policy"
+            },
+            "name": "hpolicy",
+            "description": "Policy for horizontal scrollbar."
+          },
+          {
+            "type": {
+              "name": "Scroll::Policy",
+              "id": "scroll_policy"
+            },
+            "name": "vpolicy",
+            "description": "Policy for vertical scrollbar."
+          }
+        ],
+        "str": "setScrollbarPolicy(hpolicy, vpolicy)"
+      },
+      "description": "Set the policy for displaying horizontal and vertical scrollbars.\n",
+      "id": "setscrollbarpolicy-hpolicy-vpolicy"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::tuple",
+          "template": "std::tuple",
+          "args": [
+            {
+              "name": "Scroll::Policy",
+              "id": "scroll_policy"
+            },
+            {
+              "name": "Scroll::Policy",
+              "id": "scroll_policy"
+            }
+          ],
+          "id": "std_tuple"
+        },
+        "name": "getScrollbarPolicy",
+        "parameters": [],
+        "str": "getScrollbarPolicy()"
+      },
+      "description": "Return the display policy of horizontal and vertical scrollbars.\n",
+      "id": "getscrollbarpolicy"
+    }
+  ],
+  "module": "gui",
+  "id": "scroll"
+}

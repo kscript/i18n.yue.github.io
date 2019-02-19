@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>RectF - Yue</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <div id="header">
+    <a class="logo" href="../index.html">Yue</a>
+    <div class="nav">
+      <a>
+        <span>
+          Langauge/语言:
+        </span>
+        <select id="i18n-list" i18n-page="api"></select>
+      </a>
+      <a href="../index.html" i18n="Docs"></a>
+      <a href="/" i18n="Versions"></a>
+      <a href="https://github.com/yue/yue">GitHub</a>
+    </div>
+  </div>
+  <div id="container">
+    <div class="markdown-body" id="content">
+      <h1>RectF</h1>
+      <p>Rectangle type.</p>
+      <table class="code">
+        <tr>
+          <td>Type</td>
+          <td>Object</td>
+        </tr>
+      </table>
+      <p>This type defines a simple integer rectangle class. The containment semantics
+        are array-like; that is, the coordinate (x, y) is considered to be
+        contained by the rectangle, but the coordinate (x + width, y) is not.</p>
+      <p>This type is represented by an <code>Object</code> with <code>x</code>, <code>y</code>, <code>width</code>,
+        <code>height</code>
+        properties.</p>
+      <pre><code class="lang-js"><span class="hljs-built_in">window</span>.setBounds({<span class="hljs-attr">x</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">24</span>, <span class="hljs-attr">width</span>: <span class="hljs-number">100</span>, <span class="hljs-attr">height</span>: <span class="hljs-number">100</span>})
+</code></pre>
+      <h2 id="properties"><a class="anchor" aria-hidden="true" href="#properties"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>Properties</h2>
+      <h3 id="x"><a class="anchor" aria-hidden="true" href="#undefined"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a><code><span class="type">Number</span></code> x</h3>
+      <p>X coordinate.</p>
+      <h3 id="y"><a class="anchor" aria-hidden="true" href="#undefined"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a><code><span class="type">Number</span></code> y</h3>
+      <p>Y coordinate.</p>
+      <h3 id="width"><a class="anchor" aria-hidden="true" href="#undefined"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a><code><span class="type">Number</span></code> width</h3>
+      <p>Rectangle width.</p>
+      <h3 id="height"><a class="anchor" aria-hidden="true" href="#undefined"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a><code><span class="type">Number</span></code> height</h3>
+      <p>Rectangle height.</p>
+    </div>
+    <div class="markdown-body" id="sidebar">
+      <h4>Langauge:</h4>
+      <div class="lang-switcher"><a href="../../cpp/api/rectf.html">C++</a> | <a href="../../lua/api/rectf.html">Lua</a>
+        | <span class="current">JavaScript</span></div>
+      <h4>Version:</h4><span class="current">v0.6.2</span>
+      <h4>Formats:</h4><a href="rectf.json">JSON</a>
+      <h4>Components:</h4>
+      <ul>
+        <li><a href="abstracttablemodel.html" i18n="AbstractTableModel"></a></li>
+        <li><a href="app.html" i18n="App"></a></li>
+        <li><a href="browser.html" i18n="Browser"></a></li>
+        <li><a href="button.html" i18n="Button"></a></li>
+        <li><a href="canvas.html" i18n="Canvas"></a></li>
+        <li><a href="clipboard.html" i18n="Clipboard"></a></li>
+        <li><a href="color.html" i18n="Color"></a></li>
+        <li><a href="combobox.html" i18n="ComboBox"></a></li>
+        <li><a href="container.html" i18n="Container"></a></li>
+        <li><a href="cursor.html" i18n="Cursor"></a></li>
+        <li><a href="entry.html" i18n="Entry"></a></li>
+        <li><a href="filedialog.html" i18n="FileDialog"></a></li>
+        <li><a href="fileopendialog.html" i18n="FileOpenDialog"></a></li>
+        <li><a href="filesavedialog.html" i18n="FileSaveDialog"></a></li>
+        <li><a href="font.html" i18n="Font"></a></li>
+        <li><a href="gif_player.html" i18n="GifPlayer"></a></li>
+        <li><a href="group.html" i18n="Group"></a></li>
+        <li><a href="image.html" i18n="Image"></a></li>
+        <li><a href="label.html" i18n="Label"></a></li>
+        <li><a href="lifetime.html" i18n="Lifetime"></a></li>
+        <li><a href="menu.html" i18n="Menu"></a></li>
+        <li><a href="menubar.html" i18n="MenuBar"></a></li>
+        <li><a href="menubase.html" i18n="MenuBase"></a></li>
+        <li><a href="menuitem.html" i18n="MenuItem"></a></li>
+        <li><a href="message_loop.html" i18n="MessageLoop"></a></li>
+        <li><a href="painter.html" i18n="Painter"></a></li>
+        <li><a href="picker.html" i18n="Picker"></a></li>
+        <li><a href="progressbar.html" i18n="ProgressBar"></a></li>
+        <li><a href="protocolasarjob.html" i18n="ProtocolAsarJob"></a></li>
+        <li><a href="protocolfilejob.html" i18n="ProtocolFileJob"></a></li>
+        <li><a href="protocoljob.html" i18n="ProtocolJob"></a></li>
+        <li><a href="protocolstringjob.html" i18n="ProtocolStringJob"></a></li>
+        <li><a href="scroll.html" i18n="Scroll"></a></li>
+        <li><a href="simpletablemodel.html" i18n="SimpleTableModel"></a></li>
+        <li><a href="tab.html" i18n="Tab"></a></li>
+        <li><a href="table.html" i18n="Table"></a></li>
+        <li><a href="tablemodel.html" i18n="TableModel"></a></li>
+        <li><a href="textedit.html" i18n="TextEdit"></a></li>
+        <li><a href="toolbar.html" i18n="Toolbar"></a></li>
+        <li><a href="tray.html" i18n="Tray"></a></li>
+        <li><a href="vibrant.html" i18n="Vibrant"></a></li>
+        <li><a href="view.html" i18n="View"></a></li>
+        <li><a href="window.html" i18n="Window"></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="footer">
+    <p>Content of this page is in public domain.</p>
+  </div>
+  <script src="../i18n.js"></script>
+</body>
+
+</html>

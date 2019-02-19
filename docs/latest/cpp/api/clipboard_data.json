@@ -1,0 +1,133 @@
+{
+  "name": "Clipboard::Data",
+  "header": "nativeui/clipboard.h",
+  "type": "class",
+  "namespace": "nu",
+  "description": "Clipboard data.",
+  "constructors": [
+    {
+      "signature": {
+        "name": "Data",
+        "parameters": [],
+        "str": "Data()"
+      },
+      "description": "Create a null data.",
+      "detail": "This constructor is useless in userland and should not be used by users,\nit is only usefull when writing language bindings or libraries.\n",
+      "id": "data"
+    },
+    {
+      "signature": {
+        "name": "Data",
+        "parameters": [
+          {
+            "type": {
+              "name": "Clipboard::Data::Type",
+              "id": "clipboard_data_type"
+            },
+            "name": "type"
+          },
+          {
+            "type": {
+              "name": "std::string"
+            },
+            "name": "str"
+          }
+        ],
+        "str": "Data(Clipboard::Data::Type type, std::string str)"
+      },
+      "description": "Create a data that contains an string.",
+      "detail": "The `type` can only be `Text` or `HTML`.",
+      "id": "data-type-str"
+    },
+    {
+      "signature": {
+        "name": "Data",
+        "parameters": [
+          {
+            "type": {
+              "name": "Image*",
+              "id": "image"
+            },
+            "name": "image"
+          }
+        ],
+        "str": "Data(Image* image)"
+      },
+      "description": "Create a data with type of `Image`.",
+      "id": "data-image"
+    },
+    {
+      "signature": {
+        "name": "Data",
+        "parameters": [
+          {
+            "type": {
+              "name": "std::vector<base::FilePath>"
+            },
+            "name": "file_paths"
+          }
+        ],
+        "str": "Data(std::vector<base::FilePath> file_paths)"
+      },
+      "description": "Create a data with type of `FilePaths`.",
+      "id": "data-filepaths"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Clipboard::Data::Type",
+          "id": "clipboard_data_type"
+        },
+        "name": "type",
+        "parameters": [],
+        "str": "Clipboard::Data::Type type() const"
+      },
+      "description": "Return the type of data.",
+      "id": "type"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::string"
+        },
+        "name": "str",
+        "parameters": [],
+        "str": "std::string str() const"
+      },
+      "description": "Return the string content of data.",
+      "detail": "It can only be called when type is `Text` or `HTML`.",
+      "id": "str"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Image*",
+          "id": "image"
+        },
+        "name": "image",
+        "parameters": [],
+        "str": "Image* image() const"
+      },
+      "description": "Return the image content of data.",
+      "detail": "It can only be called when type is `Image`.",
+      "id": "image"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::vector<base::FilePath>"
+        },
+        "name": "file_paths",
+        "parameters": [],
+        "str": "std::vector<base::FilePath> file_paths() const"
+      },
+      "description": "Return the file paths content of data.",
+      "detail": "It can only be called when type is `FilePaths`.",
+      "id": "filepaths"
+    }
+  ],
+  "detail": "\nThe `Clipboard::Data` is a move-only type, it can not be copied. When\ncreating a `Clipboard::Data`, the arguments should be passed as r-value\nreference for best performance.\n",
+  "id": "clipboard_data"
+}

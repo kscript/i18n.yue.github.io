@@ -1,0 +1,539 @@
+{
+  "name": "Painter",
+  "component": "gui",
+  "header": "nativeui/gfx/painter.h",
+  "type": "class",
+  "namespace": "nu",
+  "description": "Graphic context.",
+  "detail": "The `Painter` class can not be created by user, its instance can only be recevied in drawing events or via the [`Canvas`](canvas.html) class.",
+  "methods": [
+    {
+      "signature": {
+        "name": "Save",
+        "parameters": [],
+        "str": "void Save()"
+      },
+      "description": "Save the entire state of the painter.",
+      "id": "save"
+    },
+    {
+      "signature": {
+        "name": "Restore",
+        "parameters": [],
+        "str": "void Restore()"
+      },
+      "description": "Restore the most recently saved state.",
+      "id": "restore"
+    },
+    {
+      "signature": {
+        "name": "BeginPath",
+        "parameters": [],
+        "str": "void BeginPath()"
+      },
+      "description": "Create a new path.",
+      "id": "beginpath"
+    },
+    {
+      "signature": {
+        "name": "ClosePath",
+        "parameters": [],
+        "str": "void ClosePath()"
+      },
+      "description": "Close current path and move current point to the start of current path.\n\nA straight line will be drew from current point to the start.\n",
+      "id": "closepath"
+    },
+    {
+      "signature": {
+        "name": "MoveTo",
+        "parameters": [
+          {
+            "type": {
+              "name": "const PointF&",
+              "id": "pointf"
+            },
+            "name": "point"
+          }
+        ],
+        "str": "void MoveTo(const PointF& point)"
+      },
+      "description": "Move current point to `point`.",
+      "id": "moveto-point"
+    },
+    {
+      "signature": {
+        "name": "LineTo",
+        "parameters": [
+          {
+            "type": {
+              "name": "const PointF&",
+              "id": "pointf"
+            },
+            "name": "point"
+          }
+        ],
+        "str": "void LineTo(const PointF& point)"
+      },
+      "description": "Connect the last point in current path to `point` with a straight line.\n",
+      "id": "lineto-point"
+    },
+    {
+      "signature": {
+        "name": "BezierCurveTo",
+        "parameters": [
+          {
+            "type": {
+              "name": "const PointF&",
+              "id": "pointf"
+            },
+            "name": "cp1"
+          },
+          {
+            "type": {
+              "name": "const PointF&",
+              "id": "pointf"
+            },
+            "name": "cp2"
+          },
+          {
+            "type": {
+              "name": "const PointF&",
+              "id": "pointf"
+            },
+            "name": "ep"
+          }
+        ],
+        "str": "void BezierCurveTo(const PointF& cp1, const PointF& cp2, const PointF& ep)"
+      },
+      "description": "Add a cubic Bézier curve to current path.\n\nThe first two points are control points and the third one is the end\npoint. The starting point is the last point in the current path.\n",
+      "id": "beziercurveto-cp1-cp2-ep"
+    },
+    {
+      "signature": {
+        "name": "Arc",
+        "parameters": [
+          {
+            "type": {
+              "name": "const PointF&",
+              "id": "pointf"
+            },
+            "name": "point",
+            "description": "Arc's center."
+          },
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "radius",
+            "description": "Arc's radius."
+          },
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "sa",
+            "description": "The angle at which the arc starts, measured clockwise from the positive x axis and expressed in radians.\n"
+          },
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "ea",
+            "description": "The angle at which the arc ends, measured clockwise from the positive x axis and expressed in radians.\n"
+          }
+        ],
+        "str": "void Arc(const PointF& point, float radius, float sa, float ea)"
+      },
+      "description": "Add an arc to the path which is centered at `point` with `radius`\nstarting at `sa` angle and ending at `ea` angle going in clockwise\ndirection.\n",
+      "id": "arc-point-radius-sa-ea"
+    },
+    {
+      "signature": {
+        "name": "Rect",
+        "parameters": [
+          {
+            "type": {
+              "name": "const RectF&",
+              "id": "rectf"
+            },
+            "name": "rect"
+          }
+        ],
+        "str": "void Rect(const RectF& rect)"
+      },
+      "description": "Add rectangle to current path.",
+      "id": "rect-rect"
+    },
+    {
+      "signature": {
+        "name": "Clip",
+        "parameters": [],
+        "str": "void Clip()"
+      },
+      "description": "Add current path to clip area by intersection.",
+      "id": "clip"
+    },
+    {
+      "signature": {
+        "name": "ClipRect",
+        "parameters": [
+          {
+            "type": {
+              "name": "const RectF&",
+              "id": "rectf"
+            },
+            "name": "rect"
+          }
+        ],
+        "str": "void ClipRect(const RectF& rect)"
+      },
+      "description": "Add `rect` to clip area by intersection.",
+      "id": "cliprect-rect"
+    },
+    {
+      "signature": {
+        "name": "Translate",
+        "parameters": [
+          {
+            "type": {
+              "name": "const Vector2dF&",
+              "id": "vector2df"
+            },
+            "name": "offset"
+          }
+        ],
+        "str": "void Translate(const Vector2dF& offset)"
+      },
+      "description": "Add translate transformation which moves the origin by `offset`.\n",
+      "id": "translate-offset"
+    },
+    {
+      "signature": {
+        "name": "Rotate",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "angle",
+            "description": "The angle to rotate clockwise in radians."
+          }
+        ],
+        "str": "void Rotate(float angle)"
+      },
+      "description": "Add rotation transformation.",
+      "id": "rotate-angle"
+    },
+    {
+      "signature": {
+        "name": "Scale",
+        "parameters": [
+          {
+            "type": {
+              "name": "const Vector2dF&",
+              "id": "vector2df"
+            },
+            "name": "scale"
+          }
+        ],
+        "str": "void Scale(const Vector2dF& scale)"
+      },
+      "description": "Add scaling transformation to the painter.",
+      "id": "scale-scale"
+    },
+    {
+      "signature": {
+        "name": "SetColor",
+        "parameters": [
+          {
+            "type": {
+              "name": "Color",
+              "id": "color"
+            },
+            "name": "color"
+          }
+        ],
+        "str": "void SetColor(Color color)"
+      },
+      "description": "Set stroke color and fill color to `color`.",
+      "id": "setcolor-color"
+    },
+    {
+      "signature": {
+        "name": "SetStrokeColor",
+        "parameters": [
+          {
+            "type": {
+              "name": "Color",
+              "id": "color"
+            },
+            "name": "color"
+          }
+        ],
+        "str": "void SetStrokeColor(Color color)"
+      },
+      "description": "Set the color used for shapes' outlines.",
+      "id": "setstrokecolor-color"
+    },
+    {
+      "signature": {
+        "name": "SetFillColor",
+        "parameters": [
+          {
+            "type": {
+              "name": "Color",
+              "id": "color"
+            },
+            "name": "color"
+          }
+        ],
+        "str": "void SetFillColor(Color color)"
+      },
+      "description": "Set the color used when filling shapes.",
+      "id": "setfillcolor-color"
+    },
+    {
+      "signature": {
+        "name": "SetLineWidth",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "width"
+          }
+        ],
+        "str": "void SetLineWidth(float width)"
+      },
+      "description": "Set the width of lines.",
+      "id": "setlinewidth-width"
+    },
+    {
+      "signature": {
+        "name": "Stroke",
+        "parameters": [],
+        "str": "void Stroke()"
+      },
+      "description": "Draw current path by stroking its outline.",
+      "id": "stroke"
+    },
+    {
+      "signature": {
+        "name": "Fill",
+        "parameters": [],
+        "str": "void Fill()"
+      },
+      "description": "Draw a solid shape by filling current path's content area.",
+      "id": "fill"
+    },
+    {
+      "signature": {
+        "name": "StrokeRect",
+        "parameters": [
+          {
+            "type": {
+              "name": "const RectF&",
+              "id": "rectf"
+            },
+            "name": "rect"
+          }
+        ],
+        "str": "void StrokeRect(const RectF& rect)"
+      },
+      "description": "Draw a rectangular outline.",
+      "id": "strokerect-rect"
+    },
+    {
+      "signature": {
+        "name": "FillRect",
+        "parameters": [
+          {
+            "type": {
+              "name": "const RectF&",
+              "id": "rectf"
+            },
+            "name": "rect"
+          }
+        ],
+        "str": "void FillRect(const RectF& rect)"
+      },
+      "description": "Draw a filled rectangle.",
+      "id": "fillrect-rect"
+    },
+    {
+      "signature": {
+        "name": "DrawImage",
+        "parameters": [
+          {
+            "type": {
+              "name": "Image*",
+              "id": "image"
+            },
+            "name": "image"
+          },
+          {
+            "type": {
+              "name": "const RectF&",
+              "id": "rectf"
+            },
+            "name": "rect"
+          }
+        ],
+        "str": "void DrawImage(Image* image, const RectF& rect)"
+      },
+      "description": "Draw scaled `image` to fit `rect`.",
+      "id": "drawimage-image-rect"
+    },
+    {
+      "signature": {
+        "name": "DrawImageFromRect",
+        "parameters": [
+          {
+            "type": {
+              "name": "Image*",
+              "id": "image"
+            },
+            "name": "image"
+          },
+          {
+            "type": {
+              "name": "const RectF&",
+              "id": "rectf"
+            },
+            "name": "src"
+          },
+          {
+            "type": {
+              "name": "const RectF&",
+              "id": "rectf"
+            },
+            "name": "dest"
+          }
+        ],
+        "str": "void DrawImageFromRect(Image* image, const RectF& src, const RectF& dest)"
+      },
+      "description": "Draw the specified portion of `image` at `src` to fit `rect`.",
+      "id": "drawimagefromrect-image-src-dest"
+    },
+    {
+      "signature": {
+        "name": "DrawCanvas",
+        "parameters": [
+          {
+            "type": {
+              "name": "Canvas*",
+              "id": "canvas"
+            },
+            "name": "canvas"
+          },
+          {
+            "type": {
+              "name": "const RectF&",
+              "id": "rectf"
+            },
+            "name": "rect"
+          }
+        ],
+        "str": "void DrawCanvas(Canvas* canvas, const RectF& rect)"
+      },
+      "description": "Draw scaled `canvas` to fit `rect`.",
+      "id": "drawcanvas-canvas-rect"
+    },
+    {
+      "signature": {
+        "name": "DrawCanvasFromRect",
+        "parameters": [
+          {
+            "type": {
+              "name": "Canvas*",
+              "id": "canvas"
+            },
+            "name": "canvas"
+          },
+          {
+            "type": {
+              "name": "const RectF&",
+              "id": "rectf"
+            },
+            "name": "src"
+          },
+          {
+            "type": {
+              "name": "const RectF&",
+              "id": "rectf"
+            },
+            "name": "dest"
+          }
+        ],
+        "str": "void DrawCanvasFromRect(Canvas* canvas, const RectF& src, const RectF& dest)"
+      },
+      "description": "Draw the specified portion of `canvas` at `src` to fit `rect`.",
+      "id": "drawcanvasfromrect-canvas-src-dest"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "TextMetrics",
+          "id": "textmetrics"
+        },
+        "name": "MeasureText",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "text"
+          },
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "width",
+            "description": "Maximum width, passing `-1` to indicate unlimited width."
+          },
+          {
+            "type": {
+              "name": "const TextAttributes&",
+              "id": "textattributes"
+            },
+            "name": "attributes"
+          }
+        ],
+        "str": "TextMetrics MeasureText(const std::string& text, float width, const TextAttributes& attributes)"
+      },
+      "description": "Measure the `text` with `attributes`, with maximum `width`.",
+      "id": "measuretext-text-width-attributes"
+    },
+    {
+      "signature": {
+        "name": "DrawText",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "text"
+          },
+          {
+            "type": {
+              "name": "const RectF&",
+              "id": "rectf"
+            },
+            "name": "rect"
+          },
+          {
+            "type": {
+              "name": "const TextAttributes&",
+              "id": "textattributes"
+            },
+            "name": "attributes"
+          }
+        ],
+        "str": "void DrawText(const std::string& text, const RectF& rect, const TextAttributes& attributes)"
+      },
+      "description": "Draw `text` with `attributes` bounded by `rect`.",
+      "id": "drawtext-text-rect-attributes"
+    }
+  ],
+  "id": "painter"
+}

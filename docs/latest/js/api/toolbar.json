@@ -1,0 +1,174 @@
+{
+  "name": "Toolbar",
+  "platform": [
+    "macOS"
+  ],
+  "component": "gui",
+  "header": "nativeui/toolbar.h",
+  "type": "Class",
+  "namespace": "nu",
+  "description": "Window toolbar.",
+  "detail": "This view is only implemented for macOS by wrapping\n[`NSToolbar`](https://developer.apple.com/documentation/appkit/nstoolbar).\nThe API is still experimental and will be changed in future. Currently certain\nitems are not aligned correctly in toolbar.\n\nThe toolbar items are not added manually like the normal views, instead you\nhave to implement the `get_item` delegate which creates items on request, and\nthen call `SetDefaultItemIdentifiers` to specify the default items to show.\n\n```js\nconst toolbar = gui.Toolbar.create('my-toolbar')\ntoolbar.getItem = (toolbar, identifier) => {\n  switch (identifier) {\n    case 'entry':\n      const entry = gui.Entry.create()\n      const minSize = entry.getMinimumSize()\n      minSize.width = 200\n      const maxSize = { width: 2 << 30 - 1, height: minSize.height }\n      return { label: 'Address', view: entry, minSize, maxSize }\n    case 'button':\n      const button = gui.Button.create('GO')\n      button.setImage(gui.Image.createFromPath('go.png'))\n      return {\n        label: 'GO',\n        minSize: {width: 30, height: 35},\n        view: button\n      }\n  }\n}\ntoolbar.setDefaultItemIdentifiers(['entry', 'button'])\ntoolbar.setDisplayMode('icon')\nwindow.setToolbar(toolbar)\n```\n",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Toolbar",
+          "id": "toolbar"
+        },
+        "name": "create",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "identifier"
+          }
+        ],
+        "str": "create(identifier)"
+      },
+      "description": "Create a new `Toolbar` view with `identifier`.\n\nWithin the application all toolbars with the same identifier are\nsynchronized to maintain the same state, including for example, the\ndisplay mode and item order. The identifier is used as the autosave name\nfor toolbars that save their configuration.\n",
+      "id": "create-identifier"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "setDefaultItemIdentifiers",
+        "parameters": [
+          {
+            "type": {
+              "name": "Array"
+            },
+            "name": "identifiers",
+            "description": "An array of toolbar items' identifiers."
+          }
+        ],
+        "str": "setDefaultItemIdentifiers(identifiers)"
+      },
+      "description": "Set the identifiers of default items that would show in toolbar.\n",
+      "id": "setdefaultitemidentifiers-identifiers"
+    },
+    {
+      "signature": {
+        "name": "setAllowedItemIdentifiers",
+        "parameters": [
+          {
+            "type": {
+              "name": "Array"
+            },
+            "name": "identifiers",
+            "description": "An array of toolbar items' identifiers."
+          }
+        ],
+        "str": "setAllowedItemIdentifiers(identifiers)"
+      },
+      "description": "Set the identifiers of the items that are allowed to show in toolbar.\n",
+      "id": "setalloweditemidentifiers-identifiers"
+    },
+    {
+      "signature": {
+        "name": "setAllowCustomization",
+        "parameters": [
+          {
+            "type": {
+              "name": "Boolean"
+            },
+            "name": "allow"
+          }
+        ],
+        "str": "setAllowCustomization(allow)"
+      },
+      "description": "Set whether users are allowed to customize the toolbar.\n",
+      "id": "setallowcustomization-allow"
+    },
+    {
+      "signature": {
+        "name": "setDisplayMode",
+        "parameters": [
+          {
+            "type": {
+              "name": "Toolbar::DisplayMode",
+              "id": "toolbar_displaymode"
+            },
+            "name": "mode"
+          }
+        ],
+        "str": "setDisplayMode(mode)"
+      },
+      "description": "Set the display mode of the toolbar items.",
+      "id": "setdisplaymode-mode"
+    },
+    {
+      "signature": {
+        "name": "setVisible",
+        "parameters": [
+          {
+            "type": {
+              "name": "Boolean"
+            },
+            "name": "visible"
+          }
+        ],
+        "str": "setVisible(visible)"
+      },
+      "description": "Set whether toolbar is visible.",
+      "id": "setvisible-visible"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "isVisible",
+        "parameters": [],
+        "str": "isVisible()"
+      },
+      "description": "Return whether toolbar is visible.",
+      "id": "isvisible"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "String"
+        },
+        "name": "getIdentifier",
+        "parameters": [],
+        "str": "getIdentifier()"
+      },
+      "description": "Return the identifier of the toolbar.",
+      "id": "getidentifier"
+    }
+  ],
+  "delegates": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Toolbar::Item",
+          "id": "toolbar_item"
+        },
+        "name": "getItem",
+        "parameters": [
+          {
+            "type": {
+              "name": "Toolbar",
+              "id": "toolbar"
+            },
+            "name": "toolbar"
+          },
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "identifier"
+          }
+        ],
+        "str": "getItem(toolbar, identifier)"
+      },
+      "description": "Called lazily when the toolbar is going to get the item with `identifier`.\n\nYou should not cache the item to be returned.\n",
+      "id": "getitem-toolbar-identifier"
+    }
+  ],
+  "module": "gui",
+  "id": "toolbar"
+}

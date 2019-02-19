@@ -1,0 +1,140 @@
+{
+  "name": "Tray",
+  "component": "gui",
+  "header": "nativeui/tray.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "description": "Tray item displayed in system notification area.",
+  "detail": "Platform limitations:\n\n* On Linux tray items are displayed as app indicators.\n* On Linux there is no fallback when app indicators are not supported.\n* On Linux app indicator can only show when it has menu attached.\n",
+  "constructors": [
+    {
+      "signature": {
+        "name": "Tray",
+        "parameters": [
+          {
+            "type": {
+              "name": "Image*",
+              "id": "image"
+            },
+            "name": "icon"
+          }
+        ],
+        "str": "Tray(Image* icon)"
+      },
+      "description": "Create a tray item with `icon`.",
+      "id": "tray-icon"
+    },
+    {
+      "signature": {
+        "name": "Tray",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "title"
+          }
+        ],
+        "str": "Tray(const std::string& title)"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Create a tray item with only `title`.",
+      "id": "tray-title"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "SetTitle",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "title"
+          }
+        ],
+        "str": "void SetTitle(const std::string& title)"
+      },
+      "platform": [
+        "macOS",
+        "linux"
+      ],
+      "description": "Set title to be displayed aside item's icon.",
+      "id": "settitle-title"
+    },
+    {
+      "signature": {
+        "name": "SetImage",
+        "parameters": [
+          {
+            "type": {
+              "name": "Image*",
+              "id": "image"
+            },
+            "name": "icon"
+          }
+        ],
+        "str": "void SetImage(Image* icon)"
+      },
+      "description": "Set the `icon` of tray item.",
+      "id": "setimage-icon"
+    },
+    {
+      "signature": {
+        "name": "SetMenu",
+        "parameters": [
+          {
+            "type": {
+              "name": "Menu*",
+              "id": "menu"
+            },
+            "name": "menu"
+          }
+        ],
+        "str": "void SetMenu(Menu* menu)"
+      },
+      "description": "Set the menu attached with the tray item.",
+      "detail": "On most platforms the menu will show when clicking on the icon, while on\nWindows the menu will only show when when right-clicking on the icon.\n",
+      "id": "setmenu-menu"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Menu*",
+          "id": "menu"
+        },
+        "name": "GetMenu",
+        "parameters": [],
+        "str": "Menu* GetMenu() const"
+      },
+      "description": "Return the menu attached.",
+      "id": "getmenu"
+    }
+  ],
+  "events": [
+    {
+      "callback": {
+        "name": "on_click",
+        "parameters": [
+          {
+            "type": {
+              "name": "Button*",
+              "id": "button"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "void on_click(Button* self)"
+      },
+      "platform": [
+        "Windows"
+      ],
+      "description": "Emitted when the tray item is clicked.",
+      "id": "onclick-self"
+    }
+  ],
+  "id": "tray"
+}

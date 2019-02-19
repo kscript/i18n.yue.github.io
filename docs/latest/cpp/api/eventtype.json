@@ -1,0 +1,12 @@
+{
+  "name": "EventType",
+  "lang": [
+    "cpp"
+  ],
+  "header": "nativeui/events/event.h",
+  "type": "enum class",
+  "namespace": "nu",
+  "description": "Represent possible event types.",
+  "detail": "`EventType` is an `enum class` with following values:\n\n* `EventType::Unknown`\n* `EventType::MouseDown`\n* `EventType::MouseUp`\n* `EventType::MouseMove`\n* `EventType::MouseEnter`\n* `EventType::MouseLeave`\n* `EventType::KeyDown`\n* `EventType::KeyUp`\n",
+  "id": "eventtype"
+}

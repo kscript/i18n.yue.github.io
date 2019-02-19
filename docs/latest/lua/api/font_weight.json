@@ -1,0 +1,9 @@
+{
+  "name": "Font::Weight",
+  "header": "nativeui/gfx/font.h",
+  "type": "string",
+  "namespace": "nu",
+  "description": "Represent font weights.",
+  "detail": "\nThis type is a string with following possible values:\n* `\"thin\"`\n* `\"extra-light\"`\n* `\"light\"`\n* `\"normal\"`\n* `\"medium\"`\n* `\"semi-bold\"`\n* `\"bold\"`\n* `\"extra-bold\"`\n* `\"black\"`\n",
+  "id": "font_weight"
+}

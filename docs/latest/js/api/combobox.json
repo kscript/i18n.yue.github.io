@@ -1,0 +1,79 @@
+{
+  "name": "ComboBox",
+  "component": "gui",
+  "header": "nativeui/combo_box.h",
+  "type": "Class",
+  "namespace": "nu",
+  "inherit": {
+    "name": "ComboBox",
+    "id": "combobox"
+  },
+  "description": "Choose a single item from a list of items or type a custom value.",
+  "detail": "The `ComboBox` behaves differently from `ComboBox` that:\n1. no item is selected by default;\n2. duplicate items are allowed.\n",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "ComboBox",
+          "id": "combobox"
+        },
+        "name": "create",
+        "parameters": [],
+        "str": "create()"
+      },
+      "description": "Create a new `ComboBox` view.",
+      "id": "create"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "setText",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "text"
+          }
+        ],
+        "str": "setText(text)"
+      },
+      "description": "Change the text in the view.",
+      "id": "settext-text"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "String"
+        },
+        "name": "getText",
+        "parameters": [],
+        "str": "getText()"
+      },
+      "description": "Return currently displayed text.",
+      "id": "gettext"
+    }
+  ],
+  "events": [
+    {
+      "callback": {
+        "name": "onTextChange",
+        "parameters": [
+          {
+            "type": {
+              "name": "Entry",
+              "id": "entry"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "onTextChange(self)"
+      },
+      "description": "Emitted when user has changed text.",
+      "id": "ontextchange-self"
+    }
+  ],
+  "module": "gui",
+  "id": "combobox"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Vibrant::Material",
+  "platform": [
+    "macOS"
+  ],
+  "header": "nativeui/vibrant.h",
+  "type": "String",
+  "namespace": "nu",
+  "description": "The material of a `Vibrant` view.",
+  "detail": "\nThis type is a string with following possible values:\n* `\"appearance-based\"`\n* `\"light\"`\n* `\"dark\"`\n* `\"titlebar\"`\n",
+  "id": "vibrant_material"
+}

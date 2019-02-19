@@ -1,0 +1,9 @@
+{
+  "name": "Clipboard::Type",
+  "header": "nativeui/clipboard.h",
+  "type": "enum class",
+  "namespace": "nu",
+  "description": "Type of `Clipboard`.",
+  "detail": "\nThis type is an `enum class` with following values:\n* `Clipboard::Type::CopyPaste`\n* `Clipboard::Type::Drag`\n* `Clipboard::Type::Find`\n* `Clipboard::Type::Font`\n* `Clipboard::Type::Selection`\n\nThe `Drag`, `Find`, `Font` clipboards are only available on macOS, and the\n`Selection` clipboard is only available on Linux.\n",
+  "id": "clipboard_type"
+}

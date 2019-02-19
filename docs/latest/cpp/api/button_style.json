@@ -1,0 +1,9 @@
+{
+  "name": "Button::Style",
+  "header": "nativeui/button.h",
+  "type": "enum class",
+  "namespace": "nu",
+  "description": "Represent visual types of `Button`.",
+  "detail": "\nThis type is an `enum class`.\n\nOn macOS it can have following values:\n* `Button::Style::Rounded`\n* `Button::Style::RegularSquare`\n* `Button::Style::ThickSquare`\n* `Button::Style::ThickerSquare`\n* `Button::Style::Disclosure`\n* `Button::Style::ShadowlessSquare`\n* `Button::Style::Circular`\n* `Button::Style::TexturedSquare`\n* `Button::Style::HelpButton`\n* `Button::Style::SmallSquare`\n* `Button::Style::TexturedRounded`\n* `Button::Style::RoundRect`\n* `Button::Style::Recessed`\n* `Button::Style::RoundedDisclosure`\n* `Button::Style::Inline`\n",
+  "id": "button_style"
+}

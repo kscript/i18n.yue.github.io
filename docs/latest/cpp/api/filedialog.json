@@ -1,0 +1,180 @@
+{
+  "name": "FileDialog",
+  "component": "gui",
+  "header": "nativeui/file_dialog.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "description": "Base class for file dialogs.",
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "base::FilePath",
+          "id": "base_filepath"
+        },
+        "name": "GetResult",
+        "parameters": [],
+        "str": "base::FilePath GetResult() const"
+      },
+      "description": "Return the chosen item in dialog.",
+      "id": "getresult"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "Run",
+        "parameters": [],
+        "str": "bool Run()"
+      },
+      "description": "Show the dialog and wait for result, return `true` if user has chosen\nitem(s).\n",
+      "id": "run"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "RunForWindow",
+        "parameters": [
+          {
+            "type": {
+              "name": "Window*",
+              "id": "window"
+            },
+            "name": "window"
+          }
+        ],
+        "str": "bool RunForWindow(Window* window)"
+      },
+      "description": "Show the dialog as a modal child of parent `window` and wait for result,\nreturn `true` if user has chosen item(s).\n",
+      "id": "runforwindow-window"
+    },
+    {
+      "signature": {
+        "name": "SetTitle",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "title"
+          }
+        ],
+        "str": "void SetTitle(const std::string& title)"
+      },
+      "description": "Set the title of the dialog.",
+      "id": "settitle-title"
+    },
+    {
+      "signature": {
+        "name": "SetButtonLabel",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "label"
+          }
+        ],
+        "str": "void SetButtonLabel(const std::string& label)"
+      },
+      "description": "Set the text of accept button.",
+      "id": "setbuttonlabel-label"
+    },
+    {
+      "signature": {
+        "name": "SetFilename",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "filename"
+          }
+        ],
+        "str": "void SetFilename(const std::string& filename)"
+      },
+      "description": "Set the filename to show in the dialog.",
+      "id": "setfilename-filename"
+    },
+    {
+      "signature": {
+        "name": "SetFolder",
+        "parameters": [
+          {
+            "type": {
+              "name": "const base::FilePath&",
+              "id": "base_filepath"
+            },
+            "name": "folder"
+          }
+        ],
+        "str": "void SetFolder(const base::FilePath& folder)"
+      },
+      "description": "Set a `folder` that is always selected when the dialog is opened\n",
+      "id": "setfolder-folder"
+    },
+    {
+      "signature": {
+        "name": "SetOptions",
+        "parameters": [
+          {
+            "type": {
+              "name": "int"
+            },
+            "name": "options"
+          }
+        ],
+        "str": "void SetOptions(int options)"
+      },
+      "description": "A bit array of `options`.",
+      "detail": "\nAvailable options can be found in\n[FileDialog::Option](filedialog_option.html).\n",
+      "id": "setoptions-options"
+    },
+    {
+      "signature": {
+        "name": "SetFilters",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::vector<FileDialog::Filter>&"
+            },
+            "name": "filters",
+            "description": "An array of [FileDialog::Filter](filedialog_filter.html) objects.\n"
+          }
+        ],
+        "str": "void SetFilters(const std::vector<FileDialog::Filter>& filters)"
+      },
+      "description": "Set the file types that the dialog can open or save.",
+      "id": "setfilters-filters"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::vector<FileDialog::Filter>"
+        },
+        "name": "GetFilters",
+        "parameters": [],
+        "str": "std::vector<FileDialog::Filter> GetFilters() const"
+      },
+      "description": "Return the filters previously set.",
+      "id": "getfilters"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "NativeFileDialog",
+          "id": "nativefiledialog"
+        },
+        "name": "GetNative",
+        "parameters": [],
+        "str": "NativeFileDialog GetNative() const"
+      },
+      "description": "Return the native type wrapped by the dialog.",
+      "id": "getnative"
+    }
+  ],
+  "id": "filedialog"
+}

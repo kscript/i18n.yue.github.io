@@ -1,0 +1,169 @@
+{
+  "name": "Tab",
+  "component": "gui",
+  "header": "nativeui/tab.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "inherit": {
+    "name": "View",
+    "id": "view"
+  },
+  "description": "Multipage view with tabs.",
+  "constructors": [
+    {
+      "signature": {
+        "name": "Tab",
+        "parameters": [],
+        "str": "Tab()"
+      },
+      "description": "Create a new `Tab` view.",
+      "id": "tab"
+    }
+  ],
+  "class_properties": [
+    {
+      "description": "The class name of this view.",
+      "id": "kclassname",
+      "type": {
+        "name": "const char*"
+      },
+      "name": "kClassName"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "AddPage",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "title"
+          },
+          {
+            "type": {
+              "name": "View*",
+              "id": "view"
+            },
+            "name": "view"
+          }
+        ],
+        "str": "void AddPage(const std::string& title, View* view)"
+      },
+      "description": "Add `view` as a new page with `title`.",
+      "id": "addpage-title-view"
+    },
+    {
+      "signature": {
+        "name": "RemovePage",
+        "parameters": [
+          {
+            "type": {
+              "name": "View*",
+              "id": "view"
+            },
+            "name": "view"
+          }
+        ],
+        "str": "void RemovePage(View* view)"
+      },
+      "description": "Remove the page that shows `view`.",
+      "id": "removepage-view"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "int"
+        },
+        "name": "PageCount",
+        "parameters": [],
+        "str": "int PageCount() const"
+      },
+      "description": "Return the number of pages.",
+      "id": "pagecount"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "View*",
+          "id": "view"
+        },
+        "name": "PageAt",
+        "parameters": [
+          {
+            "type": {
+              "name": "int"
+            },
+            "name": "index"
+          }
+        ],
+        "str": "View* PageAt(int index) const"
+      },
+      "description": "Return the view of page at `index`.",
+      "id": "pageat-index"
+    },
+    {
+      "signature": {
+        "name": "SelectPageAt",
+        "parameters": [
+          {
+            "type": {
+              "name": "int"
+            },
+            "name": "index"
+          }
+        ],
+        "str": "void SelectPageAt(int index)"
+      },
+      "description": "Select the page at `index`.",
+      "id": "selectpageat-index"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "int"
+        },
+        "name": "GetSelectedPageIndex",
+        "parameters": [],
+        "str": "int GetSelectedPageIndex() const"
+      },
+      "description": "Return the index of selected page.",
+      "id": "getselectedpageindex"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "View*",
+          "id": "view"
+        },
+        "name": "GetSelectedPage",
+        "parameters": [],
+        "str": "View* GetSelectedPage() const"
+      },
+      "description": "Return the view of selected page.",
+      "id": "getselectedpage"
+    }
+  ],
+  "events": [
+    {
+      "callback": {
+        "name": "on_selected_page_change",
+        "parameters": [
+          {
+            "type": {
+              "name": "Tab*",
+              "id": "tab"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "void on_selected_page_change(Tab* self)"
+      },
+      "description": "Emitted when user has changed the selected page.",
+      "detail": "Programmatically changing the selected page will also emit the event.\n",
+      "id": "onselectedpagechange-self"
+    }
+  ],
+  "id": "tab"
+}

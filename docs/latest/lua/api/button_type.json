@@ -1,0 +1,9 @@
+{
+  "name": "Button::Type",
+  "header": "nativeui/button.h",
+  "type": "string",
+  "namespace": "nu",
+  "description": "Represent possible `Button` types.",
+  "detail": "\nThis type is a string with following possible values:\n* `\"normal\"`\n* `\"checkbox\"`\n* `\"radio\"`\n",
+  "id": "button_type"
+}

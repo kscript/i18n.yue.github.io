@@ -1,0 +1,84 @@
+{
+  "name": "ComboBox",
+  "component": "gui",
+  "header": "nativeui/combo_box.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "inherit": {
+    "name": "ComboBox",
+    "id": "combobox"
+  },
+  "description": "Choose a single item from a list of items or type a custom value.",
+  "detail": "The `ComboBox` behaves differently from `ComboBox` that:\n1. no item is selected by default;\n2. duplicate items are allowed.\n",
+  "constructors": [
+    {
+      "signature": {
+        "name": "ComboBox",
+        "parameters": [],
+        "str": "ComboBox()"
+      },
+      "description": "Create a new `ComboBox` view.",
+      "id": "combobox"
+    }
+  ],
+  "class_properties": [
+    {
+      "description": "The class name of this view.",
+      "id": "kclassname",
+      "type": {
+        "name": "const char*"
+      },
+      "name": "kClassName"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "SetText",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "text"
+          }
+        ],
+        "str": "void SetText(const std::string& text)"
+      },
+      "description": "Change the text in the view.",
+      "id": "settext-text"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::string"
+        },
+        "name": "GetText",
+        "parameters": [],
+        "str": "std::string GetText() const"
+      },
+      "description": "Return currently displayed text.",
+      "id": "gettext"
+    }
+  ],
+  "events": [
+    {
+      "callback": {
+        "name": "on_text_change",
+        "parameters": [
+          {
+            "type": {
+              "name": "Entry*",
+              "id": "entry"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "void on_text_change(Entry* self)"
+      },
+      "description": "Emitted when user has changed text.",
+      "id": "ontextchange-self"
+    }
+  ],
+  "id": "combobox"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "App::ThemeColor",
+  "header": "nativeui/app.h",
+  "type": "enum class",
+  "namespace": "nu",
+  "description": "Represent possible theme colors.",
+  "detail": "\nThis type is an `enum class` with following values:\n  * `App::ThemeColor::Text`\n  * `App::ThemeColor::DisabledText`\n",
+  "id": "app_themecolor"
+}

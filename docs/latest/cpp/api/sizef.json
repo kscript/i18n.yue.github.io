@@ -1,0 +1,123 @@
+{
+  "name": "SizeF",
+  "header": "nativeui/gfx/geometry/size_f.h",
+  "type": "class",
+  "namespace": "nu",
+  "description": "Size type.",
+  "constructors": [
+    {
+      "signature": {
+        "name": "SizeF",
+        "parameters": [],
+        "str": "SizeF()"
+      },
+      "description": "Create an empty size.",
+      "id": "sizef"
+    },
+    {
+      "signature": {
+        "name": "SizeF",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "width"
+          },
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "height"
+          }
+        ],
+        "str": "SizeF(float width, float height)"
+      },
+      "description": "Create a size with `width` and `height`.",
+      "id": "sizef-width-height"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "width",
+        "parameters": [],
+        "str": "float width() const"
+      },
+      "description": "Return size width.",
+      "id": "width"
+    },
+    {
+      "signature": {
+        "name": "set_width",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "width"
+          }
+        ],
+        "str": "void set_width(float width)"
+      },
+      "description": "Set size width.",
+      "id": "setwidth-width"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "height",
+        "parameters": [],
+        "str": "float height() const"
+      },
+      "description": "Return size height.",
+      "id": "height"
+    },
+    {
+      "signature": {
+        "name": "set_height",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "height"
+          }
+        ],
+        "str": "void set_height(float height)"
+      },
+      "description": "Set size height.",
+      "id": "setheight-height"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsEmpty",
+        "parameters": [],
+        "str": "bool IsEmpty() const"
+      },
+      "description": "Return `true` if the size is zero.",
+      "id": "isempty"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::string"
+        },
+        "name": "ToString",
+        "parameters": [],
+        "str": "std::string ToString() const"
+      },
+      "description": "Return string representation of the size.",
+      "id": "tostring"
+    }
+  ],
+  "id": "sizef"
+}

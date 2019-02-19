@@ -1,0 +1,67 @@
+{
+  "name": "SimpleTableModel",
+  "component": "gui",
+  "header": "nativeui/table_model.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "inherit": {
+    "name": "TableModel",
+    "id": "tablemodel"
+  },
+  "description": "A simple implementation of TableModel.",
+  "detail": "There is no need to call `Notify` methods when using `SimpleTableModel`.\n\nNote that all data are stored as primary types, it is not possible to store\na native object (for example `Image`s) in table model.\n",
+  "constructors": [
+    {
+      "signature": {
+        "name": "SimpleTableModel",
+        "parameters": [
+          {
+            "type": {
+              "name": "uint32_t"
+            },
+            "name": "columns"
+          }
+        ],
+        "str": "SimpleTableModel(uint32_t columns)"
+      },
+      "description": "Create a `SimpleTableModel` with fixed `columns` number.",
+      "id": "simpletablemodel-columns"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "AddRow",
+        "parameters": [
+          {
+            "type": {
+              "name": "std::vector<base::Value>"
+            },
+            "name": "row"
+          }
+        ],
+        "str": "void AddRow(std::vector<base::Value> row)"
+      },
+      "description": "Add a row.",
+      "detail": "The length of `row` should not be smaller than columns number.\nThe `data` should be `std::move`d for best performance.\n",
+      "id": "addrow-row"
+    },
+    {
+      "signature": {
+        "name": "RemoveRowAt",
+        "parameters": [
+          {
+            "type": {
+              "name": "uint32_t"
+            },
+            "name": "index"
+          }
+        ],
+        "str": "void RemoveRowAt(uint32_t index)"
+      },
+      "description": "Remove the row at `index`.",
+      "id": "removerowat-index"
+    }
+  ],
+  "id": "simpletablemodel"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "ProtocolStringJob",
+  "component": "gui",
+  "header": "nativeui/protocol_job.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "inherit": {
+    "name": "ProtocolJob",
+    "id": "protocoljob"
+  },
+  "description": "Use string as response to custom protocol requests.",
+  "constructors": [
+    {
+      "signature": {
+        "name": "ProtocolStringJob",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "mimetype"
+          },
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "content"
+          }
+        ],
+        "str": "ProtocolStringJob(const std::string& mimetype, const std::string& content)"
+      },
+      "description": "Create a `ProtocolStringJob` with `mimetype` and `content`.\n",
+      "id": "protocolstringjob-mimetype-content"
+    }
+  ],
+  "id": "protocolstringjob"
+}

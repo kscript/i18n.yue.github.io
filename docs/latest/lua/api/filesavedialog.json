@@ -1,0 +1,29 @@
+{
+  "name": "FileSaveDialog",
+  "component": "gui",
+  "header": "nativeui/file_save_dialog.h",
+  "type": "Class",
+  "namespace": "nu",
+  "inherit": {
+    "name": "FileDialog",
+    "id": "filedialog"
+  },
+  "description": "Dialog used for saveing files.",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "FileSaveDialog",
+          "id": "filesavedialog"
+        },
+        "name": "create",
+        "parameters": [],
+        "str": "create()"
+      },
+      "description": "Create an save dialog.",
+      "id": "create"
+    }
+  ],
+  "module": "yue.gui",
+  "id": "filesavedialog"
+}

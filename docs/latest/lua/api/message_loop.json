@@ -1,0 +1,70 @@
+{
+  "name": "MessageLoop",
+  "component": "gui",
+  "header": "nativeui/message_loop.h",
+  "type": "table",
+  "namespace": "nu",
+  "description": "Post events to main GUI message loop.",
+  "detail": "Depending on the runtime you use, Yue may or may not provide this API.\n\nNote that `MessageLoop` is a class instead of an instance, the APIs are\nprovided as class methods. This is because the `MessageLoop` does not manage\nmessage loop, it just provides wrappers of system GUI message loop APIs.\n\nThis class can not be created by user, you can only call its class methods.\n\n```lua\nlocal gui = require('yue.gui')\ngui.MessageLoop.run()\n```\n",
+  "class_methods": [
+    {
+      "signature": {
+        "name": "run",
+        "parameters": [],
+        "str": "run()"
+      },
+      "description": "Enter message loop.",
+      "id": "run"
+    },
+    {
+      "signature": {
+        "name": "quit",
+        "parameters": [],
+        "str": "quit()"
+      },
+      "description": "Quit message loop.",
+      "id": "quit"
+    },
+    {
+      "signature": {
+        "name": "posttask",
+        "parameters": [
+          {
+            "type": {
+              "name": "function"
+            },
+            "name": "task"
+          }
+        ],
+        "str": "posttask(task)"
+      },
+      "description": "Post a `task` to message loop.",
+      "id": "posttask-task"
+    },
+    {
+      "signature": {
+        "name": "postdelayedtask",
+        "parameters": [
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "ms",
+            "description": "The number of milliseconds to wait"
+          },
+          {
+            "type": {
+              "name": "function"
+            },
+            "name": "task"
+          }
+        ],
+        "str": "postdelayedtask(ms, task)"
+      },
+      "description": "Post a `task` to message loop and execute it after `ms`.",
+      "id": "postdelayedtask-ms-task"
+    }
+  ],
+  "module": "yue.gui",
+  "id": "message_loop"
+}

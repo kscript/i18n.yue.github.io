@@ -1,0 +1,9 @@
+{
+  "name": "Font::Style",
+  "header": "nativeui/gfx/font.h",
+  "type": "String",
+  "namespace": "nu",
+  "description": "Represent font styles.",
+  "detail": "\nThis type is a string with following possible values:\n* `\"normal\"`\n* `\"italic\"`\n",
+  "id": "font_style"
+}

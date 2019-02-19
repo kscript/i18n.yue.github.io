@@ -1,0 +1,200 @@
+{
+  "name": "Table",
+  "component": "gui",
+  "header": "nativeui/table.h",
+  "type": "Class",
+  "namespace": "nu",
+  "inherit": {
+    "name": "View",
+    "id": "view"
+  },
+  "description": "Table view.",
+  "detail": "The `Table` does not store any data itself, to display data in `Table`, users\nhave to provide a [`TableModel`](tablemodel.html).\n\nHow data are renderered depends on the type of column. It is also possible to\ncreate a custom renderer for arbitrary data.\n",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Table",
+          "id": "table"
+        },
+        "name": "create",
+        "parameters": [],
+        "str": "create()"
+      },
+      "description": "Create a new `Table`.",
+      "id": "create"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "setModel",
+        "parameters": [
+          {
+            "type": {
+              "name": "TableModel",
+              "id": "tablemodel"
+            },
+            "name": "model"
+          }
+        ],
+        "str": "setModel(model)"
+      },
+      "description": "Set `model` as table's data source.",
+      "id": "setmodel-model"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "TableModel",
+          "id": "tablemodel"
+        },
+        "name": "getModel",
+        "parameters": [],
+        "str": "getModel()"
+      },
+      "description": "Return table's model.",
+      "id": "getmodel"
+    },
+    {
+      "signature": {
+        "name": "addColumn",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "title"
+          }
+        ],
+        "str": "addColumn(title)"
+      },
+      "description": "Add a new column with `title`, which shows readonly text.",
+      "id": "addcolumn-title"
+    },
+    {
+      "signature": {
+        "name": "addColumnWithOptions",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "title"
+          },
+          {
+            "type": {
+              "name": "Table::ColumnOptions",
+              "id": "table_columnoptions"
+            },
+            "name": "options"
+          }
+        ],
+        "str": "addColumnWithOptions(title, options)"
+      },
+      "description": "Add a new column with `title` and `options`.",
+      "id": "addcolumnwithoptions-title-options"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Integer"
+        },
+        "name": "getColumnCount",
+        "parameters": [],
+        "str": "getColumnCount()"
+      },
+      "description": "Return the number of columns.",
+      "id": "getcolumncount"
+    },
+    {
+      "signature": {
+        "name": "setColumnsVisible",
+        "parameters": [
+          {
+            "type": {
+              "name": "Boolean"
+            },
+            "name": "visible"
+          }
+        ],
+        "str": "setColumnsVisible(visible)"
+      },
+      "description": "Set whether the columns header is visible.",
+      "detail": "On macOS adding column after hiding the header will result in missing\ncolumns in the header even after making the header visible again.\n\nIt is recommended to never show the header again after hiding the header,\nfor consistent behaviors between platforms.\n",
+      "id": "setcolumnsvisible-visible"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "isColumnsVisible",
+        "parameters": [],
+        "str": "isColumnsVisible()"
+      },
+      "description": "Return whether the columns header is visible.",
+      "id": "iscolumnsvisible"
+    },
+    {
+      "signature": {
+        "name": "setRowHeight",
+        "parameters": [
+          {
+            "type": {
+              "name": "Number"
+            },
+            "name": "height"
+          }
+        ],
+        "str": "setRowHeight(height)"
+      },
+      "description": "Set the `height` of each row.",
+      "detail": "It is not recommended to change row height unless you are drawing all\ncells yourself, as the default text cells may not show decently under\nlarge or small height.\n\nOn Linux, due to platform implementations, this method has to be called\nbefore adding columns. It does not have any effect when columns have\nalready been added.\n",
+      "id": "setrowheight-height"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Number"
+        },
+        "name": "getRowHeight",
+        "parameters": [],
+        "str": "getRowHeight()"
+      },
+      "description": "Return the `height` of each row.",
+      "id": "getrowheight"
+    },
+    {
+      "signature": {
+        "name": "selectRow",
+        "parameters": [
+          {
+            "type": {
+              "name": "Integer"
+            },
+            "name": "row"
+          }
+        ],
+        "str": "selectRow(row)"
+      },
+      "description": "Select a `row`.",
+      "id": "selectrow-row"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Integer"
+        },
+        "name": "getSelectedRow",
+        "parameters": [],
+        "str": "getSelectedRow()"
+      },
+      "description": "Return the index of selected row.",
+      "detail": "For table that allows multiple selections, this will return the index of\nfirst selected row. When no row is selected, `-1` will be returned.\n",
+      "id": "getselectedrow"
+    }
+  ],
+  "module": "gui",
+  "id": "table"
+}

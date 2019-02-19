@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>TextEdit - Yue</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <div id="header">
+    <a class="logo" href="../index.html">Yue</a>
+    <div class="nav">
+      <a>
+        <span>
+          Langauge/语言:
+        </span>
+        <select id="i18n-list" i18n-page="api"></select>
+      </a>
+      <a href="../index.html" i18n="Docs"></a>
+      <a href="/" i18n="Versions"></a>
+      <a href="https://github.com/yue/yue">GitHub</a>
+    </div>
+  </div>
+  <div id="container">
+    <div class="markdown-body" id="content">
+      <h1>TextEdit</h1>
+      <p>Plain text input view.</p>
+      <table class="code">
+        <tr>
+          <td>Module</td>
+          <td>require("gui")</td>
+        </tr>
+        <tr>
+          <td>Type</td>
+          <td>Class</td>
+        </tr>
+        <tr>
+          <td>Inherits</td>
+          <td><a class="type" href="view.html">View</a></td>
+        </tr>
+      </table>
+      <h2 id="class-methods"><a class="anchor" aria-hidden="true" href="#class-methods"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>Class methods</h2>
+      <h3 id="create"><a class="anchor" aria-hidden="true" href="#create"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>create()</h3>
+      <p>Create a new <code>TextEdit</code>.</p>
+      <h4>Return</h4><code><a class="type" href="textedit.html">TextEdit</a></code>
+      <h2 id="methods"><a class="anchor" aria-hidden="true" href="#methods"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>Methods</h2>
+      <h3 id="settext-text"><a class="anchor" aria-hidden="true" href="#settext-text"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setText(text)</h3>
+      <p>Change the text in the view.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">String</span></code> <span class="code">text</span></li>
+      </ul>
+      <h3 id="gettext"><a class="anchor" aria-hidden="true" href="#gettext"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>getText()</h3>
+      <p>Return currently displayed text.</p>
+      <h4>Return</h4><code><span class="type">String</span></code>
+      <h3 id="undo"><a class="anchor" aria-hidden="true" href="#undo"><svg aria-hidden="true" height="16" version="1.1"
+            viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>undo()</h3>
+      <p>Undo the last edit operation in the undo queue.</p>
+      <h3 id="canundo"><a class="anchor" aria-hidden="true" href="#canundo"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>canUndo()</h3>
+      <p>Return whether there are any actions in undo queue.</p>
+      <h3 id="redo"><a class="anchor" aria-hidden="true" href="#redo"><svg aria-hidden="true" height="16" version="1.1"
+            viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>redo()</h3>
+      <p>Redo the next action in the redo queue</p>
+      <h3 id="canredo"><a class="anchor" aria-hidden="true" href="#canredo"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>canRedo()</h3>
+      <p>Return whether there are any actions in redo queue.</p>
+      <h3 id="cut"><a class="anchor" aria-hidden="true" href="#cut"><svg aria-hidden="true" height="16" version="1.1"
+            viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>cut()</h3>
+      <p>Delete (cut) the current selection, if any, copy the deleted text to the
+        clipboard.</p>
+      <h3 id="copy"><a class="anchor" aria-hidden="true" href="#copy"><svg aria-hidden="true" height="16" version="1.1"
+            viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>copy()</h3>
+      <p>Copy current selection to clipboard.</p>
+      <h3 id="paste"><a class="anchor" aria-hidden="true" href="#paste"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>paste()</h3>
+      <p>Copy the current content of the clipboard to current caret position.</p>
+      <h3 id="selectall"><a class="anchor" aria-hidden="true" href="#selectall"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>selectAll()</h3>
+      <p>Select all text.</p>
+      <h3 id="getselectionrange"><a class="anchor" aria-hidden="true" href="#getselectionrange"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>getSelectionRange()</h3>
+      <p>Return the start position and end position of current selection.</p>
+      <p>If nothing is selected, the cursor position will be returned as both values, ie. (0, 0).</p>
+      <h4>Return</h4><code><span class="type">[Integer, Integer]</span></code>
+      <h3 id="selectrange-start-end"><a class="anchor" aria-hidden="true" href="#selectrange-start-end"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>selectRange(start, end)</h3>
+      <p>Select text between <code>start</code> and <code>end</code> positions.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">Integer</span></code> <span class="code">start</span></li>
+        <li><code><span class="type">Integer</span></code> <span class="code">end</span></li>
+      </ul>
+      <h3 id="gettextinrange-start-end"><a class="anchor" aria-hidden="true" href="#gettextinrange-start-end"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>getTextInRange(start, end)</h3>
+      <p>Return the text between <code>start</code> and <code>end</code> positions.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">Integer</span></code> <span class="code">start</span></li>
+        <li><code><span class="type">Integer</span></code> <span class="code">end</span></li>
+      </ul>
+      <h4>Return</h4><code><span class="type">String</span></code>
+      <h3 id="inserttext-text"><a class="anchor" aria-hidden="true" href="#inserttext-text"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>insertText(text)</h3>
+      <p>Insert <code>text</code> at current caret position.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">String</span></code> <span class="code">text</span></li>
+      </ul>
+      <h3 id="inserttextat-text-position"><a class="anchor" aria-hidden="true" href="#inserttextat-text-position"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>insertTextAt(text, position)</h3>
+      <p>Insert <code>text</code> at the <code>position</code>.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">String</span></code> <span class="code">text</span></li>
+        <li><code><span class="type">Integer</span></code> <span class="code">position</span></li>
+      </ul>
+      <h3 id="delete"><a class="anchor" aria-hidden="true" href="#delete"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>delete()</h3>
+      <p>Delete text of current selection.</p>
+      <h3 id="deleterange-start-end"><a class="anchor" aria-hidden="true" href="#deleterange-start-end"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>deleteRange(start, end)</h3>
+      <p>Delete text between <code>start</code> and <code>end</code> positions.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">Integer</span></code> <span class="code">start</span></li>
+        <li><code><span class="type">Integer</span></code> <span class="code">end</span></li>
+      </ul>
+      <h3 id="setoverlayscrollbar-overlay"><a class="anchor" aria-hidden="true" href="#setoverlayscrollbar-overlay"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setOverlayScrollbar(overlay) <span class="platform">macOS</span> <span class="platform">linux</span>
+      </h3>
+      <p>Set whether to use overlay scrolling.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">Boolean</span></code> <span class="code">overlay</span></li>
+      </ul>
+      <h3 id="setscrollbarpolicy-hpolicy-vpolicy"><a class="anchor" aria-hidden="true"
+          href="#setscrollbarpolicy-hpolicy-vpolicy"><svg aria-hidden="true" height="16" version="1.1"
+            viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setScrollbarPolicy(hpolicy, vpolicy)</h3>
+      <p>Set the policy for displaying horizontal and vertical scrollbars.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="scroll_policy.html">Scroll::Policy</a></code> <span class="code">hpolicy</span>
+          - Policy for horizontal scrollbar.</li>
+        <li><code><a class="type" href="scroll_policy.html">Scroll::Policy</a></code> <span class="code">vpolicy</span>
+          - Policy for vertical scrollbar.</li>
+      </ul>
+      <h3 id="gettextbounds"><a class="anchor" aria-hidden="true" href="#gettextbounds"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>getTextBounds()</h3>
+      <p>Return the text extend.</p>
+      <h4>Return</h4><code><a class="type" href="rectf.html">RectF</a></code>
+      <h2 id="events"><a class="anchor" aria-hidden="true" href="#events"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>Events</h2>
+      <h3 id="ontextchange-self"><a class="anchor" aria-hidden="true" href="#ontextchange-self"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>onTextChange(self)</h3>
+      <p>Emitted when user has changed text.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="textedit.html">TextEdit</a></code> <span class="code">self</span></li>
+      </ul>
+      <h4>Preventable</h4>No.<h2 id="delegates"><a class="anchor" aria-hidden="true" href="#delegates"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>Delegates</h2>
+      <h3 id="shouldinsertnewline-self"><a class="anchor" aria-hidden="true" href="#shouldinsertnewline-self"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>shouldInsertNewLine(self)</h3>
+      <p>Called when user presses <code>Return</code> to insert new line, should return
+        whether it is allowed.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="textedit.html">TextEdit</a></code> <span class="code">self</span></li>
+      </ul>
+      <h4>Return</h4><code><span class="type">Boolean</span></code>
+    </div>
+    <div class="markdown-body" id="sidebar">
+      <h4>Langauge:</h4>
+      <div class="lang-switcher"><a href="../../cpp/api/textedit.html">C++</a> | <a
+          href="../../lua/api/textedit.html">Lua</a> | <span class="current">JavaScript</span></div>
+      <h4>Version:</h4><span class="current">v0.6.2</span>
+      <h4>Formats:</h4><a href="textedit.json">JSON</a>
+      <h4>Components:</h4>
+      <ul>
+        <li><a href="abstracttablemodel.html" i18n="AbstractTableModel"></a></li>
+        <li><a href="app.html" i18n="App"></a></li>
+        <li><a href="browser.html" i18n="Browser"></a></li>
+        <li><a href="button.html" i18n="Button"></a></li>
+        <li><a href="canvas.html" i18n="Canvas"></a></li>
+        <li><a href="clipboard.html" i18n="Clipboard"></a></li>
+        <li><a href="color.html" i18n="Color"></a></li>
+        <li><a href="combobox.html" i18n="ComboBox"></a></li>
+        <li><a href="container.html" i18n="Container"></a></li>
+        <li><a href="cursor.html" i18n="Cursor"></a></li>
+        <li><a href="entry.html" i18n="Entry"></a></li>
+        <li><a href="filedialog.html" i18n="FileDialog"></a></li>
+        <li><a href="fileopendialog.html" i18n="FileOpenDialog"></a></li>
+        <li><a href="filesavedialog.html" i18n="FileSaveDialog"></a></li>
+        <li><a href="font.html" i18n="Font"></a></li>
+        <li><a href="gif_player.html" i18n="GifPlayer"></a></li>
+        <li><a href="group.html" i18n="Group"></a></li>
+        <li><a href="image.html" i18n="Image"></a></li>
+        <li><a href="label.html" i18n="Label"></a></li>
+        <li><a href="lifetime.html" i18n="Lifetime"></a></li>
+        <li><a href="menu.html" i18n="Menu"></a></li>
+        <li><a href="menubar.html" i18n="MenuBar"></a></li>
+        <li><a href="menubase.html" i18n="MenuBase"></a></li>
+        <li><a href="menuitem.html" i18n="MenuItem"></a></li>
+        <li><a href="message_loop.html" i18n="MessageLoop"></a></li>
+        <li><a href="painter.html" i18n="Painter"></a></li>
+        <li><a href="picker.html" i18n="Picker"></a></li>
+        <li><a href="progressbar.html" i18n="ProgressBar"></a></li>
+        <li><a href="protocolasarjob.html" i18n="ProtocolAsarJob"></a></li>
+        <li><a href="protocolfilejob.html" i18n="ProtocolFileJob"></a></li>
+        <li><a href="protocoljob.html" i18n="ProtocolJob"></a></li>
+        <li><a href="protocolstringjob.html" i18n="ProtocolStringJob"></a></li>
+        <li><a href="scroll.html" i18n="Scroll"></a></li>
+        <li><a href="simpletablemodel.html" i18n="SimpleTableModel"></a></li>
+        <li><a href="tab.html" i18n="Tab"></a></li>
+        <li><a href="table.html" i18n="Table"></a></li>
+        <li><a href="tablemodel.html" i18n="TableModel"></a></li>
+        <li><span class="current" i18n="TextEdit"></span></li>
+        <li><a href="toolbar.html" i18n="Toolbar"></a></li>
+        <li><a href="tray.html" i18n="Tray"></a></li>
+        <li><a href="vibrant.html" i18n="Vibrant"></a></li>
+        <li><a href="view.html" i18n="View"></a></li>
+        <li><a href="window.html" i18n="Window"></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="footer">
+    <p>Content of this page is in public domain.</p>
+  </div>
+  <script src="../i18n.js"></script>
+</body>
+
+</html>

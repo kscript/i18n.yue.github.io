@@ -1,0 +1,58 @@
+{
+  "name": "KeyboardCode",
+  "header": "nativeui/events/keyboard_codes.h",
+  "type": "enum",
+  "namespace": "nu",
+  "description": "Codes of keyboard keys.",
+  "global_functions": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "const char*"
+        },
+        "name": "KeyboardCodeToStr",
+        "parameters": [
+          {
+            "type": {
+              "name": "KeyboardCode",
+              "id": "keyboardcode"
+            },
+            "name": "code"
+          }
+        ],
+        "str": "const char* KeyboardCodeToStr(KeyboardCode code)"
+      },
+      "description": "Convert a key code to string, using the values of `KeyboardEvent.key`,\na list of available keys can be found at:\n[Key Values - MDN](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values).\n\nThere is an exception that the <kbd>Space Bar</kbd> is represented as\n`\"Space\"` in Yue instead of `\" \"`.\n",
+      "id": "keyboardcodetostr-code"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "KeyboardCode",
+          "id": "keyboardcode"
+        },
+        "name": "KeyboardCodeFromStr",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "str"
+          },
+          {
+            "type": {
+              "name": "bool*"
+            },
+            "name": "shifted",
+            "description": "Whether the represented key requires <kbd>Shift</kbd> to be pressed.\n"
+          }
+        ],
+        "str": "KeyboardCode KeyboardCodeFromStr(const std::string& str, bool* shifted)"
+      },
+      "description": "Convert a string to a KeyboardCode.",
+      "id": "keyboardcodefromstr-str-shifted"
+    }
+  ],
+  "detail": "\n`KeyboardCode` is an `enum` with following values, the actual integer values\nare different on different platforms:\n\n* `VKEY_CANCEL`\n* `VKEY_BACK`\n* `VKEY_TAB`\n* `VKEY_CLEAR`\n* `VKEY_RETURN`\n* `VKEY_SHIFT`\n* `VKEY_CONTROL`\n* `VKEY_MENU`\n* `VKEY_PAUSE`\n* `VKEY_CAPITAL`\n* `VKEY_KANA`\n* `VKEY_HANGUL`\n* `VKEY_HANJA`\n* `VKEY_KANJI`\n* `VKEY_ESCAPE`\n* `VKEY_SPACE`\n* `VKEY_PRIOR`\n* `VKEY_NEXT`\n* `VKEY_END`\n* `VKEY_HOME`\n* `VKEY_LEFT`\n* `VKEY_UP`\n* `VKEY_RIGHT`\n* `VKEY_DOWN`\n* `VKEY_SELECT`\n* `VKEY_PRINT`\n* `VKEY_EXECUTE`\n* `VKEY_SNAPSHOT`\n* `VKEY_INSERT`\n* `VKEY_DELETE`\n* `VKEY_HELP`\n* `VKEY_0`\n* `VKEY_1`\n* `VKEY_2`\n* `VKEY_3`\n* `VKEY_4`\n* `VKEY_5`\n* `VKEY_6`\n* `VKEY_7`\n* `VKEY_8`\n* `VKEY_9`\n* `VKEY_A`\n* `VKEY_B`\n* `VKEY_C`\n* `VKEY_D`\n* `VKEY_E`\n* `VKEY_F`\n* `VKEY_G`\n* `VKEY_H`\n* `VKEY_I`\n* `VKEY_J`\n* `VKEY_K`\n* `VKEY_L`\n* `VKEY_M`\n* `VKEY_N`\n* `VKEY_O`\n* `VKEY_P`\n* `VKEY_Q`\n* `VKEY_R`\n* `VKEY_S`\n* `VKEY_T`\n* `VKEY_U`\n* `VKEY_V`\n* `VKEY_W`\n* `VKEY_X`\n* `VKEY_Y`\n* `VKEY_Z`\n* `VKEY_LWIN`\n* `VKEY_COMMAND`\n* `VKEY_RWIN`\n* `VKEY_APPS`\n* `VKEY_NUMPAD0`\n* `VKEY_NUMPAD1`\n* `VKEY_NUMPAD2`\n* `VKEY_NUMPAD3`\n* `VKEY_NUMPAD4`\n* `VKEY_NUMPAD5`\n* `VKEY_NUMPAD6`\n* `VKEY_NUMPAD7`\n* `VKEY_NUMPAD8`\n* `VKEY_NUMPAD9`\n* `VKEY_MULTIPLY`\n* `VKEY_ADD`\n* `VKEY_SUBTRACT`\n* `VKEY_DECIMAL`\n* `VKEY_DIVIDE`\n* `VKEY_F1`\n* `VKEY_F2`\n* `VKEY_F3`\n* `VKEY_F4`\n* `VKEY_F5`\n* `VKEY_F6`\n* `VKEY_F7`\n* `VKEY_F8`\n* `VKEY_F9`\n* `VKEY_F10`\n* `VKEY_F11`\n* `VKEY_F12`\n* `VKEY_F13`\n* `VKEY_F14`\n* `VKEY_F15`\n* `VKEY_F16`\n* `VKEY_F17`\n* `VKEY_F18`\n* `VKEY_F19`\n* `VKEY_F20`\n* `VKEY_F21`\n* `VKEY_F22`\n* `VKEY_F23`\n* `VKEY_F24`\n* `VKEY_NUMLOCK`\n* `VKEY_SCROLL`\n* `VKEY_LSHIFT`\n* `VKEY_RSHIFT`\n* `VKEY_LCONTROL`\n* `VKEY_RCONTROL`\n* `VKEY_LMENU`\n* `VKEY_RMENU`\n* `VKEY_BROWSER_BACK`\n* `VKEY_BROWSER_FORWARD`\n* `VKEY_BROWSER_REFRESH`\n* `VKEY_BROWSER_STOP`\n* `VKEY_BROWSER_SEARCH`\n* `VKEY_BROWSER_FAVORITES`\n* `VKEY_BROWSER_HOME`\n* `VKEY_VOLUME_MUTE`\n* `VKEY_VOLUME_DOWN`\n* `VKEY_VOLUME_UP`\n* `VKEY_MEDIA_NEXT_TRACK`\n* `VKEY_MEDIA_PREV_TRACK`\n* `VKEY_MEDIA_STOP`\n* `VKEY_MEDIA_PLAY_PAUSE`\n* `VKEY_MEDIA_LAUNCH_MAIL`\n* `VKEY_MEDIA_LAUNCH_MEDIA_SELECT`\n* `VKEY_MEDIA_LAUNCH_APP1`\n* `VKEY_MEDIA_LAUNCH_APP2`\n* `VKEY_OEM_1`\n* `VKEY_OEM_PLUS`\n* `VKEY_OEM_COMMA`\n* `VKEY_OEM_MINUS`\n* `VKEY_OEM_PERIOD`\n* `VKEY_OEM_2`\n* `VKEY_OEM_3`\n* `VKEY_OEM_4`\n* `VKEY_OEM_5`\n* `VKEY_OEM_6`\n* `VKEY_OEM_7`\n* `VKEY_OEM_CLEAR`\n* `VKEY_UNKNOWN`\n",
+  "id": "keyboardcode"
+}

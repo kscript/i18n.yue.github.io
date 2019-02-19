@@ -1,0 +1,91 @@
+{
+  "name": "GifPlayer",
+  "component": "gui",
+  "header": "nativeui/gif_player.h",
+  "type": "Class",
+  "namespace": "nu",
+  "inherit": {
+    "name": "View",
+    "id": "view"
+  },
+  "description": "Image view with animated GIF support.",
+  "detail": "It can also display other types of images, but only GIF images can be\nanimated.\n\nDisplaying animated GIF images consumes lots of CPU resources, it is highly\nunrecommended to constantly display animated GIF images.\n\nFor optimization, hiding the view would automatically pause the animation,\nand showing the view would automatically resume previous state.\n",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "GifPlayer",
+          "id": "gifplayer"
+        },
+        "name": "create",
+        "parameters": [],
+        "str": "create()"
+      },
+      "description": "Create a new `GifPlayer`.",
+      "id": "create"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "setImage",
+        "parameters": [
+          {
+            "type": {
+              "name": "Image",
+              "id": "image"
+            },
+            "name": "image"
+          }
+        ],
+        "str": "setImage(image)"
+      },
+      "description": "Set the image.",
+      "detail": "After setting the image, the animated image will start playing\nautomatically.\n",
+      "id": "setimage-image"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Image",
+          "id": "image"
+        },
+        "name": "getImage",
+        "parameters": [],
+        "str": "getImage()"
+      },
+      "description": "Return the image.",
+      "id": "getimage"
+    },
+    {
+      "signature": {
+        "name": "setAnimating",
+        "parameters": [
+          {
+            "type": {
+              "name": "Boolean"
+            },
+            "name": "animating"
+          }
+        ],
+        "str": "setAnimating(animating)"
+      },
+      "description": "Set whether the animated image should be played.",
+      "id": "setanimating-animating"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "isAnimating",
+        "parameters": [],
+        "str": "isAnimating()"
+      },
+      "description": "Return whether the image is animating.",
+      "id": "isanimating"
+    }
+  ],
+  "module": "gui",
+  "id": "gif_player"
+}

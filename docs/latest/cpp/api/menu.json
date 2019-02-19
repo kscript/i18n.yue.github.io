@@ -1,0 +1,35 @@
+{
+  "name": "Menu",
+  "component": "gui",
+  "header": "nativeui/menu.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "inherit": {
+    "name": "MenuBase",
+    "id": "menubase"
+  },
+  "description": "Popup menu.",
+  "constructors": [
+    {
+      "signature": {
+        "name": "Menu",
+        "parameters": [],
+        "str": "Menu()"
+      },
+      "description": "Create a popup menu.",
+      "id": "menu"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "Popup",
+        "parameters": [],
+        "str": "void Popup()"
+      },
+      "description": "Show the popup menu at current mouse position, this method will block\nuntil the menu is dismissed.\n",
+      "id": "popup"
+    }
+  ],
+  "id": "menu"
+}

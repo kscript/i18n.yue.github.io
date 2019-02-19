@@ -1,0 +1,511 @@
+{
+  "name": "Browser",
+  "component": "gui",
+  "header": "nativeui/browser.h",
+  "type": "Class",
+  "namespace": "nu",
+  "inherit": {
+    "name": "View",
+    "id": "view"
+  },
+  "description": "Native webview using system browser.",
+  "detail": "Using `Browser` requires relatively new operating systems, for macOS the\nminimum version required is 10.10, for Linux it is required to install the\n`webkit2gtk` library with at least version 2.8.\n\nOn Linux due to poor support of hardware acceleration, the browser may fail to\nshow anything, when that happens you can set `WEBKIT_DISABLE_COMPOSITING_MODE`\nenvironment variable to disable hardware acceleration.\n",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Browser",
+          "id": "browser"
+        },
+        "name": "create",
+        "parameters": [
+          {
+            "type": {
+              "name": "Browser::Options",
+              "id": "browser_options"
+            },
+            "name": "options"
+          }
+        ],
+        "str": "create(options)"
+      },
+      "description": "Create a new browser view.",
+      "id": "create-options"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "registerProtocol",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "scheme"
+          },
+          {
+            "type": {
+              "name": "Function"
+            },
+            "name": "handler"
+          }
+        ],
+        "str": "registerProtocol(scheme, handler)"
+      },
+      "description": "Register a custom protocol with `scheme` and `handler`.",
+      "detail": "When the browser sends a request with `scheme`, the `handler` will be\ncalled with `handler(url)`, and the `handler` must return an instance of\nclass that inherits from [`ProtocolJob`](./protocoljob.html).\n\nThe `handler` is guaranteed to be called in the main thread.\n",
+      "id": "registerprotocol-scheme-handler"
+    },
+    {
+      "signature": {
+        "name": "unregisterProtocol",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "scheme"
+          }
+        ],
+        "str": "unregisterProtocol(scheme)"
+      },
+      "description": "Unregister the custom protocol with `scheme`.",
+      "id": "unregisterprotocol-scheme"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "loadURL",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "url"
+          }
+        ],
+        "str": "loadURL(url)"
+      },
+      "description": "Load the URL.",
+      "id": "loadurl-url"
+    },
+    {
+      "signature": {
+        "name": "loadHTML",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "html",
+            "description": "The string to use as the contents of the webpage."
+          },
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "baseurl",
+            "description": "A URL used to resolve relative URLs within the document."
+          }
+        ],
+        "str": "loadHTML(html, baseurl)"
+      },
+      "description": "Set the webpage contents and base URL.",
+      "id": "loadhtml-html-baseurl"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "String"
+        },
+        "name": "getURL",
+        "parameters": [],
+        "str": "getURL()"
+      },
+      "description": "Return current URL.",
+      "id": "geturl"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "String"
+        },
+        "name": "getTitle",
+        "parameters": [],
+        "str": "getTitle()"
+      },
+      "description": "Return the title of document.",
+      "id": "gettitle"
+    },
+    {
+      "signature": {
+        "name": "setUserAgent",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "userAgent"
+          }
+        ],
+        "str": "setUserAgent(userAgent)"
+      },
+      "description": "Change browser's user agent.",
+      "detail": "On Windows, due to Internet Explorer's limitations, calling `SetUserAgent`\nwould change all web pages' user agents in current process.\n",
+      "id": "setuseragent-useragent"
+    },
+    {
+      "signature": {
+        "name": "executeJavaScript",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "code"
+          },
+          {
+            "type": {
+              "name": "Function"
+            },
+            "name": "callback"
+          }
+        ],
+        "str": "executeJavaScript(code, callback)"
+      },
+      "description": "Evaluate `code` in browser and get the evaluated result.",
+      "detail": "The `callback` will be called with `callback(success, result)`, the\n`result` argument is a generic value that created from the result of\n`code`.\n\nNote that due to limitations of system toolkits, the execution may fail if\nthe result of `code` can not be fully converted to JSON.\n",
+      "id": "executejavascript-code-callback"
+    },
+    {
+      "signature": {
+        "name": "goBack",
+        "parameters": [],
+        "str": "goBack()"
+      },
+      "description": "Navigate to the back item in the back-forward list.",
+      "id": "goback"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "canGoBack",
+        "parameters": [],
+        "str": "canGoBack()"
+      },
+      "description": "Return whether there is a back item in the back-forward list that can be\nnavigated to.\n",
+      "id": "cangoback"
+    },
+    {
+      "signature": {
+        "name": "goForward",
+        "parameters": [],
+        "str": "goForward()"
+      },
+      "description": "Navigate to the forward item in the back-forward list.",
+      "id": "goforward"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "canGoForward",
+        "parameters": [],
+        "str": "canGoForward()"
+      },
+      "description": "Return whether there is a forward item in the back-forward list that can\nbe navigated to.\n",
+      "id": "cangoforward"
+    },
+    {
+      "signature": {
+        "name": "reload",
+        "parameters": [],
+        "str": "reload()"
+      },
+      "description": "Reload current page.",
+      "id": "reload"
+    },
+    {
+      "signature": {
+        "name": "stop",
+        "parameters": [],
+        "str": "stop()"
+      },
+      "description": "Stop loading all resources on the current page.",
+      "id": "stop"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "isLoading",
+        "parameters": [],
+        "str": "isLoading()"
+      },
+      "description": "Return whether current page is loading content.",
+      "id": "isloading"
+    },
+    {
+      "signature": {
+        "name": "setBindingName",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "name"
+          }
+        ],
+        "str": "setBindingName(name)"
+      },
+      "description": "Set the `name` of object which would have the native bindings.",
+      "detail": "By default native bindings are added to the `window` object, by calling\nthis API, native bindings will be added to the `window[name]` object.\n",
+      "id": "setbindingname-name"
+    },
+    {
+      "signature": {
+        "name": "addBinding",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "name"
+          },
+          {
+            "type": {
+              "name": "Function"
+            },
+            "name": "func"
+          }
+        ],
+        "str": "addBinding(name, func)"
+      },
+      "description": "Add a native binding to web page with `name`.",
+      "detail": "The `func` will be called with automatically converted arguments.\n",
+      "id": "addbinding-name-func"
+    },
+    {
+      "signature": {
+        "name": "addRawBinding",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "name"
+          },
+          {
+            "type": {
+              "name": "Function"
+            },
+            "name": "func"
+          }
+        ],
+        "str": "addRawBinding(name, func)"
+      },
+      "description": "Add a raw handler to web page with `name`.",
+      "detail": "The `func` will be called with a list of arguments passed from JavaScript.\n",
+      "id": "addrawbinding-name-func"
+    },
+    {
+      "signature": {
+        "name": "removeBinding",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "name"
+          }
+        ],
+        "str": "removeBinding(name)"
+      },
+      "description": "Remove the native binding with `name`.",
+      "id": "removebinding-name"
+    }
+  ],
+  "events": [
+    {
+      "callback": {
+        "name": "onClose",
+        "parameters": [
+          {
+            "type": {
+              "name": "Browser",
+              "id": "browser"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "onClose(self)"
+      },
+      "description": "Emitted when the web page requests to close.",
+      "id": "onclose-self"
+    },
+    {
+      "callback": {
+        "name": "onUpdateCommand",
+        "parameters": [
+          {
+            "type": {
+              "name": "Browser",
+              "id": "browser"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "onUpdateCommand(self)"
+      },
+      "description": "Emitted when the back-forward list has changed.",
+      "id": "onupdatecommand-self"
+    },
+    {
+      "callback": {
+        "name": "onChangeLoading",
+        "parameters": [
+          {
+            "type": {
+              "name": "Browser",
+              "id": "browser"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "onChangeLoading(self)"
+      },
+      "description": "Emitted when the browser starts or stops loading content.",
+      "id": "onchangeloading-self"
+    },
+    {
+      "callback": {
+        "name": "onUpdateTitle",
+        "parameters": [
+          {
+            "type": {
+              "name": "Browser",
+              "id": "browser"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "title"
+          }
+        ],
+        "str": "onUpdateTitle(self, title)"
+      },
+      "description": "Emitted when document's title is changed.",
+      "id": "onupdatetitle-self-title"
+    },
+    {
+      "callback": {
+        "name": "onStartNavigation",
+        "parameters": [
+          {
+            "type": {
+              "name": "Browser",
+              "id": "browser"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "url"
+          }
+        ],
+        "str": "onStartNavigation(self, url)"
+      },
+      "description": "Emitted when the browser begins provisional navigation.",
+      "id": "onstartnavigation-self-url"
+    },
+    {
+      "callback": {
+        "name": "onCommitNavigation",
+        "parameters": [
+          {
+            "type": {
+              "name": "Browser",
+              "id": "browser"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "url"
+          }
+        ],
+        "str": "onCommitNavigation(self, url)"
+      },
+      "description": "Emitted when the browser begins to receive web content.",
+      "id": "oncommitnavigation-self-url"
+    },
+    {
+      "callback": {
+        "name": "onFinishNavigation",
+        "parameters": [
+          {
+            "type": {
+              "name": "Browser",
+              "id": "browser"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "url"
+          }
+        ],
+        "str": "onFinishNavigation(self, url)"
+      },
+      "description": "Emitted when the navigation is complete.",
+      "id": "onfinishnavigation-self-url"
+    },
+    {
+      "callback": {
+        "name": "onFailNavigation",
+        "parameters": [
+          {
+            "type": {
+              "name": "Browser",
+              "id": "browser"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "url"
+          },
+          {
+            "type": {
+              "name": "Integer"
+            },
+            "name": "code"
+          }
+        ],
+        "str": "onFailNavigation(self, url, code)"
+      },
+      "description": "Emitted when the navigation fails.",
+      "id": "onfailnavigation-self-url-code"
+    }
+  ],
+  "module": "gui",
+  "id": "browser"
+}

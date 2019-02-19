@@ -1,0 +1,91 @@
+{
+  "name": "Canvas",
+  "component": "gui",
+  "header": "nativeui/gfx/canvas.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "description": "Offscreen drawing.",
+  "constructors": [
+    {
+      "signature": {
+        "name": "Canvas",
+        "parameters": [
+          {
+            "type": {
+              "name": "const SizeF&",
+              "id": "sizef"
+            },
+            "name": "size"
+          },
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "scale_factor"
+          }
+        ],
+        "str": "Canvas(const SizeF& size, float scale_factor)"
+      },
+      "description": "Create a new canvas with specified size and scale factor.\n",
+      "id": "canvas-size-scalefactor"
+    },
+    {
+      "signature": {
+        "name": "Canvas",
+        "parameters": [
+          {
+            "type": {
+              "name": "const SizeF&",
+              "id": "sizef"
+            },
+            "name": "size"
+          }
+        ],
+        "str": "Canvas(const SizeF& size)"
+      },
+      "description": "Create a new canvas with `size` using default scale factor.\n\nThis is strongly discouraged for using, since it does not work well with\nmulti-monitor setup. Only use it when you do not care about per-monitor\nDPI.\n",
+      "id": "canvas-size"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "GetScaleFactor",
+        "parameters": [],
+        "str": "float GetScaleFactor() const"
+      },
+      "description": "Return the scale factor of the canvas.",
+      "id": "getscalefactor"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Painter*",
+          "id": "painter"
+        },
+        "name": "GetPainter",
+        "parameters": [],
+        "str": "Painter* GetPainter()"
+      },
+      "description": "Return the Painter that can be used to draw on the canvas.",
+      "id": "getpainter"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "SizeF",
+          "id": "sizef"
+        },
+        "name": "GetSize",
+        "parameters": [],
+        "str": "SizeF GetSize() const"
+      },
+      "description": "Return the DIP size of canvas.",
+      "id": "getsize"
+    }
+  ],
+  "id": "canvas"
+}

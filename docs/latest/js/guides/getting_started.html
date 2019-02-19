@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Getting started - Yue</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <link rel="stylesheet" href="../guide.css">
+</head>
+
+<body>
+  <div id="header">
+    <a class="logo" href="../index.html">Yue</a>
+    <div class="nav">
+      <a>
+        <span>
+          Langauge/语言:
+        </span>
+        <select id="i18n-list" i18n-page="api"></select>
+      </a>
+      <a href="../index.html" i18n="Docs"></a>
+      <a href="/" i18n="Versions"></a>
+      <a href="https://github.com/yue/yue">GitHub</a>
+    </div>
+  </div>
+  <div id="container">
+    <div class="markdown-body" id="content">
+      <h1 id="getting-started" i18n="Getting started"></h1>
+      <p i18n="Getting started.guide.text"></p>
+      <h2 id="installing" i18n="Gs.guide.installing"></h2>
+      <p i18n="Gs.guide.installing.text"></p>
+      <pre><code class="lang-bash">npm i gui
+</code></pre>
+      <p i18n="Gs.guide.installing.note"></p>
+      <p i18n="Gs.guide.installing.env"></p>
+      <h2 id="using-yue" i18n="Gs.guide.Using Yue"></h2>
+      <p i18n="Gs.guide.Using Yue.text"></p>
+      <h3 id="node-js">Node.js</h3>
+      <p i18n="Gs.guide.nodejs.text"></p>
+      <p i18n="Gs.guide.nodejs.order"></p>
+      <pre><code class="lang-js"><span class="hljs-keyword">const</span> gui = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gui'</span>)
+<span class="hljs-keyword">if</span> (!process.versions.yode) {
+  gui.MessageLoop.run()  <span class="hljs-comment">// block until gui.MessageLoop.quit() is called</span>
+  process.exit(<span class="hljs-number">0</span>)
+}
+</code></pre>
+      <p i18n="Gs.guide.nodejs.note1"></p>
+      <p i18n="Gs.guide.nodejs.note2"></p>
+      <h4 id="yode">Yode</h4>
+      <p>To solve the problem of incompatible event loop, you can use the
+        <a href="https://github.com/yue/yode">Yode</a> project as a replacement of Node.js. Yode
+        is a fork of Node.js that replaces libuv event loop with native GUI message
+        loops, so there would be no need to use the <code>MessageLoop.run()</code> hack.</p>
+      <p>Unlike Node.js which would quit the process when there is no work to do, the
+        processes of Yode would keep running forever, until you call the
+        <code>MessageLoop.quit()</code> API to quit current message loop.</p>
+      <p>After quitting the GUI message loop, the libuv event loop is still running, and
+        the process will exit when all pending Node.js requests have finished.</p>
+      <p>The code example above also showed how to make the script run under both Yode
+        and Node.js.</p>
+      <h4 id="why-other-gui-toolkit-bindings-do-not-work">Why other GUI toolkit bindings do not work</h4>
+      <p>Having read so far, you might have understood why people were not using Node.js
+        for native desktop apps. This was because the design of Node.js natually does
+        not allow integrating the GUI message loops of native toolkits.</p>
+      <p>The only exeptions here are GTK+ and other X11 based toolkits, because
+        internally they use file descriptor based GUI message loops and can be iterated
+        with libuv.</p>
+      <p>So even though it is not hard to write V8 bindings for Cocoa or Qt, it is
+        impossible to run their message loops together with the event loop of Node.js.
+        The most common trick of keep iterating events of GUI message loops, results in
+        high CPU usage. While the trick used by Yue&#39;s <code>MessageLoop</code> API to replace the
+        event loop, has various problems with the events queue of Node.js.</p>
+      <p>Luckily with Yode the problem with message loop has been solved cleanly, even if
+        you are not intersted in Yue, it is still possible to use Win32 and Cocoa
+        bindings in Yode.</p>
+      <h2 id="example-text-editor">Example: Text editor</h2>
+      <p>This example shows how to create windows and views in Yue, and how to manage
+        their layout.</p>
+      <p>Full code of this example can be found at
+        <a
+          href="https://github.com/yue/yue-app-samples/tree/master/editor">https://github.com/yue/yue-app-samples/tree/master/editor</a>.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>macOS</th>
+            <th>Linux</th>
+            <th>Windows</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="https://cdn.rawgit.com/yue/yue-app-samples/10cc39d9/editor/screenshots/mac_editor.png" alt="">
+            </td>
+            <td><img src="https://cdn.rawgit.com/yue/yue-app-samples/10cc39d9/editor/screenshots/linux_editor.png"
+                alt=""></td>
+            <td><img src="https://cdn.rawgit.com/yue/yue-app-samples/10cc39d9/editor/screenshots/win_editor.png" alt="">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 id="creating-a-window">Creating a window</h3>
+      <p>Each creatable type in Yue has a <code>create</code> class method can be used to create
+        instances of the type, constructors are not used because JavaScript does not
+        support function overloading while certain types can have multiple <code>createXXX</code>
+        class methods.</p>
+      <pre><code class="lang-js"><span class="hljs-keyword">const</span> win = gui.Window.create({})
+</code></pre>
+      <h3 id="menubar">MenuBar</h3>
+      <p>With <code>gui.MenuBar</code> and <code>gui.MenuItem</code> APIs you can create menu bars, their
+        <code>create</code> methods also accept object descriptors to make the APIs easier to use.</p>
+      <p>By adding a menu bar, you can bind keyboard shortcuts to actions, and for some
+        very common actions there are also stock items can be used.</p>
+      <p>Note that macOS differs from other platforms that it has one application menu
+        instead of window menu bars, so your code should be aware of this difference.</p>
+      <pre><code class="lang-js"><span class="hljs-keyword">const</span> menu = gui.MenuBar.create([
+  {
+    <span class="hljs-attr">label</span>: <span class="hljs-string">'File'</span>,
+    <span class="hljs-attr">submenu</span>: [
+      {
+        <span class="hljs-attr">label</span>: <span class="hljs-string">'Quit'</span>,
+        <span class="hljs-attr">accelerator</span>: <span class="hljs-string">'CmdOrCtrl+Q'</span>,
+        <span class="hljs-attr">onClick</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> gui.messageLoop.quit()
+      },
+    ],
+  },
+  {
+    <span class="hljs-attr">label</span>: <span class="hljs-string">'Edit'</span>,
+    <span class="hljs-attr">submenu</span>: [
+      { <span class="hljs-attr">role</span>: <span class="hljs-string">'copy'</span> },
+      { <span class="hljs-attr">role</span>: <span class="hljs-string">'cut'</span> },
+      { <span class="hljs-attr">role</span>: <span class="hljs-string">'paste'</span> },
+      { <span class="hljs-attr">role</span>: <span class="hljs-string">'select-all'</span> },
+      { <span class="hljs-attr">type</span>: <span class="hljs-string">'separator'</span> },
+      { <span class="hljs-attr">role</span>: <span class="hljs-string">'undo'</span> },
+      { <span class="hljs-attr">role</span>: <span class="hljs-string">'redo'</span> },
+    ],
+  },
+])
+
+<span class="hljs-keyword">if</span> (process.platform == <span class="hljs-string">'darwin'</span>)
+  gui.app.setApplicationMenu(menu)
+<span class="hljs-keyword">else</span>
+  win.setMenuBar(menu)
+</code></pre>
+      <h3 id="content-view">Content view</h3>
+      <p>Each window in Yue has one content view, which fills the client area of the
+        window.</p>
+      <pre><code class="lang-js"><span class="hljs-keyword">const</span> edit = gui.TextEdit.create()
+win.setContentView(edit)
+</code></pre>
+      <h3 id="container-and-layout">Container and layout</h3>
+      <p>The <code>Container</code> view can have multiple views and it can automatically layout
+        the child views according to the flexbox style properties assigned.</p>
+      <p>Following code creates a vertical sidebar on the left of the text edit view,
+        the sidebar stretches vertically and takes fixed width, while the text edit view
+        would fill all remaining space.</p>
+      <pre><code class="lang-js"><span class="hljs-comment">// The content view has its children arranged horizontally.</span>
+<span class="hljs-keyword">const</span> contentView = gui.Container.create()
+contentView.setStyle({<span class="hljs-attr">flexDirection</span>: <span class="hljs-string">'row'</span>})
+win.setContentView(contentView)
+
+<span class="hljs-comment">// The sidebar is a child of content view and has 5px paddings.</span>
+<span class="hljs-keyword">const</span> sidebar = gui.Container.create()
+sidebar.setStyle({<span class="hljs-attr">padding</span>: <span class="hljs-number">5</span>})
+contentView.addChildView(sidebar)
+
+<span class="hljs-comment">// Make the sidebar have a fixed width which is enough to show all the buttons.</span>
+sidebar.setStyle({<span class="hljs-attr">width</span>: sidebar.getPreferredSize().width})
+
+<span class="hljs-comment">// The text edit view would take all remaining spaces.</span>
+<span class="hljs-keyword">const</span> edit = gui.TextEdit.create()
+edit.setStyle({<span class="hljs-attr">flex</span>: <span class="hljs-number">1</span>})
+contentView.addChildView(edit)
+</code></pre>
+      <h3 id="vibrant-view">Vibrant view</h3>
+      <p>On macOS views can be semi-transparent to show contents under the window, our
+        example makes use of this by using the <code>Vibrant</code> view for sidebar.</p>
+      <pre><code class="lang-js"><span class="hljs-keyword">let</span> sidebar
+<span class="hljs-keyword">if</span> (process.platform == <span class="hljs-string">'darwin'</span>) {
+  sidebar = gui.Vibrant.create()
+  sidebar.setBlendingMode(<span class="hljs-string">'behind-window'</span>)
+  sidebar.setMaterial(<span class="hljs-string">'dark'</span>)
+} <span class="hljs-keyword">else</span> {
+  sidebar = gui.Container.create()
+}
+</code></pre>
+      <h3 id="buttons-and-hidpi-images">Buttons and HiDPI images</h3>
+      <p>Following code creates image buttons without title, the <code>@2x</code> suffix in the
+        filenames of images means they have a scale factor of 2, and the images would
+        show without blur in HiDPI environments.</p>
+      <pre><code class="lang-js"><span class="hljs-comment">// The buttons in the sidebar, they shows images instead of text.</span>
+<span class="hljs-keyword">const</span> open = gui.Button.create(<span class="hljs-string">''</span>)
+open.setImage(gui.Image.createFromPath(__dirname + <span class="hljs-string">'/eopen@2x.png'</span>))
+open.setStyle({<span class="hljs-attr">marginBottom</span>: <span class="hljs-number">5</span>})
+sidebar.addChildView(open)
+<span class="hljs-keyword">const</span> save = gui.Button.create(<span class="hljs-string">''</span>)
+save.setImage(gui.Image.createFromPath(__dirname + <span class="hljs-string">'/esave@2x.png'</span>))
+sidebar.addChildView(save)
+</code></pre>
+      <h3 id="dialogs">Dialogs</h3>
+      <p>With <code>FileOpenDialog</code> and <code>FileSaveDialog</code> APIs, you can show system dialogs to
+        get inputs from users.</p>
+      <pre><code class="lang-js">save.onClick = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-keyword">const</span> dialog = gui.FileSaveDialog.create()
+  dialog.setFolder(folder)
+  dialog.setFilename(filename)
+  <span class="hljs-keyword">if</span> (dialog.runForWindow(win)) {
+    fs.writeFileSync(<span class="hljs-built_in">String</span>(dialog.getResult()), edit.getText())
+  }
+}
+</code></pre>
+      <h3 id="showing-window">Showing window</h3>
+      <p>The events of types exist as properties of instances, to add a listener to an
+        event, you can call the <code>connect()</code> method of the event, or simply do an
+        assignment.</p>
+      <pre><code class="lang-js"><span class="hljs-comment">// Quit when window is closed.</span>
+win.onClose = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> gui.messageLoop.quit()
+<span class="hljs-comment">// The size of content view.</span>
+win.setContentSize({<span class="hljs-attr">width</span>: <span class="hljs-number">400</span>, <span class="hljs-attr">height</span>: <span class="hljs-number">400</span>})
+<span class="hljs-comment">// Put the window in the center of screen.</span>
+win.center()
+<span class="hljs-comment">// Show and activate the window.</span>
+win.activate()
+</code></pre>
+      <h2 id="example-float-heart">Example: Float heart</h2>
+      <p>This example shows how to use frameless window and how to draw things.</p>
+      <p>Full code of this example can be found at
+        <a
+          href="https://github.com/yue/yue-app-samples/tree/master/floating_heart">https://github.com/yue/yue-app-samples/tree/master/floating_heart</a>.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>macOS</th>
+            <th>Linux</th>
+            <th>Windows</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="https://cdn.rawgit.com/yue/yue-app-samples/196cfee8/floating_heart/screenshots/mac_heart.png"
+                width="154" height="162" /></td>
+            <td><img
+                src="https://cdn.rawgit.com/yue/yue-app-samples/196cfee8/floating_heart/screenshots/linux_heart.png"
+                width="203" height="168" /></td>
+            <td><img src="https://cdn.rawgit.com/yue/yue-app-samples/196cfee8/floating_heart/screenshots/win_heart.png"
+                width="146" height="166" /></td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 id="frameless-and-transparent-window">Frameless and transparent window</h3>
+      <p>By using the <code>frame</code> and <code>transparent</code> options, you can control whether a window
+        would have the native chrome, and whether the window is transparent.</p>
+      <pre><code class="lang-js"><span class="hljs-keyword">const</span> win = gui.Window.create({<span class="hljs-attr">frame</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">transparent</span>: <span class="hljs-literal">true</span>})
+win.setAlwaysOnTop(<span class="hljs-literal">true</span>)
+</code></pre>
+      <h3 id="dragging-window">Dragging window</h3>
+      <p><code>View</code>s in Yue can be made draggable, so dragging the view would also drag the
+        window. In this example we make the whole window draggable.</p>
+      <pre><code class="lang-js"><span class="hljs-keyword">const</span> contentview = gui.Container.create()
+contentview.setMouseDownCanMoveWindow(<span class="hljs-literal">true</span>)
+win.setContentView(contentview)
+</code></pre>
+      <h3 id="drawable-area">Drawable area</h3>
+      <p>While the <code>Container</code> view is mostly used for layout, you can also use it as
+        drawable area by using the <code>onDraw</code> event.</p>
+      <p>In the <code>onDraw</code> event an instance of <code>Painter</code> is passed, which can be used to
+        draw things directly on the view.</p>
+      <pre><code class="lang-js">contentview.onDraw = <span class="hljs-function">(<span class="hljs-params">self, painter</span>) =&gt;</span> {
+  <span class="hljs-comment">// Draw the shadow of heart.</span>
+  painter.setFillColor(<span class="hljs-string">'#3000'</span>)
+  drawHeart(painter)
+  <span class="hljs-comment">// Draw heart.</span>
+  painter.translate({<span class="hljs-attr">x</span>: <span class="hljs-number">-5</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">-5</span>})
+  painter.setFillColor(<span class="hljs-string">'#D46A6A'</span>)
+  drawHeart(painter)
+}
+</code></pre>
+      <h3 id="painter">Painter</h3>
+      <p>The <code>Painter</code> class represents native graphics context, it provides methods for
+        drawing. This example uses paths and bezier curves to draw a heart.</p>
+      <pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawHeart</span>(<span class="hljs-params">painter</span>) </span>{
+  painter.beginPath()
+  painter.moveTo({<span class="hljs-attr">x</span>: <span class="hljs-number">75</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">40</span>})
+  painter.bezierCurveTo({<span class="hljs-attr">x</span>: <span class="hljs-number">75</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">37</span>}, {<span class="hljs-attr">x</span>: <span class="hljs-number">70</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">25</span>}, {<span class="hljs-attr">x</span>: <span class="hljs-number">50</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">25</span>})
+  painter.bezierCurveTo({<span class="hljs-attr">x</span>: <span class="hljs-number">20</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">25</span>}, {<span class="hljs-attr">x</span>: <span class="hljs-number">20</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">62.5</span>}, {<span class="hljs-attr">x</span>: <span class="hljs-number">20</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">62.5</span>})
+  painter.bezierCurveTo({<span class="hljs-attr">x</span>: <span class="hljs-number">20</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">80</span>}, {<span class="hljs-attr">x</span>: <span class="hljs-number">40</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">102</span>}, {<span class="hljs-attr">x</span>: <span class="hljs-number">75</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">120</span>})
+  painter.bezierCurveTo({<span class="hljs-attr">x</span>: <span class="hljs-number">110</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">102</span>}, {<span class="hljs-attr">x</span>: <span class="hljs-number">130</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">80</span>}, {<span class="hljs-attr">x</span>: <span class="hljs-number">130</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">62.5</span>})
+  painter.bezierCurveTo({<span class="hljs-attr">x</span>: <span class="hljs-number">130</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">62.5</span>}, {<span class="hljs-attr">x</span>: <span class="hljs-number">130</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">25</span>}, {<span class="hljs-attr">x</span>: <span class="hljs-number">100</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">25</span>})
+  painter.bezierCurveTo({<span class="hljs-attr">x</span>: <span class="hljs-number">85</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">25</span>}, {<span class="hljs-attr">x</span>: <span class="hljs-number">75</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">37</span>}, {<span class="hljs-attr">x</span>: <span class="hljs-number">75</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">40</span>})
+  painter.fill()
+}
+</code></pre>
+      <h2 id="more">More</h2>
+      <ul>
+        <li><a href="app_packaging.html">App Packaging</a></li>
+      </ul>
+    </div>
+    <div class="markdown-body" id="sidebar"></div>
+  </div>
+  <div id="footer">
+    <p>Content of this page is in public domain.</p>
+  </div>
+  <script src="../i18n.js"></script>
+</body>
+
+</html>

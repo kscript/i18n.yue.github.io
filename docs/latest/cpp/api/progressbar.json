@@ -1,0 +1,92 @@
+{
+  "name": "ProgressBar",
+  "component": "gui",
+  "header": "nativeui/progress.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "inherit": {
+    "name": "View",
+    "id": "view"
+  },
+  "description": "Horizontal bar showing progress.",
+  "constructors": [
+    {
+      "signature": {
+        "name": "ProgressBar",
+        "parameters": [],
+        "str": "ProgressBar()"
+      },
+      "description": "Create a new `ProgressBar`.",
+      "id": "progressbar"
+    }
+  ],
+  "class_properties": [
+    {
+      "description": "The class name of this view.",
+      "id": "kclassname",
+      "type": {
+        "name": "const char*"
+      },
+      "name": "kClassName"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "SetValue",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "percent"
+          }
+        ],
+        "str": "void SetValue(float percent)"
+      },
+      "description": "Set the percent value between `0` and `100.0`.",
+      "id": "setvalue-percent"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "GetValue",
+        "parameters": [],
+        "str": "float GetValue() const"
+      },
+      "description": "Return the percent value between `0` and `100.0`.",
+      "id": "getvalue"
+    },
+    {
+      "signature": {
+        "name": "SetIndeterminate",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "indeterminate"
+          }
+        ],
+        "str": "void SetIndeterminate(bool indeterminate)"
+      },
+      "description": "Set whether the progress bar is indeterminate.",
+      "id": "setindeterminate-indeterminate"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsIndeterminate",
+        "parameters": [],
+        "str": "bool IsIndeterminate() const"
+      },
+      "description": "Return whether the progress bar is indeterminate.",
+      "id": "isindeterminate"
+    }
+  ],
+  "id": "progressbar"
+}

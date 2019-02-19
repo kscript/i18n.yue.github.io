@@ -1,0 +1,152 @@
+{
+  "name": "Font",
+  "component": "gui",
+  "header": "nativeui/gfx/font.h",
+  "type": "Class",
+  "namespace": "nu",
+  "description": "Native font.",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Font",
+          "id": "font"
+        },
+        "name": "default",
+        "parameters": [],
+        "str": "default()"
+      },
+      "description": "Return the default font used for displaying text.",
+      "id": "default"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Font",
+          "id": "font"
+        },
+        "name": "create",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "name"
+          },
+          {
+            "type": {
+              "name": "Number"
+            },
+            "name": "size"
+          },
+          {
+            "type": {
+              "name": "Font::Weight",
+              "id": "font_weight"
+            },
+            "name": "weight"
+          },
+          {
+            "type": {
+              "name": "Font::Style",
+              "id": "font_style"
+            },
+            "name": "style"
+          }
+        ],
+        "str": "create(name, size, weight, style)"
+      },
+      "description": "Create a Font implementation with the specified `name`, DIP `size`,\n`weight` and `style`.\n",
+      "id": "create-name-size-weight-style"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Font",
+          "id": "font"
+        },
+        "name": "derive",
+        "parameters": [
+          {
+            "type": {
+              "name": "Number"
+            },
+            "name": "sizeDelta"
+          },
+          {
+            "type": {
+              "name": "Font::Weight",
+              "id": "font_weight"
+            },
+            "name": "weight"
+          },
+          {
+            "type": {
+              "name": "Font::Style",
+              "id": "font_style"
+            },
+            "name": "style"
+          }
+        ],
+        "str": "derive(sizeDelta, weight, style)"
+      },
+      "description": "Returns a new Font derived from the existing font.",
+      "detail": "The `size_delta` is the size in DIP to add to the current font.",
+      "id": "derive-sizedelta-weight-style"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "String"
+        },
+        "name": "getName",
+        "parameters": [],
+        "str": "getName()"
+      },
+      "description": "Return font's family name.",
+      "id": "getname"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Number"
+        },
+        "name": "getSize",
+        "parameters": [],
+        "str": "getSize()"
+      },
+      "description": "Return font's DIP size.",
+      "id": "getsize"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Font::Weight",
+          "id": "font_weight"
+        },
+        "name": "getWeight",
+        "parameters": [],
+        "str": "getWeight()"
+      },
+      "description": "Return the font weight.",
+      "id": "getweight"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Font::Style",
+          "id": "font_style"
+        },
+        "name": "getStyle",
+        "parameters": [],
+        "str": "getStyle()"
+      },
+      "description": "Return the font style.",
+      "id": "getstyle"
+    }
+  ],
+  "module": "gui",
+  "id": "font"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Clipboard::Type",
+  "header": "nativeui/clipboard.h",
+  "type": "string",
+  "namespace": "nu",
+  "description": "Type of `Clipboard`.",
+  "detail": "\nThis type is a string with following possible values:\n* `\"copy-paste\"`\n* `\"drag\"`\n* `\"find\"`\n* `\"font\"`\n* `\"selection\"`\n\nThe `drag`, `find`, `font` clipboards are only available on macOS, and the\n`selection` clipboard is only available on Linux.\n",
+  "id": "clipboard_type"
+}

@@ -1,0 +1,80 @@
+{
+  "name": "Accelerator",
+  "header": "nativeui/accelerator.h",
+  "type": "class",
+  "namespace": "nu",
+  "description": "Keyboard shortcut.",
+  "detail": "Accelerators are represented by strings that contain multiple modifier and\nkey codes, combined by the `+` character.\n\nExamples:\n* `CmdOrCtrl+A`\n* `Shift+Backspace`\n\n## Platform-dependent modifiers\n\nOn Linux and Window, the `CommandOrControl` modifier is mapped to the\n<kbd>Control</kbd> key. On macOS it is mapped to the `Command` key. This is\nuseful when defining some common keyboard shortcuts.\n\n## Available modifiers\n\n* `Control`, `Ctrl`\n* `CommandOrControl`, `CmdOrCtrl`\n* `Alt`, `Option`\n* `Shift`\n* `Meta`, `Command`, `Super`\n\n## Available key codes\n\n* `0` to `9`\n* `A` to `Z`\n* `F1` to `F24`\n* Punctuations like `~`, `!`, `@`, `#`, `$`, etc.\n* `Enter`, `Return`\n* `Esc`, `Escape`\n* `Up`, `Down`, `Left`, `Right`\n* `Home`, `End`\n* `PageDown`, `PageUp`\n* `ArrowDown`, `ArrowLeft`, `ArrowRight`, `ArrowUp`\n* `AudioVolumeDown`, `AudioVolumeMute`, `AudioVolumeUp`\n* `BrowserBack`, `BrowserFavorites`, `BrowserForward`, `BrowserHome`,\n  `BrowserRefresh`, `BrowserSearch`, `BrowserStop`\n* `LaunchApplication1`, `LaunchApplication2`, `LaunchMail`,\n  `LaunchMediaplayer`\n* `MediaPlayPause`, `MediaStop`, `MediaTrackNext`, `MediaTrackPrevious`\n* `HangulMode`, `HanjaMode`, `KanaMode`, `KanjiMode`\n* `Add`\n* `Backspace`\n* `Cancel`\n* `CapsLock`\n* `Clear`\n* `Contextmenu`\n* `Decimal`\n* `Delete`\n* `Divide`\n* `Execute`\n* `Help`\n* `Insert`\n* `Multiply`\n* `Numlock`\n* `Pause`\n* `Plus`\n* `Print`\n* `Scrolllock`\n* `Select`\n* `Snapshot`\n* `Space`\n* `Subtract`\n* `Tab`\n",
+  "constructors": [
+    {
+      "signature": {
+        "name": "Accelerator",
+        "parameters": [],
+        "str": "Accelerator()"
+      },
+      "description": "Create an empty accelerator.",
+      "id": "accelerator"
+    },
+    {
+      "signature": {
+        "name": "Accelerator",
+        "parameters": [
+          {
+            "type": {
+              "name": "const KeyEvent&",
+              "id": "keyevent"
+            },
+            "name": "event"
+          }
+        ],
+        "str": "Accelerator(const KeyEvent& event)"
+      },
+      "description": "Create from the key event.",
+      "id": "accelerator-event"
+    },
+    {
+      "signature": {
+        "name": "Accelerator",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "description"
+          }
+        ],
+        "str": "Accelerator(const std::string& description)"
+      },
+      "description": "Create from string `description`.",
+      "id": "accelerator-description"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "KeyboardCode",
+          "id": "keyboardcode"
+        },
+        "name": "GetKeyCode",
+        "parameters": [],
+        "str": "KeyboardCode GetKeyCode() const"
+      },
+      "description": "Return the key code.",
+      "id": "getkeycode"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "int"
+        },
+        "name": "GetModifiers",
+        "parameters": [],
+        "str": "int GetModifiers() const"
+      },
+      "description": "Return the modifiers.",
+      "id": "getmodifiers"
+    }
+  ],
+  "id": "accelerator"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Clipboard::Data",
+  "header": "nativeui/clipboard.h",
+  "type": "table",
+  "namespace": "nu",
+  "description": "Clipboard data.",
+  "properties": [
+    {
+      "description": "The type of data.",
+      "id": "type",
+      "type": {
+        "name": "Clipboard::Data::Type",
+        "id": "clipboard_data_type"
+      },
+      "name": "type"
+    },
+    {
+      "description": "The value of data.",
+      "detail": "The type of `value` depends on the `type` of data:\n\n* for `text` and `html` types, the `value` is a string;\n* for `image` type, the `value` is [`Image`](image.html);\n* for `file-paths` type, the value is an array of string;\n* if the data is invalid, the `value` would be null.\n",
+      "id": "value",
+      "type": {
+        "name": "any"
+      },
+      "name": "value"
+    }
+  ],
+  "id": "clipboard_data"
+}

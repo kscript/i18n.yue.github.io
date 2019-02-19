@@ -1,0 +1,9 @@
+{
+  "name": "Toolbar::DisplayMode",
+  "header": "nativeui/toolbar.h",
+  "type": "string",
+  "namespace": "nu",
+  "description": "Possible display modes of `Toolbar`.",
+  "detail": "\nThis type is a string with following possible values:\n* `\"default\"`\n* `\"icon-and-label\"`\n* `\"icon\"`\n* `\"label\"`\n",
+  "id": "toolbar_displaymode"
+}

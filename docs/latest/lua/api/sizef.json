@@ -1,0 +1,27 @@
+{
+  "name": "SizeF",
+  "header": "nativeui/gfx/geometry/size_f.h",
+  "type": "table",
+  "namespace": "nu",
+  "description": "Size type.",
+  "properties": [
+    {
+      "description": "Size width.",
+      "id": "width",
+      "type": {
+        "name": "number"
+      },
+      "name": "width"
+    },
+    {
+      "description": "Size height.",
+      "id": "height",
+      "type": {
+        "name": "number"
+      },
+      "name": "height"
+    }
+  ],
+  "detail": "\nThis type is represented by a table with `width` and `height` properties.\n\n```lua\nwindow:setcontentsize{width=100, height=100}\n```\n\nWhen a function accepts `SizeF` as its last parameter, you can simply\nunpack `width` and `height`:\n\n```lua\nwindow:setcontentsize(100, 100)\n```\n",
+  "id": "sizef"
+}

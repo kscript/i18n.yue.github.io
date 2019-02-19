@@ -1,0 +1,286 @@
+{
+  "name": "MenuItem",
+  "component": "gui",
+  "header": "nativeui/menu_item.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "description": "Menu item.",
+  "constructors": [
+    {
+      "signature": {
+        "name": "MenuItem",
+        "parameters": [
+          {
+            "type": {
+              "name": "MenuItem::Type",
+              "id": "menuitem_type"
+            },
+            "name": "type"
+          }
+        ],
+        "str": "MenuItem(MenuItem::Type type)"
+      },
+      "description": "Create a menu item.",
+      "id": "menuitem-type"
+    },
+    {
+      "signature": {
+        "name": "MenuItem",
+        "parameters": [
+          {
+            "type": {
+              "name": "MenuItem::Role",
+              "id": "menuitem_role"
+            },
+            "name": "role"
+          }
+        ],
+        "str": "MenuItem(MenuItem::Role role)"
+      },
+      "description": "Create a menu item with specified `role`.",
+      "id": "menuitem-role"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "Click",
+        "parameters": [],
+        "str": "void Click()"
+      },
+      "description": "Emulate user clicking the menu item.",
+      "id": "click"
+    },
+    {
+      "signature": {
+        "name": "SetLabel",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "label"
+          }
+        ],
+        "str": "void SetLabel(const std::string& label)"
+      },
+      "description": "Change the item's label.",
+      "id": "setlabel-label"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::string"
+        },
+        "name": "GetLabel",
+        "parameters": [],
+        "str": "std::string GetLabel() const"
+      },
+      "description": "Return the item's label.",
+      "id": "getlabel"
+    },
+    {
+      "signature": {
+        "name": "SetSubmenu",
+        "parameters": [
+          {
+            "type": {
+              "name": "Menu*",
+              "id": "menu"
+            },
+            "name": "submenu"
+          }
+        ],
+        "str": "void SetSubmenu(Menu* submenu)"
+      },
+      "description": "Set the submenu attached to the item.\n\nThis method only works for `submenu` type menu items.\n",
+      "id": "setsubmenu-submenu"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Menu*",
+          "id": "menu"
+        },
+        "name": "GetSubmenu",
+        "parameters": [],
+        "str": "Menu* GetSubmenu() const"
+      },
+      "description": "Return the submenu attached to the item.",
+      "id": "getsubmenu"
+    },
+    {
+      "signature": {
+        "name": "SetChecked",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "checked"
+          }
+        ],
+        "str": "void SetChecked(bool checked)"
+      },
+      "description": "Set the `checked` state of the item.\n\nThis method only works for `radio` and `checkbox` type menu items.\n",
+      "id": "setchecked-checked"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsChecked",
+        "parameters": [],
+        "str": "bool IsChecked() const"
+      },
+      "description": "Return the `checked` state of the item.",
+      "id": "ischecked"
+    },
+    {
+      "signature": {
+        "name": "SetEnabled",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "enabled"
+          }
+        ],
+        "str": "void SetEnabled(bool enabled)"
+      },
+      "description": "Enable/disable the item.",
+      "id": "setenabled-enabled"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsEnabled",
+        "parameters": [],
+        "str": "bool IsEnabled() const"
+      },
+      "description": "Return whether the item is enabled.",
+      "id": "isenabled"
+    },
+    {
+      "signature": {
+        "name": "SetVisible",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "visible"
+          }
+        ],
+        "str": "void SetVisible(bool visible)"
+      },
+      "description": "Show/hide the item.",
+      "id": "setvisible-visible"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsVisible",
+        "parameters": [],
+        "str": "bool IsVisible() const"
+      },
+      "description": "Return whether the item is visible to users.",
+      "id": "isvisible"
+    },
+    {
+      "signature": {
+        "name": "SetAccelerator",
+        "parameters": [
+          {
+            "type": {
+              "name": "const Accelerator&",
+              "id": "accelerator"
+            },
+            "name": "accelerator"
+          }
+        ],
+        "str": "void SetAccelerator(const Accelerator& accelerator)"
+      },
+      "description": "Set the `accelerator` used to activate the item.",
+      "id": "setaccelerator-accelerator"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Accelerator",
+          "id": "accelerator"
+        },
+        "name": "GetAccelerator",
+        "parameters": [],
+        "str": "Accelerator GetAccelerator() const"
+      },
+      "description": "Return the accelerator of the item.",
+      "id": "getaccelerator"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "MenuItem::Type",
+          "id": "menuitem_type"
+        },
+        "name": "GetType",
+        "parameters": [],
+        "str": "MenuItem::Type GetType() const"
+      },
+      "description": "Return the type of the item.",
+      "id": "gettype"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "MenuBase*",
+          "id": "menubase"
+        },
+        "name": "GetMenu",
+        "parameters": [],
+        "str": "MenuBase* GetMenu() const"
+      },
+      "description": "Return the parent menu of the item.",
+      "id": "getmenu"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "NativeMenuItem",
+          "id": "nativemenuitem"
+        },
+        "name": "GetNative",
+        "parameters": [],
+        "str": "NativeMenuItem GetNative() const"
+      },
+      "description": "Return the native instance wrapped by the item.",
+      "id": "getnative"
+    }
+  ],
+  "events": [
+    {
+      "callback": {
+        "name": "on_click",
+        "parameters": [
+          {
+            "type": {
+              "name": "MenuItem*",
+              "id": "menuitem"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "void on_click(MenuItem* self)"
+      },
+      "description": "Emitted when item is clicked.",
+      "id": "onclick-self"
+    }
+  ],
+  "id": "menuitem"
+}

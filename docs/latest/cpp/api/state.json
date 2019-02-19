@@ -1,0 +1,39 @@
+{
+  "name": "State",
+  "lang": [
+    "cpp"
+  ],
+  "component": "gui",
+  "header": "nativeui/state.h",
+  "type": "class",
+  "namespace": "nu",
+  "description": "Global state.",
+  "detail": "This class manages the global state of Yue's GUI components, it should always\nbe initialized before you call any GUI related API, and released after all\ninstances of GUI components get destroyed.\n\nA common pattern is to create `State` on stack before entering message loop:\n\n```cpp\nint main() {\n  nu::State state;\n\n  // Enter message loop.\n  MessageLoop().Run();\n\n  return 0;\n}\n```\n\nIt is safe to leak it if you can't or don't want to clean up resources on\nexit.\n",
+  "constructors": [
+    {
+      "signature": {
+        "name": "State",
+        "parameters": [],
+        "str": "State()"
+      },
+      "description": "Create global state, each thread can only have one `State`.",
+      "id": "state"
+    }
+  ],
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "State*",
+          "id": "state"
+        },
+        "name": "GetCurrent",
+        "parameters": [],
+        "str": "State* GetCurrent()"
+      },
+      "description": "Return the global state of current thread.",
+      "id": "getcurrent"
+    }
+  ],
+  "id": "state"
+}

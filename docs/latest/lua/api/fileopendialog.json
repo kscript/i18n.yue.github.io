@@ -1,0 +1,43 @@
+{
+  "name": "FileOpenDialog",
+  "component": "gui",
+  "header": "nativeui/file_open_dialog.h",
+  "type": "Class",
+  "namespace": "nu",
+  "inherit": {
+    "name": "FileDialog",
+    "id": "filedialog"
+  },
+  "description": "Dialog used for opening files or folders.",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "FileOpenDialog",
+          "id": "fileopendialog"
+        },
+        "name": "create",
+        "parameters": [],
+        "str": "create()"
+      },
+      "description": "Create an open dialog.",
+      "id": "create"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "table"
+        },
+        "name": "getresults",
+        "parameters": [],
+        "str": "getresults()"
+      },
+      "description": "Return the chosen items in dialog.",
+      "id": "getresults"
+    }
+  ],
+  "module": "yue.gui",
+  "id": "fileopendialog"
+}

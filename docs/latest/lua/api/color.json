@@ -1,0 +1,89 @@
+{
+  "name": "Color",
+  "component": "gui",
+  "header": "nativeui/gfx/color.h",
+  "type": "integer",
+  "namespace": "nu",
+  "description": "32-bit Color with alpha channel.",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Color",
+          "id": "color"
+        },
+        "name": "rgb",
+        "parameters": [
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "r",
+            "description": "8-bit red channel value."
+          },
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "g",
+            "description": "8-bit green channel value."
+          },
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "b",
+            "description": "8-bit blue channel value."
+          }
+        ],
+        "str": "rgb(r, g, b)"
+      },
+      "description": "Create an opaque RGB color.",
+      "id": "rgb-r-g-b"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Color",
+          "id": "color"
+        },
+        "name": "argb",
+        "parameters": [
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "a"
+          },
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "r",
+            "description": "8-bit red channel value."
+          },
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "g",
+            "description": "8-bit green channel value."
+          },
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "b",
+            "description": "8-bit blue channel value."
+          }
+        ],
+        "str": "argb(a, r, g, b)"
+      },
+      "description": "Create an ARGB color.",
+      "id": "argb-a-r-g-b"
+    }
+  ],
+  "module": "yue.gui",
+  "detail": "\n`Color` is represented by a 32-bit ARGB integer.\n\nFor APIs that accept `Color`, you can also pass a hex string representing\nthe color, like `\"#A123\"`, `\"#123\"`, `\"#AA112233\"`, `\"#112233\"`.\n\n```lua\nlabel:setcolor('#F000')\n```\n",
+  "id": "color"
+}

@@ -1,0 +1,179 @@
+{
+  "name": "FileDialog",
+  "component": "gui",
+  "header": "nativeui/file_dialog.h",
+  "type": "Class",
+  "namespace": "nu",
+  "description": "Base class for file dialogs.",
+  "class_properties": [
+    {
+      "description": "Option that indicates the open dialog will open folders instead of files.\n",
+      "id": "optionpickfolders",
+      "type": {
+        "name": "integer"
+      },
+      "name": "optionpickfolders"
+    },
+    {
+      "description": "Option that indicates the open dialog can select multiple items.\n",
+      "id": "optionmultiselect",
+      "type": {
+        "name": "integer"
+      },
+      "name": "optionmultiselect"
+    },
+    {
+      "description": "Option that indicates hidden files will always show in the dialog.\n",
+      "id": "optionshowhidden",
+      "type": {
+        "name": "integer"
+      },
+      "name": "optionshowhidden"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "string"
+        },
+        "name": "getresult",
+        "parameters": [],
+        "str": "getresult()"
+      },
+      "description": "Return the chosen item in dialog.",
+      "id": "getresult"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "boolean"
+        },
+        "name": "run",
+        "parameters": [],
+        "str": "run()"
+      },
+      "description": "Show the dialog and wait for result, return `true` if user has chosen\nitem(s).\n",
+      "id": "run"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "boolean"
+        },
+        "name": "runforwindow",
+        "parameters": [
+          {
+            "type": {
+              "name": "Window",
+              "id": "window"
+            },
+            "name": "window"
+          }
+        ],
+        "str": "runforwindow(window)"
+      },
+      "description": "Show the dialog as a modal child of parent `window` and wait for result,\nreturn `true` if user has chosen item(s).\n",
+      "id": "runforwindow-window"
+    },
+    {
+      "signature": {
+        "name": "settitle",
+        "parameters": [
+          {
+            "type": {
+              "name": "string"
+            },
+            "name": "title"
+          }
+        ],
+        "str": "settitle(title)"
+      },
+      "description": "Set the title of the dialog.",
+      "id": "settitle-title"
+    },
+    {
+      "signature": {
+        "name": "setbuttonlabel",
+        "parameters": [
+          {
+            "type": {
+              "name": "string"
+            },
+            "name": "label"
+          }
+        ],
+        "str": "setbuttonlabel(label)"
+      },
+      "description": "Set the text of accept button.",
+      "id": "setbuttonlabel-label"
+    },
+    {
+      "signature": {
+        "name": "setfilename",
+        "parameters": [
+          {
+            "type": {
+              "name": "string"
+            },
+            "name": "filename"
+          }
+        ],
+        "str": "setfilename(filename)"
+      },
+      "description": "Set the filename to show in the dialog.",
+      "id": "setfilename-filename"
+    },
+    {
+      "signature": {
+        "name": "setfolder",
+        "parameters": [
+          {
+            "type": {
+              "name": "string"
+            },
+            "name": "folder"
+          }
+        ],
+        "str": "setfolder(folder)"
+      },
+      "description": "Set a `folder` that is always selected when the dialog is opened\n",
+      "id": "setfolder-folder"
+    },
+    {
+      "signature": {
+        "name": "setoptions",
+        "parameters": [
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "options"
+          }
+        ],
+        "str": "setoptions(options)"
+      },
+      "description": "A bit array of `options`.",
+      "id": "setoptions-options"
+    },
+    {
+      "signature": {
+        "name": "setfilters",
+        "parameters": [
+          {
+            "type": {
+              "name": "table"
+            },
+            "name": "filters",
+            "description": "An array of [FileDialog::Filter](filedialog_filter.html) objects.\n"
+          }
+        ],
+        "str": "setfilters(filters)"
+      },
+      "description": "Set the file types that the dialog can open or save.",
+      "id": "setfilters-filters"
+    }
+  ],
+  "module": "yue.gui",
+  "id": "filedialog"
+}

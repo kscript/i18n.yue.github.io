@@ -1,0 +1,102 @@
+{
+  "name": "Signal",
+  "header": "nativeui/signal.h",
+  "type": "template class<typename Sig>",
+  "namespace": "nu",
+  "description": "Connect and emit events.",
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "int"
+        },
+        "name": "Connect",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::function<Sig>&"
+            },
+            "name": "slot"
+          }
+        ],
+        "str": "int Connect(const std::function<Sig>& slot)"
+      },
+      "description": "Connect `slot` to the signal, and return an ID that can be used to\ndisconnect it.\n",
+      "id": "connect-slot"
+    },
+    {
+      "signature": {
+        "name": "Disconnect",
+        "parameters": [
+          {
+            "type": {
+              "name": "int"
+            },
+            "name": "id"
+          }
+        ],
+        "str": "void Disconnect(int id)"
+      },
+      "description": "Disconnect the `id` from the signal.",
+      "id": "disconnect-id"
+    },
+    {
+      "signature": {
+        "name": "DisconnectAll",
+        "parameters": [],
+        "str": "void DisconnectAll()"
+      },
+      "description": "Disconnect all slots in the signal.",
+      "id": "disconnectall"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsEmpty",
+        "parameters": [],
+        "str": "bool IsEmpty() const"
+      },
+      "description": "Return `true` if there is no slot connected to the signal.",
+      "id": "isempty"
+    },
+    {
+      "signature": {
+        "name": "Emit",
+        "parameters": [
+          {
+            "type": {
+              "name": "Args..."
+            },
+            "name": "args"
+          }
+        ],
+        "str": "void Emit(Args... args)"
+      },
+      "description": "Emit the event by passing `args...` to callbacks. The `Sig` must be in the\nform of `void(Args...)`.\n",
+      "id": "emit-args"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "Emit",
+        "parameters": [
+          {
+            "type": {
+              "name": "Args..."
+            },
+            "name": "args"
+          }
+        ],
+        "str": "bool Emit(Args... args)"
+      },
+      "description": "Emit the event by passing `args...` to callbacks. The `Sig` must be in the\nform of `bool(Args...)`.\n\nIf any of the callbacks returns `true`, `Emit` would return `true`\nimmediately without executing other callbacks.\n",
+      "id": "emit-args"
+    }
+  ],
+  "detail": "\nThe template class `Signal<Sig>` implements the signal/slot pattern, which\nis used as event type.\n\nIt can be used to register a list of callbacks, and then dispatch the event\nto all the callbacks.\n\n```cpp\n#include \"base/logging.h\"\n#include \"nativeui/nativeui.h\"\n\nvoid Main() {\n  nu::Signal<void(const std::string&)> event;\n  event.Connect([](const std::string&) {\n    LOG(ERROR) << \"OnEvent: \" << arg;\n  });\n\n  event.Emit(\"Emitted\");\n}\n```\n",
+  "id": "signal"
+}

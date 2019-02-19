@@ -1,0 +1,148 @@
+{
+  "name": "Font",
+  "component": "gui",
+  "header": "nativeui/gfx/font.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "description": "Native font.",
+  "constructors": [
+    {
+      "signature": {
+        "name": "Font",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "name"
+          },
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "size"
+          },
+          {
+            "type": {
+              "name": "Font::Weight",
+              "id": "font_weight"
+            },
+            "name": "weight"
+          },
+          {
+            "type": {
+              "name": "Font::Style",
+              "id": "font_style"
+            },
+            "name": "style"
+          }
+        ],
+        "str": "Font(const std::string& name, float size, Font::Weight weight, Font::Style style)"
+      },
+      "description": "Create a Font implementation with the specified `name`, DIP `size`,\n`weight` and `style`.\n",
+      "id": "font-name-size-weight-style"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Font*",
+          "id": "font"
+        },
+        "name": "Derive",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "size_delta"
+          },
+          {
+            "type": {
+              "name": "Font::Weight",
+              "id": "font_weight"
+            },
+            "name": "weight"
+          },
+          {
+            "type": {
+              "name": "Font::Style",
+              "id": "font_style"
+            },
+            "name": "style"
+          }
+        ],
+        "str": "Font* Derive(float size_delta, Font::Weight weight, Font::Style style) const"
+      },
+      "description": "Returns a new Font derived from the existing font.",
+      "detail": "The `size_delta` is the size in DIP to add to the current font.",
+      "id": "derive-sizedelta-weight-style"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::string"
+        },
+        "name": "GetName",
+        "parameters": [],
+        "str": "std::string GetName() const"
+      },
+      "description": "Return font's family name.",
+      "id": "getname"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "GetSize",
+        "parameters": [],
+        "str": "float GetSize() const"
+      },
+      "description": "Return font's DIP size.",
+      "id": "getsize"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Font::Weight",
+          "id": "font_weight"
+        },
+        "name": "GetWeight",
+        "parameters": [],
+        "str": "Font::Weight GetWeight() const"
+      },
+      "description": "Return the font weight.",
+      "id": "getweight"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Font::Style",
+          "id": "font_style"
+        },
+        "name": "GetStyle",
+        "parameters": [],
+        "str": "Font::Style GetStyle() const"
+      },
+      "description": "Return the font style.",
+      "id": "getstyle"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "NativeFont",
+          "id": "nativefont"
+        },
+        "name": "GetNative",
+        "parameters": [],
+        "str": "NativeFont GetNative() const"
+      },
+      "description": "Return the native instance wrapped by the class.",
+      "id": "getnative"
+    }
+  ],
+  "detail": "\nTo get the default font used for displaying text, you should use the\n[`App::GetDefaultFont()`](app.html#getdefaultfont) API.\n",
+  "id": "font"
+}

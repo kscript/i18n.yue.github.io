@@ -1,0 +1,9 @@
+{
+  "name": "FileDialog::Filter",
+  "header": "nativeui/file_dialog.h",
+  "type": "struct",
+  "namespace": "nu",
+  "description": "FileDialog filters.",
+  "detail": "\n`FileDialog::Filter` is a `tuple` type:\n\n```cpp\nstd::tuple<std::string, std::vector<std::string>>\n```\n\nThe first element is the filter's description, the second element is a\nvector of possible extensions.\n",
+  "id": "filedialog_filter"
+}

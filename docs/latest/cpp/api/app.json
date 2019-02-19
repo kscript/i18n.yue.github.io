@@ -1,0 +1,153 @@
+{
+  "name": "App",
+  "component": "gui",
+  "header": "nativeui/app.h",
+  "type": "class",
+  "namespace": "nu",
+  "description": "Application class.",
+  "detail": "This class represents current app and provides app wide APIs.\n\nThis class can not be created by user, you must create `State` first and\nthen receive an instance of `App` via `App::GetCurrent`.\n\n```cpp\nnu::State state;\nnu::App* app = nu::App::GetCurrent();\n```\n",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "App*",
+          "id": "app"
+        },
+        "name": "GetCurrent",
+        "parameters": [],
+        "str": "App* GetCurrent()"
+      },
+      "description": "Return current app.",
+      "id": "getcurrent"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "SetApplicationMenu",
+        "parameters": [
+          {
+            "type": {
+              "name": "MenuBar*",
+              "id": "menubar"
+            },
+            "name": "menu"
+          }
+        ],
+        "str": "void SetApplicationMenu(MenuBar* menu)"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Set the application menu bar.",
+      "id": "setapplicationmenu-menu"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "MenuBar*",
+          "id": "menubar"
+        },
+        "name": "GetApplicationMenu",
+        "parameters": [],
+        "str": "MenuBar* GetApplicationMenu() const"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Return the application menu bar.",
+      "id": "getapplicationmenu"
+    },
+    {
+      "signature": {
+        "name": "SetDockBadgeLabel",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "label"
+          }
+        ],
+        "str": "void SetDockBadgeLabel(const std::string& label)"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Set the `label` to be displayed in dock’s badging area.",
+      "id": "setdockbadgelabel-label"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::string"
+        },
+        "name": "GetDockBadgeLabel",
+        "parameters": [],
+        "str": "std::string GetDockBadgeLabel() const"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Get the label displayed in dock’s badging area.",
+      "id": "getdockbadgelabel"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Color",
+          "id": "color"
+        },
+        "name": "GetColor",
+        "parameters": [
+          {
+            "type": {
+              "name": "App::ThemeColor",
+              "id": "app_themecolor"
+            },
+            "name": "name"
+          }
+        ],
+        "str": "Color GetColor(App::ThemeColor name)"
+      },
+      "description": "Return color of a theme component.",
+      "id": "getcolor-name"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Font*",
+          "id": "font"
+        },
+        "name": "GetDefaultFont",
+        "parameters": [],
+        "str": "Font* GetDefaultFont()"
+      },
+      "description": "Return the default font for displaying text.",
+      "id": "getdefaultfont"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Clipboard*",
+          "id": "clipboard"
+        },
+        "name": "GetClipboard",
+        "parameters": [
+          {
+            "type": {
+              "name": "Clipboard::Type",
+              "id": "clipboard_type"
+            },
+            "name": "type"
+          }
+        ],
+        "str": "Clipboard* GetClipboard(Clipboard::Type type)"
+      },
+      "description": "Return the clipboard with `type`.",
+      "detail": "\nThe returned clipboard instance is managed by App, there is no need to\nmanually free it.\n\nThe `CopyPaste` clipboard will be return if The `type` argument is\nomitted.\n",
+      "id": "getclipboard-type"
+    }
+  ],
+  "id": "app"
+}

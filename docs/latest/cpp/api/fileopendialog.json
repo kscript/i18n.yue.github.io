@@ -1,0 +1,38 @@
+{
+  "name": "FileOpenDialog",
+  "component": "gui",
+  "header": "nativeui/file_open_dialog.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "inherit": {
+    "name": "FileDialog",
+    "id": "filedialog"
+  },
+  "description": "Dialog used for opening files or folders.",
+  "constructors": [
+    {
+      "signature": {
+        "name": "FileOpenDialog",
+        "parameters": [],
+        "str": "FileOpenDialog()"
+      },
+      "description": "Create an open dialog.",
+      "id": "fileopendialog"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::vector<base::FilePath>"
+        },
+        "name": "GetResults",
+        "parameters": [],
+        "str": "std::vector<base::FilePath> GetResults() const"
+      },
+      "description": "Return the chosen items in dialog.",
+      "id": "getresults"
+    }
+  ],
+  "id": "fileopendialog"
+}

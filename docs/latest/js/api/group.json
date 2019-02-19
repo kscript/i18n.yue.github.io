@@ -1,0 +1,96 @@
+{
+  "name": "Group",
+  "component": "gui",
+  "header": "nativeui/group.h",
+  "type": "Class",
+  "namespace": "nu",
+  "inherit": {
+    "name": "View",
+    "id": "view"
+  },
+  "description": "Display a container view with title and border.",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Group",
+          "id": "group"
+        },
+        "name": "create",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "title"
+          }
+        ],
+        "str": "create(title)"
+      },
+      "description": "Create a new `Group` with `title`.",
+      "id": "create-title"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "setContentView",
+        "parameters": [
+          {
+            "type": {
+              "name": "Container",
+              "id": "container"
+            },
+            "name": "view"
+          }
+        ],
+        "str": "setContentView(view)"
+      },
+      "description": "Set the content view.",
+      "id": "setcontentview-view"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Container",
+          "id": "container"
+        },
+        "name": "getContentView",
+        "parameters": [],
+        "str": "getContentView()"
+      },
+      "description": "Return the content view.",
+      "id": "getcontentview"
+    },
+    {
+      "signature": {
+        "name": "setTitle",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "title"
+          }
+        ],
+        "str": "setTitle(title)"
+      },
+      "description": "Set the title.",
+      "id": "settitle-title"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "String"
+        },
+        "name": "getTitle",
+        "parameters": [],
+        "str": "getTitle()"
+      },
+      "description": "Return the title.",
+      "id": "gettitle"
+    }
+  ],
+  "module": "gui",
+  "id": "group"
+}

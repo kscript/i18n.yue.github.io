@@ -1,0 +1,36 @@
+{
+  "name": "ProtocolFileJob",
+  "component": "gui",
+  "header": "nativeui/protocol_file_job.h",
+  "type": "Class",
+  "namespace": "nu",
+  "inherit": {
+    "name": "ProtocolJob",
+    "id": "protocoljob"
+  },
+  "description": "Read file to serve custom protocol requests.",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "ProtocolFileJob",
+          "id": "protocolfilejob"
+        },
+        "name": "create",
+        "parameters": [
+          {
+            "type": {
+              "name": "string"
+            },
+            "name": "path"
+          }
+        ],
+        "str": "create(path)"
+      },
+      "description": "Create a `ProtocolFileJob` with `path` to a local file.\n",
+      "id": "create-path"
+    }
+  ],
+  "module": "yue.gui",
+  "id": "protocolfilejob"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "ProtocolFileJob",
+  "component": "gui",
+  "header": "nativeui/protocol_file_job.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "inherit": {
+    "name": "ProtocolJob",
+    "id": "protocoljob"
+  },
+  "description": "Read file to serve custom protocol requests.",
+  "constructors": [
+    {
+      "signature": {
+        "name": "ProtocolFileJob",
+        "parameters": [
+          {
+            "type": {
+              "name": "const base::FilePath&",
+              "id": "base_filepath"
+            },
+            "name": "path"
+          }
+        ],
+        "str": "ProtocolFileJob(const base::FilePath& path)"
+      },
+      "description": "Create a `ProtocolFileJob` with `path` to a local file.\n",
+      "id": "protocolfilejob-path"
+    }
+  ],
+  "id": "protocolfilejob"
+}

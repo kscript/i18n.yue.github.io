@@ -1,0 +1,62 @@
+{
+  "name": "Toolbar::Item",
+  "header": "nativeui/toolbar.h",
+  "type": "struct",
+  "namespace": "nu",
+  "description": "Represent an item of `Toolbar`.",
+  "properties": [
+    {
+      "description": "Item's label.",
+      "id": "label",
+      "type": {
+        "name": "std::string"
+      },
+      "name": "label"
+    },
+    {
+      "description": "Item's minimum size.",
+      "id": "minsize",
+      "type": {
+        "name": "SizeF",
+        "id": "sizef"
+      },
+      "name": "min_size"
+    },
+    {
+      "description": "Item's maximum size.",
+      "id": "maxsize",
+      "type": {
+        "name": "SizeF",
+        "id": "sizef"
+      },
+      "name": "max_size"
+    },
+    {
+      "description": "Item's image.",
+      "id": "image",
+      "type": {
+        "name": "scoped_refptr<Image>",
+        "id": "image"
+      },
+      "name": "image"
+    },
+    {
+      "description": "Item's custom view.",
+      "id": "view",
+      "type": {
+        "name": "scoped_refptr<View>",
+        "id": "view"
+      },
+      "name": "view"
+    },
+    {
+      "description": "Function called when item is clicked.",
+      "id": "onclick",
+      "type": {
+        "name": "std::function<void(Toolbar*, const std::string&)>"
+      },
+      "name": "on_click"
+    }
+  ],
+  "id": "toolbar_item"
+}

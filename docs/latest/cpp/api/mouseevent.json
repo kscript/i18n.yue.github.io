@@ -1,0 +1,40 @@
+{
+  "name": "MouseEvent",
+  "inherit": {
+    "name": "Event",
+    "id": "event"
+  },
+  "header": "nativeui/events/event.h",
+  "type": "struct",
+  "namespace": "nu",
+  "description": "Mouse event.",
+  "properties": [
+    {
+      "description": "The mouse button being pressed, `1` is for left button, `2` is for right\nbutton, `3` is for middle button.\n",
+      "id": "button",
+      "type": {
+        "name": "int"
+      },
+      "name": "button"
+    },
+    {
+      "description": "Relative position inside the view where the event happened.",
+      "id": "positioninview",
+      "type": {
+        "name": "PointF",
+        "id": "pointf"
+      },
+      "name": "position_in_view"
+    },
+    {
+      "description": "Relative position inside the window.",
+      "id": "positioninwindow",
+      "type": {
+        "name": "PointF",
+        "id": "pointf"
+      },
+      "name": "position_in_window"
+    }
+  ],
+  "id": "mouseevent"
+}

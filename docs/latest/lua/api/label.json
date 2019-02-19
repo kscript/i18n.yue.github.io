@@ -1,0 +1,100 @@
+{
+  "name": "Label",
+  "component": "gui",
+  "header": "nativeui/label.h",
+  "type": "Class",
+  "namespace": "nu",
+  "inherit": {
+    "name": "View",
+    "id": "view"
+  },
+  "description": "Display text.",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Label",
+          "id": "label"
+        },
+        "name": "create",
+        "parameters": [
+          {
+            "type": {
+              "name": "string"
+            },
+            "name": "text"
+          }
+        ],
+        "str": "create(text)"
+      },
+      "description": "Create a new `Label` with `text`.",
+      "id": "create-text"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "settext",
+        "parameters": [
+          {
+            "type": {
+              "name": "string"
+            },
+            "name": "text"
+          }
+        ],
+        "str": "settext(text)"
+      },
+      "description": "Set the text to display.",
+      "id": "settext-text"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "string"
+        },
+        "name": "gettext",
+        "parameters": [],
+        "str": "gettext()"
+      },
+      "description": "Return the text displayed.",
+      "id": "gettext"
+    },
+    {
+      "signature": {
+        "name": "setalign",
+        "parameters": [
+          {
+            "type": {
+              "name": "TextAlign",
+              "id": "textalign"
+            },
+            "name": "align"
+          }
+        ],
+        "str": "setalign(align)"
+      },
+      "description": "Set horizontal text alignment.",
+      "id": "setalign-align"
+    },
+    {
+      "signature": {
+        "name": "setvalign",
+        "parameters": [
+          {
+            "type": {
+              "name": "TextAlign",
+              "id": "textalign"
+            },
+            "name": "align"
+          }
+        ],
+        "str": "setvalign(align)"
+      },
+      "description": "Set vertical text alignment.",
+      "id": "setvalign-align"
+    }
+  ],
+  "module": "yue.gui",
+  "id": "label"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Entry::Type",
+  "header": "nativeui/entry.h",
+  "type": "String",
+  "namespace": "nu",
+  "description": "Represent possible `Entry` types.",
+  "detail": "\nThis type is a string with following possible values:\n* `\"normal\"`\n* `\"password\"`\n",
+  "id": "entry_type"
+}

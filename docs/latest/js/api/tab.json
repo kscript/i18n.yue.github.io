@@ -1,0 +1,164 @@
+{
+  "name": "Tab",
+  "component": "gui",
+  "header": "nativeui/tab.h",
+  "type": "Class",
+  "namespace": "nu",
+  "inherit": {
+    "name": "View",
+    "id": "view"
+  },
+  "description": "Multipage view with tabs.",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Tab",
+          "id": "tab"
+        },
+        "name": "create",
+        "parameters": [],
+        "str": "create()"
+      },
+      "description": "Create a new `Tab` view.",
+      "id": "create"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "addPage",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "title"
+          },
+          {
+            "type": {
+              "name": "View",
+              "id": "view"
+            },
+            "name": "view"
+          }
+        ],
+        "str": "addPage(title, view)"
+      },
+      "description": "Add `view` as a new page with `title`.",
+      "id": "addpage-title-view"
+    },
+    {
+      "signature": {
+        "name": "removePage",
+        "parameters": [
+          {
+            "type": {
+              "name": "View",
+              "id": "view"
+            },
+            "name": "view"
+          }
+        ],
+        "str": "removePage(view)"
+      },
+      "description": "Remove the page that shows `view`.",
+      "id": "removepage-view"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Integer"
+        },
+        "name": "pageCount",
+        "parameters": [],
+        "str": "pageCount()"
+      },
+      "description": "Return the number of pages.",
+      "id": "pagecount"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "View",
+          "id": "view"
+        },
+        "name": "pageAt",
+        "parameters": [
+          {
+            "type": {
+              "name": "Integer"
+            },
+            "name": "index"
+          }
+        ],
+        "str": "pageAt(index)"
+      },
+      "description": "Return the view of page at `index`.",
+      "id": "pageat-index"
+    },
+    {
+      "signature": {
+        "name": "selectPageAt",
+        "parameters": [
+          {
+            "type": {
+              "name": "Integer"
+            },
+            "name": "index"
+          }
+        ],
+        "str": "selectPageAt(index)"
+      },
+      "description": "Select the page at `index`.",
+      "id": "selectpageat-index"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Integer"
+        },
+        "name": "getSelectedPageIndex",
+        "parameters": [],
+        "str": "getSelectedPageIndex()"
+      },
+      "description": "Return the index of selected page.",
+      "id": "getselectedpageindex"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "View",
+          "id": "view"
+        },
+        "name": "getSelectedPage",
+        "parameters": [],
+        "str": "getSelectedPage()"
+      },
+      "description": "Return the view of selected page.",
+      "id": "getselectedpage"
+    }
+  ],
+  "events": [
+    {
+      "callback": {
+        "name": "onSelectedPageChange",
+        "parameters": [
+          {
+            "type": {
+              "name": "Tab",
+              "id": "tab"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "onSelectedPageChange(self)"
+      },
+      "description": "Emitted when user has changed the selected page.",
+      "detail": "Programmatically changing the selected page will also emit the event.\n",
+      "id": "onselectedpagechange-self"
+    }
+  ],
+  "module": "gui",
+  "id": "tab"
+}

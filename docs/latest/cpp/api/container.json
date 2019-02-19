@@ -1,0 +1,212 @@
+{
+  "name": "Container",
+  "component": "gui",
+  "header": "nativeui/container.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "inherit": {
+    "name": "View",
+    "id": "view"
+  },
+  "description": "Drawable view with child views.",
+  "detail": "The `Container` view is mainly used for two purposes:\n* Show custom drawn content;\n* Display a collection of child views.\n",
+  "constructors": [
+    {
+      "signature": {
+        "name": "Container",
+        "parameters": [],
+        "str": "Container()"
+      },
+      "description": "Create a new container view.",
+      "id": "container"
+    }
+  ],
+  "class_properties": [
+    {
+      "description": "The class name of this view.",
+      "id": "kclassname",
+      "type": {
+        "name": "const char*"
+      },
+      "name": "kClassName"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "SizeF",
+          "id": "sizef"
+        },
+        "name": "GetPreferredSize",
+        "parameters": [],
+        "str": "SizeF GetPreferredSize() const"
+      },
+      "description": "Get the minimum size to show all children of the view.\n\nNote that if the view is using a `flex-wrap: wrap` style, this method\nmight return a extremely wide/high size since it does not know the best\nwidth/height to show the children.\n",
+      "id": "getpreferredsize"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "GetPreferredHeightForWidth",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "width"
+          }
+        ],
+        "str": "float GetPreferredHeightForWidth(float width) const"
+      },
+      "description": "Return the minimum height to show all child of the view for the `width`.\n",
+      "id": "getpreferredheightforwidth-width"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "GetPreferredWidthForHeight",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "height"
+          }
+        ],
+        "str": "float GetPreferredWidthForHeight(float height) const"
+      },
+      "description": "Return the minimum width to show all child of the view for the `height`.\n",
+      "id": "getpreferredwidthforheight-height"
+    },
+    {
+      "signature": {
+        "name": "AddChildView",
+        "parameters": [
+          {
+            "type": {
+              "name": "View*",
+              "id": "view"
+            },
+            "name": "view"
+          }
+        ],
+        "str": "void AddChildView(View* view)"
+      },
+      "description": "Append a child `view` to the container.\n\nThis method will silently fail if the `view` already has a parent.\n",
+      "id": "addchildview-view"
+    },
+    {
+      "signature": {
+        "name": "AddChildViewAt",
+        "parameters": [
+          {
+            "type": {
+              "name": "View*",
+              "id": "view"
+            },
+            "name": "view"
+          },
+          {
+            "type": {
+              "name": "int"
+            },
+            "name": "index"
+          }
+        ],
+        "str": "void AddChildViewAt(View* view, int index)"
+      },
+      "description": "Add a child `view` to the container at `index`.\n\nThis method will silently fail if the `view` already has a parent.\n",
+      "id": "addchildviewat-view-index"
+    },
+    {
+      "signature": {
+        "name": "RemoveChildView",
+        "parameters": [
+          {
+            "type": {
+              "name": "View*",
+              "id": "view"
+            },
+            "name": "view"
+          }
+        ],
+        "str": "void RemoveChildView(View* view)"
+      },
+      "description": "Remove a child `view` from this container.\n\nThis method will silently fail if the `view` is not a child of the\ncontainer.\n",
+      "id": "removechildview-view"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "int"
+        },
+        "name": "ChildCount",
+        "parameters": [],
+        "str": "int ChildCount() const"
+      },
+      "description": "Return the count of children in the container.",
+      "id": "childcount"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "View*",
+          "id": "view"
+        },
+        "name": "ChildAt",
+        "parameters": [
+          {
+            "type": {
+              "name": "int"
+            },
+            "name": "index"
+          }
+        ],
+        "str": "View* ChildAt(int index) const"
+      },
+      "description": "Return the child `view` at `index`.\n\nThis method will silently fail if the `index` is out of range.\n",
+      "id": "childat-index"
+    }
+  ],
+  "events": [
+    {
+      "callback": {
+        "name": "on_draw",
+        "parameters": [
+          {
+            "type": {
+              "name": "Container*",
+              "id": "container"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "Painter*",
+              "id": "painter"
+            },
+            "name": "painter",
+            "description": "The drawing context of the view."
+          },
+          {
+            "type": {
+              "name": "const RectF&",
+              "id": "rectf"
+            },
+            "name": "dirty",
+            "description": "The area in the view to draw on."
+          }
+        ],
+        "str": "void on_draw(Container* self, Painter* painter, const RectF& dirty)"
+      },
+      "description": "Emitted when button the operating system or application requests to draw\na portion of the view.\n",
+      "id": "ondraw-self-painter-dirty"
+    }
+  ],
+  "id": "container"
+}

@@ -1,0 +1,19 @@
+doctype html
+head
+  title Yue
+  style
+    | a{margin-right: 6px}
+body
+  h1 Yue
+  p A library for creating native cross-platform GUI apps.
+  h2 Links
+  a(href="https://github.com/yue/yue") Repo
+  a(href="https://github.com/yue/yue/releases") Releases
+  a(href="https://github.com/yue/yue-sample-apps") Sample Apps
+  h2 Latest Docs (#{latest})
+  a(href=`docs/latest/cpp/`) C++
+  a(href=`docs/latest/lua/`) Lua
+  a(href=`docs/latest/js/`) JavaScript
+  h2 Versions
+  each ver in versions
+    a(href=`docs/${ver}/cpp/`) #{ver}

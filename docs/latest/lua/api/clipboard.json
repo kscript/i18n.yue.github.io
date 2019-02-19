@@ -1,0 +1,109 @@
+{
+  "name": "Clipboard",
+  "component": "gui",
+  "header": "nativeui/clipboard.h",
+  "type": "table",
+  "namespace": "nu",
+  "description": "Native clipboard.",
+  "detail": "The `Clipboard` class can not be created by user, its instance can only be\nrecevied by using [`App.GetClipboard`](app.html#getclipboard-type).\n\n```cpp\n// Get the default copy-paste clipboard.\nnu::Clipboard* clipboard = nu::App::GetCurrent()->GetClipboard(nu::Clipboard::Type::CopyPaste);\n\n// Changing the content of clipboard with multiple formats of data.\nstd::vector<nu::Clipboard::Data> objects;\n// Add text.\nobjects.emplace_back(nu::Clipboard::Text, \"some text\");\n// Add HTML.\nobjects.emplace_back(nu::Clipboard::HTML, \"<strong>some text</strong>\");\n// Add Image.\nobjects.emplace_back(new nu::Image(\"...\"));\n// Add file paths.\nobjects.emplace_back({\n  base::FilePath(FILE_PATH_LITERAL(\"/some/path\")),\n});\n// Change data.\nclipboard->SetData(std::move(objects));\n\n// Read data.\nData data = clipboard->GetData(nu::Clipboard::Data::Type::Text);\nif (data.type() == nu::Clipboard::Data::Type::Text)\n  LOG(INFO) << data.str();\n```\n\n```lua\n-- Get the default copy-paste clipboard.\nlocal clipboard = gui.app:getclipboard('copy-paste')\n\n-- Changing the content of clipboard with multiple formats of data.\nclipboard:setdata{\n  {type='text', value='some text'},\n  {type='html', value='<strong>some text</strong>'},\n  {type='image', value=gui.Image.createfrompath('...')},\n  {type='file-paths', value={'/some/path'}},\n}\n\n-- Read data.\nlocal data = clipboard:getdata('text')\nif data.type == 'text' then\n  print(data.value)\nend\n```\n\n```js\n// Get the default copy-paste clipboard.\nconst clipboard = gui.app.getClipboard('copy-paste')\n\n// Changing the content of clipboard with multiple formats of data.\nclipboard.setData([\n  {type: 'text', value: 'some text'},\n  {type: 'html', value: '<strong>some text</strong>'},\n  {type: 'image', value: gui.Image.createFromPath('...')},\n  {type: 'file-paths', value: ['/some/path']},\n])\n\n// Read data.\nconst data = clipboard.getData('text')\nif (data.type == 'text')\n  console.log(data.value)\n```\n",
+  "methods": [
+    {
+      "signature": {
+        "name": "clear",
+        "parameters": [],
+        "str": "clear()"
+      },
+      "description": "Clear the clipboard.",
+      "id": "clear"
+    },
+    {
+      "signature": {
+        "name": "settext",
+        "parameters": [
+          {
+            "type": {
+              "name": "string"
+            },
+            "name": "text"
+          }
+        ],
+        "str": "settext(text)"
+      },
+      "description": "Set `text` as clipboard's content.",
+      "id": "settext-text"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "string"
+        },
+        "name": "gettext",
+        "parameters": [],
+        "str": "gettext()"
+      },
+      "description": "Return the content of clipboard as text.",
+      "id": "gettext"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "boolean"
+        },
+        "name": "isdataavailable",
+        "parameters": [
+          {
+            "type": {
+              "name": "Clipboard::Data::Type",
+              "id": "clipboard_data_type"
+            },
+            "name": "type"
+          }
+        ],
+        "str": "isdataavailable(type)"
+      },
+      "description": "Return whether the data of `type` is available.",
+      "id": "isdataavailable-type"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Clipboard::Data",
+          "id": "clipboard_data"
+        },
+        "name": "getdata",
+        "parameters": [
+          {
+            "type": {
+              "name": "Clipboard::Data::Type",
+              "id": "clipboard_data_type"
+            },
+            "name": "type"
+          }
+        ],
+        "str": "getdata(type)"
+      },
+      "description": "Get the data of `type` from clipboard.",
+      "detail": "You should always check the type of returned data before using it.",
+      "id": "getdata-type"
+    },
+    {
+      "signature": {
+        "name": "setdata",
+        "parameters": [
+          {
+            "type": {
+              "name": "table"
+            },
+            "name": "objects",
+            "description": "An array of [`Clipboard::Data`](clipboard_data.html)."
+          }
+        ],
+        "str": "setdata(objects)"
+      },
+      "description": "Set clipboard's content.",
+      "id": "setdata-objects"
+    }
+  ],
+  "module": "yue.gui",
+  "id": "clipboard"
+}

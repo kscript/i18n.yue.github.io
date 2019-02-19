@@ -1,0 +1,11 @@
+{
+  "name": "ProtocolJob",
+  "component": "gui",
+  "header": "nativeui/protocol_job.h",
+  "type": "Class",
+  "namespace": "nu",
+  "description": "Response to custom protocol requests.",
+  "detail": "This class can not be used to create instances, you must use its sub-classes\ninstead.\n",
+  "module": "yue.gui",
+  "id": "protocoljob"
+}

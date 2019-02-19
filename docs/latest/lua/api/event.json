@@ -1,0 +1,119 @@
+{
+  "name": "Event",
+  "header": "nativeui/events/event.h",
+  "type": "table",
+  "namespace": "nu",
+  "description": "Generic input event type.",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "boolean"
+        },
+        "name": "isshiftpressed",
+        "parameters": [],
+        "str": "isshiftpressed()"
+      },
+      "description": "Return whether <kbd>Shift</kbd> key is pressed.",
+      "id": "isshiftpressed"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "boolean"
+        },
+        "name": "iscontrolpressed",
+        "parameters": [],
+        "str": "iscontrolpressed()"
+      },
+      "description": "Return whether <kbd>Control</kbd> key is pressed.",
+      "id": "iscontrolpressed"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "boolean"
+        },
+        "name": "isaltpressed",
+        "parameters": [],
+        "str": "isaltpressed()"
+      },
+      "description": "Return whether <kbd>Alt</kbd> key is pressed.",
+      "id": "isaltpressed"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "boolean"
+        },
+        "name": "ismetapressed",
+        "parameters": [],
+        "str": "ismetapressed()"
+      },
+      "description": "Return whether <kbd>Win</kbd> or <kbd>Command</kbd> key is pressed.\n",
+      "id": "ismetapressed"
+    }
+  ],
+  "class_properties": [
+    {
+      "description": "Modifier for <kbd>Shift</kbd> key.",
+      "id": "maskshift",
+      "type": {
+        "name": "integer"
+      },
+      "name": "maskshift"
+    },
+    {
+      "description": "Modifier for <kbd>Control</kbd> key.",
+      "id": "maskcontrl",
+      "type": {
+        "name": "integer"
+      },
+      "name": "maskcontrl"
+    },
+    {
+      "description": "Modifier for <kbd>Alt</kbd> key.",
+      "id": "maskalt",
+      "type": {
+        "name": "integer"
+      },
+      "name": "maskalt"
+    },
+    {
+      "description": "Modifier for <kbd>Win</kbd> or <kbd>Command</kbd> key.",
+      "id": "maskmeta",
+      "type": {
+        "name": "integer"
+      },
+      "name": "maskmeta"
+    }
+  ],
+  "properties": [
+    {
+      "description": "The type of the event.",
+      "id": "type",
+      "type": {
+        "name": "EventType",
+        "id": "eventtype"
+      },
+      "name": "type"
+    },
+    {
+      "description": "A bit array of keyboard modifiers of the event.",
+      "id": "modifiers",
+      "type": {
+        "name": "integer"
+      },
+      "name": "modifiers"
+    },
+    {
+      "description": "Time when event was created, starts from when machine was booted.\n",
+      "id": "timestamp",
+      "type": {
+        "name": "integer"
+      },
+      "name": "timestamp"
+    }
+  ],
+  "id": "event"
+}

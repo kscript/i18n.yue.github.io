@@ -1,0 +1,100 @@
+{
+  "name": "Vibrant",
+  "platform": [
+    "macOS"
+  ],
+  "component": "gui",
+  "header": "nativeui/vibrant.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "inherit": {
+    "name": "Container",
+    "id": "container"
+  },
+  "description": "Translucency view.",
+  "detail": "This view is only implemented for macOS by wrapping\n[`NSVisualEffectView`](https://developer.apple.com/documentation/appkit/nsvisualeffectview).\n\nIt is not possible to draw on this view, to display content on it you have to\nadd the content as child view.\n",
+  "constructors": [
+    {
+      "signature": {
+        "name": "Vibrant",
+        "parameters": [],
+        "str": "Vibrant()"
+      },
+      "description": "Create a new `Vibrant` view.",
+      "id": "vibrant"
+    }
+  ],
+  "class_properties": [
+    {
+      "description": "The class name of this view.",
+      "id": "kclassname",
+      "type": {
+        "name": "const char*"
+      },
+      "name": "kClassName"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "SetMaterial",
+        "parameters": [
+          {
+            "type": {
+              "name": "Vibrant::Material",
+              "id": "vibrant_material"
+            },
+            "name": "material"
+          }
+        ],
+        "str": "void SetMaterial(Vibrant::Material material)"
+      },
+      "description": "Set the material for the view.",
+      "id": "setmaterial-material"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Vibrant::Material",
+          "id": "vibrant_material"
+        },
+        "name": "GetMaterial",
+        "parameters": [],
+        "str": "Vibrant::Material GetMaterial() const"
+      },
+      "description": "Get the material for the view.",
+      "id": "getmaterial"
+    },
+    {
+      "signature": {
+        "name": "SetBlendingMode",
+        "parameters": [
+          {
+            "type": {
+              "name": "Vibrant::BlendingMode",
+              "id": "vibrant_blendingmode"
+            },
+            "name": "mode"
+          }
+        ],
+        "str": "void SetBlendingMode(Vibrant::BlendingMode mode)"
+      },
+      "description": "Set the blending mode for the view.",
+      "id": "setblendingmode-mode"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Vibrant::BlendingMode",
+          "id": "vibrant_blendingmode"
+        },
+        "name": "GetBlendingMode",
+        "parameters": [],
+        "str": "Vibrant::BlendingMode GetBlendingMode() const"
+      },
+      "description": "Get the blending mode for the view.",
+      "id": "getblendingmode"
+    }
+  ],
+  "id": "vibrant"
+}

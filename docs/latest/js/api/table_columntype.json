@@ -1,0 +1,9 @@
+{
+  "name": "Table::ColumnType",
+  "header": "nativeui/table.h",
+  "type": "String",
+  "namespace": "nu",
+  "description": "Type of `Table`'s column.",
+  "detail": "\nThis type is a string with following possible values:\n* `\"text\"`\n* `\"edit\"`\n* `\"custom\"`\n\nThe `text` and `edit` column types can only render String type of data, the\n`custom` supports arbitrary type data (except for native objects like `Image`)\nbut a drawing function has to be provided.\n\nThe `text` column type renders readonly text. The `edit` column type is like\n`Text` but allows user to edit the text.\n",
+  "id": "table_columntype"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "FileSaveDialog",
+  "component": "gui",
+  "header": "nativeui/file_save_dialog.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "inherit": {
+    "name": "FileDialog",
+    "id": "filedialog"
+  },
+  "description": "Dialog used for saveing files.",
+  "constructors": [
+    {
+      "signature": {
+        "name": "FileSaveDialog",
+        "parameters": [],
+        "str": "FileSaveDialog()"
+      },
+      "description": "Create a save dialog.",
+      "id": "filesavedialog"
+    }
+  ],
+  "id": "filesavedialog"
+}

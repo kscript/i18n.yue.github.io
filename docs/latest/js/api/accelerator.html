@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Accelerator - Yue</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <div id="header">
+    <a class="logo" href="../index.html">Yue</a>
+    <div class="nav">
+      <a>
+        <span>
+          Langauge/语言:
+        </span>
+        <select id="i18n-list" i18n-page="api"></select>
+      </a>
+      <a href="../index.html" i18n="Docs"></a>
+      <a href="/" i18n="Versions"></a>
+      <a href="https://github.com/yue/yue">GitHub</a>
+    </div>
+  </div>
+  <div id="container">
+    <div class="markdown-body" id="content">
+      <h1>Accelerator</h1>
+      <p>Keyboard shortcut.</p>
+      <table class="code">
+        <tr>
+          <td>Type</td>
+          <td>String</td>
+        </tr>
+      </table>
+      <p>Accelerators are represented by strings that contain multiple modifier and
+        key codes, combined by the <code>+</code> character.</p>
+      <p>Examples:</p>
+      <ul>
+        <li><code>CmdOrCtrl+A</code></li>
+        <li><code>Shift+Backspace</code></li>
+      </ul>
+      <h2 id="platform-dependent-modifiers">Platform-dependent modifiers</h2>
+      <p>On Linux and Window, the <code>CommandOrControl</code> modifier is mapped to the
+        <kbd>Control</kbd> key. On macOS it is mapped to the <code>Command</code> key. This is
+        useful when defining some common keyboard shortcuts.</p>
+      <h2 id="available-modifiers">Available modifiers</h2>
+      <ul>
+        <li><code>Control</code>, <code>Ctrl</code></li>
+        <li><code>CommandOrControl</code>, <code>CmdOrCtrl</code></li>
+        <li><code>Alt</code>, <code>Option</code></li>
+        <li><code>Shift</code></li>
+        <li><code>Meta</code>, <code>Command</code>, <code>Super</code></li>
+      </ul>
+      <h2 id="available-key-codes">Available key codes</h2>
+      <ul>
+        <li><code>0</code> to <code>9</code></li>
+        <li><code>A</code> to <code>Z</code></li>
+        <li><code>F1</code> to <code>F24</code></li>
+        <li>Punctuations like <code>~</code>, <code>!</code>, <code>@</code>, <code>#</code>, <code>$</code>, etc.</li>
+        <li><code>Enter</code>, <code>Return</code></li>
+        <li><code>Esc</code>, <code>Escape</code></li>
+        <li><code>Up</code>, <code>Down</code>, <code>Left</code>, <code>Right</code></li>
+        <li><code>Home</code>, <code>End</code></li>
+        <li><code>PageDown</code>, <code>PageUp</code></li>
+        <li><code>ArrowDown</code>, <code>ArrowLeft</code>, <code>ArrowRight</code>, <code>ArrowUp</code></li>
+        <li><code>AudioVolumeDown</code>, <code>AudioVolumeMute</code>, <code>AudioVolumeUp</code></li>
+        <li><code>BrowserBack</code>, <code>BrowserFavorites</code>, <code>BrowserForward</code>,
+          <code>BrowserHome</code>,
+          <code>BrowserRefresh</code>, <code>BrowserSearch</code>, <code>BrowserStop</code></li>
+        <li><code>LaunchApplication1</code>, <code>LaunchApplication2</code>, <code>LaunchMail</code>,
+          <code>LaunchMediaplayer</code></li>
+        <li><code>MediaPlayPause</code>, <code>MediaStop</code>, <code>MediaTrackNext</code>,
+          <code>MediaTrackPrevious</code></li>
+        <li><code>HangulMode</code>, <code>HanjaMode</code>, <code>KanaMode</code>, <code>KanjiMode</code></li>
+        <li><code>Add</code></li>
+        <li><code>Backspace</code></li>
+        <li><code>Cancel</code></li>
+        <li><code>CapsLock</code></li>
+        <li><code>Clear</code></li>
+        <li><code>Contextmenu</code></li>
+        <li><code>Decimal</code></li>
+        <li><code>Delete</code></li>
+        <li><code>Divide</code></li>
+        <li><code>Execute</code></li>
+        <li><code>Help</code></li>
+        <li><code>Insert</code></li>
+        <li><code>Multiply</code></li>
+        <li><code>Numlock</code></li>
+        <li><code>Pause</code></li>
+        <li><code>Plus</code></li>
+        <li><code>Print</code></li>
+        <li><code>Scrolllock</code></li>
+        <li><code>Select</code></li>
+        <li><code>Snapshot</code></li>
+        <li><code>Space</code></li>
+        <li><code>Subtract</code></li>
+        <li><code>Tab</code></li>
+      </ul>
+    </div>
+    <div class="markdown-body" id="sidebar">
+      <h4>Langauge:</h4>
+      <div class="lang-switcher"><a href="../../cpp/api/accelerator.html">C++</a> | <a
+          href="../../lua/api/accelerator.html">Lua</a> | <span class="current">JavaScript</span></div>
+      <h4>Version:</h4><span class="current">v0.6.2</span>
+      <h4>Formats:</h4><a href="accelerator.json">JSON</a>
+      <h4>Components:</h4>
+      <ul>
+        <li><a href="abstracttablemodel.html" i18n="AbstractTableModel"></a></li>
+        <li><a href="app.html" i18n="App"></a></li>
+        <li><a href="browser.html" i18n="Browser"></a></li>
+        <li><a href="button.html" i18n="Button"></a></li>
+        <li><a href="canvas.html" i18n="Canvas"></a></li>
+        <li><a href="clipboard.html" i18n="Clipboard"></a></li>
+        <li><a href="color.html" i18n="Color"></a></li>
+        <li><a href="combobox.html" i18n="ComboBox"></a></li>
+        <li><a href="container.html" i18n="Container"></a></li>
+        <li><a href="cursor.html" i18n="Cursor"></a></li>
+        <li><a href="entry.html" i18n="Entry"></a></li>
+        <li><a href="filedialog.html" i18n="FileDialog"></a></li>
+        <li><a href="fileopendialog.html" i18n="FileOpenDialog"></a></li>
+        <li><a href="filesavedialog.html" i18n="FileSaveDialog"></a></li>
+        <li><a href="font.html" i18n="Font"></a></li>
+        <li><a href="gif_player.html" i18n="GifPlayer"></a></li>
+        <li><a href="group.html" i18n="Group"></a></li>
+        <li><a href="image.html" i18n="Image"></a></li>
+        <li><a href="label.html" i18n="Label"></a></li>
+        <li><a href="lifetime.html" i18n="Lifetime"></a></li>
+        <li><a href="menu.html" i18n="Menu"></a></li>
+        <li><a href="menubar.html" i18n="MenuBar"></a></li>
+        <li><a href="menubase.html" i18n="MenuBase"></a></li>
+        <li><a href="menuitem.html" i18n="MenuItem"></a></li>
+        <li><a href="message_loop.html" i18n="MessageLoop"></a></li>
+        <li><a href="painter.html" i18n="Painter"></a></li>
+        <li><a href="picker.html" i18n="Picker"></a></li>
+        <li><a href="progressbar.html" i18n="ProgressBar"></a></li>
+        <li><a href="protocolasarjob.html" i18n="ProtocolAsarJob"></a></li>
+        <li><a href="protocolfilejob.html" i18n="ProtocolFileJob"></a></li>
+        <li><a href="protocoljob.html" i18n="ProtocolJob"></a></li>
+        <li><a href="protocolstringjob.html" i18n="ProtocolStringJob"></a></li>
+        <li><a href="scroll.html" i18n="Scroll"></a></li>
+        <li><a href="simpletablemodel.html" i18n="SimpleTableModel"></a></li>
+        <li><a href="tab.html" i18n="Tab"></a></li>
+        <li><a href="table.html" i18n="Table"></a></li>
+        <li><a href="tablemodel.html" i18n="TableModel"></a></li>
+        <li><a href="textedit.html" i18n="TextEdit"></a></li>
+        <li><a href="toolbar.html" i18n="Toolbar"></a></li>
+        <li><a href="tray.html" i18n="Tray"></a></li>
+        <li><a href="vibrant.html" i18n="Vibrant"></a></li>
+        <li><a href="view.html" i18n="View"></a></li>
+        <li><a href="window.html" i18n="Window"></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="footer">
+    <p>Content of this page is in public domain.</p>
+  </div>
+  <script src="../i18n.js"></script>
+</body>
+
+</html>

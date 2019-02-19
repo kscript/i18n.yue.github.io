@@ -1,0 +1,136 @@
+{
+  "name": "TableModel",
+  "component": "gui",
+  "header": "nativeui/table_model.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "description": "Base class for models of Table.",
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "uint32_t"
+        },
+        "name": "GetRowCount",
+        "parameters": [],
+        "str": "uint32_t GetRowCount() const"
+      },
+      "description": "Return how many rows are in the model.",
+      "detail": "\nThis is a pure virtual method, subclass must override this method.",
+      "id": "getrowcount"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "const base::Value*",
+          "id": "base_value"
+        },
+        "name": "GetValue",
+        "parameters": [
+          {
+            "type": {
+              "name": "uint32_t"
+            },
+            "name": "column"
+          },
+          {
+            "type": {
+              "name": "uint32_t"
+            },
+            "name": "row"
+          }
+        ],
+        "str": "const base::Value* GetValue(uint32_t column, uint32_t row) const"
+      },
+      "description": "Return the reference to the data at `column` and `row`.",
+      "detail": "Caller should not store the return value, as it is a temporary reference\nthat may immediately get destroyed after exiting current stack.\n\nThis is a pure virtual method, subclass must override this method.\n",
+      "id": "getvalue-column-row"
+    },
+    {
+      "signature": {
+        "name": "SetValue",
+        "parameters": [
+          {
+            "type": {
+              "name": "uint32_t"
+            },
+            "name": "column"
+          },
+          {
+            "type": {
+              "name": "uint32_t"
+            },
+            "name": "row"
+          },
+          {
+            "type": {
+              "name": "base::Value",
+              "id": "base_value"
+            },
+            "name": "value"
+          }
+        ],
+        "str": "void SetValue(uint32_t column, uint32_t row, base::Value value)"
+      },
+      "description": "Change the `value` at `column` and `row`.",
+      "detail": "\nThis is a pure virtual method, subclass must override this method.",
+      "id": "setvalue-column-row-value"
+    },
+    {
+      "signature": {
+        "name": "NotifyRowInsertion",
+        "parameters": [
+          {
+            "type": {
+              "name": "uint32_t"
+            },
+            "name": "row"
+          }
+        ],
+        "str": "void NotifyRowInsertion(uint32_t row)"
+      },
+      "description": "Called by implementers to notify the table that a row is inserted.\n",
+      "id": "notifyrowinsertion-row"
+    },
+    {
+      "signature": {
+        "name": "NotifyRowDeletion",
+        "parameters": [
+          {
+            "type": {
+              "name": "uint32_t"
+            },
+            "name": "row"
+          }
+        ],
+        "str": "void NotifyRowDeletion(uint32_t row)"
+      },
+      "description": "Called by implementers to notify the table that a row is removed.\n",
+      "id": "notifyrowdeletion-row"
+    },
+    {
+      "signature": {
+        "name": "NotifyValueChange",
+        "parameters": [
+          {
+            "type": {
+              "name": "uint32_t"
+            },
+            "name": "column"
+          },
+          {
+            "type": {
+              "name": "uint32_t"
+            },
+            "name": "row"
+          }
+        ],
+        "str": "void NotifyValueChange(uint32_t column, uint32_t row)"
+      },
+      "description": "Called by implementers to notify the table that the value at `column` and\n`row` has been changed.\n",
+      "id": "notifyvaluechange-column-row"
+    }
+  ],
+  "detail": "\nUsers can implement a subclass of `TableModel` to feed `Table` any kind\nof data source. It is required to call the `Notify` methods in subclasses\nwhen data has been changed, so the `Table` can correctly update.\n\nFor simple use cases, the [`SimpleTableModel`](simpletablemodel.html) can\nbe used.\n",
+  "id": "tablemodel"
+}

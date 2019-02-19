@@ -1,0 +1,95 @@
+{
+  "name": "Event",
+  "header": "nativeui/events/event.h",
+  "type": "struct",
+  "namespace": "nu",
+  "description": "Generic input event type.",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsShiftPressed",
+        "parameters": [],
+        "str": "bool IsShiftPressed()"
+      },
+      "description": "Return whether <kbd>Shift</kbd> key is pressed.",
+      "id": "isshiftpressed"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsControlPressed",
+        "parameters": [],
+        "str": "bool IsControlPressed()"
+      },
+      "description": "Return whether <kbd>Control</kbd> key is pressed.",
+      "id": "iscontrolpressed"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsAltPressed",
+        "parameters": [],
+        "str": "bool IsAltPressed()"
+      },
+      "description": "Return whether <kbd>Alt</kbd> key is pressed.",
+      "id": "isaltpressed"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsMetaPressed",
+        "parameters": [],
+        "str": "bool IsMetaPressed()"
+      },
+      "description": "Return whether <kbd>Win</kbd> or <kbd>Command</kbd> key is pressed.\n",
+      "id": "ismetapressed"
+    }
+  ],
+  "properties": [
+    {
+      "description": "The type of the event.",
+      "id": "type",
+      "type": {
+        "name": "EventType",
+        "id": "eventtype"
+      },
+      "name": "type"
+    },
+    {
+      "description": "A bit array of keyboard modifiers of the event.",
+      "detail": "\nAvailable modifiers can be found in\n[KeyboardModifier](keyboardmodifier.html).\n",
+      "id": "modifiers",
+      "type": {
+        "name": "int"
+      },
+      "name": "modifiers"
+    },
+    {
+      "description": "Time when event was created, starts from when machine was booted.\n",
+      "id": "timestamp",
+      "type": {
+        "name": "uint32_t"
+      },
+      "name": "timestamp"
+    },
+    {
+      "description": "The underlying native event.",
+      "id": "nativeevent",
+      "type": {
+        "name": "NativeEvent",
+        "id": "nativeevent"
+      },
+      "name": "native_event"
+    }
+  ],
+  "id": "event"
+}

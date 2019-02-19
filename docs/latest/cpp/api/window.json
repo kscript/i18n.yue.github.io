@@ -1,0 +1,928 @@
+{
+  "name": "Window",
+  "component": "gui",
+  "header": "nativeui/window.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "description": "Native window.",
+  "constructors": [
+    {
+      "signature": {
+        "name": "Window",
+        "parameters": [
+          {
+            "type": {
+              "name": "const Window::Options&",
+              "id": "window_options"
+            },
+            "name": "options"
+          }
+        ],
+        "str": "Window(const Window::Options& options)"
+      },
+      "description": "Create a new window with `options`.",
+      "id": "window-options"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "Close",
+        "parameters": [],
+        "str": "void Close()"
+      },
+      "description": "Request to close the window.",
+      "id": "close"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "HasFrame",
+        "parameters": [],
+        "str": "bool HasFrame() const"
+      },
+      "description": "Return whether window has a native frame.",
+      "id": "hasframe"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsTransparent",
+        "parameters": [],
+        "str": "bool IsTransparent() const"
+      },
+      "description": "Return whether window is transparent.",
+      "id": "istransparent"
+    },
+    {
+      "signature": {
+        "name": "SetHasShadow",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "has"
+          }
+        ],
+        "str": "void SetHasShadow(bool has)"
+      },
+      "description": "Set whether window should have shadow.\n\nDepending on platform, this may not work.\n",
+      "id": "sethasshadow-has"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "HasShadow",
+        "parameters": [],
+        "str": "bool HasShadow() const"
+      },
+      "description": "Return whether window has shadow.",
+      "id": "hasshadow"
+    },
+    {
+      "signature": {
+        "name": "SetContentView",
+        "parameters": [
+          {
+            "type": {
+              "name": "View*",
+              "id": "view"
+            },
+            "name": "view"
+          }
+        ],
+        "str": "void SetContentView(View* view)"
+      },
+      "description": "Set the content view of the window.\n\nThe content view will always be resized to fill window's client area.\n",
+      "id": "setcontentview-view"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "View*",
+          "id": "view"
+        },
+        "name": "GetContentView",
+        "parameters": [],
+        "str": "View* GetContentView() const"
+      },
+      "description": "Return the content view of the window.",
+      "id": "getcontentview"
+    },
+    {
+      "signature": {
+        "name": "Center",
+        "parameters": [],
+        "str": "void Center()"
+      },
+      "description": "Move the window to the center of the screen.",
+      "id": "center"
+    },
+    {
+      "signature": {
+        "name": "SetContentSize",
+        "parameters": [
+          {
+            "type": {
+              "name": "const SizeF&",
+              "id": "sizef"
+            },
+            "name": "size"
+          }
+        ],
+        "str": "void SetContentSize(const SizeF& size)"
+      },
+      "description": "Resize window to make the content view fit `size`.",
+      "id": "setcontentsize-size"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "SizeF",
+          "id": "sizef"
+        },
+        "name": "GetContentSize",
+        "parameters": [],
+        "str": "SizeF GetContentSize() const"
+      },
+      "description": "Return the size of content view.",
+      "id": "getcontentsize"
+    },
+    {
+      "signature": {
+        "name": "SetBounds",
+        "parameters": [
+          {
+            "type": {
+              "name": "const RectF&",
+              "id": "rectf"
+            },
+            "name": "bounds"
+          }
+        ],
+        "str": "void SetBounds(const RectF& bounds)"
+      },
+      "description": "Change the position and size of the window.",
+      "id": "setbounds-bounds"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "RectF",
+          "id": "rectf"
+        },
+        "name": "GetBounds",
+        "parameters": [],
+        "str": "RectF GetBounds() const"
+      },
+      "description": "Return the position and size of the window.",
+      "id": "getbounds"
+    },
+    {
+      "signature": {
+        "name": "SetSizeConstraints",
+        "parameters": [
+          {
+            "type": {
+              "name": "const SizeF&",
+              "id": "sizef"
+            },
+            "name": "minsize",
+            "description": "Minimum size."
+          },
+          {
+            "type": {
+              "name": "const SizeF&",
+              "id": "sizef"
+            },
+            "name": "maxsize",
+            "description": "Maximum size."
+          }
+        ],
+        "str": "void SetSizeConstraints(const SizeF& minsize, const SizeF& maxsize)"
+      },
+      "description": "Set the minimum and maximum sizes of the window.\n\nPassing an empty size means no constraint.\n",
+      "id": "setsizeconstraints-minsize-maxsize"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::tuple<SizeF, SizeF>",
+          "template": "std::tuple",
+          "args": [
+            {
+              "name": "SizeF",
+              "id": "sizef"
+            },
+            {
+              "name": "SizeF",
+              "id": "sizef"
+            }
+          ]
+        },
+        "name": "GetSizeConstraints",
+        "parameters": [],
+        "str": "std::tuple<SizeF, SizeF> GetSizeConstraints() const"
+      },
+      "description": "Return minimum and maximum sizes of the window.",
+      "id": "getsizeconstraints"
+    },
+    {
+      "signature": {
+        "name": "SetContentSizeConstraints",
+        "parameters": [
+          {
+            "type": {
+              "name": "const SizeF&",
+              "id": "sizef"
+            },
+            "name": "minsize",
+            "description": "Minimum content size."
+          },
+          {
+            "type": {
+              "name": "const SizeF&",
+              "id": "sizef"
+            },
+            "name": "maxsize",
+            "description": "Maximum content size."
+          }
+        ],
+        "str": "void SetContentSizeConstraints(const SizeF& minsize, const SizeF& maxsize)"
+      },
+      "description": "Set the minimum and maximum content sizes of the window.\n\nPassing an empty size means no constraint.\n",
+      "id": "setcontentsizeconstraints-minsize-maxsize"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::tuple<SizeF, SizeF>",
+          "template": "std::tuple",
+          "args": [
+            {
+              "name": "SizeF",
+              "id": "sizef"
+            },
+            {
+              "name": "SizeF",
+              "id": "sizef"
+            }
+          ]
+        },
+        "name": "GetContentSizeConstraints",
+        "parameters": [],
+        "str": "std::tuple<SizeF, SizeF> GetContentSizeConstraints() const"
+      },
+      "description": "Return minimum and maximum content sizes of the window.",
+      "id": "getcontentsizeconstraints"
+    },
+    {
+      "signature": {
+        "name": "Activate",
+        "parameters": [],
+        "str": "void Activate()"
+      },
+      "description": "Show the window and activate it.",
+      "id": "activate"
+    },
+    {
+      "signature": {
+        "name": "Deactivate",
+        "parameters": [],
+        "str": "void Deactivate()"
+      },
+      "description": "Move the focus away from the window.",
+      "id": "deactivate"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsActive",
+        "parameters": [],
+        "str": "bool IsActive() const"
+      },
+      "description": "Return whether window has focus.",
+      "id": "isactive"
+    },
+    {
+      "signature": {
+        "name": "SetVisible",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "visible"
+          }
+        ],
+        "str": "void SetVisible(bool visible)"
+      },
+      "description": "Show/hide the window.",
+      "id": "setvisible-visible"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsVisible",
+        "parameters": [],
+        "str": "bool IsVisible() const"
+      },
+      "description": "Return whether window is visible.",
+      "id": "isvisible"
+    },
+    {
+      "signature": {
+        "name": "SetAlwaysOnTop",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "top"
+          }
+        ],
+        "str": "void SetAlwaysOnTop(bool top)"
+      },
+      "description": "Make the window always show above other normal windows.",
+      "id": "setalwaysontop-top"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsAlwaysOnTop",
+        "parameters": [],
+        "str": "bool IsAlwaysOnTop() const"
+      },
+      "description": "Return whether window is always above other normal windows.",
+      "id": "isalwaysontop"
+    },
+    {
+      "signature": {
+        "name": "SetFullscreen",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "fullscreen"
+          }
+        ],
+        "str": "void SetFullscreen(bool fullscreen)"
+      },
+      "description": "Enter/leave fullscreen state.",
+      "id": "setfullscreen-fullscreen"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsFullscreen",
+        "parameters": [],
+        "str": "bool IsFullscreen() const"
+      },
+      "description": "Return whether window is in fullscreen.",
+      "id": "isfullscreen"
+    },
+    {
+      "signature": {
+        "name": "Maximize",
+        "parameters": [],
+        "str": "void Maximize()"
+      },
+      "description": "Maximize the window.",
+      "id": "maximize"
+    },
+    {
+      "signature": {
+        "name": "Unmaximize",
+        "parameters": [],
+        "str": "void Unmaximize()"
+      },
+      "description": "Unmaximize the window.",
+      "id": "unmaximize"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsMaximized",
+        "parameters": [],
+        "str": "bool IsMaximized() const"
+      },
+      "description": "Return whether window is maximized.",
+      "id": "ismaximized"
+    },
+    {
+      "signature": {
+        "name": "Minimize",
+        "parameters": [],
+        "str": "void Minimize()"
+      },
+      "description": "Minimize the window.",
+      "id": "minimize"
+    },
+    {
+      "signature": {
+        "name": "Restore",
+        "parameters": [],
+        "str": "void Restore()"
+      },
+      "description": "Restore the minimized window.",
+      "id": "restore"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsMinimized",
+        "parameters": [],
+        "str": "bool IsMinimized() const"
+      },
+      "description": "Return whether window is minimized.",
+      "id": "isminimized"
+    },
+    {
+      "signature": {
+        "name": "SetResizable",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "resizable"
+          }
+        ],
+        "str": "void SetResizable(bool resizable)"
+      },
+      "description": "Set whether window can be resized.",
+      "id": "setresizable-resizable"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsResizable",
+        "parameters": [],
+        "str": "bool IsResizable() const"
+      },
+      "description": "Return whether window can be resized.",
+      "id": "isresizable"
+    },
+    {
+      "signature": {
+        "name": "SetMaximizable",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "maximizable"
+          }
+        ],
+        "str": "void SetMaximizable(bool maximizable)"
+      },
+      "description": "Set whether window can be maximize.",
+      "id": "setmaximizable-maximizable"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsMaximizable",
+        "parameters": [],
+        "str": "bool IsMaximizable() const"
+      },
+      "description": "Return whether window can be maximize.",
+      "id": "ismaximizable"
+    },
+    {
+      "signature": {
+        "name": "SetMinimizable",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "minimizable"
+          }
+        ],
+        "str": "void SetMinimizable(bool minimizable)"
+      },
+      "description": "Set whether window can be minimized.",
+      "id": "setminimizable-minimizable"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsMinimizable",
+        "parameters": [],
+        "str": "bool IsMinimizable() const"
+      },
+      "description": "Return whether window can be minimized.",
+      "id": "isminimizable"
+    },
+    {
+      "signature": {
+        "name": "SetMovable",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "movable"
+          }
+        ],
+        "str": "void SetMovable(bool movable)"
+      },
+      "description": "Set whether window can be moved.",
+      "id": "setmovable-movable"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsMovable",
+        "parameters": [],
+        "str": "bool IsMovable() const"
+      },
+      "description": "Return whether window can be moved.",
+      "id": "ismovable"
+    },
+    {
+      "signature": {
+        "name": "SetTitle",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "title"
+          }
+        ],
+        "str": "void SetTitle(const std::string& title)"
+      },
+      "description": "Set window title.",
+      "id": "settitle-title"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::string"
+        },
+        "name": "GetTitle",
+        "parameters": [],
+        "str": "std::string GetTitle() const"
+      },
+      "description": "Get window title.",
+      "id": "gettitle"
+    },
+    {
+      "signature": {
+        "name": "SetBackgroundColor",
+        "parameters": [
+          {
+            "type": {
+              "name": "Color",
+              "id": "color"
+            },
+            "name": "color"
+          }
+        ],
+        "str": "void SetBackgroundColor(Color color)"
+      },
+      "description": "Set the background color of the window.",
+      "id": "setbackgroundcolor-color"
+    },
+    {
+      "signature": {
+        "name": "SetToolbar",
+        "parameters": [
+          {
+            "type": {
+              "name": "Toolbar*",
+              "id": "toolbar"
+            },
+            "name": "toolbar"
+          }
+        ],
+        "str": "void SetToolbar(Toolbar* toolbar)"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Set the window toolbar.",
+      "id": "settoolbar-toolbar"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Toolbar*",
+          "id": "toolbar"
+        },
+        "name": "GetToolbar",
+        "parameters": [],
+        "str": "Toolbar* GetToolbar() const"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Return the window toolbar.",
+      "id": "gettoolbar"
+    },
+    {
+      "signature": {
+        "name": "SetTitleVisible",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "visible"
+          }
+        ],
+        "str": "void SetTitleVisible(bool visible)"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Set whether the title is visible, when title was hidden the toolber would\nbe moved into the area previously occupied by the title.\n",
+      "id": "settitlevisible-visible"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsTitleVisible",
+        "parameters": [],
+        "str": "bool IsTitleVisible() const;"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Return whether title is visible.",
+      "id": "istitlevisible"
+    },
+    {
+      "signature": {
+        "name": "SetFullSizeContentView",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "full"
+          }
+        ],
+        "str": "void SetFullSizeContentView(bool full)"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Set the `NSFullSizeContentViewWindowMask` style on the window.\n",
+      "id": "setfullsizecontentview-full"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsFullSizeContentView",
+        "parameters": [],
+        "str": "bool IsFullSizeContentView() const"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Return whether the window has `NSFullSizeContentViewWindowMask` style.\n",
+      "id": "isfullsizecontentview"
+    },
+    {
+      "signature": {
+        "name": "SetMenuBar",
+        "parameters": [
+          {
+            "type": {
+              "name": "MenuBar*",
+              "id": "menubar"
+            },
+            "name": "menubar"
+          }
+        ],
+        "str": "void SetMenuBar(MenuBar* menubar)"
+      },
+      "platform": [
+        "Windows",
+        "Linux"
+      ],
+      "description": "Set the window menu bar.",
+      "id": "setmenubar-menubar"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "MenuBar*",
+          "id": "menubar"
+        },
+        "name": "GetMenuBar",
+        "parameters": [],
+        "str": "MenuBar* GetMenuBar() const"
+      },
+      "platform": [
+        "Windows",
+        "Linux"
+      ],
+      "description": "Return the window menu bar.",
+      "id": "getmenubar"
+    },
+    {
+      "signature": {
+        "name": "SetFullSizeContentView",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "full"
+          }
+        ],
+        "str": "void SetFullSizeContentView(bool full)"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Set the `NSFullSizeContentViewWindowMask` style on the window.\n",
+      "id": "setfullsizecontentview-full"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Window*",
+          "id": "window"
+        },
+        "name": "GetParentWindow",
+        "parameters": [],
+        "str": "Window* GetParentWindow() const"
+      },
+      "description": "Return the parent window.",
+      "id": "getparentwindow"
+    },
+    {
+      "signature": {
+        "name": "AddChildWindow",
+        "parameters": [
+          {
+            "type": {
+              "name": "Window*",
+              "id": "window"
+            },
+            "name": "child"
+          }
+        ],
+        "str": "void AddChildWindow(Window* child)"
+      },
+      "description": "Make `child` a child window of this window.",
+      "detail": "This method will do nothing if `child` already has a parent window.",
+      "id": "addchildwindow-child"
+    },
+    {
+      "signature": {
+        "name": "RemoveChildWindow",
+        "parameters": [
+          {
+            "type": {
+              "name": "Window*",
+              "id": "window"
+            },
+            "name": "child"
+          }
+        ],
+        "str": "void RemoveChildWindow(Window* child)"
+      },
+      "description": "Remove this window as `child`'s parent window.",
+      "id": "removechildwindow-child"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::vector<Window*>"
+        },
+        "name": "GetChildWindows",
+        "parameters": [],
+        "str": "std::vector<Window*> GetChildWindows() const"
+      },
+      "description": "Return all the child windows of this window.",
+      "id": "getchildwindows"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "NativeWindow",
+          "id": "nativewindow"
+        },
+        "name": "GetNative",
+        "parameters": [],
+        "str": "NativeWindow GetNative() const"
+      },
+      "description": "Return the native instance wrapped the window.",
+      "id": "getnative"
+    }
+  ],
+  "events": [
+    {
+      "callback": {
+        "name": "on_close",
+        "parameters": [
+          {
+            "type": {
+              "name": "Window*",
+              "id": "window"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "void on_close(Window* self)"
+      },
+      "description": "Emitted when the window is closed.",
+      "id": "onclose-self"
+    },
+    {
+      "callback": {
+        "name": "on_focus",
+        "parameters": [
+          {
+            "type": {
+              "name": "Window*",
+              "id": "window"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "void on_focus(Window* self)"
+      },
+      "description": "Emitted when the window is focused.",
+      "id": "onfocus-self"
+    },
+    {
+      "callback": {
+        "name": "on_blur",
+        "parameters": [
+          {
+            "type": {
+              "name": "Window*",
+              "id": "window"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "void on_blur(Window* self)"
+      },
+      "description": "Emitted when the window lost focus.",
+      "id": "onblur-self"
+    }
+  ],
+  "delegates": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "should_close",
+        "parameters": [
+          {
+            "type": {
+              "name": "Window*",
+              "id": "window"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "bool should_close(Window* self)"
+      },
+      "description": "Called when user requests to close the window, should return whether the\nwindow can be closed.\n",
+      "id": "shouldclose-self"
+    }
+  ],
+  "id": "window"
+}

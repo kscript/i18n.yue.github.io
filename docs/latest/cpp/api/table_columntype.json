@@ -1,0 +1,9 @@
+{
+  "name": "Table::ColumnType",
+  "header": "nativeui/table.h",
+  "type": "enum class",
+  "namespace": "nu",
+  "description": "Type of `Table`'s column.",
+  "detail": "\nThis type is an `enum class` with following values:\n* `Table::ColumnType::Text`\n* `Table::ColumnType::Edit`\n* `Table::ColumnType::Custom`\n\nThe `Text` and `Edit` column types can only render String type of data, the\n`Custom` supports arbitrary type data (except for native objects like `Image`)\nbut a drawing function has to be provided.\n\nThe `Text` column type renders readonly text. The `Edit` column type is like\n`Text` but allows user to edit the text.\n",
+  "id": "table_columntype"
+}

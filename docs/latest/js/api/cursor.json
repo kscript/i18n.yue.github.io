@@ -1,0 +1,33 @@
+{
+  "name": "Cursor",
+  "component": "gui",
+  "header": "nativeui/cursor.h",
+  "type": "Class",
+  "namespace": "nu",
+  "description": "Native cursor.",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Font",
+          "id": "font"
+        },
+        "name": "createWithType",
+        "parameters": [
+          {
+            "type": {
+              "name": "Cursor::Type",
+              "id": "cursor_type"
+            },
+            "name": "type"
+          }
+        ],
+        "str": "createWithType(type)"
+      },
+      "description": "Create a cursor of `type`.",
+      "id": "createwithtype-type"
+    }
+  ],
+  "module": "gui",
+  "id": "cursor"
+}

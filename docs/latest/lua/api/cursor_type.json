@@ -1,0 +1,9 @@
+{
+  "name": "Cursor::Type",
+  "header": "nativeui/cursor.h",
+  "type": "string",
+  "namespace": "nu",
+  "description": "Type of cursor.",
+  "detail": "\nThis type is a string with following possible values:\n* `\"default\"`\n* `\"hand\"`\n* `\"crosshair\"`\n* `\"progress\"`\n* `\"text\"`\n* `\"not-allowed\"`\n* `\"help\"`\n* `\"move\"`\n* `\"resize-ew\"`\n* `\"resize-ns\"`\n* `\"resize-nesw\"`\n* `\"resize-nwse\"`\n",
+  "id": "cursor_type"
+}

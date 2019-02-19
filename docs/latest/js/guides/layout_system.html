@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Layout system - Yue</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <link rel="stylesheet" href="../guide.css">
+</head>
+
+<body>
+  <div id="header">
+    <a class="logo" href="../index.html">Yue</a>
+    <div class="nav">
+      <a>
+        <span>
+          Langauge/语言:
+        </span>
+        <select id="i18n-list" i18n-page="api"></select>
+      </a>
+      <a href="../index.html" i18n="Docs"></a>
+      <a href="/" i18n="Versions"></a>
+      <a href="https://github.com/yue/yue">GitHub</a>
+    </div>
+  </div>
+  <div id="container">
+    <div class="markdown-body" id="content">
+      <h1 id="layout-system">Layout system</h1>
+      <p>Yue uses <a href="https://facebook.github.io/yoga/">Facebook Yoga</a> as layout engine,
+        which provides Flexbox style layout system.</p>
+      <p>Yue does not support CSS itself, it only uses the concept of Flexbox for layout,
+        and you have to manually set style for each View.</p>
+      <pre><code class="lang-js">view.setStyle({<span class="hljs-attr">flexDirection</span>: <span class="hljs-string">'column'</span>, <span class="hljs-attr">flex</span>: <span class="hljs-number">1</span>})
+</code></pre>
+      <p>It should be noted that not all CSS properties are supported, and there is no
+        plan for support of tables, floats, or similar CSS concepts.</p>
+      <h2 id="view-and-container">View and Container</h2>
+      <p>In Yue all widgets are inherited from the virtual class <code>View</code>, which represents
+        a leaf node in the layout system. The <code>Container</code> is a <code>View</code> that can have
+        multiple child <code>View</code>s, in the layout system the child <code>View</code>s of <code>Container</code>
+        are treated as child nodes.</p>
+      <p>There are <code>View</code>s that can have content view like <code>Group</code> or <code>Scroll</code>, but
+        their
+        content views are treated as root nodes in layout system, instead of being child
+        nodes of their parents.</p>
+      <p>Following code is an example of list view.</p>
+      <pre><code class="lang-js"><span class="hljs-keyword">const</span> listView = gui.Scroll.create()
+<span class="hljs-keyword">const</span> contentView = gui.Container.create()
+contentView.setStyle({<span class="hljs-attr">flexDirection</span>: <span class="hljs-string">'column'</span>})
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100</span>; ++i) {
+  <span class="hljs-keyword">const</span> item = gui.Label.create(<span class="hljs-built_in">String</span>(i))
+  <span class="hljs-keyword">const</span> g = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-number">155</span> / <span class="hljs-number">100</span> * i + <span class="hljs-number">100</span>)
+  item.setBackgroundColor(gui.Color.rgb(<span class="hljs-number">100</span>, g, <span class="hljs-number">100</span>))
+  contentView.addChildView(item)
+}
+
+listView.setContentSize(contentView.getPreferredSize())
+listView.setContentView(contentView)
+</code></pre>
+      <h2 id="style-properties">Style properties</h2>
+      <p>For a complete list of supported style properties, it is recommended to read the
+        <a href="https://yogalayout.com/docs">documentation of Yoga</a>.</p>
+    </div>
+    <div class="markdown-body" id="sidebar"></div>
+  </div>
+  <div id="footer">
+    <p>Content of this page is in public domain.</p>
+  </div>
+  <script src="../i18n.js"></script>
+</body>
+
+</html>

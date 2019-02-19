@@ -1,0 +1,72 @@
+{
+  "name": "SimpleTableModel",
+  "component": "gui",
+  "header": "nativeui/table_model.h",
+  "type": "Class",
+  "namespace": "nu",
+  "inherit": {
+    "name": "TableModel",
+    "id": "tablemodel"
+  },
+  "description": "A simple implementation of TableModel.",
+  "detail": "There is no need to call `Notify` methods when using `SimpleTableModel`.\n\nNote that all data are stored as primary types, it is not possible to store\na native object (for example `Image`s) in table model.\n",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "SimpleTableModel",
+          "id": "simpletablemodel"
+        },
+        "name": "create",
+        "parameters": [
+          {
+            "type": {
+              "name": "Integer"
+            },
+            "name": "columns"
+          }
+        ],
+        "str": "create(columns)"
+      },
+      "description": "Create a `SimpleTableModel` with fixed `columns` number.",
+      "id": "create-columns"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "addRow",
+        "parameters": [
+          {
+            "type": {
+              "name": "Array"
+            },
+            "name": "row"
+          }
+        ],
+        "str": "addRow(row)"
+      },
+      "description": "Add a row.",
+      "detail": "The length of `row` should not be smaller than columns number.",
+      "id": "addrow-row"
+    },
+    {
+      "signature": {
+        "name": "removeRowAt",
+        "parameters": [
+          {
+            "type": {
+              "name": "Integer"
+            },
+            "name": "index"
+          }
+        ],
+        "str": "removeRowAt(index)"
+      },
+      "description": "Remove the row at `index`.",
+      "id": "removerowat-index"
+    }
+  ],
+  "module": "gui",
+  "id": "simpletablemodel"
+}

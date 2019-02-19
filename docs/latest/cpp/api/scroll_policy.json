@@ -1,0 +1,9 @@
+{
+  "name": "Scroll::Policy",
+  "header": "nativeui/scroll.h",
+  "type": "enum class",
+  "namespace": "nu",
+  "description": "Scrollbar policy.",
+  "detail": "\nThis type is an `enum class` with following values:\n* `Scroll::Policy::Always`\n* `Scroll::Policy::Never`\n* `Scroll::Policy::Automatic`\n",
+  "id": "scroll_policy"
+}

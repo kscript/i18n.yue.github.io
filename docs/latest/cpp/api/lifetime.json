@@ -1,0 +1,45 @@
+{
+  "name": "Lifetime",
+  "component": "gui",
+  "header": "nativeui/lifetime.h",
+  "type": "class",
+  "namespace": "nu",
+  "description": "Application lifetime.",
+  "detail": "This class does system GUI toolkit intializations, and provides APIs around\nnative GUI toolkit's application lifetime APIs. You should not use this API\nwhen integrating Yue into existing GUI apps.\n\nWhen using this class, you must create `Lifetime` before creating `State`.\n",
+  "constructor": [
+    {
+      "signature": "Lifetime()",
+      "lang": [
+        "cpp"
+      ],
+      "description": "Create a `Lifetime` instance, you can only have one instance per thread.\n"
+    }
+  ],
+  "events": [
+    {
+      "callback": {
+        "name": "on_ready",
+        "parameters": [],
+        "str": "void on_ready()"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Emitted when received `applicationDidFinishLaunching` notification.\n",
+      "id": "onready"
+    },
+    {
+      "callback": {
+        "name": "on_activate",
+        "parameters": [],
+        "str": "void on_activate()"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Emitted when received `applicationShouldHandleReopen` notification and\nthere is no visible windows. This usually happens when the app is\nactivated by Finder, or user clicks on the dock icon.\n",
+      "id": "onactivate"
+    }
+  ],
+  "id": "lifetime"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Window::Options",
+  "header": "nativeui/window.h",
+  "type": "Object",
+  "namespace": "nu",
+  "description": "Options for creating window.",
+  "properties": [
+    {
+      "description": "Whether window has native frame, default is `true`.\n",
+      "id": "frame",
+      "type": {
+        "name": "Boolean"
+      },
+      "name": "frame"
+    },
+    {
+      "description": "Whether window is transparent, default is `false`.\n\nOnly frameless window can be transparent, the behavior of making a normal\nwindow transparent is undefined.\n",
+      "id": "transparent",
+      "type": {
+        "name": "Boolean"
+      },
+      "name": "transparent"
+    },
+    {
+      "platform": [
+        "macOS"
+      ],
+      "description": "Whether to show window buttons for frameless window, default is `false`.\n\nThis property is ignored for normal windows.\n",
+      "id": "showtrafficlights",
+      "type": {
+        "name": "Boolean"
+      },
+      "name": "showTrafficLights"
+    }
+  ],
+  "id": "window_options"
+}

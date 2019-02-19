@@ -1,0 +1,236 @@
+{
+  "name": "Button",
+  "component": "gui",
+  "header": "nativeui/button.h",
+  "type": "Class",
+  "namespace": "nu",
+  "inherit": {
+    "name": "View",
+    "id": "view"
+  },
+  "description": "Native button, can also be used as checkbox and radio button.",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Button",
+          "id": "button"
+        },
+        "name": "create",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "title"
+          }
+        ],
+        "str": "create(title)"
+      },
+      "description": "Create a normal button with `title`.",
+      "id": "create-title"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Button",
+          "id": "button"
+        },
+        "name": "create",
+        "parameters": [
+          {
+            "type": {
+              "name": "Object"
+            },
+            "name": "options",
+            "properties": [
+              {
+                "description": "Button's title.",
+                "id": "title",
+                "type": {
+                  "name": "String"
+                },
+                "name": "title"
+              },
+              {
+                "description": "Button's type.",
+                "id": "type",
+                "type": {
+                  "name": "Button::Type",
+                  "id": "button_type"
+                },
+                "name": "type"
+              }
+            ]
+          }
+        ],
+        "str": "create(options)"
+      },
+      "description": "Create a button by reading `options`.",
+      "id": "create-options"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "setTitle",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "title"
+          }
+        ],
+        "str": "setTitle(title)"
+      },
+      "description": "Set button title.",
+      "id": "settitle-title"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "String"
+        },
+        "name": "getTitle",
+        "parameters": [],
+        "str": "getTitle()"
+      },
+      "description": "Return the button title.",
+      "id": "gettitle"
+    },
+    {
+      "signature": {
+        "name": "setChecked",
+        "parameters": [
+          {
+            "type": {
+              "name": "Boolean"
+            },
+            "name": "checked"
+          }
+        ],
+        "str": "setChecked(checked)"
+      },
+      "description": "Set `checked` state of checkbox or radio.",
+      "id": "setchecked-checked"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "isChecked",
+        "parameters": [],
+        "str": "isChecked()"
+      },
+      "description": "Return whether checkbox or radio is checked.",
+      "id": "ischecked"
+    },
+    {
+      "signature": {
+        "name": "setImage",
+        "parameters": [
+          {
+            "type": {
+              "name": "Image",
+              "id": "image"
+            },
+            "name": "image"
+          }
+        ],
+        "str": "setImage(image)"
+      },
+      "description": "Set the image of button.",
+      "id": "setimage-image"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Image",
+          "id": "image"
+        },
+        "name": "getImage",
+        "parameters": [],
+        "str": "getImage()"
+      },
+      "description": "Return the image of button.",
+      "id": "getimage"
+    },
+    {
+      "signature": {
+        "name": "setButtonStyle",
+        "parameters": [
+          {
+            "type": {
+              "name": "Button::Style",
+              "id": "button_style"
+            },
+            "name": "style"
+          }
+        ],
+        "str": "setButtonStyle(style)"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Set the visual style of the button.",
+      "id": "setbuttonstyle-style"
+    },
+    {
+      "signature": {
+        "name": "setHasBorder",
+        "parameters": [
+          {
+            "type": {
+              "name": "Boolean"
+            },
+            "name": "yes"
+          }
+        ],
+        "str": "setHasBorder(yes)"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Set whether the button has a border.",
+      "id": "sethasborder-yes"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "hasBorder",
+        "parameters": [],
+        "str": "hasBorder()"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Return whether the button has a border.",
+      "id": "hasborder"
+    }
+  ],
+  "events": [
+    {
+      "callback": {
+        "name": "onClick",
+        "parameters": [
+          {
+            "type": {
+              "name": "Button",
+              "id": "button"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "onClick(self)"
+      },
+      "description": "Emitted when button is clicked.",
+      "id": "onclick-self"
+    }
+  ],
+  "module": "gui",
+  "id": "button"
+}

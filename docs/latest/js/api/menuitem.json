@@ -1,0 +1,311 @@
+{
+  "name": "MenuItem",
+  "component": "gui",
+  "header": "nativeui/menu_item.h",
+  "type": "Class",
+  "namespace": "nu",
+  "description": "Menu item.",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "MenuItem",
+          "id": "menuitem"
+        },
+        "name": "create",
+        "parameters": [
+          {
+            "type": {
+              "name": "MenuItem::Type",
+              "id": "menuitem_type"
+            },
+            "name": "type"
+          }
+        ],
+        "str": "create(type)"
+      },
+      "description": "Create a menu item with `type`.",
+      "id": "create-type"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "MenuItem",
+          "id": "menuitem"
+        },
+        "name": "create",
+        "parameters": [
+          {
+            "type": {
+              "name": "Object"
+            },
+            "name": "options",
+            "properties": [
+              {
+                "id": "type",
+                "type": {
+                  "name": "MenuItem::Type",
+                  "id": "menuitem_type"
+                },
+                "name": "type"
+              },
+              {
+                "id": "role",
+                "type": {
+                  "name": "MenuItem::Role",
+                  "id": "menuitem_role"
+                },
+                "name": "role"
+              },
+              {
+                "id": "checked",
+                "type": {
+                  "name": "Boolean"
+                },
+                "name": "checked"
+              },
+              {
+                "id": "submenu",
+                "type": {
+                  "name": "Menu",
+                  "id": "menu"
+                },
+                "name": "submenu"
+              },
+              {
+                "id": "visible",
+                "type": {
+                  "name": "Boolean"
+                },
+                "name": "visible"
+              },
+              {
+                "id": "enabled",
+                "type": {
+                  "name": "Boolean"
+                },
+                "name": "enabled"
+              },
+              {
+                "id": "label",
+                "type": {
+                  "name": "String"
+                },
+                "name": "label"
+              },
+              {
+                "id": "accelerator",
+                "type": {
+                  "name": "Accelerator",
+                  "id": "accelerator"
+                },
+                "name": "accelerator"
+              },
+              {
+                "id": "onclick",
+                "type": {
+                  "name": "Function"
+                },
+                "name": "onClick"
+              }
+            ]
+          }
+        ],
+        "str": "create(options)"
+      },
+      "description": "Create a menu item with `options`.",
+      "id": "create-options"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "click",
+        "parameters": [],
+        "str": "click()"
+      },
+      "description": "Emulate user clicking the menu item.",
+      "id": "click"
+    },
+    {
+      "signature": {
+        "name": "setLabel",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "label"
+          }
+        ],
+        "str": "setLabel(label)"
+      },
+      "description": "Change the item's label.",
+      "id": "setlabel-label"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "String"
+        },
+        "name": "getLabel",
+        "parameters": [],
+        "str": "getLabel()"
+      },
+      "description": "Return the item's label.",
+      "id": "getlabel"
+    },
+    {
+      "signature": {
+        "name": "setSubmenu",
+        "parameters": [
+          {
+            "type": {
+              "name": "Menu",
+              "id": "menu"
+            },
+            "name": "submenu"
+          }
+        ],
+        "str": "setSubmenu(submenu)"
+      },
+      "description": "Set the submenu attached to the item.\n\nThis method only works for `submenu` type menu items.\n",
+      "id": "setsubmenu-submenu"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Menu",
+          "id": "menu"
+        },
+        "name": "getSubmenu",
+        "parameters": [],
+        "str": "getSubmenu()"
+      },
+      "description": "Return the submenu attached to the item.",
+      "id": "getsubmenu"
+    },
+    {
+      "signature": {
+        "name": "setChecked",
+        "parameters": [
+          {
+            "type": {
+              "name": "Boolean"
+            },
+            "name": "checked"
+          }
+        ],
+        "str": "setChecked(checked)"
+      },
+      "description": "Set the `checked` state of the item.\n\nThis method only works for `radio` and `checkbox` type menu items.\n",
+      "id": "setchecked-checked"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "isChecked",
+        "parameters": [],
+        "str": "isChecked()"
+      },
+      "description": "Return the `checked` state of the item.",
+      "id": "ischecked"
+    },
+    {
+      "signature": {
+        "name": "setEnabled",
+        "parameters": [
+          {
+            "type": {
+              "name": "Boolean"
+            },
+            "name": "enabled"
+          }
+        ],
+        "str": "setEnabled(enabled)"
+      },
+      "description": "Enable/disable the item.",
+      "id": "setenabled-enabled"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "isEnabled",
+        "parameters": [],
+        "str": "isEnabled()"
+      },
+      "description": "Return whether the item is enabled.",
+      "id": "isenabled"
+    },
+    {
+      "signature": {
+        "name": "setVisible",
+        "parameters": [
+          {
+            "type": {
+              "name": "Boolean"
+            },
+            "name": "visible"
+          }
+        ],
+        "str": "setVisible(visible)"
+      },
+      "description": "Show/hide the item.",
+      "id": "setvisible-visible"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Boolean"
+        },
+        "name": "isVisible",
+        "parameters": [],
+        "str": "isVisible()"
+      },
+      "description": "Return whether the item is visible to users.",
+      "id": "isvisible"
+    },
+    {
+      "signature": {
+        "name": "setAccelerator",
+        "parameters": [
+          {
+            "type": {
+              "name": "Accelerator",
+              "id": "accelerator"
+            },
+            "name": "accelerator"
+          }
+        ],
+        "str": "setAccelerator(accelerator)"
+      },
+      "description": "Set the `accelerator` used to activate the item.",
+      "id": "setaccelerator-accelerator"
+    }
+  ],
+  "events": [
+    {
+      "callback": {
+        "name": "onClick",
+        "parameters": [
+          {
+            "type": {
+              "name": "MenuItem",
+              "id": "menuitem"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "onClick(self)"
+      },
+      "description": "Emitted when item is clicked.",
+      "id": "onclick-self"
+    }
+  ],
+  "module": "gui",
+  "id": "menuitem"
+}

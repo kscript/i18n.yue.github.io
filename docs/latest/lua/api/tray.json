@@ -1,0 +1,149 @@
+{
+  "name": "Tray",
+  "component": "gui",
+  "header": "nativeui/tray.h",
+  "type": "Class",
+  "namespace": "nu",
+  "description": "Tray item displayed in system notification area.",
+  "detail": "Platform limitations:\n\n* On Linux tray items are displayed as app indicators.\n* On Linux there is no fallback when app indicators are not supported.\n* On Linux app indicator can only show when it has menu attached.\n",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Tray",
+          "id": "tray"
+        },
+        "name": "createwithimage",
+        "parameters": [
+          {
+            "type": {
+              "name": "Image",
+              "id": "image"
+            },
+            "name": "icon"
+          }
+        ],
+        "str": "createwithimage(icon)"
+      },
+      "description": "Create a tray item with `icon`.",
+      "id": "createwithimage-icon"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Tray",
+          "id": "tray"
+        },
+        "name": "createwithtitle",
+        "parameters": [
+          {
+            "type": {
+              "name": "string"
+            },
+            "name": "title"
+          }
+        ],
+        "str": "createwithtitle(title)"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Create a tray item with only `title`.",
+      "id": "createwithtitle-title"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "settitle",
+        "parameters": [
+          {
+            "type": {
+              "name": "string"
+            },
+            "name": "title"
+          }
+        ],
+        "str": "settitle(title)"
+      },
+      "platform": [
+        "macOS",
+        "linux"
+      ],
+      "description": "Set title to be displayed aside item's icon.",
+      "id": "settitle-title"
+    },
+    {
+      "signature": {
+        "name": "setimage",
+        "parameters": [
+          {
+            "type": {
+              "name": "Image",
+              "id": "image"
+            },
+            "name": "icon"
+          }
+        ],
+        "str": "setimage(icon)"
+      },
+      "description": "Set the `icon` of tray item.",
+      "id": "setimage-icon"
+    },
+    {
+      "signature": {
+        "name": "setmenu",
+        "parameters": [
+          {
+            "type": {
+              "name": "Menu",
+              "id": "menu"
+            },
+            "name": "menu"
+          }
+        ],
+        "str": "setmenu(menu)"
+      },
+      "description": "Set the menu attached with the tray item.",
+      "detail": "On most platforms the menu will show when clicking on the icon, while on\nWindows the menu will only show when when right-clicking on the icon.\n",
+      "id": "setmenu-menu"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Menu",
+          "id": "menu"
+        },
+        "name": "getmenu",
+        "parameters": [],
+        "str": "getmenu()"
+      },
+      "description": "Return the menu attached.",
+      "id": "getmenu"
+    }
+  ],
+  "events": [
+    {
+      "callback": {
+        "name": "onclick",
+        "parameters": [
+          {
+            "type": {
+              "name": "Button",
+              "id": "button"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "onclick(self)"
+      },
+      "platform": [
+        "Windows"
+      ],
+      "description": "Emitted when the tray item is clicked.",
+      "id": "onclick-self"
+    }
+  ],
+  "module": "yue.gui",
+  "id": "tray"
+}

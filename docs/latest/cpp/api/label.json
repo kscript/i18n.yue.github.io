@@ -1,0 +1,105 @@
+{
+  "name": "Label",
+  "component": "gui",
+  "header": "nativeui/label.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "inherit": {
+    "name": "View",
+    "id": "view"
+  },
+  "description": "Display text.",
+  "constructors": [
+    {
+      "signature": {
+        "name": "Label",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "text"
+          }
+        ],
+        "str": "Label(const std::string& text)"
+      },
+      "description": "Create a new `Label` with `text`.",
+      "id": "label-text"
+    }
+  ],
+  "class_properties": [
+    {
+      "description": "The class name of this view.",
+      "id": "kclassname",
+      "type": {
+        "name": "const char*"
+      },
+      "name": "kClassName"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "SetText",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "text"
+          }
+        ],
+        "str": "void SetText(const std::string& text)"
+      },
+      "description": "Set the text to display.",
+      "id": "settext-text"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::string"
+        },
+        "name": "GetText",
+        "parameters": [],
+        "str": "std::string GetText() const"
+      },
+      "description": "Return the text displayed.",
+      "id": "gettext"
+    },
+    {
+      "signature": {
+        "name": "SetAlign",
+        "parameters": [
+          {
+            "type": {
+              "name": "TextAlign",
+              "id": "textalign"
+            },
+            "name": "align"
+          }
+        ],
+        "str": "void SetAlign(TextAlign align)"
+      },
+      "description": "Set horizontal text alignment.",
+      "id": "setalign-align"
+    },
+    {
+      "signature": {
+        "name": "SetVAlign",
+        "parameters": [
+          {
+            "type": {
+              "name": "TextAlign",
+              "id": "textalign"
+            },
+            "name": "align"
+          }
+        ],
+        "str": "void SetVAlign(TextAlign align)"
+      },
+      "description": "Set vertical text alignment.",
+      "id": "setvalign-align"
+    }
+  ],
+  "id": "label"
+}

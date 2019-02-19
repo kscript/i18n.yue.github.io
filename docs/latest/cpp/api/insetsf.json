@@ -1,0 +1,192 @@
+{
+  "name": "InsetsF",
+  "lang": [
+    "cpp"
+  ],
+  "header": "nativeui/gfx/geometry/insets_f.h",
+  "type": "class",
+  "namespace": "nu",
+  "description": "Borders inside rectangle.",
+  "constructors": [
+    {
+      "signature": {
+        "name": "InsetsF",
+        "parameters": [],
+        "str": "InsetsF()"
+      },
+      "description": "Create an empty insets.",
+      "id": "insetsf"
+    },
+    {
+      "signature": {
+        "name": "InsetsF",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "all"
+          }
+        ],
+        "str": "InsetsF(float all)"
+      },
+      "description": "Create an insets using `all` as borders.",
+      "id": "insetsf-all"
+    },
+    {
+      "signature": {
+        "name": "InsetsF",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "vertical"
+          },
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "horizontal"
+          }
+        ],
+        "str": "InsetsF(float vertical, float horizontal)"
+      },
+      "description": "Create an insets with `vertical` and `horizontal` borders.",
+      "id": "insetsf-vertical-horizontal"
+    },
+    {
+      "signature": {
+        "name": "InsetsF",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "top"
+          },
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "left"
+          },
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "bottom"
+          },
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "right"
+          }
+        ],
+        "str": "InsetsF(float top, float left, float bottom, float right)"
+      },
+      "description": "Create an insets with specified borders.",
+      "id": "insetsf-top-left-bottom-right"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "top",
+        "parameters": [],
+        "str": "float top() const"
+      },
+      "description": "Return the top border.",
+      "id": "top"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "left",
+        "parameters": [],
+        "str": "float left() const"
+      },
+      "description": "Return the left border.",
+      "id": "left"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "bottom",
+        "parameters": [],
+        "str": "float bottom() const"
+      },
+      "description": "Return the bottom border.",
+      "id": "bottom"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "right",
+        "parameters": [],
+        "str": "float right() const"
+      },
+      "description": "Return the right border.",
+      "id": "right"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "width",
+        "parameters": [],
+        "str": "float width() const"
+      },
+      "description": "Return the total width taken up by the insets, which is the sum of the\nleft and right insets.\n",
+      "id": "width"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "height",
+        "parameters": [],
+        "str": "float height() const"
+      },
+      "description": "Return the total height taken up by the insets, which is the sum of the\ntop and bottom insets.\n",
+      "id": "height"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsEmpty",
+        "parameters": [],
+        "str": "bool IsEmpty() const"
+      },
+      "description": "Return `true` if the insets are empty.",
+      "id": "isempty"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::string"
+        },
+        "name": "ToString",
+        "parameters": [],
+        "str": "std::string ToString() const"
+      },
+      "description": "Return string representation of the insets.",
+      "id": "tostring"
+    }
+  ],
+  "id": "insetsf"
+}

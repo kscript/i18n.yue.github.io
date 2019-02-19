@@ -1,0 +1,24 @@
+{
+  "name": "MenuBar",
+  "component": "gui",
+  "header": "nativeui/menu_bar.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "inherit": {
+    "name": "MenuBase",
+    "id": "menubase"
+  },
+  "description": "Menu bar.",
+  "constructors": [
+    {
+      "signature": {
+        "name": "MenuBar",
+        "parameters": [],
+        "str": "MenuBar()"
+      },
+      "description": "Create a menubar.",
+      "id": "menubar"
+    }
+  ],
+  "id": "menubar"
+}

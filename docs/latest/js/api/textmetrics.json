@@ -1,0 +1,19 @@
+{
+  "name": "TextMetrics",
+  "header": "nativeui/gfx/text.h",
+  "type": "Object",
+  "namespace": "nu",
+  "description": "Text measurement.",
+  "properties": [
+    {
+      "description": "Size needed for drawing the text.",
+      "id": "size",
+      "type": {
+        "name": "SizeF",
+        "id": "sizef"
+      },
+      "name": "size"
+    }
+  ],
+  "id": "textmetrics"
+}

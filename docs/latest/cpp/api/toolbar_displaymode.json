@@ -1,0 +1,9 @@
+{
+  "name": "Toolbar::DisplayMode",
+  "header": "nativeui/toolbar.h",
+  "type": "enum class",
+  "namespace": "nu",
+  "description": "Possible display modes of `Toolbar`.",
+  "detail": "\nThis type is an `enum class` with following values:\n  * `Toolbar::DisplayMode::Default`\n  * `Toolbar::DisplayMode::IconAndLabel`\n  * `Toolbar::DisplayMode::Icon`\n  * `Toolbar::DisplayMode::Label`\n",
+  "id": "toolbar_displaymode"
+}

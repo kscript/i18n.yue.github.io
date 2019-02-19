@@ -1,0 +1,137 @@
+{
+  "name": "Picker",
+  "component": "gui",
+  "header": "nativeui/picker.h",
+  "type": "Class",
+  "namespace": "nu",
+  "inherit": {
+    "name": "View",
+    "id": "view"
+  },
+  "description": "Choose a single item from a list of items.",
+  "detail": "By default, the first item is automatically selected, and duplicate items\nare merged into one.\n",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Picker",
+          "id": "picker"
+        },
+        "name": "create",
+        "parameters": [],
+        "str": "create()"
+      },
+      "description": "Create a new `Picker` view.",
+      "id": "create"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "addItem",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "title"
+          }
+        ],
+        "str": "addItem(title)"
+      },
+      "description": "Add an item with `title` to the end.",
+      "id": "additem-title"
+    },
+    {
+      "signature": {
+        "name": "removeItemAt",
+        "parameters": [
+          {
+            "type": {
+              "name": "Integer"
+            },
+            "name": "index"
+          }
+        ],
+        "str": "removeItemAt(index)"
+      },
+      "description": "Remove the item at `index`.",
+      "id": "removeitemat-index"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Array"
+        },
+        "name": "getItems",
+        "parameters": [],
+        "str": "getItems()"
+      },
+      "description": "Return all items.",
+      "id": "getitems"
+    },
+    {
+      "signature": {
+        "name": "selectItemAt",
+        "parameters": [
+          {
+            "type": {
+              "name": "Integer"
+            },
+            "name": "index"
+          }
+        ],
+        "str": "selectItemAt(index)"
+      },
+      "description": "Select the item at `index`.",
+      "id": "selectitemat-index"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "String"
+        },
+        "name": "getSelectedItem",
+        "parameters": [],
+        "str": "getSelectedItem()"
+      },
+      "description": "Return the title of selected item.",
+      "detail": "Empty string is returned if there is no selected item.",
+      "id": "getselecteditem"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Integer"
+        },
+        "name": "getSelectedItemIndex",
+        "parameters": [],
+        "str": "getSelectedItemIndex()"
+      },
+      "description": "Return the index of selected item.",
+      "detail": "-1 is returned if there is no selected item.",
+      "id": "getselecteditemindex"
+    }
+  ],
+  "events": [
+    {
+      "callback": {
+        "name": "onSelectionChange",
+        "parameters": [
+          {
+            "type": {
+              "name": "Picker",
+              "id": "picker"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "onSelectionChange(self)"
+      },
+      "description": "Emitted when user has changed the selected item.",
+      "id": "onselectionchange-self"
+    }
+  ],
+  "module": "gui",
+  "id": "picker"
+}

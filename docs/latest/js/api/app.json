@@ -1,0 +1,138 @@
+{
+  "name": "App",
+  "component": "gui",
+  "header": "nativeui/app.h",
+  "type": "Class",
+  "namespace": "nu",
+  "description": "Application class.",
+  "detail": "This class represents current app and provides app wide APIs.\n\nThis class can not be created by user, you can only receive its global\ninstance from the `app` property of the module:\n\n```js\nconst gui = require('gui')\ngui.app.getColor('text')\n```\n",
+  "methods": [
+    {
+      "signature": {
+        "name": "setApplicationMenu",
+        "parameters": [
+          {
+            "type": {
+              "name": "MenuBar",
+              "id": "menubar"
+            },
+            "name": "menu"
+          }
+        ],
+        "str": "setApplicationMenu(menu)"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Set the application menu bar.",
+      "id": "setapplicationmenu-menu"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "MenuBar",
+          "id": "menubar"
+        },
+        "name": "getApplicationMenu",
+        "parameters": [],
+        "str": "getApplicationMenu()"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Return the application menu bar.",
+      "id": "getapplicationmenu"
+    },
+    {
+      "signature": {
+        "name": "setDockBadgeLabel",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "label"
+          }
+        ],
+        "str": "setDockBadgeLabel(label)"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Set the `label` to be displayed in dock’s badging area.",
+      "id": "setdockbadgelabel-label"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "String"
+        },
+        "name": "getDockBadgeLabel",
+        "parameters": [],
+        "str": "getDockBadgeLabel()"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Get the label displayed in dock’s badging area.",
+      "id": "getdockbadgelabel"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Color",
+          "id": "color"
+        },
+        "name": "getColor",
+        "parameters": [
+          {
+            "type": {
+              "name": "App::ThemeColor",
+              "id": "app_themecolor"
+            },
+            "name": "name"
+          }
+        ],
+        "str": "getColor(name)"
+      },
+      "description": "Return color of a theme component.",
+      "id": "getcolor-name"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Font",
+          "id": "font"
+        },
+        "name": "getDefaultFont",
+        "parameters": [],
+        "str": "getDefaultFont()"
+      },
+      "description": "Return the default font for displaying text.",
+      "id": "getdefaultfont"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Clipboard",
+          "id": "clipboard"
+        },
+        "name": "getClipboard",
+        "parameters": [
+          {
+            "type": {
+              "name": "Clipboard::Type",
+              "id": "clipboard_type"
+            },
+            "name": "type"
+          }
+        ],
+        "str": "getClipboard(type)"
+      },
+      "description": "Return the clipboard with `type`.",
+      "id": "getclipboard-type"
+    }
+  ],
+  "module": "gui",
+  "id": "app"
+}

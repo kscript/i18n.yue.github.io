@@ -1,0 +1,91 @@
+{
+  "name": "Image",
+  "component": "gui",
+  "header": "nativeui/gfx/image.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "description": "Native image.",
+  "constructors": [
+    {
+      "signature": {
+        "name": "Image",
+        "parameters": [
+          {
+            "type": {
+              "name": "const base::FilePath&",
+              "id": "base_filepath"
+            },
+            "name": "path"
+          }
+        ],
+        "str": "Image(const base::FilePath& path)"
+      },
+      "description": "Create an image by reading from `path`.",
+      "id": "image-path"
+    },
+    {
+      "signature": {
+        "name": "Image",
+        "parameters": [
+          {
+            "type": {
+              "name": "const Buffer&",
+              "id": "buffer"
+            },
+            "name": "buffer"
+          },
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "scale_factor"
+          }
+        ],
+        "str": "Image(const Buffer& buffer, float scale_factor)"
+      },
+      "description": "Create an image from `buffer` in memory, with `scale_factor`.\n",
+      "id": "image-buffer-scalefactor"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "SizeF",
+          "id": "sizef"
+        },
+        "name": "GetSize",
+        "parameters": [],
+        "str": "SizeF GetSize() const"
+      },
+      "description": "Return image's size in DIP.",
+      "id": "getsize"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "GetScaleFactor",
+        "parameters": [],
+        "str": "float GetScaleFactor() const"
+      },
+      "description": "Return image's scale factor.",
+      "id": "getscalefactor"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "NativeImage",
+          "id": "nativeimage"
+        },
+        "name": "GetNative",
+        "parameters": [],
+        "str": "NativeImage GetNative() const"
+      },
+      "description": "Return the native instance wrapped by the class.",
+      "id": "getnative"
+    }
+  ],
+  "id": "image"
+}

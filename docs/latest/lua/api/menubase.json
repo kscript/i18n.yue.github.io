@@ -1,0 +1,102 @@
+{
+  "name": "MenuBase",
+  "component": "gui",
+  "header": "nativeui/menu_base.h",
+  "type": "Class",
+  "namespace": "nu",
+  "description": "Base class of menu bar and popup menu.",
+  "methods": [
+    {
+      "signature": {
+        "name": "append",
+        "parameters": [
+          {
+            "type": {
+              "name": "MenuItem",
+              "id": "menuitem"
+            },
+            "name": "item"
+          }
+        ],
+        "str": "append(item)"
+      },
+      "description": "Append the `item` to the menu.",
+      "id": "append-item"
+    },
+    {
+      "signature": {
+        "name": "insert",
+        "parameters": [
+          {
+            "type": {
+              "name": "MenuItem",
+              "id": "menuitem"
+            },
+            "name": "item"
+          },
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "index"
+          }
+        ],
+        "str": "insert(item, index)"
+      },
+      "description": "Insert the `item` at `index` to the menu.",
+      "id": "insert-item-index"
+    },
+    {
+      "signature": {
+        "name": "remove",
+        "parameters": [
+          {
+            "type": {
+              "name": "MenuItem",
+              "id": "menuitem"
+            },
+            "name": "item"
+          }
+        ],
+        "str": "remove(item)"
+      },
+      "description": "Remove the `item` from the menu.",
+      "id": "remove-item"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "integer"
+        },
+        "name": "itemcount",
+        "parameters": [],
+        "str": "itemcount()"
+      },
+      "description": "Return the count of items in the menu.",
+      "id": "itemcount"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "MenuItem",
+          "id": "menuitem"
+        },
+        "name": "itemat",
+        "parameters": [
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "index"
+          }
+        ],
+        "str": "itemat(index)"
+      },
+      "description": "Return the item at `index`.",
+      "id": "itemat-index"
+    }
+  ],
+  "module": "yue.gui",
+  "detail": "\nNote that the `index` counts from `1`, following lua's convention.\n",
+  "id": "menubase"
+}

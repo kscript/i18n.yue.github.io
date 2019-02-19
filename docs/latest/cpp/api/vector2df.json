@@ -1,0 +1,186 @@
+{
+  "name": "Vector2dF",
+  "header": "nativeui/gfx/geometry/vector2d_f.h",
+  "type": "class",
+  "namespace": "nu",
+  "description": "Two dimensions vector.",
+  "constructors": [
+    {
+      "signature": {
+        "name": "Vector2dF",
+        "parameters": [],
+        "str": "Vector2dF()"
+      },
+      "description": "Create an empty vector.",
+      "id": "vector2df"
+    },
+    {
+      "signature": {
+        "name": "Vector2dF",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "x"
+          },
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "y"
+          }
+        ],
+        "str": "Vector2dF(float x, float y)"
+      },
+      "description": "Create a vector with dimensions of `x` and `y`.",
+      "id": "vector2df-x-y"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "x",
+        "parameters": [],
+        "str": "float x() const"
+      },
+      "description": "Return X component.",
+      "id": "x"
+    },
+    {
+      "signature": {
+        "name": "set_x",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "x"
+          }
+        ],
+        "str": "void set_x(float x)"
+      },
+      "description": "Set X component.",
+      "id": "setx-x"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "y",
+        "parameters": [],
+        "str": "float y() const"
+      },
+      "description": "Return Y component.",
+      "id": "y"
+    },
+    {
+      "signature": {
+        "name": "set_y",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "y"
+          }
+        ],
+        "str": "void set_y(float y)"
+      },
+      "description": "Set Y component.",
+      "id": "sety-y"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsZero",
+        "parameters": [],
+        "str": "bool IsZero() const"
+      },
+      "description": "Return whether the vector is empty.",
+      "id": "iszero"
+    },
+    {
+      "signature": {
+        "name": "Add",
+        "parameters": [
+          {
+            "type": {
+              "name": "const Vector2dF&",
+              "id": "vector2df"
+            },
+            "name": "other"
+          }
+        ],
+        "str": "void Add(const Vector2dF& other)"
+      },
+      "description": "Add the components of the `other` vector to the current vector.\n",
+      "id": "add-other"
+    },
+    {
+      "signature": {
+        "name": "Subtract",
+        "parameters": [
+          {
+            "type": {
+              "name": "const Vector2dF&",
+              "id": "vector2df"
+            },
+            "name": "other"
+          }
+        ],
+        "str": "void Subtract(const Vector2dF& other)"
+      },
+      "description": "Subtract the components of the `other` vector from the current vector.\n",
+      "id": "subtract-other"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "Length",
+        "parameters": [],
+        "str": "float Length() const"
+      },
+      "description": "Return the diagonal length of the vector.",
+      "id": "length"
+    },
+    {
+      "signature": {
+        "name": "Scale",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "scale"
+          }
+        ],
+        "str": "void Scale(float scale)"
+      },
+      "description": "Scale the x and y components of the vector by `scale|`.",
+      "id": "scale-scale"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::string"
+        },
+        "name": "ToString",
+        "parameters": [],
+        "str": "std::string ToString() const;"
+      },
+      "description": "Return string representation of the vector.",
+      "id": "tostring"
+    }
+  ],
+  "detail": "\nThis class is used to indicate a distance in two dimensions between two\npoints. Subtracting two points should produce a vector, and adding a vector\nto a point produces the point at the vector's distance from the original\npoint.\n\n```cpp\nnu::PointF view_point(100, 100);\nnu::PointF window_point = view_point + view->OffsetFromWindow();\nwindow_point == nu::PointF(200, 200);\n```\n",
+  "id": "vector2df"
+}

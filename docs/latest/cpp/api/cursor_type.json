@@ -1,0 +1,9 @@
+{
+  "name": "Cursor::Type",
+  "header": "nativeui/cursor.h",
+  "type": "enum class",
+  "namespace": "nu",
+  "description": "Type of cursor.",
+  "detail": "\nThis type is an `enum class` with following values:\n* `Cursor::Type::Default`\n* `Cursor::Type::Hand`\n* `Cursor::Type::Crosshair`\n* `Cursor::Type::Progress`\n* `Cursor::Type::Text`\n* `Cursor::Type::NotAllowed`\n* `Cursor::Type::Help`\n* `Cursor::Type::Move`\n* `Cursor::Type::ResizeEW`\n* `Cursor::Type::ResizeNS`\n* `Cursor::Type::ResizeNESW`\n* `Cursor::Type::ResizeNWSE`\n",
+  "id": "cursor_type"
+}

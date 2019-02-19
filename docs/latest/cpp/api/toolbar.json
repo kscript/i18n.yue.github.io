@@ -1,0 +1,200 @@
+{
+  "name": "Toolbar",
+  "platform": [
+    "macOS"
+  ],
+  "component": "gui",
+  "header": "nativeui/toolbar.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "description": "Window toolbar.",
+  "detail": "This view is only implemented for macOS by wrapping\n[`NSToolbar`](https://developer.apple.com/documentation/appkit/nstoolbar).\nThe API is still experimental and will be changed in future. Currently certain\nitems are not aligned correctly in toolbar.\n\nThe toolbar items are not added manually like the normal views, instead you\nhave to implement the `get_item` delegate which creates items on request, and\nthen call `SetDefaultItemIdentifiers` to specify the default items to show.\n\n```js\nconst toolbar = gui.Toolbar.create('my-toolbar')\ntoolbar.getItem = (toolbar, identifier) => {\n  switch (identifier) {\n    case 'entry':\n      const entry = gui.Entry.create()\n      const minSize = entry.getMinimumSize()\n      minSize.width = 200\n      const maxSize = { width: 2 << 30 - 1, height: minSize.height }\n      return { label: 'Address', view: entry, minSize, maxSize }\n    case 'button':\n      const button = gui.Button.create('GO')\n      button.setImage(gui.Image.createFromPath('go.png'))\n      return {\n        label: 'GO',\n        minSize: {width: 30, height: 35},\n        view: button\n      }\n  }\n}\ntoolbar.setDefaultItemIdentifiers(['entry', 'button'])\ntoolbar.setDisplayMode('icon')\nwindow.setToolbar(toolbar)\n```\n",
+  "constructors": [
+    {
+      "signature": {
+        "name": "Toolbar",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "identifier"
+          }
+        ],
+        "str": "Toolbar(const std::string& identifier)"
+      },
+      "description": "Create a new `Toolbar` view with `identifier`.\n\nWithin the application all toolbars with the same identifier are\nsynchronized to maintain the same state, including for example, the\ndisplay mode and item order. The identifier is used as the autosave name\nfor toolbars that save their configuration.\n",
+      "id": "toolbar-identifier"
+    }
+  ],
+  "class_properties": [
+    {
+      "description": "The identifier of the Flexible Space toolbar item.",
+      "id": "kflexiblespaceitemidentifier",
+      "type": {
+        "name": "const char*"
+      },
+      "name": "kFlexibleSpaceItemIdentifier"
+    },
+    {
+      "description": "The identifier of the Space toolbar item.",
+      "id": "kspaceitemidentifier",
+      "type": {
+        "name": "const char*"
+      },
+      "name": "kSpaceItemIdentifier"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "SetDefaultItemIdentifiers",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::vector<std::string>&"
+            },
+            "name": "identifiers",
+            "description": "An array of toolbar items' identifiers."
+          }
+        ],
+        "str": "void SetDefaultItemIdentifiers(const std::vector<std::string>& identifiers)"
+      },
+      "description": "Set the identifiers of default items that would show in toolbar.\n",
+      "id": "setdefaultitemidentifiers-identifiers"
+    },
+    {
+      "signature": {
+        "name": "SetAllowedItemIdentifiers",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::vector<std::string>&"
+            },
+            "name": "identifiers",
+            "description": "An array of toolbar items' identifiers."
+          }
+        ],
+        "str": "void SetAllowedItemIdentifiers(const std::vector<std::string>& identifiers)"
+      },
+      "description": "Set the identifiers of the items that are allowed to show in toolbar.\n",
+      "id": "setalloweditemidentifiers-identifiers"
+    },
+    {
+      "signature": {
+        "name": "SetAllowCustomization",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "allow"
+          }
+        ],
+        "str": "void SetAllowCustomization(bool allow)"
+      },
+      "description": "Set whether users are allowed to customize the toolbar.\n",
+      "id": "setallowcustomization-allow"
+    },
+    {
+      "signature": {
+        "name": "SetDisplayMode",
+        "parameters": [
+          {
+            "type": {
+              "name": "Toolbar::DisplayMode",
+              "id": "toolbar_displaymode"
+            },
+            "name": "mode"
+          }
+        ],
+        "str": "void SetDisplayMode(Toolbar::DisplayMode mode)"
+      },
+      "description": "Set the display mode of the toolbar items.",
+      "id": "setdisplaymode-mode"
+    },
+    {
+      "signature": {
+        "name": "SetVisible",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "visible"
+          }
+        ],
+        "str": "void SetVisible(bool visible)"
+      },
+      "description": "Set whether toolbar is visible.",
+      "id": "setvisible-visible"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsVisible",
+        "parameters": [],
+        "str": "bool IsVisible() const"
+      },
+      "description": "Return whether toolbar is visible.",
+      "id": "isvisible"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::string"
+        },
+        "name": "GetIdentifier",
+        "parameters": [],
+        "str": "std::string GetIdentifier() const"
+      },
+      "description": "Return the identifier of the toolbar.",
+      "id": "getidentifier"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "NativeToolbar",
+          "id": "nativetoolbar"
+        },
+        "name": "GetNative",
+        "parameters": [],
+        "str": "NativeToolbar GetNative() const"
+      },
+      "description": "Return the underlying native view of the toolbar.",
+      "id": "getnative"
+    }
+  ],
+  "delegates": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Toolbar::Item",
+          "id": "toolbar_item"
+        },
+        "name": "get_item",
+        "parameters": [
+          {
+            "type": {
+              "name": "Toolbar*",
+              "id": "toolbar"
+            },
+            "name": "toolbar"
+          },
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "identifier"
+          }
+        ],
+        "str": "Toolbar::Item get_item(Toolbar* toolbar, const std::string& identifier)"
+      },
+      "description": "Called lazily when the toolbar is going to get the item with `identifier`.\n\nYou should not cache the item to be returned.\n",
+      "id": "getitem-toolbar-identifier"
+    }
+  ],
+  "id": "toolbar"
+}

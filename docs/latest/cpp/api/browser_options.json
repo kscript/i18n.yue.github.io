@@ -1,0 +1,52 @@
+{
+  "name": "Browser::Options",
+  "header": "nativeui/browser.h",
+  "type": "struct",
+  "namespace": "nu",
+  "description": "Options for creating browser.",
+  "properties": [
+    {
+      "description": "Whether the browser can show devtools, default is `false`.",
+      "detail": "Depending on platform, the option to show devtools is usually in the\ncontext menu, so you should also enable builtin context menu when using\nthis option.\n\nCurrently this option is not working on Windows.\n",
+      "id": "devtools",
+      "type": {
+        "name": "bool"
+      },
+      "name": "devtools"
+    },
+    {
+      "description": "Whether to use builtin context menu, default is `false`.",
+      "detail": "On macOS due to the limitation of system APIs, right-clicking certain\nelements would still popup a menu with Services items.\n",
+      "id": "contextmenu",
+      "type": {
+        "name": "bool"
+      },
+      "name": "context_menu"
+    },
+    {
+      "description": "Whether file access is allowed from file URLs, default is `false`.",
+      "platform": [
+        "macOS",
+        "Linux"
+      ],
+      "detail": "By default, when something is loaded in using a file URI, cross origin\nrequests to other file resources are not allowed. This setting allows\nyou to change that behaviour, so that it would be possible to do a\n`XMLHttpRequest` of a local file, for example.\n",
+      "id": "allowfileaccessfromfiles",
+      "type": {
+        "name": "bool"
+      },
+      "name": "allow_file_access_from_files"
+    },
+    {
+      "description": "Whether to enable hardware acceleration, default is `true`.",
+      "platform": [
+        "Linux"
+      ],
+      "id": "hardwareacceleration",
+      "type": {
+        "name": "bool"
+      },
+      "name": "hardware_acceleration"
+    }
+  ],
+  "id": "browser_options"
+}

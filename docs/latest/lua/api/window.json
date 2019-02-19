@@ -1,0 +1,922 @@
+{
+  "name": "Window",
+  "component": "gui",
+  "header": "nativeui/window.h",
+  "type": "Class",
+  "namespace": "nu",
+  "description": "Native window.",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "Window",
+          "id": "window"
+        },
+        "name": "create",
+        "parameters": [
+          {
+            "type": {
+              "name": "Window::Options",
+              "id": "window_options"
+            },
+            "name": "options"
+          }
+        ],
+        "str": "create(options)"
+      },
+      "description": "Create a new window with `options`.",
+      "id": "create-options"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "close",
+        "parameters": [],
+        "str": "close()"
+      },
+      "description": "Request to close the window.",
+      "id": "close"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "boolean"
+        },
+        "name": "hasframe",
+        "parameters": [],
+        "str": "hasframe()"
+      },
+      "description": "Return whether window has a native frame.",
+      "id": "hasframe"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "boolean"
+        },
+        "name": "istransparent",
+        "parameters": [],
+        "str": "istransparent()"
+      },
+      "description": "Return whether window is transparent.",
+      "id": "istransparent"
+    },
+    {
+      "signature": {
+        "name": "sethasshadow",
+        "parameters": [
+          {
+            "type": {
+              "name": "boolean"
+            },
+            "name": "has"
+          }
+        ],
+        "str": "sethasshadow(has)"
+      },
+      "description": "Set whether window should have shadow.\n\nDepending on platform, this may not work.\n",
+      "id": "sethasshadow-has"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "boolean"
+        },
+        "name": "hasshadow",
+        "parameters": [],
+        "str": "hasshadow()"
+      },
+      "description": "Return whether window has shadow.",
+      "id": "hasshadow"
+    },
+    {
+      "signature": {
+        "name": "setcontentview",
+        "parameters": [
+          {
+            "type": {
+              "name": "View",
+              "id": "view"
+            },
+            "name": "view"
+          }
+        ],
+        "str": "setcontentview(view)"
+      },
+      "description": "Set the content view of the window.\n\nThe content view will always be resized to fill window's client area.\n",
+      "id": "setcontentview-view"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "View",
+          "id": "view"
+        },
+        "name": "getcontentview",
+        "parameters": [],
+        "str": "getcontentview()"
+      },
+      "description": "Return the content view of the window.",
+      "id": "getcontentview"
+    },
+    {
+      "signature": {
+        "name": "center",
+        "parameters": [],
+        "str": "center()"
+      },
+      "description": "Move the window to the center of the screen.",
+      "id": "center"
+    },
+    {
+      "signature": {
+        "name": "setcontentsize",
+        "parameters": [
+          {
+            "type": {
+              "name": "SizeF",
+              "id": "sizef"
+            },
+            "name": "size"
+          }
+        ],
+        "str": "setcontentsize(size)"
+      },
+      "description": "Resize window to make the content view fit `size`.",
+      "id": "setcontentsize-size"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "SizeF",
+          "id": "sizef"
+        },
+        "name": "getcontentsize",
+        "parameters": [],
+        "str": "getcontentsize()"
+      },
+      "description": "Return the size of content view.",
+      "id": "getcontentsize"
+    },
+    {
+      "signature": {
+        "name": "setbounds",
+        "parameters": [
+          {
+            "type": {
+              "name": "RectF",
+              "id": "rectf"
+            },
+            "name": "bounds"
+          }
+        ],
+        "str": "setbounds(bounds)"
+      },
+      "description": "Change the position and size of the window.",
+      "id": "setbounds-bounds"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "RectF",
+          "id": "rectf"
+        },
+        "name": "getbounds",
+        "parameters": [],
+        "str": "getbounds()"
+      },
+      "description": "Return the position and size of the window.",
+      "id": "getbounds"
+    },
+    {
+      "signature": {
+        "name": "setsizeconstraints",
+        "parameters": [
+          {
+            "type": {
+              "name": "SizeF",
+              "id": "sizef"
+            },
+            "name": "minsize",
+            "description": "Minimum size."
+          },
+          {
+            "type": {
+              "name": "SizeF",
+              "id": "sizef"
+            },
+            "name": "maxsize",
+            "description": "Maximum size."
+          }
+        ],
+        "str": "setsizeconstraints(minsize, maxsize)"
+      },
+      "description": "Set the minimum and maximum sizes of the window.\n\nPassing an empty size means no constraint.\n",
+      "id": "setsizeconstraints-minsize-maxsize"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::tuple",
+          "template": "std::tuple",
+          "args": [
+            {
+              "name": "SizeF",
+              "id": "sizef"
+            },
+            {
+              "name": "SizeF",
+              "id": "sizef"
+            }
+          ],
+          "id": "std_tuple"
+        },
+        "name": "getsizeconstraints",
+        "parameters": [],
+        "str": "getsizeconstraints()"
+      },
+      "description": "Return minimum and maximum sizes of the window.",
+      "id": "getsizeconstraints"
+    },
+    {
+      "signature": {
+        "name": "setcontentsizeconstraints",
+        "parameters": [
+          {
+            "type": {
+              "name": "SizeF",
+              "id": "sizef"
+            },
+            "name": "minsize",
+            "description": "Minimum content size."
+          },
+          {
+            "type": {
+              "name": "SizeF",
+              "id": "sizef"
+            },
+            "name": "maxsize",
+            "description": "Maximum content size."
+          }
+        ],
+        "str": "setcontentsizeconstraints(minsize, maxsize)"
+      },
+      "description": "Set the minimum and maximum content sizes of the window.\n\nPassing an empty size means no constraint.\n",
+      "id": "setcontentsizeconstraints-minsize-maxsize"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::tuple",
+          "template": "std::tuple",
+          "args": [
+            {
+              "name": "SizeF",
+              "id": "sizef"
+            },
+            {
+              "name": "SizeF",
+              "id": "sizef"
+            }
+          ],
+          "id": "std_tuple"
+        },
+        "name": "getcontentsizeconstraints",
+        "parameters": [],
+        "str": "getcontentsizeconstraints()"
+      },
+      "description": "Return minimum and maximum content sizes of the window.",
+      "id": "getcontentsizeconstraints"
+    },
+    {
+      "signature": {
+        "name": "activate",
+        "parameters": [],
+        "str": "activate()"
+      },
+      "description": "Show the window and activate it.",
+      "id": "activate"
+    },
+    {
+      "signature": {
+        "name": "deactivate",
+        "parameters": [],
+        "str": "deactivate()"
+      },
+      "description": "Move the focus away from the window.",
+      "id": "deactivate"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "boolean"
+        },
+        "name": "isactive",
+        "parameters": [],
+        "str": "isactive()"
+      },
+      "description": "Return whether window has focus.",
+      "id": "isactive"
+    },
+    {
+      "signature": {
+        "name": "setvisible",
+        "parameters": [
+          {
+            "type": {
+              "name": "boolean"
+            },
+            "name": "visible"
+          }
+        ],
+        "str": "setvisible(visible)"
+      },
+      "description": "Show/hide the window.",
+      "id": "setvisible-visible"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "boolean"
+        },
+        "name": "isvisible",
+        "parameters": [],
+        "str": "isvisible()"
+      },
+      "description": "Return whether window is visible.",
+      "id": "isvisible"
+    },
+    {
+      "signature": {
+        "name": "setalwaysontop",
+        "parameters": [
+          {
+            "type": {
+              "name": "boolean"
+            },
+            "name": "top"
+          }
+        ],
+        "str": "setalwaysontop(top)"
+      },
+      "description": "Make the window always show above other normal windows.",
+      "id": "setalwaysontop-top"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "boolean"
+        },
+        "name": "isalwaysontop",
+        "parameters": [],
+        "str": "isalwaysontop()"
+      },
+      "description": "Return whether window is always above other normal windows.",
+      "id": "isalwaysontop"
+    },
+    {
+      "signature": {
+        "name": "setfullscreen",
+        "parameters": [
+          {
+            "type": {
+              "name": "boolean"
+            },
+            "name": "fullscreen"
+          }
+        ],
+        "str": "setfullscreen(fullscreen)"
+      },
+      "description": "Enter/leave fullscreen state.",
+      "id": "setfullscreen-fullscreen"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "boolean"
+        },
+        "name": "isfullscreen",
+        "parameters": [],
+        "str": "isfullscreen()"
+      },
+      "description": "Return whether window is in fullscreen.",
+      "id": "isfullscreen"
+    },
+    {
+      "signature": {
+        "name": "maximize",
+        "parameters": [],
+        "str": "maximize()"
+      },
+      "description": "Maximize the window.",
+      "id": "maximize"
+    },
+    {
+      "signature": {
+        "name": "unmaximize",
+        "parameters": [],
+        "str": "unmaximize()"
+      },
+      "description": "Unmaximize the window.",
+      "id": "unmaximize"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "boolean"
+        },
+        "name": "ismaximized",
+        "parameters": [],
+        "str": "ismaximized()"
+      },
+      "description": "Return whether window is maximized.",
+      "id": "ismaximized"
+    },
+    {
+      "signature": {
+        "name": "minimize",
+        "parameters": [],
+        "str": "minimize()"
+      },
+      "description": "Minimize the window.",
+      "id": "minimize"
+    },
+    {
+      "signature": {
+        "name": "restore",
+        "parameters": [],
+        "str": "restore()"
+      },
+      "description": "Restore the minimized window.",
+      "id": "restore"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "boolean"
+        },
+        "name": "isminimized",
+        "parameters": [],
+        "str": "isminimized()"
+      },
+      "description": "Return whether window is minimized.",
+      "id": "isminimized"
+    },
+    {
+      "signature": {
+        "name": "setresizable",
+        "parameters": [
+          {
+            "type": {
+              "name": "boolean"
+            },
+            "name": "resizable"
+          }
+        ],
+        "str": "setresizable(resizable)"
+      },
+      "description": "Set whether window can be resized.",
+      "id": "setresizable-resizable"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "boolean"
+        },
+        "name": "isresizable",
+        "parameters": [],
+        "str": "isresizable()"
+      },
+      "description": "Return whether window can be resized.",
+      "id": "isresizable"
+    },
+    {
+      "signature": {
+        "name": "setmaximizable",
+        "parameters": [
+          {
+            "type": {
+              "name": "boolean"
+            },
+            "name": "maximizable"
+          }
+        ],
+        "str": "setmaximizable(maximizable)"
+      },
+      "description": "Set whether window can be maximize.",
+      "id": "setmaximizable-maximizable"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "boolean"
+        },
+        "name": "ismaximizable",
+        "parameters": [],
+        "str": "ismaximizable()"
+      },
+      "description": "Return whether window can be maximize.",
+      "id": "ismaximizable"
+    },
+    {
+      "signature": {
+        "name": "setminimizable",
+        "parameters": [
+          {
+            "type": {
+              "name": "boolean"
+            },
+            "name": "minimizable"
+          }
+        ],
+        "str": "setminimizable(minimizable)"
+      },
+      "description": "Set whether window can be minimized.",
+      "id": "setminimizable-minimizable"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "boolean"
+        },
+        "name": "isminimizable",
+        "parameters": [],
+        "str": "isminimizable()"
+      },
+      "description": "Return whether window can be minimized.",
+      "id": "isminimizable"
+    },
+    {
+      "signature": {
+        "name": "setmovable",
+        "parameters": [
+          {
+            "type": {
+              "name": "boolean"
+            },
+            "name": "movable"
+          }
+        ],
+        "str": "setmovable(movable)"
+      },
+      "description": "Set whether window can be moved.",
+      "id": "setmovable-movable"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "boolean"
+        },
+        "name": "ismovable",
+        "parameters": [],
+        "str": "ismovable()"
+      },
+      "description": "Return whether window can be moved.",
+      "id": "ismovable"
+    },
+    {
+      "signature": {
+        "name": "settitle",
+        "parameters": [
+          {
+            "type": {
+              "name": "string"
+            },
+            "name": "title"
+          }
+        ],
+        "str": "settitle(title)"
+      },
+      "description": "Set window title.",
+      "id": "settitle-title"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "string"
+        },
+        "name": "gettitle",
+        "parameters": [],
+        "str": "gettitle()"
+      },
+      "description": "Get window title.",
+      "id": "gettitle"
+    },
+    {
+      "signature": {
+        "name": "setbackgroundcolor",
+        "parameters": [
+          {
+            "type": {
+              "name": "Color",
+              "id": "color"
+            },
+            "name": "color"
+          }
+        ],
+        "str": "setbackgroundcolor(color)"
+      },
+      "description": "Set the background color of the window.",
+      "id": "setbackgroundcolor-color"
+    },
+    {
+      "signature": {
+        "name": "settoolbar",
+        "parameters": [
+          {
+            "type": {
+              "name": "Toolbar",
+              "id": "toolbar"
+            },
+            "name": "toolbar"
+          }
+        ],
+        "str": "settoolbar(toolbar)"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Set the window toolbar.",
+      "id": "settoolbar-toolbar"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Toolbar",
+          "id": "toolbar"
+        },
+        "name": "gettoolbar",
+        "parameters": [],
+        "str": "gettoolbar()"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Return the window toolbar.",
+      "id": "gettoolbar"
+    },
+    {
+      "signature": {
+        "name": "settitlevisible",
+        "parameters": [
+          {
+            "type": {
+              "name": "boolean"
+            },
+            "name": "visible"
+          }
+        ],
+        "str": "settitlevisible(visible)"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Set whether the title is visible, when title was hidden the toolber would\nbe moved into the area previously occupied by the title.\n",
+      "id": "settitlevisible-visible"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "boolean"
+        },
+        "name": "istitlevisible",
+        "parameters": [],
+        "str": "istitlevisible()"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Return whether title is visible.",
+      "id": "istitlevisible"
+    },
+    {
+      "signature": {
+        "name": "setfullsizecontentview",
+        "parameters": [
+          {
+            "type": {
+              "name": "boolean"
+            },
+            "name": "full"
+          }
+        ],
+        "str": "setfullsizecontentview(full)"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Set the `NSFullSizeContentViewWindowMask` style on the window.\n",
+      "id": "setfullsizecontentview-full"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "boolean"
+        },
+        "name": "isfullsizecontentview",
+        "parameters": [],
+        "str": "isfullsizecontentview()"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Return whether the window has `NSFullSizeContentViewWindowMask` style.\n",
+      "id": "isfullsizecontentview"
+    },
+    {
+      "signature": {
+        "name": "setmenubar",
+        "parameters": [
+          {
+            "type": {
+              "name": "MenuBar",
+              "id": "menubar"
+            },
+            "name": "menubar"
+          }
+        ],
+        "str": "setmenubar(menubar)"
+      },
+      "platform": [
+        "Windows",
+        "Linux"
+      ],
+      "description": "Set the window menu bar.",
+      "id": "setmenubar-menubar"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "MenuBar",
+          "id": "menubar"
+        },
+        "name": "getmenubar",
+        "parameters": [],
+        "str": "getmenubar()"
+      },
+      "platform": [
+        "Windows",
+        "Linux"
+      ],
+      "description": "Return the window menu bar.",
+      "id": "getmenubar"
+    },
+    {
+      "signature": {
+        "name": "setfullsizecontentview",
+        "parameters": [
+          {
+            "type": {
+              "name": "boolean"
+            },
+            "name": "full"
+          }
+        ],
+        "str": "setfullsizecontentview(full)"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Set the `NSFullSizeContentViewWindowMask` style on the window.\n",
+      "id": "setfullsizecontentview-full"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Window",
+          "id": "window"
+        },
+        "name": "getparentwindow",
+        "parameters": [],
+        "str": "getparentwindow()"
+      },
+      "description": "Return the parent window.",
+      "id": "getparentwindow"
+    },
+    {
+      "signature": {
+        "name": "addchildwindow",
+        "parameters": [
+          {
+            "type": {
+              "name": "Window",
+              "id": "window"
+            },
+            "name": "child"
+          }
+        ],
+        "str": "addchildwindow(child)"
+      },
+      "description": "Make `child` a child window of this window.",
+      "detail": "This method will do nothing if `child` already has a parent window.",
+      "id": "addchildwindow-child"
+    },
+    {
+      "signature": {
+        "name": "removechildwindow",
+        "parameters": [
+          {
+            "type": {
+              "name": "Window",
+              "id": "window"
+            },
+            "name": "child"
+          }
+        ],
+        "str": "removechildwindow(child)"
+      },
+      "description": "Remove this window as `child`'s parent window.",
+      "id": "removechildwindow-child"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "table"
+        },
+        "name": "getchildwindows",
+        "parameters": [],
+        "str": "getchildwindows()"
+      },
+      "description": "Return all the child windows of this window.",
+      "id": "getchildwindows"
+    }
+  ],
+  "events": [
+    {
+      "callback": {
+        "name": "onclose",
+        "parameters": [
+          {
+            "type": {
+              "name": "Window",
+              "id": "window"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "onclose(self)"
+      },
+      "description": "Emitted when the window is closed.",
+      "id": "onclose-self"
+    },
+    {
+      "callback": {
+        "name": "onfocus",
+        "parameters": [
+          {
+            "type": {
+              "name": "Window",
+              "id": "window"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "onfocus(self)"
+      },
+      "description": "Emitted when the window is focused.",
+      "id": "onfocus-self"
+    },
+    {
+      "callback": {
+        "name": "onblur",
+        "parameters": [
+          {
+            "type": {
+              "name": "Window",
+              "id": "window"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "onblur(self)"
+      },
+      "description": "Emitted when the window lost focus.",
+      "id": "onblur-self"
+    }
+  ],
+  "delegates": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "boolean"
+        },
+        "name": "shouldclose",
+        "parameters": [
+          {
+            "type": {
+              "name": "Window",
+              "id": "window"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "shouldclose(self)"
+      },
+      "description": "Called when user requests to close the window, should return whether the\nwindow can be closed.\n",
+      "id": "shouldclose-self"
+    }
+  ],
+  "module": "yue.gui",
+  "id": "window"
+}

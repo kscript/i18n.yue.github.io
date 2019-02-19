@@ -1,0 +1,209 @@
+{
+  "name": "Button",
+  "component": "gui",
+  "header": "nativeui/button.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "inherit": {
+    "name": "View",
+    "id": "view"
+  },
+  "description": "Native button, can also be used as checkbox and radio button.",
+  "constructors": [
+    {
+      "signature": {
+        "name": "Button",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "title"
+          },
+          {
+            "type": {
+              "name": "Button::Type",
+              "id": "button_type"
+            },
+            "name": "type"
+          }
+        ],
+        "str": "Button(const std::string& title, Button::Type type)"
+      },
+      "description": "Create a new button.",
+      "id": "button-title-type"
+    }
+  ],
+  "class_properties": [
+    {
+      "description": "The class name of this view.",
+      "id": "kclassname",
+      "type": {
+        "name": "const char*"
+      },
+      "name": "kClassName"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "SetTitle",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "title"
+          }
+        ],
+        "str": "void SetTitle(const std::string& title)"
+      },
+      "description": "Set button title.",
+      "id": "settitle-title"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::string"
+        },
+        "name": "GetTitle",
+        "parameters": [],
+        "str": "std::string GetTitle() const"
+      },
+      "description": "Return the button title.",
+      "id": "gettitle"
+    },
+    {
+      "signature": {
+        "name": "SetChecked",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "checked"
+          }
+        ],
+        "str": "void SetChecked(bool checked)"
+      },
+      "description": "Set `checked` state of checkbox or radio.",
+      "id": "setchecked-checked"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsChecked",
+        "parameters": [],
+        "str": "bool IsChecked() const"
+      },
+      "description": "Return whether checkbox or radio is checked.",
+      "id": "ischecked"
+    },
+    {
+      "signature": {
+        "name": "SetImage",
+        "parameters": [
+          {
+            "type": {
+              "name": "Image*",
+              "id": "image"
+            },
+            "name": "image"
+          }
+        ],
+        "str": "void SetImage(Image* image)"
+      },
+      "description": "Set the image of button.",
+      "id": "setimage-image"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Image*",
+          "id": "image"
+        },
+        "name": "GetImage",
+        "parameters": [],
+        "str": "Image* GetImage() const"
+      },
+      "description": "Return the image of button.",
+      "id": "getimage"
+    },
+    {
+      "signature": {
+        "name": "SetButtonStyle",
+        "parameters": [
+          {
+            "type": {
+              "name": "Button::Style",
+              "id": "button_style"
+            },
+            "name": "style"
+          }
+        ],
+        "str": "void SetButtonStyle(Button::Style style)"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Set the visual style of the button.",
+      "id": "setbuttonstyle-style"
+    },
+    {
+      "signature": {
+        "name": "SetHasBorder",
+        "parameters": [
+          {
+            "type": {
+              "name": "bool"
+            },
+            "name": "yes"
+          }
+        ],
+        "str": "void SetHasBorder(bool yes)"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Set whether the button has a border.",
+      "id": "sethasborder-yes"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "HasBorder",
+        "parameters": [],
+        "str": "bool HasBorder() const"
+      },
+      "platform": [
+        "macOS"
+      ],
+      "description": "Return whether the button has a border.",
+      "id": "hasborder"
+    }
+  ],
+  "events": [
+    {
+      "callback": {
+        "name": "on_click",
+        "parameters": [
+          {
+            "type": {
+              "name": "Button*",
+              "id": "button"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "void on_click(Button* self)"
+      },
+      "description": "Emitted when button is clicked.",
+      "id": "onclick-self"
+    }
+  ],
+  "id": "button"
+}

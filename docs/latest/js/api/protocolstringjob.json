@@ -1,0 +1,42 @@
+{
+  "name": "ProtocolStringJob",
+  "component": "gui",
+  "header": "nativeui/protocol_job.h",
+  "type": "Class",
+  "namespace": "nu",
+  "inherit": {
+    "name": "ProtocolJob",
+    "id": "protocoljob"
+  },
+  "description": "Use string as response to custom protocol requests.",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "ProtocolStringJob",
+          "id": "protocolstringjob"
+        },
+        "name": "create",
+        "parameters": [
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "mimetype"
+          },
+          {
+            "type": {
+              "name": "String"
+            },
+            "name": "content"
+          }
+        ],
+        "str": "create(mimetype, content)"
+      },
+      "description": "Create a `ProtocolStringJob` with `mimetype` and `content`.\n",
+      "id": "create-mimetype-content"
+    }
+  ],
+  "module": "gui",
+  "id": "protocolstringjob"
+}

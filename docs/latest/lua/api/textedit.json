@@ -1,0 +1,369 @@
+{
+  "name": "TextEdit",
+  "component": "gui",
+  "header": "nativeui/text_edit.h",
+  "type": "Class",
+  "namespace": "nu",
+  "inherit": {
+    "name": "View",
+    "id": "view"
+  },
+  "description": "Plain text input view.",
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "TextEdit",
+          "id": "textedit"
+        },
+        "name": "create",
+        "parameters": [],
+        "str": "create()"
+      },
+      "description": "Create a new `TextEdit`.",
+      "id": "create"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "settext",
+        "parameters": [
+          {
+            "type": {
+              "name": "string"
+            },
+            "name": "text"
+          }
+        ],
+        "str": "settext(text)"
+      },
+      "description": "Change the text in the view.",
+      "id": "settext-text"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "string"
+        },
+        "name": "gettext",
+        "parameters": [],
+        "str": "gettext()"
+      },
+      "description": "Return currently displayed text.",
+      "id": "gettext"
+    },
+    {
+      "signature": {
+        "name": "undo",
+        "parameters": [],
+        "str": "undo()"
+      },
+      "description": "Undo the last edit operation in the undo queue.",
+      "id": "undo"
+    },
+    {
+      "signature": {
+        "name": "canundo",
+        "parameters": [],
+        "str": "canundo()"
+      },
+      "description": "Return whether there are any actions in undo queue.",
+      "id": "canundo"
+    },
+    {
+      "signature": {
+        "name": "redo",
+        "parameters": [],
+        "str": "redo()"
+      },
+      "description": "Redo the next action in the redo queue",
+      "id": "redo"
+    },
+    {
+      "signature": {
+        "name": "canredo",
+        "parameters": [],
+        "str": "canredo()"
+      },
+      "description": "Return whether there are any actions in redo queue.",
+      "id": "canredo"
+    },
+    {
+      "signature": {
+        "name": "cut",
+        "parameters": [],
+        "str": "cut()"
+      },
+      "description": "Delete (cut) the current selection, if any, copy the deleted text to the\nclipboard.\n",
+      "id": "cut"
+    },
+    {
+      "signature": {
+        "name": "copy",
+        "parameters": [],
+        "str": "copy()"
+      },
+      "description": "Copy current selection to clipboard.",
+      "id": "copy"
+    },
+    {
+      "signature": {
+        "name": "paste",
+        "parameters": [],
+        "str": "paste()"
+      },
+      "description": "Copy the current content of the clipboard to current caret position.\n",
+      "id": "paste"
+    },
+    {
+      "signature": {
+        "name": "selectall",
+        "parameters": [],
+        "str": "selectall()"
+      },
+      "description": "Select all text.",
+      "id": "selectall"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::tuple",
+          "template": "std::tuple",
+          "args": [
+            {
+              "name": "integer"
+            },
+            {
+              "name": "integer"
+            }
+          ],
+          "id": "std_tuple"
+        },
+        "name": "getselectionrange",
+        "parameters": [],
+        "str": "getselectionrange()"
+      },
+      "description": "Return the start position and end position of current selection.\n\nIf nothing is selected, the cursor position will be returned as both values, ie. (0, 0).\n",
+      "id": "getselectionrange"
+    },
+    {
+      "signature": {
+        "name": "selectrange",
+        "parameters": [
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "start"
+          },
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "end"
+          }
+        ],
+        "str": "selectrange(start, end)"
+      },
+      "description": "Select text between `start` and `end` positions.",
+      "id": "selectrange-start-end"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "string"
+        },
+        "name": "gettextinrange",
+        "parameters": [
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "start"
+          },
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "end"
+          }
+        ],
+        "str": "gettextinrange(start, end)"
+      },
+      "description": "Return the text between `start` and `end` positions.",
+      "id": "gettextinrange-start-end"
+    },
+    {
+      "signature": {
+        "name": "inserttext",
+        "parameters": [
+          {
+            "type": {
+              "name": "string"
+            },
+            "name": "text"
+          }
+        ],
+        "str": "inserttext(text)"
+      },
+      "description": "Insert `text` at current caret position.",
+      "id": "inserttext-text"
+    },
+    {
+      "signature": {
+        "name": "inserttextat",
+        "parameters": [
+          {
+            "type": {
+              "name": "string"
+            },
+            "name": "text"
+          },
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "position"
+          }
+        ],
+        "str": "inserttextat(text, position)"
+      },
+      "description": "Insert `text` at the `position`.",
+      "id": "inserttextat-text-position"
+    },
+    {
+      "signature": {
+        "name": "delete",
+        "parameters": [],
+        "str": "delete()"
+      },
+      "description": "Delete text of current selection.",
+      "id": "delete"
+    },
+    {
+      "signature": {
+        "name": "deleterange",
+        "parameters": [
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "start"
+          },
+          {
+            "type": {
+              "name": "integer"
+            },
+            "name": "end"
+          }
+        ],
+        "str": "deleterange(start, end)"
+      },
+      "description": "Delete text between `start` and `end` positions.",
+      "id": "deleterange-start-end"
+    },
+    {
+      "signature": {
+        "name": "setoverlayscrollbar",
+        "parameters": [
+          {
+            "type": {
+              "name": "boolean"
+            },
+            "name": "overlay"
+          }
+        ],
+        "str": "setoverlayscrollbar(overlay)"
+      },
+      "platform": [
+        "macOS",
+        "linux"
+      ],
+      "description": "Set whether to use overlay scrolling.",
+      "id": "setoverlayscrollbar-overlay"
+    },
+    {
+      "signature": {
+        "name": "setscrollbarpolicy",
+        "parameters": [
+          {
+            "type": {
+              "name": "Scroll::Policy",
+              "id": "scroll_policy"
+            },
+            "name": "hpolicy",
+            "description": "Policy for horizontal scrollbar."
+          },
+          {
+            "type": {
+              "name": "Scroll::Policy",
+              "id": "scroll_policy"
+            },
+            "name": "vpolicy",
+            "description": "Policy for vertical scrollbar."
+          }
+        ],
+        "str": "setscrollbarpolicy(hpolicy, vpolicy)"
+      },
+      "description": "Set the policy for displaying horizontal and vertical scrollbars.\n",
+      "id": "setscrollbarpolicy-hpolicy-vpolicy"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "RectF",
+          "id": "rectf"
+        },
+        "name": "gettextbounds",
+        "parameters": [],
+        "str": "gettextbounds()"
+      },
+      "description": "Return the text extend.",
+      "id": "gettextbounds"
+    }
+  ],
+  "events": [
+    {
+      "callback": {
+        "name": "ontextchange",
+        "parameters": [
+          {
+            "type": {
+              "name": "TextEdit",
+              "id": "textedit"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "ontextchange(self)"
+      },
+      "description": "Emitted when user has changed text.",
+      "id": "ontextchange-self"
+    }
+  ],
+  "delegates": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "boolean"
+        },
+        "name": "shouldinsertnewline",
+        "parameters": [
+          {
+            "type": {
+              "name": "TextEdit",
+              "id": "textedit"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "shouldinsertnewline(self)"
+      },
+      "description": "Called when user presses `Return` to insert new line, should return\nwhether it is allowed.\n",
+      "id": "shouldinsertnewline-self"
+    }
+  ],
+  "module": "yue.gui",
+  "id": "textedit"
+}

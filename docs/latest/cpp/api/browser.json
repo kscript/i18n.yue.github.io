@@ -1,0 +1,518 @@
+{
+  "name": "Browser",
+  "component": "gui",
+  "header": "nativeui/browser.h",
+  "type": "refcounted",
+  "namespace": "nu",
+  "inherit": {
+    "name": "View",
+    "id": "view"
+  },
+  "description": "Native webview using system browser.",
+  "detail": "Using `Browser` requires relatively new operating systems, for macOS the\nminimum version required is 10.10, for Linux it is required to install the\n`webkit2gtk` library with at least version 2.8.\n\nOn Linux due to poor support of hardware acceleration, the browser may fail to\nshow anything, when that happens you can set `WEBKIT_DISABLE_COMPOSITING_MODE`\nenvironment variable to disable hardware acceleration.\n",
+  "constructors": [
+    {
+      "signature": {
+        "name": "Browser",
+        "parameters": [
+          {
+            "type": {
+              "name": "const Browser::Options&",
+              "id": "browser_options"
+            },
+            "name": "options"
+          }
+        ],
+        "str": "Browser(const Browser::Options& options)"
+      },
+      "description": "Create a new browser view.",
+      "id": "browser-options"
+    }
+  ],
+  "class_methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "RegisterProtocol",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "scheme"
+          },
+          {
+            "type": {
+              "name": "const std::function<ProtocolJob*(const std::string&)>&"
+            },
+            "name": "handler"
+          }
+        ],
+        "str": "bool RegisterProtocol(const std::string& scheme, const std::function<ProtocolJob*(const std::string&)>& handler)"
+      },
+      "description": "Register a custom protocol with `scheme` and `handler`.",
+      "detail": "When the browser sends a request with `scheme`, the `handler` will be\ncalled with `handler(url)`, and the `handler` must return an instance of\nclass that inherits from [`ProtocolJob`](./protocoljob.html).\n\nThe `handler` is guaranteed to be called in the main thread.\n",
+      "id": "registerprotocol-scheme-handler"
+    },
+    {
+      "signature": {
+        "name": "UnregisterProtocol",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "scheme"
+          }
+        ],
+        "str": "void UnregisterProtocol(const std::string& scheme);"
+      },
+      "description": "Unregister the custom protocol with `scheme`.",
+      "id": "unregisterprotocol-scheme"
+    }
+  ],
+  "class_properties": [
+    {
+      "description": "The class name of this view.",
+      "id": "kclassname",
+      "type": {
+        "name": "const char*"
+      },
+      "name": "kClassName"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "name": "LoadURL",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "url"
+          }
+        ],
+        "str": "void LoadURL(const std::string& url)"
+      },
+      "description": "Load the URL.",
+      "id": "loadurl-url"
+    },
+    {
+      "signature": {
+        "name": "LoadHTML",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "html",
+            "description": "The string to use as the contents of the webpage."
+          },
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "baseurl",
+            "description": "A URL used to resolve relative URLs within the document."
+          }
+        ],
+        "str": "void LoadHTML(const std::string& html, const std::string& baseurl)"
+      },
+      "description": "Set the webpage contents and base URL.",
+      "id": "loadhtml-html-baseurl"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::string"
+        },
+        "name": "GetURL",
+        "parameters": [],
+        "str": "std::string GetURL()"
+      },
+      "description": "Return current URL.",
+      "id": "geturl"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::string"
+        },
+        "name": "GetTitle",
+        "parameters": [],
+        "str": "std::string GetTitle()"
+      },
+      "description": "Return the title of document.",
+      "id": "gettitle"
+    },
+    {
+      "signature": {
+        "name": "SetUserAgent",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "user_agent"
+          }
+        ],
+        "str": "void SetUserAgent(const std::string& user_agent)"
+      },
+      "description": "Change browser's user agent.",
+      "detail": "On Windows, due to Internet Explorer's limitations, calling `SetUserAgent`\nwould change all web pages' user agents in current process.\n",
+      "id": "setuseragent-useragent"
+    },
+    {
+      "signature": {
+        "name": "ExecuteJavaScript",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "code"
+          },
+          {
+            "type": {
+              "name": "const std::function<void(bool, base::Value)>&"
+            },
+            "name": "callback"
+          }
+        ],
+        "str": "void ExecuteJavaScript(const std::string& code, const std::function<void(bool, base::Value)>& callback);"
+      },
+      "description": "Evaluate `code` in browser and get the evaluated result.",
+      "detail": "The `callback` will be called with `callback(success, result)`, the\n`result` argument is a generic value that created from the result of\n`code`.\n\nNote that due to limitations of system toolkits, the execution may fail if\nthe result of `code` can not be fully converted to JSON.\n",
+      "id": "executejavascript-code-callback"
+    },
+    {
+      "signature": {
+        "name": "GoBack",
+        "parameters": [],
+        "str": "void GoBack()"
+      },
+      "description": "Navigate to the back item in the back-forward list.",
+      "id": "goback"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "CanGoBack",
+        "parameters": [],
+        "str": "bool CanGoBack() const"
+      },
+      "description": "Return whether there is a back item in the back-forward list that can be\nnavigated to.\n",
+      "id": "cangoback"
+    },
+    {
+      "signature": {
+        "name": "GoForward",
+        "parameters": [],
+        "str": "void GoForward()"
+      },
+      "description": "Navigate to the forward item in the back-forward list.",
+      "id": "goforward"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "CanGoForward",
+        "parameters": [],
+        "str": "bool CanGoForward() const"
+      },
+      "description": "Return whether there is a forward item in the back-forward list that can\nbe navigated to.\n",
+      "id": "cangoforward"
+    },
+    {
+      "signature": {
+        "name": "Reload",
+        "parameters": [],
+        "str": "void Reload()"
+      },
+      "description": "Reload current page.",
+      "id": "reload"
+    },
+    {
+      "signature": {
+        "name": "Stop",
+        "parameters": [],
+        "str": "void Stop()"
+      },
+      "description": "Stop loading all resources on the current page.",
+      "id": "stop"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsLoading",
+        "parameters": [],
+        "str": "bool IsLoading() const"
+      },
+      "description": "Return whether current page is loading content.",
+      "id": "isloading"
+    },
+    {
+      "signature": {
+        "name": "SetBindingName",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "name"
+          }
+        ],
+        "str": "void SetBindingName(const std::string& name)"
+      },
+      "description": "Set the `name` of object which would have the native bindings.",
+      "detail": "By default native bindings are added to the `window` object, by calling\nthis API, native bindings will be added to the `window[name]` object.\n",
+      "id": "setbindingname-name"
+    },
+    {
+      "signature": {
+        "name": "AddBinding",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "name"
+          },
+          {
+            "type": {
+              "name": "const std::function<void(...)>&"
+            },
+            "name": "func"
+          }
+        ],
+        "str": "void AddBinding(const std::string& name, const std::function<void(...)>& func)"
+      },
+      "description": "Add a native binding to web page with `name`.",
+      "detail": "You can pass an arbitrary function as long as the parameters can be\nconverted from `base::Value`, othewise compilation error would happen.\n\nFor example, following native binding:\n\n```cpp\nbrowser->AddBinding(\"AddRecord\", [](const std::string&key, int value) {\n});\n```\n\naccepts following calls:\n\n```\nwindow.addRecord('Books', 4);\nwindow.addRecord('Videos', 8);\n```\n\nYou can also use `base::Value` directly to accept arbitrary argument:\n\n```cpp\nbrowser->AddBinding(\"AddRecord2\", [](const std::string&key, base::Value value) {\n})\n```\n\n```\nwindow.addRecord2('PI', 3.14);\nwindow.addRecord2('The Best Animal', 'Panda');\n```\n\nNote that only functors, function pointers, `std::function` and\ncaptureless labmda functions are accepted in `AddBinding`. Labmda\nfunctions with captures can not have their types deduced automatically, so\nyou have to convert them to `std::function` first .\n",
+      "id": "addbinding-name-func"
+    },
+    {
+      "signature": {
+        "name": "AddRawBinding",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "name"
+          },
+          {
+            "type": {
+              "name": "const std::function<void(Browser*, base::Value)>&"
+            },
+            "name": "func"
+          }
+        ],
+        "str": "void AddRawBinding(const std::string& name, const std::function<void(Browser*, base::Value)>& func)"
+      },
+      "description": "Add a raw handler to web page with `name`.",
+      "detail": "The `func` will be called with a list of arguments passed from JavaScript.\n",
+      "id": "addrawbinding-name-func"
+    },
+    {
+      "signature": {
+        "name": "RemoveBinding",
+        "parameters": [
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "name"
+          }
+        ],
+        "str": "void RemoveBinding(const std::string& name)"
+      },
+      "description": "Remove the native binding with `name`.",
+      "id": "removebinding-name"
+    }
+  ],
+  "events": [
+    {
+      "callback": {
+        "name": "on_close",
+        "parameters": [
+          {
+            "type": {
+              "name": "Browser*",
+              "id": "browser"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "void on_close(Browser* self)"
+      },
+      "description": "Emitted when the web page requests to close.",
+      "id": "onclose-self"
+    },
+    {
+      "callback": {
+        "name": "on_update_command",
+        "parameters": [
+          {
+            "type": {
+              "name": "Browser*",
+              "id": "browser"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "void on_update_command(Browser* self)"
+      },
+      "description": "Emitted when the back-forward list has changed.",
+      "id": "onupdatecommand-self"
+    },
+    {
+      "callback": {
+        "name": "on_change_loading",
+        "parameters": [
+          {
+            "type": {
+              "name": "Browser*",
+              "id": "browser"
+            },
+            "name": "self"
+          }
+        ],
+        "str": "void on_change_loading(Browser* self)"
+      },
+      "description": "Emitted when the browser starts or stops loading content.",
+      "id": "onchangeloading-self"
+    },
+    {
+      "callback": {
+        "name": "on_update_title",
+        "parameters": [
+          {
+            "type": {
+              "name": "Browser*",
+              "id": "browser"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "title"
+          }
+        ],
+        "str": "void on_update_title(Browser* self, const std::string& title)"
+      },
+      "description": "Emitted when document's title is changed.",
+      "id": "onupdatetitle-self-title"
+    },
+    {
+      "callback": {
+        "name": "on_start_navigation",
+        "parameters": [
+          {
+            "type": {
+              "name": "Browser*",
+              "id": "browser"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "url"
+          }
+        ],
+        "str": "void on_start_navigation(Browser* self, const std::string& url)"
+      },
+      "description": "Emitted when the browser begins provisional navigation.",
+      "id": "onstartnavigation-self-url"
+    },
+    {
+      "callback": {
+        "name": "on_commit_navigation",
+        "parameters": [
+          {
+            "type": {
+              "name": "Browser*",
+              "id": "browser"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "url"
+          }
+        ],
+        "str": "void on_commit_navigation(Browser* self, const std::string& url)"
+      },
+      "description": "Emitted when the browser begins to receive web content.",
+      "id": "oncommitnavigation-self-url"
+    },
+    {
+      "callback": {
+        "name": "on_finish_navigation",
+        "parameters": [
+          {
+            "type": {
+              "name": "Browser*",
+              "id": "browser"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "url"
+          }
+        ],
+        "str": "void on_finish_navigation(Browser* self, const std::string& url)"
+      },
+      "description": "Emitted when the navigation is complete.",
+      "id": "onfinishnavigation-self-url"
+    },
+    {
+      "callback": {
+        "name": "on_fail_navigation",
+        "parameters": [
+          {
+            "type": {
+              "name": "Browser*",
+              "id": "browser"
+            },
+            "name": "self"
+          },
+          {
+            "type": {
+              "name": "const std::string&"
+            },
+            "name": "url"
+          },
+          {
+            "type": {
+              "name": "int"
+            },
+            "name": "code"
+          }
+        ],
+        "str": "void on_fail_navigation(Browser* self, const std::string& url, int code)"
+      },
+      "description": "Emitted when the navigation fails.",
+      "id": "onfailnavigation-self-url-code"
+    }
+  ],
+  "id": "browser"
+}

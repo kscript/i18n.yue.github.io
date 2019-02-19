@@ -1,0 +1,9 @@
+{
+  "name": "Clipboard::Data::Type",
+  "header": "nativeui/clipboard.h",
+  "type": "enum class",
+  "namespace": "nu",
+  "description": "Type of clipboard data.",
+  "detail": "\nThis type is an `enum class` with following values:\n* `Clipboard::Data::Type::Text`\n* `Clipboard::Data::Type::HTML`\n* `Clipboard::Data::Type::Image`\n* `Clipboard::Data::Type::FilePaths`\n* `Clipboard::Data::Type::None`\n",
+  "id": "clipboard_data_type"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Button::Style",
+  "header": "nativeui/button.h",
+  "type": "string",
+  "namespace": "nu",
+  "description": "Represent visual types of `Button`.",
+  "detail": "\nThis type is a string.\n\nOn macOS it can have following possible values:\n* `\"rounded\"`\n* `\"regular-square\"`\n* `\"thick-square\"`\n* `\"thicker-square\"`\n* `\"disclosure\"`\n* `\"shadowless-square\"`\n* `\"circular\"`\n* `\"textured-square\"`\n* `\"help-button\"`\n* `\"small-square\"`\n* `\"textured-rounded\"`\n* `\"round-rect\"`\n* `\"recessed\"`\n* `\"rounded-disclosure\"`\n* `\"inline\"`\n",
+  "id": "button_style"
+}

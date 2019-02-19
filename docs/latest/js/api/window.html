@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Window - Yue</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <div id="header">
+    <a class="logo" href="../index.html">Yue</a>
+    <div class="nav">
+      <a>
+        <span>
+          Langauge/语言:
+        </span>
+        <select id="i18n-list" i18n-page="api"></select>
+      </a>
+      <a href="../index.html" i18n="Docs"></a>
+      <a href="/" i18n="Versions"></a>
+      <a href="https://github.com/yue/yue">GitHub</a>
+    </div>
+  </div>
+  <div id="container">
+    <div class="markdown-body" id="content">
+      <h1>Window</h1>
+      <p>Native window.</p>
+      <table class="code">
+        <tr>
+          <td>Module</td>
+          <td>require("gui")</td>
+        </tr>
+        <tr>
+          <td>Type</td>
+          <td>Class</td>
+        </tr>
+      </table>
+      <h2 id="class-methods"><a class="anchor" aria-hidden="true" href="#class-methods"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>Class methods</h2>
+      <h3 id="create-options"><a class="anchor" aria-hidden="true" href="#create-options"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>create(options)</h3>
+      <p>Create a new window with <code>options</code>.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="window_options.html">Window::Options</a></code> <span
+            class="code">options</span></li>
+      </ul>
+      <h4>Return</h4><code><a class="type" href="window.html">Window</a></code>
+      <h2 id="methods"><a class="anchor" aria-hidden="true" href="#methods"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>Methods</h2>
+      <h3 id="close"><a class="anchor" aria-hidden="true" href="#close"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>close()</h3>
+      <p>Request to close the window.</p>
+      <h3 id="hasframe"><a class="anchor" aria-hidden="true" href="#hasframe"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>hasFrame()</h3>
+      <p>Return whether window has a native frame.</p>
+      <h4>Return</h4><code><span class="type">Boolean</span></code>
+      <h3 id="istransparent"><a class="anchor" aria-hidden="true" href="#istransparent"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>isTransparent()</h3>
+      <p>Return whether window is transparent.</p>
+      <h4>Return</h4><code><span class="type">Boolean</span></code>
+      <h3 id="sethasshadow-has"><a class="anchor" aria-hidden="true" href="#sethasshadow-has"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setHasShadow(has)</h3>
+      <p>Set whether window should have shadow.</p>
+      <p>Depending on platform, this may not work.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">Boolean</span></code> <span class="code">has</span></li>
+      </ul>
+      <h3 id="hasshadow"><a class="anchor" aria-hidden="true" href="#hasshadow"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>hasShadow()</h3>
+      <p>Return whether window has shadow.</p>
+      <h4>Return</h4><code><span class="type">Boolean</span></code>
+      <h3 id="setcontentview-view"><a class="anchor" aria-hidden="true" href="#setcontentview-view"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setContentView(view)</h3>
+      <p>Set the content view of the window.</p>
+      <p>The content view will always be resized to fill window&#39;s client area.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="view.html">View</a></code> <span class="code">view</span></li>
+      </ul>
+      <h3 id="getcontentview"><a class="anchor" aria-hidden="true" href="#getcontentview"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>getContentView()</h3>
+      <p>Return the content view of the window.</p>
+      <h4>Return</h4><code><a class="type" href="view.html">View</a></code>
+      <h3 id="center"><a class="anchor" aria-hidden="true" href="#center"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>center()</h3>
+      <p>Move the window to the center of the screen.</p>
+      <h3 id="setcontentsize-size"><a class="anchor" aria-hidden="true" href="#setcontentsize-size"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setContentSize(size)</h3>
+      <p>Resize window to make the content view fit <code>size</code>.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="sizef.html">SizeF</a></code> <span class="code">size</span></li>
+      </ul>
+      <h3 id="getcontentsize"><a class="anchor" aria-hidden="true" href="#getcontentsize"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>getContentSize()</h3>
+      <p>Return the size of content view.</p>
+      <h4>Return</h4><code><a class="type" href="sizef.html">SizeF</a></code>
+      <h3 id="setbounds-bounds"><a class="anchor" aria-hidden="true" href="#setbounds-bounds"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setBounds(bounds)</h3>
+      <p>Change the position and size of the window.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="rectf.html">RectF</a></code> <span class="code">bounds</span></li>
+      </ul>
+      <h3 id="getbounds"><a class="anchor" aria-hidden="true" href="#getbounds"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>getBounds()</h3>
+      <p>Return the position and size of the window.</p>
+      <h4>Return</h4><code><a class="type" href="rectf.html">RectF</a></code>
+      <h3 id="setsizeconstraints-minsize-maxsize"><a class="anchor" aria-hidden="true"
+          href="#setsizeconstraints-minsize-maxsize"><svg aria-hidden="true" height="16" version="1.1"
+            viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setSizeConstraints(minsize, maxsize)</h3>
+      <p>Set the minimum and maximum sizes of the window.</p>
+      <p>Passing an empty size means no constraint.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="sizef.html">SizeF</a></code> <span class="code">minsize</span> - Minimum size.
+        </li>
+        <li><code><a class="type" href="sizef.html">SizeF</a></code> <span class="code">maxsize</span> - Maximum size.
+        </li>
+      </ul>
+      <h3 id="getsizeconstraints"><a class="anchor" aria-hidden="true" href="#getsizeconstraints"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>getSizeConstraints()</h3>
+      <p>Return minimum and maximum sizes of the window.</p>
+      <h4>Return</h4>
+      <code><span class="type">[<a class="type" href="sizef.html}">SizeF</a>, <a class="type" href="sizef.html}">SizeF</a>]</span></code>
+      <h3 id="setcontentsizeconstraints-minsize-maxsize"><a class="anchor" aria-hidden="true"
+          href="#setcontentsizeconstraints-minsize-maxsize"><svg aria-hidden="true" height="16" version="1.1"
+            viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setContentSizeConstraints(minsize, maxsize)</h3>
+      <p>Set the minimum and maximum content sizes of the window.</p>
+      <p>Passing an empty size means no constraint.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="sizef.html">SizeF</a></code> <span class="code">minsize</span> - Minimum content
+          size.</li>
+        <li><code><a class="type" href="sizef.html">SizeF</a></code> <span class="code">maxsize</span> - Maximum content
+          size.</li>
+      </ul>
+      <h3 id="getcontentsizeconstraints"><a class="anchor" aria-hidden="true" href="#getcontentsizeconstraints"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>getContentSizeConstraints()</h3>
+      <p>Return minimum and maximum content sizes of the window.</p>
+      <h4>Return</h4>
+      <code><span class="type">[<a class="type" href="sizef.html}">SizeF</a>, <a class="type" href="sizef.html}">SizeF</a>]</span></code>
+      <h3 id="activate"><a class="anchor" aria-hidden="true" href="#activate"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>activate()</h3>
+      <p>Show the window and activate it.</p>
+      <h3 id="deactivate"><a class="anchor" aria-hidden="true" href="#deactivate"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>deactivate()</h3>
+      <p>Move the focus away from the window.</p>
+      <h3 id="isactive"><a class="anchor" aria-hidden="true" href="#isactive"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>isActive()</h3>
+      <p>Return whether window has focus.</p>
+      <h4>Return</h4><code><span class="type">Boolean</span></code>
+      <h3 id="setvisible-visible"><a class="anchor" aria-hidden="true" href="#setvisible-visible"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setVisible(visible)</h3>
+      <p>Show/hide the window.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">Boolean</span></code> <span class="code">visible</span></li>
+      </ul>
+      <h3 id="isvisible"><a class="anchor" aria-hidden="true" href="#isvisible"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>isVisible()</h3>
+      <p>Return whether window is visible.</p>
+      <h4>Return</h4><code><span class="type">Boolean</span></code>
+      <h3 id="setalwaysontop-top"><a class="anchor" aria-hidden="true" href="#setalwaysontop-top"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setAlwaysOnTop(top)</h3>
+      <p>Make the window always show above other normal windows.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">Boolean</span></code> <span class="code">top</span></li>
+      </ul>
+      <h3 id="isalwaysontop"><a class="anchor" aria-hidden="true" href="#isalwaysontop"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>isAlwaysOnTop()</h3>
+      <p>Return whether window is always above other normal windows.</p>
+      <h4>Return</h4><code><span class="type">Boolean</span></code>
+      <h3 id="setfullscreen-fullscreen"><a class="anchor" aria-hidden="true" href="#setfullscreen-fullscreen"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setFullscreen(fullscreen)</h3>
+      <p>Enter/leave fullscreen state.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">Boolean</span></code> <span class="code">fullscreen</span></li>
+      </ul>
+      <h3 id="isfullscreen"><a class="anchor" aria-hidden="true" href="#isfullscreen"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>isFullscreen()</h3>
+      <p>Return whether window is in fullscreen.</p>
+      <h4>Return</h4><code><span class="type">Boolean</span></code>
+      <h3 id="maximize"><a class="anchor" aria-hidden="true" href="#maximize"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>maximize()</h3>
+      <p>Maximize the window.</p>
+      <h3 id="unmaximize"><a class="anchor" aria-hidden="true" href="#unmaximize"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>unmaximize()</h3>
+      <p>Unmaximize the window.</p>
+      <h3 id="ismaximized"><a class="anchor" aria-hidden="true" href="#ismaximized"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>isMaximized()</h3>
+      <p>Return whether window is maximized.</p>
+      <h4>Return</h4><code><span class="type">Boolean</span></code>
+      <h3 id="minimize"><a class="anchor" aria-hidden="true" href="#minimize"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>minimize()</h3>
+      <p>Minimize the window.</p>
+      <h3 id="restore"><a class="anchor" aria-hidden="true" href="#restore"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>restore()</h3>
+      <p>Restore the minimized window.</p>
+      <h3 id="isminimized"><a class="anchor" aria-hidden="true" href="#isminimized"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>isMinimized()</h3>
+      <p>Return whether window is minimized.</p>
+      <h4>Return</h4><code><span class="type">Boolean</span></code>
+      <h3 id="setresizable-resizable"><a class="anchor" aria-hidden="true" href="#setresizable-resizable"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setResizable(resizable)</h3>
+      <p>Set whether window can be resized.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">Boolean</span></code> <span class="code">resizable</span></li>
+      </ul>
+      <h3 id="isresizable"><a class="anchor" aria-hidden="true" href="#isresizable"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>isResizable()</h3>
+      <p>Return whether window can be resized.</p>
+      <h4>Return</h4><code><span class="type">Boolean</span></code>
+      <h3 id="setmaximizable-maximizable"><a class="anchor" aria-hidden="true" href="#setmaximizable-maximizable"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setMaximizable(maximizable)</h3>
+      <p>Set whether window can be maximize.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">Boolean</span></code> <span class="code">maximizable</span></li>
+      </ul>
+      <h3 id="ismaximizable"><a class="anchor" aria-hidden="true" href="#ismaximizable"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>isMaximizable()</h3>
+      <p>Return whether window can be maximize.</p>
+      <h4>Return</h4><code><span class="type">Boolean</span></code>
+      <h3 id="setminimizable-minimizable"><a class="anchor" aria-hidden="true" href="#setminimizable-minimizable"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setMinimizable(minimizable)</h3>
+      <p>Set whether window can be minimized.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">Boolean</span></code> <span class="code">minimizable</span></li>
+      </ul>
+      <h3 id="isminimizable"><a class="anchor" aria-hidden="true" href="#isminimizable"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>isMinimizable()</h3>
+      <p>Return whether window can be minimized.</p>
+      <h4>Return</h4><code><span class="type">Boolean</span></code>
+      <h3 id="setmovable-movable"><a class="anchor" aria-hidden="true" href="#setmovable-movable"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setMovable(movable)</h3>
+      <p>Set whether window can be moved.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">Boolean</span></code> <span class="code">movable</span></li>
+      </ul>
+      <h3 id="ismovable"><a class="anchor" aria-hidden="true" href="#ismovable"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>isMovable()</h3>
+      <p>Return whether window can be moved.</p>
+      <h4>Return</h4><code><span class="type">Boolean</span></code>
+      <h3 id="settitle-title"><a class="anchor" aria-hidden="true" href="#settitle-title"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setTitle(title)</h3>
+      <p>Set window title.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">String</span></code> <span class="code">title</span></li>
+      </ul>
+      <h3 id="gettitle"><a class="anchor" aria-hidden="true" href="#gettitle"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>getTitle()</h3>
+      <p>Get window title.</p>
+      <h4>Return</h4><code><span class="type">String</span></code>
+      <h3 id="setbackgroundcolor-color"><a class="anchor" aria-hidden="true" href="#setbackgroundcolor-color"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setBackgroundColor(color)</h3>
+      <p>Set the background color of the window.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="color.html">Color</a></code> <span class="code">color</span></li>
+      </ul>
+      <h3 id="settoolbar-toolbar"><a class="anchor" aria-hidden="true" href="#settoolbar-toolbar"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setToolbar(toolbar) <span class="platform">macOS</span></h3>
+      <p>Set the window toolbar.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="toolbar.html">Toolbar</a></code> <span class="code">toolbar</span></li>
+      </ul>
+      <h3 id="gettoolbar"><a class="anchor" aria-hidden="true" href="#gettoolbar"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>getToolbar() <span class="platform">macOS</span></h3>
+      <p>Return the window toolbar.</p>
+      <h4>Return</h4><code><a class="type" href="toolbar.html">Toolbar</a></code>
+      <h3 id="settitlevisible-visible"><a class="anchor" aria-hidden="true" href="#settitlevisible-visible"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setTitleVisible(visible) <span class="platform">macOS</span></h3>
+      <p>Set whether the title is visible, when title was hidden the toolber would
+        be moved into the area previously occupied by the title.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">Boolean</span></code> <span class="code">visible</span></li>
+      </ul>
+      <h3 id="istitlevisible"><a class="anchor" aria-hidden="true" href="#istitlevisible"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>isTitleVisible() <span class="platform">macOS</span></h3>
+      <p>Return whether title is visible.</p>
+      <h4>Return</h4><code><span class="type">Boolean</span></code>
+      <h3 id="setfullsizecontentview-full"><a class="anchor" aria-hidden="true" href="#setfullsizecontentview-full"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setFullSizeContentView(full) <span class="platform">macOS</span></h3>
+      <p>Set the <code>NSFullSizeContentViewWindowMask</code> style on the window.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">Boolean</span></code> <span class="code">full</span></li>
+      </ul>
+      <h3 id="isfullsizecontentview"><a class="anchor" aria-hidden="true" href="#isfullsizecontentview"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>isFullSizeContentView() <span class="platform">macOS</span></h3>
+      <p>Return whether the window has <code>NSFullSizeContentViewWindowMask</code> style.</p>
+      <h4>Return</h4><code><span class="type">Boolean</span></code>
+      <h3 id="setmenubar-menubar"><a class="anchor" aria-hidden="true" href="#setmenubar-menubar"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setMenuBar(menubar) <span class="platform">Windows</span> <span class="platform">Linux</span></h3>
+      <p>Set the window menu bar.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="menubar.html">MenuBar</a></code> <span class="code">menubar</span></li>
+      </ul>
+      <h3 id="getmenubar"><a class="anchor" aria-hidden="true" href="#getmenubar"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>getMenuBar() <span class="platform">Windows</span> <span class="platform">Linux</span></h3>
+      <p>Return the window menu bar.</p>
+      <h4>Return</h4><code><a class="type" href="menubar.html">MenuBar</a></code>
+      <h3 id="setfullsizecontentview-full"><a class="anchor" aria-hidden="true" href="#setfullsizecontentview-full"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>setFullSizeContentView(full) <span class="platform">macOS</span></h3>
+      <p>Set the <code>NSFullSizeContentViewWindowMask</code> style on the window.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><span class="type">Boolean</span></code> <span class="code">full</span></li>
+      </ul>
+      <h3 id="getparentwindow"><a class="anchor" aria-hidden="true" href="#getparentwindow"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>getParentWindow()</h3>
+      <p>Return the parent window.</p>
+      <h4>Return</h4><code><a class="type" href="window.html">Window</a></code>
+      <h3 id="addchildwindow-child"><a class="anchor" aria-hidden="true" href="#addchildwindow-child"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>addChildWindow(child)</h3>
+      <p>Make <code>child</code> a child window of this window.</p>
+      <p>This method will do nothing if <code>child</code> already has a parent window.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="window.html">Window</a></code> <span class="code">child</span></li>
+      </ul>
+      <h3 id="removechildwindow-child"><a class="anchor" aria-hidden="true" href="#removechildwindow-child"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>removeChildWindow(child)</h3>
+      <p>Remove this window as <code>child</code>&#39;s parent window.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="window.html">Window</a></code> <span class="code">child</span></li>
+      </ul>
+      <h3 id="getchildwindows"><a class="anchor" aria-hidden="true" href="#getchildwindows"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>getChildWindows()</h3>
+      <p>Return all the child windows of this window.</p>
+      <h4>Return</h4><code><span class="type">Array</span></code>
+      <h2 id="events"><a class="anchor" aria-hidden="true" href="#events"><svg aria-hidden="true" height="16"
+            version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>Events</h2>
+      <h3 id="onclose-self"><a class="anchor" aria-hidden="true" href="#onclose-self"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>onClose(self)</h3>
+      <p>Emitted when the window is closed.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="window.html">Window</a></code> <span class="code">self</span></li>
+      </ul>
+      <h4>Preventable</h4>No.<h3 id="onfocus-self"><a class="anchor" aria-hidden="true" href="#onfocus-self"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>onFocus(self)</h3>
+      <p>Emitted when the window is focused.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="window.html">Window</a></code> <span class="code">self</span></li>
+      </ul>
+      <h4>Preventable</h4>No.<h3 id="onblur-self"><a class="anchor" aria-hidden="true" href="#onblur-self"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>onBlur(self)</h3>
+      <p>Emitted when the window lost focus.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="window.html">Window</a></code> <span class="code">self</span></li>
+      </ul>
+      <h4>Preventable</h4>No.<h2 id="delegates"><a class="anchor" aria-hidden="true" href="#delegates"><svg
+            aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>Delegates</h2>
+      <h3 id="shouldclose-self"><a class="anchor" aria-hidden="true" href="#shouldclose-self"><svg aria-hidden="true"
+            height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+              d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+          </svg></a>shouldClose(self)</h3>
+      <p>Called when user requests to close the window, should return whether the
+        window can be closed.</p>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code><a class="type" href="window.html">Window</a></code> <span class="code">self</span></li>
+      </ul>
+      <h4>Return</h4><code><span class="type">Boolean</span></code>
+    </div>
+    <div class="markdown-body" id="sidebar">
+      <h4>Langauge:</h4>
+      <div class="lang-switcher"><a href="../../cpp/api/window.html">C++</a> | <a
+          href="../../lua/api/window.html">Lua</a> | <span class="current">JavaScript</span></div>
+      <h4>Version:</h4><span class="current">v0.6.2</span>
+      <h4>Formats:</h4><a href="window.json">JSON</a>
+      <h4>Components:</h4>
+      <ul>
+        <li><a href="abstracttablemodel.html" i18n="AbstractTableModel"></a></li>
+        <li><a href="app.html" i18n="App"></a></li>
+        <li><a href="browser.html" i18n="Browser"></a></li>
+        <li><a href="button.html" i18n="Button"></a></li>
+        <li><a href="canvas.html" i18n="Canvas"></a></li>
+        <li><a href="clipboard.html" i18n="Clipboard"></a></li>
+        <li><a href="color.html" i18n="Color"></a></li>
+        <li><a href="combobox.html" i18n="ComboBox"></a></li>
+        <li><a href="container.html" i18n="Container"></a></li>
+        <li><a href="cursor.html" i18n="Cursor"></a></li>
+        <li><a href="entry.html" i18n="Entry"></a></li>
+        <li><a href="filedialog.html" i18n="FileDialog"></a></li>
+        <li><a href="fileopendialog.html" i18n="FileOpenDialog"></a></li>
+        <li><a href="filesavedialog.html" i18n="FileSaveDialog"></a></li>
+        <li><a href="font.html" i18n="Font"></a></li>
+        <li><a href="gif_player.html" i18n="GifPlayer"></a></li>
+        <li><a href="group.html" i18n="Group"></a></li>
+        <li><a href="image.html" i18n="Image"></a></li>
+        <li><a href="label.html" i18n="Label"></a></li>
+        <li><a href="lifetime.html" i18n="Lifetime"></a></li>
+        <li><a href="menu.html" i18n="Menu"></a></li>
+        <li><a href="menubar.html" i18n="MenuBar"></a></li>
+        <li><a href="menubase.html" i18n="MenuBase"></a></li>
+        <li><a href="menuitem.html" i18n="MenuItem"></a></li>
+        <li><a href="message_loop.html" i18n="MessageLoop"></a></li>
+        <li><a href="painter.html" i18n="Painter"></a></li>
+        <li><a href="picker.html" i18n="Picker"></a></li>
+        <li><a href="progressbar.html" i18n="ProgressBar"></a></li>
+        <li><a href="protocolasarjob.html" i18n="ProtocolAsarJob"></a></li>
+        <li><a href="protocolfilejob.html" i18n="ProtocolFileJob"></a></li>
+        <li><a href="protocoljob.html" i18n="ProtocolJob"></a></li>
+        <li><a href="protocolstringjob.html" i18n="ProtocolStringJob"></a></li>
+        <li><a href="scroll.html" i18n="Scroll"></a></li>
+        <li><a href="simpletablemodel.html" i18n="SimpleTableModel"></a></li>
+        <li><a href="tab.html" i18n="Tab"></a></li>
+        <li><a href="table.html" i18n="Table"></a></li>
+        <li><a href="tablemodel.html" i18n="TableModel"></a></li>
+        <li><a href="textedit.html" i18n="TextEdit"></a></li>
+        <li><a href="toolbar.html" i18n="Toolbar"></a></li>
+        <li><a href="tray.html" i18n="Tray"></a></li>
+        <li><a href="vibrant.html" i18n="Vibrant"></a></li>
+        <li><a href="view.html" i18n="View"></a></li>
+        <li><span class="current" i18n="Window"></span></li>
+      </ul>
+    </div>
+  </div>
+  <div id="footer">
+    <p>Content of this page is in public domain.</p>
+  </div>
+  <script src="../i18n.js"></script>
+</body>
+
+</html>

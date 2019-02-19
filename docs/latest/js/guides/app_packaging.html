@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>App packaging - Yue</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <link rel="stylesheet" href="../guide.css">
+</head>
+
+<body>
+  <div id="header">
+    <a class="logo" href="../index.html">Yue</a>
+    <div class="nav">
+      <a>
+        <span>
+          Langauge/语言:
+        </span>
+        <select id="i18n-list" i18n-page="api"></select>
+      </a>
+      <a href="../index.html" i18n="Docs"></a>
+      <a href="/" i18n="Versions"></a>
+      <a href="https://github.com/yue/yue">GitHub</a>
+    </div>
+  </div>
+  <div id="container">
+    <div class="markdown-body" id="content">
+      <h1 id="app-packaging">App packaging</h1>
+      <p>While you can let users install your app via <code>npm install</code>, it is recommended to
+        package your app and ship platform specific app bundles, so users can get best
+        desktop experience.</p>
+      <p>Yode supports appending ASAR archive to the executable and starting from it, so
+        for apps using Yue the best way to package is using <a
+          href="https://github.com/yue/yackage"><code>yackage</code></a>, which
+        can automatically put the app into ASAR archive and concatenate it to Yode.</p>
+      <p>By packaging the app you can also gain extra benefits like avoiding long path
+        names problem on Windows, and speeding up the <code>require</code> calls.</p>
+      <h2 id="using-yackage-">Using <code>yackage</code></h2>
+      <p>The README of <a href="https://github.com/yue/yackage"><code>yackage</code></a> has detailed usage
+        instructions, basically
+        you can generate independent app bundle under <code>out/</code> directory with:</p>
+      <pre><code>yackage build out/
+</code></pre>
+      <h2 id="limitations-of-node-apis">Limitations of Node APIs</h2>
+      <p>Due to the low-level nature of the Node APIs, there are some limitations when
+        using Node APIs after you packaged your app, details can be found at
+        <a
+          href="https://electronjs.org/docs/tutorial/application-packaging#limitations-of-the-node-api">https://electronjs.org/docs/tutorial/application-packaging#limitations-of-the-node-api</a>.
+      </p>
+      <h2 id="limitations-of-yue-apis">Limitations of Yue APIs</h2>
+      <p>Yue is essentially a thin wrapper of native APIs, which do not recognize ASAR
+        archives. So the APIs of Yue can not read files inside ASAR archives, i.e., can
+        not read your app&#39;s files when packaged.</p>
+      <p>Currently you can solve this by using the <code>--unpack</code> flag to exclude the assets
+        of your app when using <code>yackage</code>, and in your app&#39;s code use <code>fs.realpath</code> to
+        get the filesystem path of the assets before passing the path to Yue APIs.</p>
+      <p>For example you can unpack the images when using <code>yackage</code>:</p>
+      <pre><code>yackage dist out --unpack &quot;+(*.node|*.png)&quot;
+</code></pre>
+      <p>And in app&#39;s code call <code>fs.realpath</code> before reading the images:</p>
+      <pre><code class="lang-js"><span class="hljs-keyword">const</span> p = fs.realpathSync(path.join(__dirname, <span class="hljs-string">'image.png'</span>))
+<span class="hljs-keyword">const</span> image = gui.Image.createFromPath(p)
+</code></pre>
+    </div>
+    <div class="markdown-body" id="sidebar"></div>
+  </div>
+  <div id="footer">
+    <p>Content of this page is in public domain.</p>
+  </div>
+  <script src="../i18n.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "Vibrant::BlendingMode",
+  "platform": [
+    "macOS"
+  ],
+  "header": "nativeui/vibrant.h",
+  "type": "string",
+  "namespace": "nu",
+  "description": "The blending mode of a `Vibrant` view.",
+  "detail": "\nThis type is a string with following possible values:\n* `\"behind-window\"`\n* `\"within-window\"`\n",
+  "id": "vibrant_blendingmode"
+}

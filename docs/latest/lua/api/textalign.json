@@ -1,0 +1,9 @@
+{
+  "name": "TextAlign",
+  "header": "nativeui/gfx/text.h",
+  "type": "string",
+  "namespace": "nu",
+  "description": "Text alignment.",
+  "detail": "\nThis type is a string with following possible values:\n* `\"start\"`\n* `\"center\"`\n* `\"end\"`\n",
+  "id": "textalign"
+}

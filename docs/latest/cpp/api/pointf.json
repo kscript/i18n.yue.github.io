@@ -1,0 +1,152 @@
+{
+  "name": "PointF",
+  "header": "nativeui/gfx/geometry/point_f.h",
+  "type": "class",
+  "namespace": "nu",
+  "description": "A point with x and y coordinate.",
+  "constructors": [
+    {
+      "signature": {
+        "name": "PointF",
+        "parameters": [],
+        "str": "PointF()"
+      },
+      "description": "Create an empty point.",
+      "id": "pointf"
+    },
+    {
+      "signature": {
+        "name": "PointF",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "x"
+          },
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "y"
+          }
+        ],
+        "str": "PointF(float x, float y)"
+      },
+      "description": "Create a point with coordinates of `x` and `y`.",
+      "id": "pointf-x-y"
+    }
+  ],
+  "methods": [
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "x",
+        "parameters": [],
+        "str": "float x() const"
+      },
+      "description": "Return X coordinate.",
+      "id": "x"
+    },
+    {
+      "signature": {
+        "name": "set_x",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "x"
+          }
+        ],
+        "str": "void set_x(float x)"
+      },
+      "description": "Set X coordinate.",
+      "id": "setx-x"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "float"
+        },
+        "name": "y",
+        "parameters": [],
+        "str": "float y() const"
+      },
+      "description": "Return Y coordinate.",
+      "id": "y"
+    },
+    {
+      "signature": {
+        "name": "set_y",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "y"
+          }
+        ],
+        "str": "void set_y(float y)"
+      },
+      "description": "Set Y coordinate.",
+      "id": "sety-y"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "bool"
+        },
+        "name": "IsOrigin",
+        "parameters": [],
+        "str": "bool IsOrigin() const"
+      },
+      "description": "Return whether the point is empty.",
+      "id": "isorigin"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "Vector2dF",
+          "id": "vector2df"
+        },
+        "name": "OffsetFromOrigin",
+        "parameters": [],
+        "str": "Vector2dF OffsetFromOrigin() const"
+      },
+      "description": "Return the `Vector2dF` version of the point.",
+      "id": "offsetfromorigin"
+    },
+    {
+      "signature": {
+        "name": "Scale",
+        "parameters": [
+          {
+            "type": {
+              "name": "float"
+            },
+            "name": "scale"
+          }
+        ],
+        "str": "void Scale(float scale)"
+      },
+      "description": "Scale the x and y coordinates by `scale|`.",
+      "id": "scale-scale"
+    },
+    {
+      "signature": {
+        "returnType": {
+          "name": "std::string"
+        },
+        "name": "ToString",
+        "parameters": [],
+        "str": "std::string ToString() const"
+      },
+      "description": "Return string representation of the point.",
+      "id": "tostring"
+    }
+  ],
+  "id": "pointf"
+}
